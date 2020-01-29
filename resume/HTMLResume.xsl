@@ -5,23 +5,23 @@
 		<html>
 			<head>
 				<title>About me</title>
-				<link rel="stylesheet" type="text/css" href="/Billuc/resume/resumeStyle.css"/>
+				<link rel="stylesheet" type="text/css" href="./resume/resumeStyle.css"/>
 				<meta charset="ISO-8859-1"/>
 			</head>
 			<body>
 				<xsl:apply-templates select="//contact"/>
-				
+
 				<xsl:apply-templates select="//education"/>
-				
+
 				<xsl:apply-templates select="//experiences"/>
-				
+
 				<xsl:apply-templates select="//skills"/>
-				
+
 				<xsl:apply-templates select="//extras"/>
 			</body>
 		</html>
 	</xsl:template>
-	
+
 	<xsl:template match="contact">
 		<div id="contact">
 		<h1><xsl:value-of select="./name/first"/>&#160;<xsl:value-of select="./name/last"/></h1>
@@ -36,8 +36,8 @@
 			</tr>
 			<tr>
 				<td>Birth Date</td>
-				<td><xsl:value-of select="./birth/day" ></xsl:value-of> / 
-					<xsl:value-of select="./birth/month" ></xsl:value-of> / 
+				<td><xsl:value-of select="./birth/day" ></xsl:value-of> /
+					<xsl:value-of select="./birth/month" ></xsl:value-of> /
 					<xsl:value-of select="./birth/year" ></xsl:value-of></td>
 			</tr>
 			<tr>
@@ -50,7 +50,7 @@
 		</table>
 		</div>
 	</xsl:template>
-	
+
 	<xsl:template match="education">
 		<div id="education">
 		<h2>Education</h2>
@@ -58,7 +58,7 @@
 		</xsl:apply-templates>
 		</div>
 	</xsl:template>
-	
+
 	<xsl:template match="experiences">
 		<div id="experiences">
 		<h2>Experiences</h2>
@@ -66,7 +66,7 @@
 		</xsl:apply-templates>
 		</div>
 	</xsl:template>
-	
+
 	<xsl:template match="skills">
 		<div id="skills">
 		<h2>Skills</h2>
@@ -74,7 +74,7 @@
 		</xsl:apply-templates>
 		</div>
 	</xsl:template>
-	
+
 	<xsl:template match="extras">
 		<div id="extras">
 		<h2>Extras</h2>
@@ -82,7 +82,7 @@
 		</xsl:apply-templates>
 		</div>
 	</xsl:template>
-	
+
 	<xsl:template match="element">
 		<div class="element">
 			<table>
@@ -98,26 +98,26 @@
 			</table>
 		</div>
 	</xsl:template>
-	
+
 	<xsl:template match="title">
 		<span class="title">
 			<xsl:value-of select="."></xsl:value-of>
 		</span>
 	</xsl:template>
-	
+
 	<xsl:template match="start-date">
-		<xsl:value-of select="."></xsl:value-of> - 
+		<xsl:value-of select="."></xsl:value-of> -
 	</xsl:template>
-	
+
 	<xsl:template match="comment">
 		<li><xsl:value-of select="."></xsl:value-of></li>
 	</xsl:template>
-	
+
 	<xsl:template match="skill-category">
 		<tr><td><b><xsl:value-of select="./cat-title"></xsl:value-of></b></td>
 		<td><ul><xsl:apply-templates select="./skill"></xsl:apply-templates></ul></td></tr>
 	</xsl:template>
-	
+
 	<xsl:template match="skill">
 		<li>
 			<u><xsl:value-of select="./sk-title"></xsl:value-of></u>
@@ -125,7 +125,7 @@
 			<xsl:value-of select="./comment"></xsl:value-of>
 		</li>
 	</xsl:template>
-	
+
 	<xsl:template match="extra">
 		<xsl:choose>
 			<xsl:when test="title">
