@@ -31,6 +31,19 @@ body {
   text-decoration: underline;
 }
 
+.entete a {
+	display: inline-block;
+	margin-left: 30px;
+	padding: 5px;
+
+	border: 3px solid red;
+	border-radius: 5px;
+
+	color: red;
+	font-weight: bold;
+	text-decoration: none;
+}
+
 .contenu p {
   text-indent: 50px;
   text-align: justify;
