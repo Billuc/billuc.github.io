@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE resume SYSTEM "resume.dtd"> --> 
+<resume>
+  <contact>
+    <name>
+      <first>Luc</first>
+      <last>BILLAUD</last>
+    </name>
+    <mail>billaud.luc982@gmail.com</mail>
+    <tel>0033 (0)6 52 48 49 99</tel>
+    <birth>
+   		<day>21</day>
+   		<month>01</month>
+   		<year>2000</year>
+   	</birth>
+    <nationality>French</nationality>
+    <extra>
+    	<value>Driving License</value>
+    </extra>
+  </contact>
+  <education>
+  	<element>
+  		<title>Team Leader in an academic Project (team of 6)</title>
+  		<end-date><year>2019</year></end-date>
+  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
+  		<comment>Divided tasks so that everybody had something they can do to do</comment>
+  		<comment>Conceived architectures for a bank management application</comment>
+  		<comment>Made a Proof of Concept and a simulation of our solution</comment>
+  	</element>
+    <element>
+  		<title>Academic development project (team of 7)</title>
+  		<end-date><year>2019</year></end-date>
+  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
+  		<comment>Led the GUI team</comment>
+	    <comment>Worked following the Agile software development model</comment>
+	    <comment><i>Languages used : </i> Java</comment>
+  	</element>
+    <element>
+  		<title>Master of Science in Computer Science Engineering</title>
+      	<start-date><year>2018</year></start-date>
+  		<end-date><year>2021</year></end-date>
+  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
+  		<comment><i>Courses included: </i> Object Oriented Programming, Software Engineering, Project Management</comment>
+  	</element>
+    <element>
+  		<title>Undergraduate Course in Engineering Sciences</title>
+      	<start-date><year>2016</year></start-date>
+  		<end-date><year>2018</year></end-date>
+  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
+  		<comment>Grade: 15/20 – Ranked 39th out of 770</comment>
+  	</element>
+  	<element>
+  		<title>Multidisciplinary Project in Mechatronics (team of 12)</title>
+  		<end-date><year>2018</year></end-date>
+  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
+  		<comment>Designed and built a ball-throwing robot usable by disabled persons</comment>
+  		<comment>Coded an Android app to control the robot</comment>
+  		<comment><i>IT Manager</i></comment>
+  	</element>
+  	<element>
+  		<title>Baccalaureate (Equivalent to A-Levels) passed with highest distinction</title>
+  		<end-date><year>2016</year></end-date>
+  		<location>Lycée Armand Peugeot, Valentigney, France</location>
+  		<comment><i>Options : </i> Computer Science and Physics in German</comment>
+  	</element>
+  </education>
+  <experiences>
+    <element>
+      <title><![CDATA[Intern in the R&D service for 2 months]]></title>
+      <end-date><year>2019</year></end-date>
+      <location>Everwin SX (ERP software editor) – Villeurbanne, France</location>
+      <comment>Integrated APIs into the existing application</comment>
+      <comment>Updated some old code</comment>
+      <comment><i>Tools used: </i> Java, HTML, ExtJS, CSS, Maven, Gradle, SVN</comment>
+    </element>
+    <element>
+      <title>Tutor in Mathematics for other students</title>
+      <start-date><year>2018</year></start-date>
+      <end-date><year>2019</year></end-date>
+      <location>INSA (National Institute of Applied Sciences) Lyon</location>
+    </element>
+    <element>
+      <title>Summer job (1 month) - Faurecia (automotive supplier)</title>
+      <end-date><year>2018</year></end-date>
+      <location><![CDATA[R&D center – Bavans, France]]></location>
+      <comment>Reviewed different planning tools and chose to use one</comment>
+      <comment>Adapted an existing planning to the new tools</comment>
+      <comment><i>Tools used: </i> Excel, Trello, Gantt charts</comment>
+    </element>
+    <element>
+      <title>Technical intern / worker (1 month) - Veolia (water, waste and energy services)</title>
+      <end-date><year>2017</year></end-date>
+      <location>Waste sorting center – Rillieux-La-Pape, France</location>
+      <comment>Discovered the working world from the inside</comment>
+    </element>
+  </experiences>
+  <skills>
+  	<skill-category>
+  		<cat-title>Languages</cat-title>
+  		<skill>
+  			<sk-title>French</sk-title>
+  			<comment>Mother Tongue</comment>	
+  		</skill>
+  		<skill>
+  			<sk-title>English</sk-title>
+  			<comment>C1 level (LinguaSkills : 180/200)</comment>
+  		</skill>
+  		<skill>
+  			<sk-title>German</sk-title>
+  			<comment>Proficient, B2 level</comment>
+  		</skill>
+  	</skill-category>
+  	<skill-category>
+  		<cat-title>Programming Languages</cat-title>
+  		<skill><sk-title>Java/JavaEE</sk-title></skill>
+  		<skill><sk-title>C/C++</sk-title></skill>
+  		<skill><sk-title>HTML</sk-title></skill>
+  		<skill><sk-title>JavaScript</sk-title></skill>
+  		<skill><sk-title>SQL</sk-title></skill>
+  		<skill><sk-title>XML/XSL</sk-title></skill>
+  		<skill><sk-title>Matlab</sk-title></skill>
+  		<skill><sk-title>Python</sk-title></skill>
+  		<skill><sk-title>Batch/Shell</sk-title></skill>
+  		<skill><sk-title>Prolog</sk-title></skill>
+  		<skill><sk-title>RDF/SPARQL</sk-title></skill>
+  	</skill-category>
+  	<skill-category>
+  		<cat-title>IT skills</cat-title>
+  		<skill>
+  			<sk-title>Microsoft Office</sk-title>
+  		</skill>
+  		<skill>
+  			<sk-title>Adobe Suite</sk-title>
+  			<comment>Acrobat, Photoshop, Premiere, Illustrator</comment>
+  		</skill>
+  		<skill>
+  			<sk-title>Operating Systems</sk-title>
+  			<comment>Linux, Windows</comment>
+  		</skill>
+  		<skill>
+  			<sk-title>SolidEdge</sk-title>
+  		</skill>
+  		<skill>
+  			<sk-title>Versionning Tools</sk-title>
+  			<comment>Git (Github, Gitlab), SVN</comment>
+  		</skill>
+  		<skill>
+  			<sk-title>Maven, Gradle</sk-title>
+  		</skill>
+  		<skill>
+  			<sk-title>Tomcat</sk-title>
+  		</skill>
+  		<skill>
+  			<sk-title>Networks</sk-title>
+  			<comment>HTTP, TCP, UDP, IP protocols</comment>
+  		</skill>
+  		<skill>
+  			<sk-title>KNIME</sk-title>
+  			<comment>Basics</comment>
+  		</skill>
+  	</skill-category>
+  </skills>
+  <extras>
+    <element>
+      <title>Treasurer of the association INSA Esport (video games)</title>
+      <start-date><year>2018</year></start-date>
+      <end-date><year>2020</year></end-date>
+      <location>INSA (National Institute of Applied Sciences) Lyon</location>
+      <comment>Organized tournaments on different games</comment>
+      <comment>Managed a treasury</comment>
+      <comment>Managed teams</comment>
+      <comment>Led meetings with the executive board</comment>
+    </element>
+    <element>
+      <title>3 months linguistic exchange</title>
+      <end-date><year>2014</year></end-date>
+      <location>Wolfenbüttel, Germany</location>
+      <comment>Followed courses in German</comment>
+      <comment>Lived with a German family</comment>
+    </element>
+    <element>
+    	<title>Interests</title>
+    	<comment>Sport : Climbing, team sports</comment>
+    	<comment>Reading</comment>
+    </element>
+  </extras>
+</resume>

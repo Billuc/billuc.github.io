@@ -1,0 +1,26 @@
+<!ELEMENT resume (contact, education, experiences, skills, extras)>
+  <!ELEMENT contact (name, mail, tel, birth, nationality)>
+    <!ELEMENT name (first, last)>
+      <!ELEMENT first (#PCDATA)>
+      <!ELEMENT last (#PCDATA)>
+    <!ELEMENT mail (#PCDATA)>
+    <!ELEMENT tel (#PCDATA)>
+    <!ELEMENT birth (day, month, year)>
+      <!ELEMENT day (#PCDATA)>
+      <!ELEMENT month (#PCDATA)>
+      <!ELEMENT year (#PCDATA)>
+    <!ELEMENT nationality (#PCDATA)>
+  <!ELEMENT education (element)*>
+    <!ELEMENT element (title, start-date?, end-date?, location?, comment*)>
+      <!ELEMENT title (#PCDATA)>
+      <!ELEMENT start-date (day?, month?, year)>
+      <!ELEMENT end-date (day?, month?, year)>
+      <!ELEMENT location (#PCDATA)>
+      <!ELEMENT comment ANY>
+  <!ELEMENT experiences (element)*>
+  <!ELEMENT skills (skill-category)*>
+    <!ELEMENT skill-category (cat-title, skill*)>
+      <!ELEMENT cat-title (#PCDATA)>
+      <!ELEMENT skill (sk-title, comment?)>
+        <!ELEMENT sk-title (#PCDATA)>
+  <!ELEMENT extras (element)*>
