@@ -26,7 +26,7 @@ body {
 .entete h1 {
   font-family: "Segoe UI", sans-serif;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 4.5em;
   text-align: center;
   text-decoration: underline;
 }
@@ -42,16 +42,68 @@ body {
 	color: red;
 	font-weight: bold;
 	text-decoration: none;
+	background-color: white;
 }
 
 .contenu p {
   text-indent: 50px;
   text-align: justify;
+	font-size: 1.35em;
+
+	margin-left: 15px;
 }
 
 .contenu h2 {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
+
+	font-family: "Segoe UI", sans-serif;
+	text-decoration: underline;
+	font-size: 2.3em;
+	text-transform: uppercase;
+}
+
+.contenu figure {
+	text-align: center;
+	color: blue;
+	font-family: "Segoe UI", sans-serif;
+	font-style: italic;
+
+	padding: 5px;
+	border: 2px solid black;
+	border-radius: 15px;
+	background-color: #d2d2d2;
+
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.contenu figure img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.contenu figcaption a {
+	display: block;
+}
+
+.contenu .intro {
+	background-color: #d2d2d2;
+	padding: 10px 15px 10px 15px;
+	border-radius: 8px;
+}
+
+.contenu .intro p {
+	margin-left: 0px;
+}
+
+.contenu .intro p:first-of-type {
+	margin-top: 0px;
+}
+
+.contenu .intro p:last-of-type {
+	margin-bottom: 0px;
 }
 
 .sources div {
