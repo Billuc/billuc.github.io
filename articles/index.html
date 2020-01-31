@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mes Articles</title>
+  </head>
+  <body>
+    <<script src="../resources/jquery-3.4.1.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      function getHead(pUrl) {
+        $.ajax({
+          type: "HEAD",
+          async: true,
+          url: pUrl,
+        }).done( function(message,text,jqXHR) {
+          console.log(message);
+          console.log(text);
+          console.log(jqXHR);
+        });
+      }
+
+      getHead("./articleSN.html");
+    </script>
+  </body>
+</html>
