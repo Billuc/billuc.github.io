@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./coursStyle.css">
+    <title>Vidéos - Grammaire et Langages</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1>Grammaire et Langages</h1>
+      <h2>Videos</h2>
+    </div>
+    <div class="chapitre" id="intro">
+      <h2>Introduction générale</h2>
+      <p>
+        <b>Grammaires et Langages</b> : concepts théoriques en informatique mais assez
+        fondamentaux.
+      </p>
+      <p>
+        <b>3 domaines d'application : </b>
+        <ul>
+          <li><b>Analyse</b> : savoir si une phrase correspond à une grammaire donnée et
+          traiter les résultats (le plus courant)</li>
+          <li><b>Synthèse</b> : générer des phrases d'une grammaire donnée</li>
+          <li><b>Inférence grammaticale</b> : générer une grammaire à partir d'échantillons
+          du langage.</li>
+        </ul>
+      </p>
+      <div class="encadre">
+        <b>Definitions</b> : <br>
+        <i>Grammaire</i> : décrit une syntaxe d'écriture à l'aide de règles <br>
+        <i>Langage</i> : ensemble de phrases d'un alphabet <br>
+        <small>Pour les grammaires, on ne parle pas d'alphabet mais de symboles terminaux </small><br>
+      </div>
+      <p>
+        <i>Exemples de langages</i> :
+        <ul>
+          <li><span class="formule">{a*b*}</span> : suite de 'a' (nb qcq) suivi d'une suite de 'b' (nb qcq) <br>
+          &rarr; langage régulier</li>
+          <li><span class="formule">{a&#8319; b&#8319; / n>0}</span> : suite de n 'a' suivi de n 'b' (contrainte : mm nombre) <br>
+          &rarr; langage non-régulier hors-contexte</li>
+          <li><span class="formule">{a&#8319; b&#8319; c&#8319; / n>0}</span> : n 'a' puis n 'b' puis n 'c' <br>
+          &rarr; langage contextuel (outils plus compliqués)</li>
+        </ul>
+        <i>Exemple de grammaire pour le langage {a*b*}</i> : <br>
+        <span class="formule">
+          EXP &rarr; a EXP | b EXP2 | &#949; <br>
+          EXP2 &rarr; b EXP2 | &#949;
+        </span>
+        "&rarr;" signifie "produit", '|' signifie "ou", "&#949;" signifie "production vide"
+      </p>
+      <p>
+        <b>Notations</b> : <br>
+        Les symboles d'un alphabet (symboles terminaux) sont notés par des lettres minuscules <br>
+        Les mots d'un alphabet aussi <br>
+        Les symboles non-terminaux sont notés avec des lettres majuscules (ex : EXP)
+      </p>
+      <div class="encadre">
+        <b>Définitions</b> : <br>
+        <i>Proto-mot</i> : Mot avec des symboles terminaux et non-terminaux noté avec une lettre grecque <br>
+        <i>Dérivation</i> : rééecriture d'un proto-mot par application d'une règle (notée &rArr;) <br>
+        <i>Phrase générée par une grammaire</i> : phrase déduite par dérivations de l'axiome (symbole de départ) de la grammaire <br>
+        <i>Langage généré par une grammaire</i> : ensemble des phrases générées par dérivations
+      </div>
+      <div class="encadre">
+          <b>Classification des grammaires</b><br>
+          Grammaires à choix finis (type 4) incluses dans <br>
+          Grammaires régulières (type 3) incluses dans <br>
+          Grammaires hors contexte (type 2) incluses dans <br>
+          Grammaires contextuelles (type 1) incluses dans <br>
+          Grammaires générales (type 0) (plus de contraintes)<br>
+          <br>
+          <b>Notations</b> : <br>
+          <ul>
+            <li>T : ensemble des symboles terminaux (ou alphabet)</li>
+            <li>N : ensemble des symboles non-terminaux</li>
+            <li>R : ensemble des règles de la grammaire</li>
+            <li>S : l'axiome de la grammaire (le symbole de départ) (S appartient à N)</li>
+            <li>V : T union N</li>
+          </ul>
+        <p>
+          <b>Grammaires générales : </b><br>
+          <span class="formule">&#945; &rarr; &#946;</span>
+          <small>Avec &#945; dans V*NV* et &#946; dans V*</small><br>
+          Difficiles à analyser car boucle si n'appartient pas au langage (indécidable)
+        </p>
+        <p>
+          <b>Grammaires contextuelles (ou croissantes) : </b><br>
+          <span class="formule">&#945; A &#946; &rarr; &#945; &#947; &#946;</span>
+          <small>Avec A dans N et &#945;, &#946;, &#947; dans V*</small><br>
+          Les langages générés sont dits contextuels.
+        </p>
+        <p>
+          <b>Grammaires hors contexte : </b><br>
+          <span class="formule">A &rarr; &#947;</span>
+          <small>Avec A dans N et &#947; dans V*</small><br>
+          Grammaires très utilisées pour la définition de langages de programmation
+          car analyse très aisée et possible. Si &#947; dans N, grammaire linéaire.
+        </p>
+        <p>
+          <b>Grammaires régulières (ou rationnelles) : </b><br>
+          Généralement sous la forme d'expressions régulières ou automates finis
+          <span class="formule">A &rarr; a B</span>
+          <span class="formule">A &rarr; b</span>
+          <small>Avec A, B dans N et a, b dans T</small><br>
+        </p>
+        <p>
+          <b>Grammaires à choix finis : </b><br>
+          <span class="formule">A &rarr; a</span>
+          <small>Avec A dans N et a dans T+</small><br>
+        </p>
+      </div>
+      <br>
+      <table>
+        <th colspan="2"><b>Notation BNF (Backus Naur Form) : </b></th>
+        <tr>
+          <td>::=</td>
+          <td>est le symbole de définition d'une règle (eq &rarr;)</td>
+        </tr>
+        <tr>
+          <td>|</td>
+          <td>est le 'ou'</td>
+        </tr>
+        <tr>
+          <td>< ></td>
+          <td>pour un symbole non-terminal</td>
+        </tr>
+        <tr>
+          <td>[ ]</td>
+          <td>pour une partie facultative</td>
+        </tr>
+        <tr>
+          <td>{ }</td>
+          <td>pour grouper des éléments</td>
+        </tr>
+        <tr>
+          <td>" "</td>
+          <td>pour les terminaux d'un seul caractère</td>
+        </tr>
+        <th colspan="2">EBNF (version étendue) : </th>
+        <tr>
+          <td>?</td>
+          <td>si c'est optionnel</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>pour la répétition de 0 à n fois</td>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>pour la répétition de 1 à n fois</td>
+        </tr>
+      </table>
+    </div>
+    <div class="chapitre" id="ana_lexicale">
+      <h2>Analyse lexicale</h2>
+      <h3>Langages et expressions rationnels</h3>
+      <div class="encadre">
+        <b>Definitions</b><br>
+        Les langages et expressions rationnels peuvent être définis de manière inductive/recursive.<br><br>
+        Un <b>langage régulier</b> est défini par :
+        <ul>
+          <li>{&#949;} et &#216; sont des langages réguliers</li>
+          <li>pour tout a dans &Sigma; (l'alphabet), {a} est un langage régulier</li>
+          <li>si L1 et L2 sont des langages rationnels, alors L1 union L2, L1 L2 et L1* aussi</li>
+        </ul>
+        Une <b>expression régulière</b> est définie par :
+        <ul>
+          <li>&epsilon; est une expression régulière (mot de longueur nulle)</li>
+          <li>&#216; est une expression regulière signifiant l'absence de mot</li>
+          <li>pour tout a dans &Sigma;, a est une expression régulière</li>
+          <li>si e1 et e2 sont des expressions régulières, (e1+e2) <small>(ou)</small>, (e1 e2) <small>(concat)</small> et (e1*) aussi</li>
+        </ul>
+      </div>
+      <p>
+        <b>Propriétés et règles simples : </b><br>
+        <ul>
+          <li><span class="formule">&epsilon;e = e&epsilon; = e</span></li>
+          <li><span class="formule">&#216;e = e&#216; = e</span></li>
+          <li>le + est commutatif (pas le concat)</li>
+          <li>le + et le concat sont associatifs</li>
+          <li><span class="formule">e1 (e2 + e3) = e1 e2 + e1 e3</span></li>
+          <li>Priorité d'opérateurs : *, concat et +</li>
+          <li><span class="formule">&#216; + e = e + &#216; = e</span></li>
+          <li><span class="formule">e + e = e</span></li>
+          <li><span class="formule">e* e* = e*</span></li>
+          <li><span class="formule">(e*)* = e*</span></li>
+          <li>etc.</li>
+        </ul>
+      </p>
+      <p>
+        Toute expression régulière décrit un et un seul langage régulier.<br>
+        Deux expressions régulières décrivant un même langage sont équivalentes.
+      </p>
+      <h3>Les Automates Finis</h3>
+      <div class="encadre">
+        <b>Définitions : </b><br>
+        Un automate fini déterministe est défini par :
+        <ul>
+          <li>&Sigma; un ensemble fini de symboles (ou alphabet)</li>
+          <li>Q un ensemble fini d'états</li>
+          <li>q0 de Q, l'état initial</li>
+          <li>F inclus dans Q, l'ensemble des états finaux</li>
+          <li>&delta; une fonction totale de Q * &Sigma; &rarr; Q, appellée fonction de transition</li>
+        </ul>
+        <small>Cet automate est déterministe car chaque couple (q, a) de Q * &Sigma; n'a qu'une valeur
+        dans la fonction de transition.</small>
+      </div>
+      <p>
+        En pratique, on n'exprime pas la totalité des transitions et on considère qu'on
+        arrive dans un état d'erreur si la transition n'est pas explicitée.<br>
+        On représente aussi la fonction de transition par une table de transition.<br>
+        On représente l'automate fini par un graphe orientés où les états sont les noeuds
+        et les symboles sont des étiquettes sur les arcs.
+      </p>
+      <div class="encadre">
+        Un <b>automate déterministe</b> permet de reconnaître les mots d'un langage.<br>
+        Soit &alpha; un mot. &alpha; est reconnu par l'automate A, si &delta;*(q0, &alpha;) appartient a F avec: <br>
+        <ul>
+          <li><span class="formule">&delta;*(q, u) = &delta;(q, u) si |u| = 1</span></li>
+          <li><span class="formule">&delta;*(q, au) = &delta;*(&delta;(q, a), u) sinon</span></li>
+        </ul>
+        &delta;* est donc l'application successive de &delta; sur tout le mot &alpha;.<br>
+        Si l'application de &delta;* n'amène pas à un état final, le mot n'est pas reconnu.<br>
+      </div>
+      <p>
+        L'ensemble des mots reconnus par A est le langage reconnu par A.
+      </p>
+      <div class="encadre">
+        <b>Méthode des dérivées</b><br>
+        Permet de trouver un automate à partir de son expression.<br>
+        Pour cela, on va dériver l'expression par rapport à un symbole.
+        <span class="formule">Da(e) = {u | au appartient à e}</span>
+        La dérivée de e par rapport à a est tout ce qui peut suivre a dans e (sachant que e commence par a).
+        <b>Propriétés : </b>
+        <ul>
+          <li> <span class="formule">Da(a) = &epsilon;</span> </li>
+          <li> <span class="formule">Da(b) = &#216;</span> </li>
+          <li> <span class="formule">Da(e1 + e2) = Da(e1) + Da(e2)</span> </li>
+          <li> <span class="formule">Da(e1e2) = Da(e1)e2 + &Delta;(e1)Da(e2)</span><br>
+          On dérive e1 et on concatène e2 si e1 ne peut pas être de longueur nulle.
+          Sinon, on dérive aussi e2.</li>
+          <li> <span class="formule">Da(e*) = Da(e)e*</span> </li>
+        </ul>
+        Les états de l'automate sont les dérivées successives de l'expression.<br>
+        Il y a une transition entre ei et ej sur le symbole a si Da(ej) = ei.<br>
+        Un état sera final si le langage qu'il génère contient le mot vide (si on peut avoir un mot de longueur nulle).
+      </div>
+      <p>Il existe aussi une manière très simple de générer l'automate fini d'une
+      expression mais cet automate sera non-déterministe.</p>
+      <div class="encadre">
+        Un <b>automate fini non-déterministe</b> est aussi défini par &Sigma;, Q, q0, F et &delta;.<br>
+        La différence se fait sur le &delta; qui est maintenant une fonction de Q * &Sigma; vers 2^Q.<br>
+        2^Q est l'ensemble des sous-ensembles de Q.<br>
+        Il existe aussi des transitions spontanées (&epsilon;-transitions), où le symbole est &epsilon;
+      </div>
+      <p>
+        La méthode de constuction de l'automate fini non-deterministe permet de produire des
+        briques d'automate avec un état initial et un état final.
+      </p>
+      <div class="encadre">
+        <b>Construction de Thomson : </b><br>
+        <ul>
+          <li>Pour un ensemble vide : pas de connexion entre l'initial et le final</li>
+          <li>Pour le mot vide : &epsilon;-transition entre l'initial et le final</li>
+          <li>Pour un symbole : une transition avec ce symbole entre les 2</li>
+          <li>Pour un 'ou' : 2 branches avec des &epsilon;-transitions et les automates des expressions sur chaque branche</li>
+          <li>Pour une concat : les automates des 2 expressions à la suite avec des &epsilon;-transitions</li>
+          <li>Pour l'operateur de Kleene (e*) : on a l'automate de l'expression entre les 2 états et des &epsilon;-transitions
+          entre les 2 états (I&rarr;F pour 0 répétitions et F&rarr;I pour répeter)</li>
+        </ul>
+      </div>
+      <b>Théorème de Kleene : </b>un langage est reconnaissable par un automate fini ssi il est rationnel.
+      <p>
+        <b>Implémentation des automates</b><br>
+        Un automate déterministe peut s'implémenter de manière procédurale, sans
+        mémoire. Il suffit d'appeler la fonction de l'état cible de la transition.<br>
+        On peut aussi utiliser une table de transition : map < int, map < int, int >><br>
+        <small>où le premier int est l'état courant, le deuxième le symbole et le troisième l'état cible</small><br>
+        <br>
+        Pour un automate non-déterministe, c'est plus complexe, puisque &delta; arrive vers un ensemble d'états.<br>
+        On a donc une : map < int, map < int, set < int > > ><br>
+        Implémentation généralement 'de front' : on stocke des états courants, qu'on met a jour quand on lit un symbole, jusqu'a un état final.<br>
+        <br>
+        La complexité est bien moins importante quand l'automate est déterministe.
+      </p>
+      <p>
+        <b>Déterminisation d'un automate : </b><br>
+        On veut transformer un automate non-deterministe en automate déterministe
+        pour réduire la complexité à l'execution.<br>
+        Pour cela, on parcourt l'automate non-déterministe. Les noeuds de l'automate
+        déterministe représentent l'ensemble des états courants dans l'automate non-déterministe.<br>
+        Pour chaque ensemble d'état, on checke toutes les transitions possibles et on ajoute
+        les noeuds et transitions correspondantes dans l'automate déterministe.<br>
+        <small>Attention : la taille du nouvel automate peut atteindre 2^(nb de noeuds de départ)</small>
+      </p>
+      <p>On peut minimiser les automates obtenus (fusionner les noeuds similaires)</p>
+    </div>
+    <div class="chapitre" id="ana_lexicale_outils">
+      <h2>Analyse lexicale - Outils</h2>
+    </div>
+
+    <li> <span class="formule"></span> </li>
+    <small><i>Notes issues du cours de Grammaires et Langages d'Eric Guérin (INSA Lyon)</i></small>
+  </body>
+</html>
