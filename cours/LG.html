@@ -295,12 +295,206 @@
         <small>Attention : la taille du nouvel automate peut atteindre 2^(nb de noeuds de départ)</small>
       </p>
       <p>On peut minimiser les automates obtenus (fusionner les noeuds similaires)</p>
-    </div>
-    <div class="chapitre" id="ana_lexicale_outils">
+    <!-- </div>
+    <div class="chapitre" id="ana_lexicale_outils"> -->
       <h2>Analyse lexicale - Outils</h2>
+      <p>
+        <b>Extensions : </b><br>
+        Il y a souvent des extensions (EREs) à la concatenation, l'union et l'opérateur
+        de Kleene pour simplifier l'écriture.
+        <ul>
+          <li> <i>Classes de caractères : </i>
+            <ul>
+              <li><b>[...]</b> : liste de caractères autorisés (ou non-autorisés si on commence par ^)</li>
+              <li>Certaines classes sont prédéclarées, comme <b>[:alpha:]</b> ou <b>[:digit:]</b></li>
+              <li>Le <b>.</b> : n'importe quel caractère</li>
+            </ul>
+          </li>
+          <li>
+            <i>Cardinalités : </i>
+            <ul>
+              <li><b>?</b> : 0 ou 1 (donc optionnel)</li>
+              <li><b>+</b> : 1 à n</li>
+              <li><b>{n1, n2}</b> : de n1 à n2 caractères (Attention, très gros automates)</li>
+            </ul>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <b>POSIX : </b><br>
+        Il existe des outils CLI unix pour travailler sur des chaînes de caractères :
+        <ul>
+          <li><b>grep</b> filtre les lignes correspondant à une regex</li>
+          <li><b>ed</b> : (vieil) éditeur de texte pour faire des modifs avec des regex</li>
+          <li><b>sed</b> : editeur de flux qui lit et associe des commandes quand une regex correspond</li>
+          <li><b>awk</b> : sed++</li>
+          <li><b>vi</b> : editeur de texte avec qqs commandes avec regex</li>
+        </ul>
+        <br>
+        Il y a aussi une biblio std pour utiliser les regex :
+        <ul>
+          <li><b>regcomp()</b> compile la regex (fabrique l'automate)</li>
+          <li><b>regexec()</b> teste si la chaine satisfait la regex (execute l'automate)</li>
+        </ul>
+        On oublie pas de regfree() à la fin ;)
+      </p>
+      <p>
+        <b>C++ : </b><br>
+        Il y a une biblio std intégrée à la STL pour faire des regex. Attention,
+        utilisez Clang/libc++ ou VS2012+.
+      </p>
+    </div>
+    <div class="chapitre" id="ana_syntaxique">
+      <h2>Analyse Syntaxique - Introduction</h2>
+      <p>Rappel : grammaire hors-contexte = <span class="formule">A &rarr; &gamma;</span>
+        <small>A dans N (non-terminal) et &gamma; dans V*</small><br>
+        Pas aussi générales que les contextuelles mais assez expressives quand meme.<br>
+      </p>
+      <p>
+        <b>2 manières d'analyser une grammaire hors-contexte : </b>
+        <ul>
+          <li>Descendante (top-down) : on part de l'axiome et on dérive jusqu'à arriver aux symboles terminaux de la phrase à analyser</li>
+          <li>Ascendante (bottom-up) : on part de la phrase à analyser et on identifie des parties droites de règles (on obtient des proto-mots) jusqu'à arriver à l'axiome</li>
+        </ul>
+      </p>
+      <p>
+        <b>Algorithmes : </b><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Pour l'analyse descendante, on a une fonction avec comme parametres le proto-mot
+        courant et la phrase à analyser. Elle va chercher les règles associées au premier
+        non-terminal du proto-mot et procéder recursivement au remplacement. On s'arrete
+        quand le proto-mot = la phrase à analyser.<br>
+        Problèmes : on peut boucler à l'infini, si une des règles est récursive /
+        on recherche tous les proto-mots sans tenir compte de la phrase (une heuristique
+        serait pas mal) / ne marche quasi que dans des cas dégénérés (grammaires à choix finis)<br>
+        On peut s'assurer que les règles génèrent des symboles de la phrase (mais on
+        ne peut pas avoir de non-terminaux au début &rarr; grammaires linéraires)<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Pour l'analyse ascendante, on inverse l'analyse des règles.
+        Cette fois-ci, on n'a besoin que d'un seul parametre : le proto-mot courant
+        (= la phrase au début). On cherche à identifier le proto-mot à des parties
+        droites de règles. On s'arrete quand on a un axiome.<br>
+        Remarques : Cet algo fonctionne sans restriction sur les règles de la grammaire /
+        Complexité en n² :( / Besoin de la connaissance complète de la phrase à chaque
+        fois.
+      </p>
+      <p>Ces algos sont faciles à implémenter et ne transforment pas la grammaire
+      mais ont quand meme de gros défauts (performance / restrictions sur la grammaire
+       / restrictions sur la lecture en entrée)</p>
+      <p>Si on réalise des pré-traitements sur la grammaire, on peut obtenir une lecture
+      dans le flux en avant limitée (on lit juste le symbole courant et le suivant)
+      et de la performance (complexité linéraire généralement avec un automate à pile)</p>
+    </div>
+    <div class="chapitre" id="ana_descendante">
+      <h2>Analyse descendante</h2>
+      <p>L'algo du chapitre précédent peut être amélioré en levant la restriction sur
+      les règles (qui doivent commencer par un symbole terminal). Pour cela, on cherche
+      les règles associées récursivement jusqu'à ce qu'on ait un terminal &rarr;
+      analyseur LL(1) ou LL(k)</p>
+      <p>
+        <b>Analyse prédictive : </b><br>
+        <i>Premiers P(A) : </i> les premiers d'un non terminal A sont les terminaux
+        qui peuvent être en tête d'une dérivation gauche de A.
+        <span class="formule">P(A) = {a &isin; &Sigma; / &exist; &alpha; &isin; V*, A &rArr;* a&alpha;}</span>
+        On a un problème pour les règles récursives à gauche (on écarte ou transforme
+        les grammaires) et celles qui produisent des &epsilon; (qu'il faut identifier).<br>
+        <br>
+        <i>L'ensemble nul N : </i> l'ensemble des non-terminaux qui peuvent produire
+        des &epsilon;.
+        <span class="formule">N = {A &isin; N / A &rArr;* &epsilon;}</span>
+        <i>Suivants S(A) : </i> les suivants d'un non-terminal A sont les terminaux
+        qui peuvent suivre un non-terminal.
+        <span class="formule">S(A) = {a &isin; &Sigma; / &exist;u &isin; &Sigma;*, &alpha;, &beta; &isin; V*, S (axiome) &rArr;* uA&alpha; &rArr; uAa&beta;}</span>
+        Si le symbole suivant est la fin du mot, on le note avec un '$'. $ &isin; S(S).<br>
+        On calcule les suivants en passant par les premiers :
+        <span class="formule">S(X) = S(X) &cup; P(Y)</span>
+        <small>s'il existe une règle donnant XY ou X&alpha;Y avec &alpha; &isin;
+        N*</small><br>
+        puis par propagation : on ajoute S(A) à S(X) pour toutes les règles A &rarr;
+        &alpha;X&beta; <small>avec &beta; &isin; N*</small> et on propage sur les
+        règles avec X.
+      </p>
+      <div class="encadre">
+        <b>Analyseurs LL </b>(Analyseur Left to right Leftmost derivation) : <br>
+        <br>
+        <i>Principe de selection de regle</i> =
+        <ul>
+          <li>Si le prochain symbole n'appartient pas a P(A), on renvoie faux (sauf si A &isin; N)</li>
+          <li>Si le prochain symbole est en tête d'une règle, on le lit et selectionne cette règle</li>
+          <li>Si le prochain symbole &isin; P(B) <small>B un non-terminal</small>, on ne le lit pas
+          mais on selectionne la règle</li>
+          <li>Si A &isin; N et que le prochain symbole &isin; S(A), on renvoie true</li>
+        </ul>
+        Dans la fonction correspondant à un symbole, on regarde d'abord si le next()
+        est dans les premiers du symbole. Ensuite, on selectionne la bonne règle, on
+        appelle les fonctions des symboles concernés et on renvoie vrai si elles ont
+        renvoyé vrai.
+      </div>
+      <p>
+        Si bcp de règles et de symboles, le travail d'écriture de toutes les fonctions
+        est fastidieux. On va donc passer par une matrice de transition qui va associer
+        à un non-terminal et un terminal la réécriture du non-terminal (cases vides =
+        erreurs).<br>
+        <br>
+        Pour cela, on a besoin d'une pile dans laquelle on met les proto-mots courants.
+        <ul>
+          <li>On initialise l'automate avec l'axiome.</li>
+          <li>Quand l'entree/résultat de la table commence par un non-terminal, on
+          transforme la pile</li>
+          <li>Quand elle commence par un terminal, on lit le terminal et le reste
+          de la partie dte remplace la partie gche</li>
+          <li>Quand elle est un &epsilon;, on lit le symbole et depile le non-terminal</li>
+          <li>L'automate se termine quand la pile est vide</li>
+        </ul>
+        <small>La pile de l'automate correspond exactement aux appels de fonctions
+        que l'on aurait fait.</small><br>
+        <br>
+        Comme on a au plus 1 valeur par case de la table, l'analyseur est un LL(1).<br>
+        <b>Grammaire LL(1) : </b> grammaire hors-contexte avec une seule transition
+        possible par couple.<br>
+        Parfois une grammaire n'est pas LL(1), mais on pourrait en construire une <br>
+        <b>Langage LL(1) : </b> langage avec (at least) 1 grammaire LL(1) qui le génère.
+      </p>
+      <p>
+        <b>Transformations de grammaires</b><br>
+        <br>
+        Le but est de se rapprocher d'une grammaire LL(1).<br>
+        Pour cela, on évite les recursions gauches en les transformant en récursions
+        droites avec des nouveaux non-terminaux et des &epsilon;-productions.<br>
+        On a aussi un problème quand la table des prédictions a plus d'un élement
+        par case (notamment quand 2 règles commencent pareil) &rarr; factorisation.<br>
+      </p>
+      <p>
+        Parfois, il est impossible de déterminer quelle règle utiliser en ne lisant
+        qu'un seul symbole &rarr; grammaires LL(k).<br> On devra donc lire plusieurs
+        symboles.<br> Il existe des cas où k n'est pas borné (tend vers +&infin;)
+      </p>
+    </div>
+    <div class="chapitre" id="ana_ascendante_intro">
+      <h2>Analyse ascendante - Intro et items</h2>
+      <p>
+        <b>Automate à pile : </b><br>
+        Automate à états finis avec une pile non bornée. Les élements dans la pile
+        font partie d'un alphabet Z.<br>
+        <div class="encadre">
+          Un <b>automate à pile déterministe</b> est défini par :
+          <ul>
+            <li>&Sigma; un ensemble fini de symboles (alphabet)</li>
+            <li>Q un ensemble fini d'états</li>
+            <li>q0 &isin; Q, l'état initial</li>
+            <li>F &sub; Q, les états finaux</li>
+            <li>Z l'alphabet de pile</li>
+            <li>z0 le symbole de fond de pile</li>
+            <li>&delta; la fonction de transition (Qx(&Sigma; &cup; {&epsilon;})xZ &rarr; QxZ*)</li>
+          </ul>
+          On a autorisé les &epsilon;-transitions &rarr; il faudra s'assurer que s'il
+          y a une &epsilon;-transition à partir d'un couple état/sommet de pile, il
+          n'y a pas d'autre transition depuis cette configuration.
+        </div>
+      </p>
     </div>
 
     <li> <span class="formule"></span> </li>
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <small><i>Notes issues du cours de Grammaires et Langages d'Eric Guérin (INSA Lyon)</i></small>
   </body>
 </html>
