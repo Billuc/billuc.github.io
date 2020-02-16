@@ -474,23 +474,106 @@
       <p>
         <b>Automate à pile : </b><br>
         Automate à états finis avec une pile non bornée. Les élements dans la pile
-        font partie d'un alphabet Z.<br>
-        <div class="encadre">
-          Un <b>automate à pile déterministe</b> est défini par :
-          <ul>
-            <li>&Sigma; un ensemble fini de symboles (alphabet)</li>
-            <li>Q un ensemble fini d'états</li>
-            <li>q0 &isin; Q, l'état initial</li>
-            <li>F &sub; Q, les états finaux</li>
-            <li>Z l'alphabet de pile</li>
-            <li>z0 le symbole de fond de pile</li>
-            <li>&delta; la fonction de transition (Qx(&Sigma; &cup; {&epsilon;})xZ &rarr; QxZ*)</li>
-          </ul>
-          On a autorisé les &epsilon;-transitions &rarr; il faudra s'assurer que s'il
-          y a une &epsilon;-transition à partir d'un couple état/sommet de pile, il
-          n'y a pas d'autre transition depuis cette configuration.
-        </div>
+        font partie d'un alphabet Z.
       </p>
+      <div class="encadre">
+        Un <b>automate à pile déterministe</b> est défini par :
+        <ul>
+          <li>&Sigma; un ensemble fini de symboles (alphabet)</li>
+          <li>Q un ensemble fini d'états</li>
+          <li>q0 &isin; Q, l'état initial</li>
+          <li>F &sub; Q, les états finaux</li>
+          <li>Z l'alphabet de pile</li>
+          <li>z0 le symbole de fond de pile</li>
+          <li>&delta; la fonction de transition (Qx(&Sigma; &cup; {&epsilon;})xZ &rarr; QxZ*)</li>
+        </ul>
+        On a autorisé les &epsilon;-transitions &rarr; il faudra s'assurer que s'il
+        y a une &epsilon;-transition à partir d'un couple état/sommet de pile, il
+        n'y a pas d'autre transition depuis cette configuration.
+      </div>
+      <p>
+        On peut faire une représentation graphique s'un tel automate. Pour cela
+        il faut rajouter l'info concernant la pile sur l'arc. <i>Exemple d'arc :
+        a[e &rarr; fg].</i><br>
+        Cet automate permet aussi de reconnaître des mots si on arrive dans un état
+        final après l'execution de l'automate. On reconnait aussi un mot si on
+        arrive à une pile vide à la fin (définition plus utilisée).
+      </p>
+      <div class="encadre">
+        <b>Automates à pile non-deterministes : </b><br>
+        &delta; (la fonction de transition) est maintenant une fonction de
+        Qx(&Sigma; &cup; {&epsilon;})xZ vers 2^(QxZ*)<br>
+        <br>
+        Ces automates ont un pouvoir d'expression plus fort et permettent donc
+        de décrire plus de langages. Il n'y a donc pas d'equivalence entre les
+        automates à pile deterministes et non-deterministes. On va donc devoir
+        construire directement les automates deterministes.
+      </div>
+      <p><small>
+        Généralement, Q = Z (on empile donc des états). C'est le cas des automates
+        à items.
+      </small></p>
+      <p>
+        <b>Automates à items : </b><br>
+        Il permet de construire un automate à pile <b>non-deterministe</b> (donc
+        non-utilisable en pratique) d'une grammaire hors-contexte.<br>
+      </p>
+      <p>
+        Un <b>item</b> est de la forme :
+        <span class="formule">[X &rarr; &alpha; &sdot; &beta;]</span>
+        Cela veut dire que dans l'application de la règle X &rarr; &alpha;&beta;,
+        on a déjà dérivé un mot de &alpha; et il reste à dériver un mot de &beta;.
+        Le point est un curseur qui dit où on en est dans l'analyse.<br>
+        <small>"X &rarr; &sdot;" correspond à la production vide.</small>
+      </p>
+      <p>
+        En général, on ajoute un nouvel axiome qui n'intervient que en partie
+        gauche et jamais en partie droite. Quand cet axiome est reconnu, on sait
+        que l'on a fini.
+      </p>
+      <div class="encadre">
+        <b>Automate des items : </b><br>
+        Les items sont à la fois les états et l'alphabet de pile. L'ensemble des
+        items est noté Zg. On modifie la fonction de transition pour pouvoir
+        regarder 1 ou 2 elements de la pile.
+        <span class="formule">&delta; : (Zg &cup; (Zg x Zg)) x (E &cup; {&epsilon;})
+        &rarr; Zg*</span>
+        <br>
+        <b>Transitions : </b><br>
+        <i>Transition de lecture : </i>dans l'état [X&rarr;&alpha;&sdot;a&beta;],
+        si le prochain symbole à lire est 'a', on remplace le haut de la pile par
+        [X&rarr;&alpha;a&sdot;&beta;].<br>
+        <small>La taille de la pile ne change pas et c'est la seule transition
+        qui ne soit pas une &epsilon;-transition.</small><br>
+        <i>Transition d'expansion : </i>dans l'état [X&rarr;a&sdot;Yb], si on a
+        une règle Y&rarr;&gamma;, on peut empiler l'item [Y&rarr;&sdot;&gamma;].<br>
+        <small>La taille de la pile augmente de 1</small><br>
+        <i>Transition de réduction : </i>dans l'état [X&rarr;a&sdot;Yb][Y&rarr;&gamma;&sdot;],
+        on a reconnu Y, donc la pile devient [X&rarr;aY&sdot;b].<br>
+        <small>La taille de la pile diminue de 1 (car on a dépilé le second item).</small>
+      </div>
+      <p>
+        <i>Théorème : </i>le langage reconnu par l'automate non-deterministe d'une
+        grammaire est le langage associé à cette grammaire. <br>
+        Comme l'automate est non-déterministe, il est suseptible de tourner en
+        boucle en pratique.
+      </p>
+      <p>
+        On va donc construire des automates deterministes directement (prochains
+        chapitres) quitte a restreindre les grammaires utilisables.
+      </p>
+    </div>
+
+    <div class="chapitre" id="">
+
+    </div>
+
+    <div class="chapitre" id="">
+
+    </div>
+
+    <div class="chapitre" id="">
+
     </div>
 
     <li> <span class="formule"></span> </li>
