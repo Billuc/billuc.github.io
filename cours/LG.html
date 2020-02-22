@@ -62,6 +62,7 @@
         <i>Phrase générée par une grammaire</i> : phrase déduite par dérivations de l'axiome (symbole de départ) de la grammaire <br>
         <i>Langage généré par une grammaire</i> : ensemble des phrases générées par dérivations
       </div>
+      <br>
       <div class="encadre">
           <b>Classification des grammaires</b><br>
           Grammaires à choix finis (type 4) incluses dans <br>
@@ -564,15 +565,78 @@
       </p>
     </div>
 
-    <div class="chapitre" id="">
+    <div class="chapitre" id="ana_lr0">
+      <h2>Automate LR0</h2>
+      <p>
+        Les automates des items posent problème à cause des &epsilon;-transitions.<br>
+        L'automate LR(0) regroupe les items en fonction de ces transitions et est
+        donc stable par les &epsilon;-transitions (on a plus de transition de réduction,
+        elles seront implicites).
+      </p>
+      <p>
+        On met les transitions d'expansion dans les états pour avoir la stabilité :
+        lorsqu'on a un non-terminal à droite d'un point, on ajoute les règles avec
+        ce non-terminal en partie gauche dans le même état.<br>
+        On a aussi des transitions avec des non-terminaux, qui correspondent aux
+        réductions (items puits).
+      </p>
+      <div class="encadre">
+        <b>Construction de l'automate : </b><br>
+        On commence par la règle de l'axiome (du type S' &rarr; S).<br>
+        On complete de manière récursive l'état en ajoutant les règles dont les parties
+        gauches se trouvent directement à droite d'un point (saturation).<br>
+        On construit ensuite les transitions avec tous les symboles (terminaux et
+        non-terminaux). On arrive dans des états où l'on a décalé le point et on
+        sature ici aussi.<br>
+        On réalise cela récursivement en fusionnant les états identiques.
+      </div>
+      <p>
+        Ici aussi, on a les transitions de lecture et de réduction, mais on n'a
+        plus besoin de transition d'expansion (elle se fait en même temps que la
+        lecture).<br>
+        /!\ Lors d'une réduction, on dépile autant d'états qu'il y a d'élements
+        en partie droite
+      </p>
+      <p>
+        <b>Table d'analyse : </b><br>
+        On modélise l'automate par une table d'analyse avec pour entrées l'état
+        courant et symbole (terminal ou non-terminal). Lors d'un décalage, on indique
+        l'état dans lequel on arrive. Lors d'une réduction, on indique la règle
+        réduite. On devra conserver le nombre d'états à dépiler et le symbole
+        non-terminal créé.<br>
+        Il n'y a pas de réduction de l'axiome, mais une acceptation.<br>
+        On met des cases vides dans le cas des erreurs (phrase non reconnue). <br>
+      </p>
+      <p>
+        Les automates LR(0) sont implémentés très facilement en utilisant le design
+        pattern State. On créé une classe-état par état et on les met dans une pile.
+        L'état en haut de la pile est l'état courant. Pour chaque état, l'action
+        à réaliser par symbole est différente (fonction de transition différente).
+      </p>
+      <p>
+        <b>Limitations : </b><br>
+        Lors de la construction, il est possible que plusieurs possibilités soient
+        faisables en même temps (conflit).<br>
+        <i>Exemple : </i> A&rarr;a|&epsilon;, est-ce que A donne a ou &epsilon; ?
+        Les 2 sont possibles !<br>
+        Il y a
+        <ul>
+          <li>les conflits décalage/réduction : dans un même état, on peut faire
+          un décalage et une réduction</li>
+          <li>les conflits réduction/réduction : dans un même état, on peut faire
+          2 réductions différentes</li>
+        </ul>
+        On peut résoudre les conflits en lisant le symbole d'après &rarr; analyseurs
+        LR(1) et SLR(1) (version simplifiée).
+      </p>
+      <p><b>Grammaire LR(0) : </b>si la table des actions ne contient aucun conflit.</p>
+    </div>
+
+    <div class="chapitre" id="ana_slr1">
 
     </div>
 
-    <div class="chapitre" id="">
-
-    </div>
-
-    <div class="chapitre" id="">
+    <div class="chapitre" id="ana_lr1">
 
     </div>
 
