@@ -35,6 +35,7 @@ h1, h2, h3 {
   background: #d0d0d0;
 
   margin: 0px 10px 25px 10px;
+  text-align: justify;
 }
 
 .chapitre h2 {

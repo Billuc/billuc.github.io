@@ -633,11 +633,107 @@
     </div>
 
     <div class="chapitre" id="ana_slr1">
-
+      <h2>Automate SLR(1)</h2>
+      <p>
+        Version améliorée de LR(0), vu qu'on lit un caractère en avance (d'où le
+        1).<br>
+        En gros, on ne fait une réduction de X que si le prochain terminal est un
+        suivant de X.<br>
+        <i>Remarque : </i>SLR(1) utilise le même automate (même graphe) que LR(0).<br>
+        <br>
+        Dans cet automate, on ne réduit une règle que si le terminal suivant fait
+        partie des suivants du symbole. Cela permet de lever des conflits. On peut
+        avoir des décalages et des réductions sur une même ligne avec cet automate.
+        <br>
+        Pour implémenter cet automate, on aura besoin d'une fonction qui sonde le
+        prochain caractère sans le consommer.
+      </p>
+      <p>
+        Une grammaire ambigüe ne peut pas être LR(0) ou SLR(1) et une grammaire
+        LR(0) ou SLR(1) ne peut pas être ambigüe.
+      </p>
+      <p>
+        Avec un automate SLR(1), la récursivité à gauche et à droite sont gérées,
+        mais la récursivité gauche est bien plus simple à traiter. L'automate dans
+        ce cas est bien plus performant (le nombre d'états empilés ne dépend pas
+        du nombre de symboles lus).<br>
+        Dans le cas d'une récursivité droite, le nombre d'états empilés correspond
+        au nombre de symboles lus (en gros).
+      </p>
+      <p><b>Grammaire SLR(1) : </b>si on a aucun conflit.</p>
     </div>
 
     <div class="chapitre" id="ana_lr1">
+      <h2>Analyseurs LR(1)</h2>
+      <p>Les analyseurs SLR(1) prennent en compte les suivants d'un non-terminal
+      mais pas dans un contexte. Les analyseurs LR(1), eux, identifient les suivants
+      d'un non-terminal par item.</p>
+      <p><b>Items généralisés : </b><br>
+        Extension des items : on ajoute les terminaux qui peuvent suivre le non-terminal
+        en partie gauche.
+      </p>
+      <p>
+        <b>Saturation des items : </b><br>
+        Quand on veut saturer [X &rarr; &alpha;&sdot;Y&beta;, a], on ajoute
+        les règles avec Y en partie gauche et les suivants pour ses règles seront
+        les premiers de "&beta; a" (a peut être dedans si &beta; peut être nul).
+      </p>
+      <p>
+        La table d'analyse est très similaire mais les réductions sont très ciblées.
+        <b>Grammaire LR(1) : </b>la table d'analyse ne contient pas de conflits.
+      </p>
+      <small>Un automate LR(1) aura plus d'états qu'un automate LR(0) ou SLR(1)
+        (parfois beaucoup plus &rarr; lourd). On a donc un intermédiaire entre SLR(1)
+        et LR(1) : LALR(1) (utilisé par bison notamment).
+      </small>
+      <h2>Analyseurs LALR(1)</h2>
+      <p>On construit l'automate LALR(1) à partir de l'automate LR(1). On fusionne
+      les états avec le même coeur (regardless of les symboles de prédiction) qui
+      ne génèrent pas de conflits et qui ont un comprtement similaire.</p>
+      <br>
+      <p>Les grammaires ascendantes sont plus puissantes que les grammaires
+      descendantes équivalentes (LR(0) > LL(0), LR(k) > LL(k)) car elles permettent
+      la récursivité à gauche</p>
+    </div>
 
+    <div class="chapitre" id="gram_attribuees">
+      <h2>Grammaires attribuées</h2>
+      <p>
+        Principe : à chaque symbole (terminal ou non-terminal), on associe un ou
+        plusieurs attributs qui permettent d'associer une sémantique aux noeuds.
+        Ces attributs peuvent être hérités (du parent vers le fils) ou synthétisé
+        (du fils vers le parent).
+      </p>
+      <p>
+        On peut formaliser le calcul d'attributs en l'écrivant entre parenthèses
+        (cela permet de formaliser des opérations arithmétiques notamment). On peut
+        aussi associer des "variables" pour chaque noeud et écrire leur relation
+        entre accolades après (cela formalise plus un algorithme). etc.
+      </p>
+      <p>
+        <b>Types de grammaires attribuées : </b><br>
+        Soit une règle <span class="formule">A &rarr; A1 A2 ... An</span>
+        <ul>
+          <li>Grammaire L-attribuée : l'attribut de Ai dépend des attributs des
+          symboles à sa gauche (A et A1 : A(i-1))</li>
+          <li>Grammaire S-attribuée : l'attribut de A dépend des attributs des Ai</li>
+        </ul>
+        Exemple: en compilation, on a souvent des L-attribuées, notamment pour la
+        déclaration de variables (on transmet de type de gauche à droite). Il est
+        aussi possible de le faire avec une grammaire S-attribuée tho.
+      </p>
+      <p>
+        <b>Calcul : </b><br>
+        2 solutions :
+        <ul>
+          <li>Calcul après analyse : parcours de l'arbre</li>
+          <li>Calcul pendant analyse : plus ou moins aisé</li>
+        </ul>
+        Si après analyse, besoin d'un graphe de dépendance entre attributs. S'il
+        n'y a pas de cycle, on peut tous les calculer.<br>
+        Si pendant analyse, les L-attribuées sont plus adaptés pour les analyseurs LL
+        et les S-attribuées pour les LR.
+      </p>
     </div>
 
     <li> <span class="formule"></span> </li>
