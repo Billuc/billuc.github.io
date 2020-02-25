@@ -9,14 +9,17 @@
 				<meta charset="ISO-8859-1"/>
 			</head>
 			<body>
-				<div class="left-col">
-					<xsl:apply-templates select="//contact"/>
-					<xsl:apply-templates select="//skills"/>
-					<xsl:apply-templates select="//extras"/>
-				</div>
-				<div>
-					<xsl:apply-templates select="//education"/>
-					<xsl:apply-templates select="//experiences"/>
+				<div id="content">
+
+					<div class="left-col">
+						<xsl:apply-templates select="//contact"/>
+						<xsl:apply-templates select="//skills"/>
+						<xsl:apply-templates select="//extras"/>
+					</div>
+					<div>
+						<xsl:apply-templates select="//education"/>
+						<xsl:apply-templates select="//experiences"/>
+					</div>
 				</div>
 			</body>
 		</html>
@@ -114,8 +117,10 @@
 	</xsl:template>
 
 	<xsl:template match="skill-category">
-		<tr><td><b><xsl:value-of select="./cat-title"></xsl:value-of></b></td>
-		<td><ul><xsl:apply-templates select="./skill"></xsl:apply-templates></ul></td></tr>
+		<div class="skill_cat">
+			<b><xsl:value-of select="./cat-title"></xsl:value-of></b>
+			<ul><xsl:apply-templates select="./skill"></xsl:apply-templates></ul>
+		</div>
 	</xsl:template>
 
 	<xsl:template match="skill">
