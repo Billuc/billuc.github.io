@@ -10,9 +10,9 @@ html {
     background-size: 100% auto;
     background-repeat: repeat;*/
 
-  background-color: light-gray;
+  background-color: #f0f0f0;
 
-	width: 100%;
+	width: 99%;
 	height: 100%;
 }
 
@@ -27,6 +27,8 @@ body {
 
 #content > div {
   flex: 50%;
+  width: 50%;
+  padding: 2%;
 }
 
 #contact {
@@ -51,9 +53,9 @@ body {
 }
 
 #contact td {
-	border: 1px solid black;
+  /*border: 1px solid black;
 	border-collapse: collapse;
-
+*/
 	padding: 5px;
 	width: 20em; /*30%;*/
 }
@@ -67,10 +69,15 @@ body {
 }
 
 .skill_cat {
-  margin: 5px;
+  margin: 10px;
   border-radius: 5px;
-  padding: 2px;
+  padding: 5px;
   background-color: #9fcfff;
+}
+
+.skill_cat ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #extras {
@@ -83,10 +90,11 @@ body {
 }
 
 div h2 {
-	color: #4078fd;
-	border-bottom: 3px solid #4078fd;
+	color: #ff0000;
+	border-bottom: 3px solid #ff0000;
 
 	text-transform: uppercase;
+  text-align: center;
 	font-weight: 800;
 
   margin-top: 20px;
