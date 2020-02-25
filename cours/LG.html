@@ -735,6 +735,84 @@
         et les S-attribuées pour les LR.
       </p>
     </div>
+    <div class="chapitre" id="bison">
+      <h2>L'outil Bison</h2>
+      <p>
+        bison est un générateur syntaxique de type ascendant. Il va construire de
+        manière automatique un automate à partir d'un fichier de définition
+        d'extension ".y".
+      </p>
+      <p>
+        <b>Structure du fichier .y : </b><br>
+        <span class="formule">
+          %{<br>
+            Pré-déclarations C/C++<br>
+          %}<br>
+          Définitions, options <br>
+          %% <br>
+          Grammaire (règles et code associé)<br>
+          %% <br>
+          Post-code C/C++
+        </span>
+        <b>Pré-déclarations : </b>code C/C++ recopié avant le code généré pour
+        l'analyse. Déclaration de biblio spécifiques notamment.<br>
+        <b>Définitions, options : </b>directives propres à Bison pour parametrer
+        le fonctionnement de l'analyseur, donner les prio d'operateurs, ...<br>
+        <b>Grammaire : </b>définit la grammaire du langage à reconnaitre. Règles
+        de production avec des actions (code C/C++) associées.<br>
+        <b>Post-code : </b>code recopié après le code de l'analyseur.
+      </p>
+      <p>
+        <b>Syntaxe de la grammaire : </b><br>
+        <span class="formule">
+          non-terminal  : sequence1 {/*code C/C++*/}<br>
+                        | sequence2 { ... }<br>
+                        ...<br>
+                        ;
+        </span>
+        Les symboles sont représentés par des identificateurs. Les terminaux sont
+        en majuscules et les non-terminaux en minuscules. Le code est optionnel
+        et exécuté au moment de la réduction de la règle.
+      </p>
+      <p>
+        <b>Syntaxe des définitions : </b><br>
+        <ul>
+          <li>Liste des types : directive %union</li>
+          <li>Liste des symboles terminaux : directive %token</li>
+          <li>Liste des symboles non-terminaux : directive %type</li>
+        </ul>
+        <span class="formule">
+          %union {<br>
+            type1 nom1;<br>
+            type2 nom2;<br>
+            ...<br>
+          }<br>
+          %token TERMINAL1 TERMINAL2 ...<br>
+          %token &lt;nom1&gt; TERMINAL3 TERMINAL4 ...<br>
+          %type &lt;nom1&gt; nonterm1 nonterm2 ...<br>
+        </span>
+        Les identificateurs pour les valeurs sémantiques dans les codes de règles
+        sont : $$ pour le non-terminal produit et $1, $2, ... pour les autres
+        symboles (terminaux ou non-terminaux).
+      </p>
+      <p>
+        <b>Conflits : </b><br>
+        Les conflits se manifestent par des erreurs lors de la génération de l'analyseur.
+        Le LR a donc des ambiguités dans sa table d'analyse. L'analyseur sera
+        quand même généré, car bison fait en priorité un décalage ou réduira la
+        première règle. On peut aussi résoudre des conflits en introduisant des
+        priorités d'opérateurs (directives %left et %right).<br>
+        <br>
+        On peut débugger en mettant -v lors de la génération de l'automate &rarr;
+        fichier .output avec la liste des états et des transitions.<br>
+        Il y a aussi un débuggeur à l"execution : YYDEBUG=1 et dans le C/C++,
+        yydebug=1;
+      </p>
+      <p>
+        <b>Récupération du résultat : </b><br>
+        
+      </p>
+    </div>
 
     <li> <span class="formule"></span> </li>
     &nbsp;&nbsp;&nbsp;&nbsp;
