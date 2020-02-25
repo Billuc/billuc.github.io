@@ -7,12 +7,12 @@ function loadXMLDoc(xmlUrl, pAsync) {
 	})
 }
 
-function displayResult() {
-	var xsltProcessor = new XSLTProcessor();	
+function createResume(xslName) {
+	var xsltProcessor = new XSLTProcessor();
 	var xsl;
 	var xml;
 
-	var xslAjax = loadXMLDoc("./resume/HTMLResume.xsl", true);
+	var xslAjax = loadXMLDoc("./resume/" + xslName, true);
 
 	xslAjax.done(function(data1) {
 		xsl = data1;
@@ -28,7 +28,7 @@ function displayResult() {
 			var newHead = newXml.head.children;
 			var newBody = newXml.body.children;
 
-			document.body.innerHTML = "";
+			//document.body.innerHTML = "";
 
 			//Partie moche ou l'on sort les éléments de newBody pour les mettre dans le *
 			// tableau elements que l'on parcourt pour ajouter les elements au body !

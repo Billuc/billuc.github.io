@@ -1,0 +1,136 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Palatino Linotype';
+
+    background-image: url("../resources/images/shapelined_.33.jpg");
+    background-size: 100% auto;
+    background-repeat: repeat;
+
+	width: 100%;
+	height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body div {
+  width: 50%;
+  padding: 2%;
+}
+
+#contact {
+	text-align: center;
+
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 48%;
+  height: auto;
+}
+
+#contact h1 {
+	font-weight: 800;
+	font-size: 3em;
+	text-decoration: underline;
+}
+
+#contact table {
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid #4078fd;
+	border-collapse: collapse;
+}
+
+#contact td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+	width: 20em; /*30%;*/
+}
+
+#contact td:first-child {
+	text-align: left;
+	font-weight: bold;
+}
+
+#skills {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 48%;
+  height: auto;
+}
+
+#extras {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 48%;
+  height: auto;
+}
+
+#experiences {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  width: 48%;
+  height: auto;
+}
+
+#education {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  width: 48%;
+  height: auto;
+}
+
+div h2 {
+	color: #4078fd;
+	border-bottom: 3px solid #4078fd;
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+.element {
+	padding: 0px 0px 0px 5px;
+	border-bottom: 1px solid #4f4f4f;
+	margin-left: 2%;
+	width: 96%;
+}
+
+.element:last-of-type {
+	border-bottom: none;
+}
+
+.element .title {
+	font-weight: 600;
+	font-size: 1.05em;
+}
+
+.element i {
+	font-size: 0.95em;
+	color: #4078fd; /*#4f4f4f;*/
+}
+
+.element table{
+	width: 100%;
+	margin: 5px 0px 5px 0px;
+}
+
+.element table td:first-child {
+	text-align: left;
+	vertical-align: top;
+	width: 6em;
+}
+
+.element ul {
+	margin: 2px 0px 2px 0px;
+	padding-inline-start: 30px;
+}
