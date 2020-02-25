@@ -23,7 +23,7 @@ body {
   display: flex;
 }
 
-#content div {
+#content > div {
   flex: 50%;
 }
 
