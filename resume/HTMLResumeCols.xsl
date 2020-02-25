@@ -5,7 +5,7 @@
 		<html>
 			<head>
 				<title>About me</title>
-				<link rel="stylesheet" type="text/css" href="./resume/resumeStyleStyle.css"/>
+				<link rel="stylesheet" type="text/css" href="./resume/resumeColsStyle.css"/>
 				<meta charset="ISO-8859-1"/>
 			</head>
 			<body>
