@@ -28,7 +28,11 @@ function createResume(xslName) {
 			var newHead = newXml.head.children;
 			var newBody = newXml.body.children;
 
-			document.getElementById("content").innerHTML = "";
+			var content = document.getElementById("content");
+
+			if (content) {
+				content.innerHTML = "";
+			}
 
 			//Partie moche ou l'on sort les éléments de newBody pour les mettre dans le *
 			// tableau elements que l'on parcourt pour ajouter les elements au body !
