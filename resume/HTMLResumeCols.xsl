@@ -10,13 +10,12 @@
 			</head>
 			<body>
 				<div id="content">
-
 					<div class="left-col">
 						<xsl:apply-templates select="//contact"/>
 						<xsl:apply-templates select="//skills"/>
 						<xsl:apply-templates select="//extras"/>
 					</div>
-					<div>
+					<div class="right-col">
 						<xsl:apply-templates select="//education"/>
 						<xsl:apply-templates select="//experiences"/>
 					</div>

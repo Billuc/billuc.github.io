@@ -9,15 +9,17 @@
 				<meta charset="ISO-8859-1"/>
 			</head>
 			<body>
-				<xsl:apply-templates select="//contact"/>
+				<div id="content">
+					<xsl:apply-templates select="//contact"/>
 
-				<xsl:apply-templates select="//education"/>
+					<xsl:apply-templates select="//education"/>
 
-				<xsl:apply-templates select="//experiences"/>
+					<xsl:apply-templates select="//experiences"/>
 
-				<xsl:apply-templates select="//skills"/>
+					<xsl:apply-templates select="//skills"/>
 
-				<xsl:apply-templates select="//extras"/>
+					<xsl:apply-templates select="//extras"/>
+				</div>
 			</body>
 		</html>
 	</xsl:template>

@@ -10,7 +10,7 @@ html {
     background-size: 100% auto;
     background-repeat: repeat;*/
 
-  background-color: #f0f0f0;
+  background-color: #fafafa;
 
 	width: 99%;
 	height: 100%;
@@ -90,7 +90,8 @@ body {
 }
 
 div h2 {
-	color: #ff0000;
+	background: #000000;
+	color: #ffffff;
 	border-bottom: 3px solid #ff0000;
 
 	text-transform: uppercase;
