@@ -30,7 +30,7 @@ function createResume(xslName) {
 
 			var content = document.getElementById("content");
 			if (content) {
-				content.innerHTML = "";
+				content.parentNode.removeChild(content);
 			}
 
 			var currentHead = document.head;
