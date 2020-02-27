@@ -37,8 +37,9 @@ function createResume(xslName) {
 			if (currentHead) {
 				var headElements = currentHead.children;
 				if (headElements) {
+					var len = headElements.length;
 					var i, elt;
-					for (i = 0; i < headElements.length; i++) {
+					for (i = 0; i < len; i++) {
 						elt = headElements[i];
 						if (elt.nodeName != "SCRIPT") {
 							elt.parentNode.removeChild(elt);
