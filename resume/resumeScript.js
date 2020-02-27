@@ -50,6 +50,10 @@ function createResume(xslName) {
 			goThroughArrayAndAddTo(newBody, $("body"));
 			goThroughArrayAndAddTo(newHead, $("head"));
 		});
+	})
+	.fail(function(data2) {
+		alert("Retrieving the xml failed !");
+		console.log(data2);
 	});
 }
 
