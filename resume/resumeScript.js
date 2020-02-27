@@ -38,7 +38,9 @@ function createResume(xslName) {
 				var headElements = currentHead.children;
 				if (headElements) {
 					for (var elt in headElements) {
-						console.log(elt);
+						if (elt.nodeName != "SCRIPT") {
+							elt.parentNode.removeChild(elt);
+						}
 					}
 				}
 			}
