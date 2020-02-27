@@ -29,9 +29,18 @@ function createResume(xslName) {
 			var newBody = newXml.body.children;
 
 			var content = document.getElementById("content");
-
 			if (content) {
 				content.innerHTML = "";
+			}
+
+			var currentHead = document.head;
+			if (currentHead) {
+				var headElements = currentHead.children;
+				if (headElements) {
+					for (var elt in headElements) {
+						console.log(elt);
+					}
+				}
 			}
 
 			//Partie moche ou l'on sort les éléments de newBody pour les mettre dans le *
