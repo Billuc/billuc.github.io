@@ -77,6 +77,7 @@ body {
 	border-collapse: collapse;
 */
 	width: 20em; /*30%;*/
+	padding: 0px 15px 0px 15px;
 }
 
 #contact td:first-child {
@@ -86,15 +87,17 @@ body {
 
 #contact tr {
 	border-top: 1px solid black;
-	padding: 0px 15px 0px 15px;
 }
 
 #contact tr:first-child {
 	border-top: 0;
+}
+
+#contact tr:first-child > td {
 	padding-top: 15px;
 }
 
-#contact tr:last-child {
+#contact tr:last-child > td {
 	padding-bottom: 15px;
 }
 
