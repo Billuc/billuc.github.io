@@ -71,7 +71,7 @@ body {
 	/* background: rgb(40,40,255);
 	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%); */
 	background: rgb(245,255,75);
-	background: linear-gradient(53deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%);
+	background: linear-gradient(53deg, rgba(245,255,75,1) 0%, rgba(156,255,255,1) 50%);
 }
 
 #contact td {
@@ -118,7 +118,7 @@ body {
   /* background-color: #9fcfff; */
 
 	background: rgb(40,40,255);
-	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 20%);
+	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(156,255,255,1) 20%);
 	/* background: rgb(245,255,75);
 	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%); */
 }
