@@ -32,12 +32,12 @@ body {
   padding: 1%;
 } */
 
-#left-col {
+.left-col {
 	flex-grow: 3;
 	padding: 2%;
 }
 
-#right-col {
+.right-col {
 	flex-grow: 7;
 	padding: 2%;
 }
