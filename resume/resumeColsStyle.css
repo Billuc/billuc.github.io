@@ -26,10 +26,20 @@ body {
   display: flex;
 }
 
-#content > div {
+/* #content > div {
   flex: 50%;
   width: 50%;
   padding: 1%;
+} */
+
+#left-col {
+	flex: 30%;
+	padding: 1%;
+}
+
+#right-col {
+	flex: 70%;
+	padding: 1%;
 }
 
 #contact {
@@ -71,9 +81,9 @@ body {
 
 #skills {
   margin-top: 10px;
-	border: 2px solid black;
-	border-radius: 15px;
+}
 
+#skills h2 {
 	background-color: rgba(68,255,255,0.3);
 }
 

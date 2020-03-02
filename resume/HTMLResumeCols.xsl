@@ -13,11 +13,11 @@
 					<div class="left-col">
 						<xsl:apply-templates select="//contact"/>
 						<xsl:apply-templates select="//skills"/>
-						<xsl:apply-templates select="//extras"/>
 					</div>
 					<div class="right-col">
 						<xsl:apply-templates select="//education"/>
 						<xsl:apply-templates select="//experiences"/>
+						<xsl:apply-templates select="//extras"/>
 					</div>
 				</div>
 			</body>
