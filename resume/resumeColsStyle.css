@@ -77,14 +77,25 @@ body {
 	border-collapse: collapse;
 */
 	width: 20em; /*30%;*/
-	padding: 0px 15px 0px 15px;
-	border-top: 1px solid black;
 }
 
 #contact td:first-child {
 	text-align: left;
 	font-weight: bold;
+}
+
+#contact tr {
+	border-top: 1px solid black;
+	padding: 0px 15px 0px 15px;
+}
+
+#contact tr:first-child {
 	border-top: 0;
+	padding-top: 15px;
+}
+
+#contact tr:last-child {
+	padding-bottom: 15px;
 }
 
 #skills {
