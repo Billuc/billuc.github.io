@@ -19,6 +19,9 @@ html {
 body {
   width: 100%;
   height: 100%;
+
+	background: rgb(252,247,140);
+background: linear-gradient(196deg, rgba(252,247,140,1) 58%, rgba(124,124,244,1) 100%);
 }
 
 #content {
