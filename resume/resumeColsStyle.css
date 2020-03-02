@@ -12,10 +12,6 @@ html {
 
   background-color: #fafafa;
 
-	background: rgb(252,247,140);
-	background: linear-gradient(196deg, rgba(252,247,140,1) 58%, rgba(124,124,244,1) 100%);
-	background-repeat: repeat;
-
 	width: 99%;
 	height: 100%;
 }
@@ -58,8 +54,8 @@ body {
 	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(36,214,224,1) 50%);
 }
 
-#contact tbody {
-	padding: 15px;
+#contact tr {
+	padding: 0px 15px 0px 15px;
 }
 
 #contact td {
@@ -75,6 +71,7 @@ body {
 }
 
 #skills {
+  margin-top: 10px;
 }
 
 .skill_cat {
@@ -103,16 +100,19 @@ body {
 }
 
 #extras {
+  margin-top: 10px;
 	border: 2px solid black;
 	border-radius: 15px;
 }
 
 #experiences {
+  margin-top: 10px;
 	border: 2px solid black;
 	border-radius: 15px;
 }
 
 #education {
+  margin-top: 10px;
 	border: 2px solid black;
 	border-radius: 15px;
 }
@@ -133,7 +133,6 @@ div h2 {
 	font-weight: 800;
 	font-family: "Arial Black", Gadget, sans-serif;
 
-  margin-top: 10px;
   margin-bottom: 15px;
 }
 
