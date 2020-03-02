@@ -58,11 +58,14 @@ body {
 	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(36,214,224,1) 50%);
 }
 
+#contact tbody {
+	padding: 15px;
+}
+
 #contact td {
   /*border: 1px solid black;
 	border-collapse: collapse;
 */
-	padding: 15px;
 	width: 20em; /*30%;*/
 }
 
@@ -82,6 +85,11 @@ body {
 
 	background: rgb(40,40,255);
 	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%);
+}
+
+.skill_cat b {
+	text-align: center;
+	font-size: 2em;
 }
 
 .skill_cat:last-child {
@@ -117,6 +125,7 @@ div h2 {
 	text-transform: uppercase;
   text-align: center;
 	font-weight: 800;
+	font-family: "Arial Black", Gadget, sans-serif;
 
   margin-top: 10px;
   margin-bottom: 15px;
