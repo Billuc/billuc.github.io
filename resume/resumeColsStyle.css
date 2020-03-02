@@ -13,13 +13,15 @@ html {
   background-color: #fafafa;
 	/* background-color: rgba(245,255,75,1); */
 
-	width: 99%;
+	width: 100%;
 	height: 100%;
 }
 
 body {
   width: 100%;
   height: 100%;
+	margin: 0px;
+	padding: 0px;
 }
 
 #content {
@@ -36,7 +38,7 @@ body {
 	flex-grow: 3;
 	width: 30%;
 	padding: 1%;
-	background-color: rgba(68,255,255,0.3);
+	background-color: rgba(40,40,255,0.3);
 }
 
 .right-col {
@@ -53,6 +55,7 @@ body {
 	font-weight: 800;
 	font-size: 3em;
 	text-decoration: underline;
+	margin: 5px 0px 10px 0px;
 }
 
 #contact table {
@@ -75,11 +78,13 @@ body {
 */
 	width: 20em; /*30%;*/
 	padding: 0px 15px 0px 15px;
+	border-top: 1px solid black;
 }
 
 #contact td:first-child {
 	text-align: left;
 	font-weight: bold;
+	border-top: 0;
 }
 
 #skills {
@@ -91,7 +96,7 @@ body {
 }
 
 .skill_cat {
-  margin: 5px 5px 10px 5px;
+  margin: 5px 5px 15px 5px;
   border-radius: 15px;
   padding: 10px;
   /* background-color: #9fcfff; */
@@ -113,6 +118,7 @@ body {
 .skill_cat ul {
   margin-top: 5px;
   margin-bottom: 5px;
+	padding-left: 30px;
 	/* column-count: 2; */
 }
 
