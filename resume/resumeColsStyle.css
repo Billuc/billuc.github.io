@@ -10,10 +10,10 @@ html {
     background-size: 100% auto;
     background-repeat: repeat;*/
 
-	background-image: url("trianglify-cv.png");
+	/* background-image: url("trianglify-cv.png");
 	background-size: 100% auto;
-	background-repeat: repeat;
-  /* background-color: #fafafa; */
+	background-repeat: repeat; */
+  background-color: #fafafa;
 	/* background-color: rgba(245,255,75,1); */
 
 	width: 100%;
@@ -41,7 +41,7 @@ body {
 	flex-grow: 35;
 	width: 35%;
 	padding: 1%;
-	/* background-color: rgba(40,40,255,0.1); */
+	background-color: rgba(40,40,255,0.1);
 }
 
 .right-col {
