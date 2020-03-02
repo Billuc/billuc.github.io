@@ -41,7 +41,7 @@ body {
 	flex-grow: 35;
 	width: 35%;
 	padding: 1%;
-	background-color: rgba(40,40,255,0.1);
+	/* background-color: rgba(40,40,255,0.1); */
 }
 
 .right-col {
