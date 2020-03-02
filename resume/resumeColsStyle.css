@@ -33,13 +33,13 @@ body {
 } */
 
 #left-col {
-	flex: 30%;
-	padding: 1%;
+	flex-grow: 3;
+	padding: 2%;
 }
 
 #right-col {
-	flex: 70%;
-	padding: 1%;
+	flex-grow: 7;
+	padding: 2%;
 }
 
 #contact {
