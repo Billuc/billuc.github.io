@@ -52,10 +52,8 @@ body {
 
   /* background-color: #9fffcf; */
 
-	/* background: rgb(245,255,75);
-	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%); */
-	background: rgb(40,40,255);
-	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%);
+	background: rgb(245,255,75);
+	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%);
 }
 
 #contact td {
@@ -73,9 +71,9 @@ body {
 
 #skills {
   margin-top: 10px;
-}
+	border: 2px solid black;
+	border-radius: 15px;
 
-#skills h2 {
 	background-color: rgba(68,255,255,0.3);
 }
 
@@ -85,8 +83,10 @@ body {
   padding: 10px;
   /* background-color: #9fcfff; */
 
-	background: rgb(40,40,255);
-	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%);
+	/* background: rgb(40,40,255);
+	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%); */
+	background: rgb(245,255,75);
+	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%);
 }
 
 .skill_cat b {
