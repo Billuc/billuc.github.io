@@ -103,12 +103,18 @@ body {
 }
 
 #extras {
+	border: 2px solid black;
+	border-radius: 15px;
 }
 
 #experiences {
+	border: 2px solid black;
+	border-radius: 15px;
 }
 
 #education {
+	border: 2px solid black;
+	border-radius: 15px;
 }
 
 div h2 {
