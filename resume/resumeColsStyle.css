@@ -44,14 +44,15 @@ body {
 #contact table {
 	margin-left: auto;
 	margin-right: auto;
+	padding: 10px;
 
   /* border: 3px solid #9fffcf; */
 	border-collapse: collapse;
   border-radius: 15px;
 
   /* background-color: #9fffcf; */
-	background: rgb(34,186,195);
-	background: linear-gradient(55deg, rgba(34,186,195,1) 0%, rgba(34,193,154,1) 13%, rgba(34,195,142,1) 50%, rgba(253,187,45,1) 100%);
+	background: rgb(245,255,75);
+	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(36,214,224,1) 50%);
 }
 
 #contact td {
@@ -104,7 +105,7 @@ div h2 {
 	/* color: #ffffff; */
 	/*border-bottom: 3px solid #ff0000;*/
 	background: rgb(255,0,0);
-	background: linear-gradient(0deg, rgba(68,255,255,0.7) 0%, rgba(255,255,255,1) 20%);
+	background: linear-gradient(0deg, rgba(40,40,255,0.7) 0%, rgba(255,255,255,0.5) 20%);
 	color: #000000;
 
 	border-radius: 15px;
