@@ -34,12 +34,15 @@ body {
 
 .left-col {
 	flex-grow: 3;
-	padding: 2%;
+	width: 30%;
+	padding: 1%;
+	background-color: rgba(68,255,255,0.3);
 }
 
 .right-col {
 	flex-grow: 7;
-	padding: 2%;
+	width: 70%;
+	padding: 1%;
 }
 
 #contact {
@@ -110,7 +113,7 @@ body {
 .skill_cat ul {
   margin-top: 5px;
   margin-bottom: 5px;
-	column-count: 2;
+	/* column-count: 2; */
 }
 
 #extras {
