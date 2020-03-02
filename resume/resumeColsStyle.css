@@ -10,7 +10,10 @@ html {
     background-size: 100% auto;
     background-repeat: repeat;*/
 
-  background-color: #fafafa;
+	background-image: url("trianglify-cv.png");
+	background-size: 100% auto;
+	background-repeat: repeat-y;
+  /* background-color: #fafafa; */
 	/* background-color: rgba(245,255,75,1); */
 
 	width: 100%;
