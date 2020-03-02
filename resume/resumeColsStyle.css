@@ -38,7 +38,7 @@ body {
 	flex-grow: 3;
 	width: 30%;
 	padding: 1%;
-	background-color: rgba(40,40,255,0.3);
+	background-color: rgba(40,40,255,0.1);
 }
 
 .right-col {
@@ -68,8 +68,10 @@ body {
 
   /* background-color: #9fffcf; */
 
-	background: rgb(245,255,75);
-	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%);
+	background: rgb(40,40,255);
+	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%);
+	/* background: rgb(245,255,75);
+	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%); */
 }
 
 #contact td {
@@ -115,10 +117,10 @@ body {
   padding: 10px;
   /* background-color: #9fcfff; */
 
-	/* background: rgb(40,40,255);
-	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%); */
-	background: rgb(245,255,75);
-	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%);
+	background: rgb(40,40,255);
+	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%);
+	/* background: rgb(245,255,75);
+	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%); */
 }
 
 .skill_cat b {
