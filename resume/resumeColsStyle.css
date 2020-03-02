@@ -94,11 +94,11 @@ body {
 }
 
 #contact tr:first-child > td {
-	padding-top: 15px;
+	padding-top: 5px;
 }
 
 #contact tr:last-child > td {
-	padding-bottom: 15px;
+	padding-bottom: 5px;
 }
 
 #skills {
