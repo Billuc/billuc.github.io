@@ -123,7 +123,6 @@
   		<skill><sk-title>Batch/Shell</sk-title></skill>
   		<skill><sk-title>Prolog</sk-title></skill>
   		<skill><sk-title>RDF/SPARQL</sk-title></skill>
-      <skill><sk-title>Docker</sk-title></skill>
   	</skill-category>
   	<skill-category>
   		<cat-title>IT skills</cat-title>
@@ -151,6 +150,7 @@
   		<skill>
   			<sk-title>Tomcat</sk-title>
   		</skill>
+      <skill><sk-title>Docker</sk-title></skill>
   		<skill>
   			<sk-title>Networks</sk-title>
   			<comment>HTTP, TCP, UDP, IP protocols</comment>
