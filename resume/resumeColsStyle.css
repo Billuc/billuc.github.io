@@ -71,7 +71,7 @@ body {
 }
 
 .skill_cat {
-  margin: 5px 5px 15px 5px;
+  margin: 5px 5px 10px 5px;
   border-radius: 15px;
   padding: 10px;
   /* background-color: #9fcfff; */
@@ -114,7 +114,7 @@ div h2 {
 	font-weight: 800;
 
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .element {
