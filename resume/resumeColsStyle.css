@@ -52,7 +52,7 @@ body {
 
   /* background-color: #9fffcf; */
 	background: rgb(245,255,75);
-	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(36,214,224,1) 50%);
+	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%);
 }
 
 #contact td {
@@ -83,8 +83,7 @@ body {
 }
 
 .skill_cat b {
-	text-align: center;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 .skill_cat:last-child {
@@ -118,7 +117,7 @@ body {
 	border: 2px solid black;
 	border-radius: 15px;
 
-	background-color: rgba(68,255,255,0.3);
+	/* background-color: rgba(68,255,255,0.3); */
 }
 
 div h2 {
@@ -139,6 +138,7 @@ div h2 {
 
   margin-bottom: 15px;
   margin-top: 0px;
+	width: 100%;
 }
 
 .element {
