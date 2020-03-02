@@ -45,9 +45,9 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 
-  border: 3px solid #9fffcf;
+  /* border: 3px solid #9fffcf; */
 	border-collapse: collapse;
-  border-radius: 5px;
+  border-radius: 15px;
 
   /* background-color: #9fffcf; */
 	background: rgb(34,186,195);
@@ -72,12 +72,12 @@ body {
 
 .skill_cat {
   margin: 5px 5px 15px 5px;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 10px;
   /* background-color: #9fcfff; */
 
 	background: rgb(40,40,255);
-	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 50%);
+	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%);
 }
 
 .skill_cat:last-child {
@@ -104,8 +104,10 @@ div h2 {
 	/* color: #ffffff; */
 	/*border-bottom: 3px solid #ff0000;*/
 	background: rgb(255,0,0);
-	background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 40%);
+	background: linear-gradient(0deg, rgba(68,255,255,0.7) 0%, rgba(255,255,255,1) 20%);
 	color: #000000;
+
+	border-radius: 15px;
 
 	text-transform: uppercase;
   text-align: center;
