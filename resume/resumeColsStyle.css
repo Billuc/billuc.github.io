@@ -49,7 +49,9 @@ body {
 	border-collapse: collapse;
   border-radius: 5px;
 
-  background-color: #9fffcf;
+  /* background-color: #9fffcf; */
+	background: rgb(34,186,195);
+	background: linear-gradient(55deg, rgba(34,186,195,1) 0%, rgba(34,193,154,1) 13%, rgba(34,195,142,1) 50%, rgba(253,187,45,1) 100%);
 }
 
 #contact td {
@@ -69,13 +71,17 @@ body {
 }
 
 .skill_cat {
-  margin: 5px;
+  margin: 5px 5px 15px 5px;
   border-radius: 5px;
   padding: 10px;
   /* background-color: #9fcfff; */
 
-	background: rgb(9,9,121);
-	background: linear-gradient(219deg, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+	background: rgb(40,40,255);
+	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 50%);
+}
+
+.skill_cat:last-child {
+	margin-bottom: 5px;
 }
 
 .skill_cat ul {
@@ -94,16 +100,19 @@ body {
 }
 
 div h2 {
-	background: #000000;
-	color: #ffffff;
+	/* background: #000000; */
+	/* color: #ffffff; */
 	/*border-bottom: 3px solid #ff0000;*/
+	background: rgb(255,0,0);
+	background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 40%);
+	color: #000000;
 
 	text-transform: uppercase;
   text-align: center;
 	font-weight: 800;
 
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .element {
