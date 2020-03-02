@@ -28,7 +28,7 @@ body {
 #content > div {
   flex: 50%;
   width: 50%;
-  padding: 2%;
+  padding: 1%;
 }
 
 #contact {
@@ -69,15 +69,19 @@ body {
 }
 
 .skill_cat {
-  margin: 10px;
+  margin: 5px;
   border-radius: 5px;
-  padding: 5px;
-  background-color: #9fcfff;
+  padding: 10px;
+  /* background-color: #9fcfff; */
+
+	background: rgb(9,9,121);
+	background: linear-gradient(219deg, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
 }
 
 .skill_cat ul {
   margin-top: 5px;
   margin-bottom: 5px;
+	column-count: 2;
 }
 
 #extras {
@@ -92,7 +96,7 @@ body {
 div h2 {
 	background: #000000;
 	color: #ffffff;
-	border-bottom: 3px solid #ff0000;
+	/*border-bottom: 3px solid #ff0000;*/
 
 	text-transform: uppercase;
   text-align: center;
