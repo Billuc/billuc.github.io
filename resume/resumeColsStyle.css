@@ -41,13 +41,14 @@ body {
 	flex-grow: 35;
 	width: 35%;
 	padding: 1%;
-	background-color: rgba(40,40,255,0.1);
+	background-color: rgba(40,40,255,0.3);
 }
 
 .right-col {
 	flex-grow: 65;
 	width: 65%;
 	padding: 1%;
+	background-color: rgba(156,255,255,0.3)
 }
 
 #contact {
@@ -55,10 +56,10 @@ body {
 }
 
 #contact h1 {
-	font-weight: 900;
-	font-size: 3.5em;
+	font-weight: 1200;
+	font-size: 4em;
 	text-decoration: underline;
-	margin: 5px 0px 10px 0px;
+	margin: 5px 0px 15px 0px;
 }
 
 #contact table {
@@ -74,7 +75,7 @@ body {
 	/* background: rgb(40,40,255);
 	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%); */
 	background: rgb(245,255,75);
-	background: linear-gradient(53deg, rgba(245,255,75,1) 0%, rgba(156,255,255,1) 50%);
+	background: linear-gradient(53deg, rgba(245,255,75,1) 20%, rgba(156,255,255,1) 50%);
 }
 
 #contact td {
@@ -121,13 +122,17 @@ body {
   /* background-color: #9fcfff; */
 
 	background: rgb(40,40,255);
-	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(156,255,255,1) 25%);
+	background: linear-gradient(53deg, rgba(245,255,75,1) 0%, rgba(156,255,255,1) 25%, rgba(156,255,255,1) 75%, rgba(40,40,255,1) 100%);
 	/* background: rgb(245,255,75);
 	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%); */
 }
 
 .skill_cat b {
 	font-size: 1.5em;
+}
+
+.skill_cat li b {
+	font-size: 1em;
 }
 
 .skill_cat:last-child {

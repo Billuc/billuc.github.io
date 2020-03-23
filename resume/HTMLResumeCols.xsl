@@ -124,7 +124,7 @@
 
 	<xsl:template match="skill">
 		<li>
-			<u><xsl:value-of select="./sk-title"></xsl:value-of></u>
+			<b><xsl:value-of select="./sk-title"></xsl:value-of></b>
 			<xsl:if test="sk-title and comment"> : </xsl:if>
 			<xsl:value-of select="./comment"></xsl:value-of>
 		</li>
