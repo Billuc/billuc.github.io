@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 :root {
-	--main-bg-color : #5680E9;
-	--left-col-color : #8860D0;
-	--right-col-color : #C1C8E4;
-	--elt-bg-color : #84CEEB;
-	--elt-corner-color : #5AB9EA;
+	--main-bg-color : #ffcb9a;
+	--left-col-color : #116466;
+	--right-col-color : #d1e8e2;
+	--elt-bg-color : #ffffff;
+	--elt-corner-color : #ffffff;
 }
 
 html {
@@ -14,15 +14,7 @@ html {
 	padding: 0px;
 	font-family: 'Palatino Linotype';
 
-    /*background-image: url("../resources/images/shapelined_.33.jpg");
-    background-size: 100% auto;
-    background-repeat: repeat;*/
-
-	/* background-image: url("trianglify-cv.png");
-	background-size: 100% auto;
-	background-repeat: repeat; */
  	background-color: var(--main-bg-color);
-	/* background-color: rgba(245,255,75,1); */
 
 	width: 100%;
 	height: 100%;
@@ -37,7 +29,6 @@ body {
 
 #content {
 	width: 95%;
-	border-radius: 10px;
 	padding: 0px 10px 0px 10px;
 	margin-top: 30px;
 	margin-left: auto;
@@ -74,6 +65,7 @@ body {
 	font-weight: 1200;
 	font-size: 4em;
 	text-decoration: underline;
+	overflow-wrap: normal;
 	margin: 5px 0px 15px 0px;
 }
 
@@ -81,22 +73,14 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 
-  /* border: 3px solid #9fffcf; */
 	border-collapse: collapse;
-  	border-radius: 15px;
-
-  /* background-color: #9fffcf; */
-
-	/* background: rgb(40,40,255);
-	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%); */
+	border-radius: 15px;
+	  
 	background: var(--elt-bg-color);
 	background: linear-gradient(53deg, var(--elt-bg-color) 30%, var(--elt-corner-color) 60%);
 }
 
 #contact td {
-  /*border: 1px solid black;
-	border-collapse: collapse;
-*/
 	width: 20em; /*30%;*/
 	padding: 0px 15px 0px 15px;
 }
@@ -134,12 +118,9 @@ body {
 	margin: 5px 5px 15px 5px;
 	border-radius: 15px;
 	padding: 10px;
-  /* background-color: #9fcfff; */
 
   	background: var(--elt-bg-color);
 	background: linear-gradient(53deg, var(--elt-bg-color) 0%, var(--elt-bg-color) 80%, var(--elt-corner-color) 100%);
-	/* background: rgb(245,255,75);
-	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%); */
 }
 
 .skill_cat b {
@@ -200,12 +181,12 @@ div h2 {
 	border-radius: 15px;
 
 	text-transform: uppercase;
-  text-align: center;
+  	text-align: center;
 	font-weight: 800;
 	font-family: "Arial Black", Gadget, sans-serif;
 
-  margin-bottom: 15px;
-  margin-top: 0px;
+  	margin-bottom: 15px;
+  	margin-top: 0px;
 }
 
 .element {
