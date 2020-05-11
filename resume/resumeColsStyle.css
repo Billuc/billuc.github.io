@@ -13,7 +13,7 @@ html {
 	/* background-image: url("trianglify-cv.png");
 	background-size: 100% auto;
 	background-repeat: repeat; */
-  background-color: #fafafa;
+  background-color: #659Dbd;
 	/* background-color: rgba(245,255,75,1); */
 
 	width: 100%;
@@ -28,6 +28,8 @@ body {
 }
 
 #content {
+	width: 80%;
+	border: 5px outset blue;
   display: flex;
 }
 
@@ -41,14 +43,14 @@ body {
 	flex-grow: 35;
 	width: 35%;
 	padding: 1%;
-	background-color: rgba(40,40,255,0.3);
+	background-color: #bc986a;
 }
 
 .right-col {
 	flex-grow: 65;
 	width: 65%;
 	padding: 1%;
-	background-color: rgba(156,255,255,0.5)
+	background-color: #fbeec1;
 }
 
 #contact {
@@ -74,8 +76,8 @@ body {
 
 	/* background: rgb(40,40,255);
 	background: linear-gradient(216deg, rgba(40,40,255,1) 0%, rgba(68,255,255,1) 30%); */
-	background: rgb(245,255,75);
-	background: linear-gradient(53deg, rgba(245,255,75,1) 30%, rgba(156,255,255,1) 60%);
+	background: #daad86;
+	background: linear-gradient(53deg, #daad86 30%, #8d8741 60%);
 }
 
 #contact td {
@@ -121,8 +123,8 @@ body {
   padding: 10px;
   /* background-color: #9fcfff; */
 
-	background: rgba(156,255,255,1);
-	background: linear-gradient(53deg, rgba(245,255,75,1) 0%, rgba(156,255,255,1) 10%, rgba(156,255,255,1) 80%, rgba(40,40,255,0.5) 100%);
+	background: #daad86;
+	background: linear-gradient(53deg, #daad86 0%, #daad86 80%, #8d8741 100%);
 	/* background: rgb(245,255,75);
 	background: linear-gradient(233deg, rgba(245,255,75,1) 0%, rgba(68,255,255,1) 50%); */
 }
@@ -151,8 +153,8 @@ body {
 	border: 2px solid black;
 	border-radius: 15px;
 
-	background: rgba(40,40,255, 1);
-	background: linear-gradient(53deg, rgba(156,255,255,0.75) 75%, rgba(40,40,255,0.5) 100%);
+	background: #daad86;
+	background: linear-gradient(53deg, #daad86 0%, #daad86 80%, #8d8741 100%);
 }
 
 #experiences {
@@ -160,8 +162,8 @@ body {
 	border: 2px solid black;
 	border-radius: 15px;
 
-	background: rgb(40,40,255);
-	background: linear-gradient(53deg, rgba(156,255,255,0.75) 75%, rgba(40,40,255,0.5) 100%);
+	background: #daad86;
+	background: linear-gradient(53deg, #daad86 0%, #daad86 80%, #8d8741 100%);
 }
 
 #education {
@@ -169,8 +171,8 @@ body {
 	border: 2px solid black;
 	border-radius: 15px;
 
-	background: rgb(40,40,255);
-	background: linear-gradient(53deg, rgba(156,255,255,0.75) 75%, rgba(40,40,255,0.5) 100%);
+	background: #daad86;
+	background: linear-gradient(53deg, #daad86 0%, #daad86 80%, #8d8741 100%);
 }
 
 div h2 {
@@ -211,6 +213,7 @@ div h2 {
 
 .element i {
 	font-size: 0.95em;
+	font-style: italic;
 	color: #4078fd; /*#4f4f4f;*/
 }
 
