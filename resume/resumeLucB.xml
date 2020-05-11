@@ -19,6 +19,15 @@
     </extra>
   </contact>
   <education>
+	<element>
+		<title>Development of Tri Select'IF</title>
+		<end-date><year>2020</year></end-date>
+  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
+		<comment>As a team of 6, developped an app to help children learn how to sort waste</comment>
+		<comment>Agile managment</comment>
+		<comment>Published the app on the Play Store</comment>
+		<comment><i>Languages and tools used : </i> Unity + C#, Gitlab + Issues Boards, Photoshop</comment>
+	</element>
   	<element>
   		<title>Team Leader in an academic Project (team of 6)</title>
   		<end-date><year>2019</year></end-date>
@@ -118,6 +127,7 @@
   		<skill><sk-title>JavaScript</sk-title></skill>
   		<skill><sk-title>SQL</sk-title></skill>
   		<skill><sk-title>XML/XSL</sk-title></skill>
+		<skill><sk-title>Unity + C#</sk-title></skill>
   		<skill><sk-title>Matlab</sk-title></skill>
   		<skill><sk-title>Python</sk-title></skill>
   		<skill><sk-title>Batch/Shell</sk-title></skill>
@@ -142,7 +152,7 @@
   		</skill>
   		<skill>
   			<sk-title>Versionning Tools</sk-title>
-  			<comment>Git (Github, Gitlab), SVN</comment>
+  			<comment>Git (Github, Gitlab, CI), SVN</comment>
   		</skill>
   		<skill>
   			<sk-title>Maven, Gradle</sk-title>
