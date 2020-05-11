@@ -3,12 +3,13 @@
 
 :root {
 	--main-bg-color : #f3d2b4;
-	--left-col-color : #75eef0;
+	--left-col-color : hsl(181, 37%, 52%);
 	--right-col-color : #d1e8e2;
 	--elt-bg-color : #ffffff;
 	--elt-corner-color : #ff0000;
-	--title-bg-color: #dbe9e5;
+	--title-bg-color: #ffffff;
 	--title-grad-color: #00000088;
+	--element-gradient: linear-gradient(183deg, var(--elt-bg-color) 92%, var(--elt-corner-color) 100%);
 }
 
 html {
@@ -83,7 +84,7 @@ body {
 	border-radius: 10px;
 	  
 	background: var(--elt-bg-color);
-	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
+	background: var(--element-gradient);
 }
 
 #contact td {
@@ -126,7 +127,7 @@ body {
 	padding: 10px;
 
 	background: var(--elt-bg-color);
-	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
+	background: var(--element-gradient);
 }
 
 .skill_cat b {
@@ -154,7 +155,7 @@ body {
 	border-radius: 15px;
 
 	background: var(--elt-bg-color);
-	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
+	background: var(--element-gradient);
 }
 
 #experiences {
@@ -163,7 +164,7 @@ body {
 	border-radius: 15px;
 
 	background: var(--elt-bg-color);
-	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
+	background: var(--element-gradient);
 }
 
 #education {
@@ -172,7 +173,7 @@ body {
 	border-radius: 15px;
 
 	background: var(--elt-bg-color);
-	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
+	background: var(--element-gradient);
 }
 
 div h2 {
