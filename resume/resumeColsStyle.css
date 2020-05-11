@@ -72,7 +72,8 @@ body {
 	font-weight: 1200;
 	font-size: 4em;
 	text-decoration: underline;
-	overflow-wrap: break-word;
+	/*overflow-wrap: break-word;*/
+	white-space: pre-wrap;
 	margin: 5px 0px 25px 0px;
 }
 
@@ -192,6 +193,7 @@ div h2 {
 	font-weight: 800;
 	font-family: "Arial Black", Gadget, sans-serif;
 
+	padding-bottom: 5px;
   	margin-bottom: 15px;
   	margin-top: 0px;
 }
