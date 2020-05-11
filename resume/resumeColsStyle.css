@@ -31,7 +31,11 @@ body {
 }
 
 #content {
-	width: 95%;
+	width: 75%;
+
+	transform: scale(1.5);
+	transition: transform ease 1s;
+
 	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
