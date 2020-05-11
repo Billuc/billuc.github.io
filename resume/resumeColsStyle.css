@@ -3,10 +3,10 @@
 
 :root {
 	--main-bg-color : #5680E9;
-	--left-col-color : #5AB9EA;
-	--right-col-color : #84CEEB;
-	--elt-bg-color : #C1C8E4;
-	--elt-corner-color : #8860D0;
+	--left-col-color : #8860D0;
+	--right-col-color : #C1C8E4;
+	--elt-bg-color : #84CEEB;
+	--elt-corner-color : #5AB9EA;
 }
 
 html {
@@ -36,11 +36,13 @@ body {
 }
 
 #content {
-	width: 90%;
+	width: 95%;
+	border-radius: 10px;
+	padding: 0px 10px 0px 10px;
 	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
-	box-shadow: 10px 10px 5px grey;
+	box-shadow: -10px -10px 10px #0000002f, 10px 10px 10px #0000002f;
   	display: flex;
 }
 
