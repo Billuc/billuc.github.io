@@ -3,12 +3,12 @@
 
 :root {
 	--main-bg-color : #f3d2b4;
-	--left-col-color : #189799;
+	--left-col-color : #75eef0;
 	--right-col-color : #d1e8e2;
 	--elt-bg-color : #ffffff;
-	--elt-corner-color : #ffffff;
+	--elt-corner-color : #ff0000;
 	--title-bg-color: #dbe9e5;
-	--title-grad-color: #00000010;
+	--title-grad-color: #00000088;
 }
 
 html {
@@ -34,7 +34,8 @@ body {
 	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
-	box-shadow: -10px -10px 10px #0000002f, 10px 10px 10px #0000002f;
+	/*box-shadow: -10px -10px 10px #0000002f, 10px 10px 10px #0000002f;*/
+	box-shadow: 0 0 20px 20px #0000002f;
   	display: flex;
 }
 
@@ -48,7 +49,7 @@ body {
 	flex-grow: 35;
 	width: 35%;
 	padding: 1%;
-	margin-right: 5px;
+	/*margin-right: 5px;*/
 	
 	background-color: var(--left-col-color);
 }
@@ -57,7 +58,7 @@ body {
 	flex-grow: 65;
 	width: 65%;
 	padding: 1%;
-	margin-left: 5px;
+	/*margin-left: 5px;*/
 
 	background-color: var(--right-col-color);
 }
@@ -71,7 +72,7 @@ body {
 	font-size: 4em;
 	text-decoration: underline;
 	overflow-wrap: break-word;
-	margin: 5px 0px 15px 0px;
+	margin: 5px 0px 25px 0px;
 }
 
 #contact table {
@@ -79,15 +80,15 @@ body {
 	margin-right: auto;
 
 	border-collapse: collapse;
-	border-radius: 15px;
+	border-radius: 10px;
 	  
 	background: var(--elt-bg-color);
-	background: linear-gradient(53deg, var(--elt-bg-color) 30%, var(--elt-corner-color) 60%);
+	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
 }
 
 #contact td {
 	width: 20em; /*30%;*/
-	padding: 0px 15px 0px 15px;
+	padding: 5px 15px 5px 15px;
 }
 
 #contact td:first-child {
@@ -112,7 +113,7 @@ body {
 }
 
 #skills {
-  	margin-top: 10px;
+  	margin-top: 20px;
 }
 
 #skills h2 {
@@ -124,8 +125,8 @@ body {
 	border-radius: 15px;
 	padding: 10px;
 
-  	background: var(--elt-bg-color);
-	background: linear-gradient(53deg, var(--elt-bg-color) 0%, var(--elt-bg-color) 80%, var(--elt-corner-color) 100%);
+	background: var(--elt-bg-color);
+	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
 }
 
 .skill_cat b {
@@ -153,7 +154,7 @@ body {
 	border-radius: 15px;
 
 	background: var(--elt-bg-color);
-	background: linear-gradient(53deg, var(--elt-bg-color) 0%, var(--elt-bg-color) 80%, var(--elt-corner-color) 100%);
+	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
 }
 
 #experiences {
@@ -162,7 +163,7 @@ body {
 	border-radius: 15px;
 
 	background: var(--elt-bg-color);
-	background: linear-gradient(53deg, var(--elt-bg-color) 0%, var(--elt-bg-color) 80%, var(--elt-corner-color) 100%);
+	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
 }
 
 #education {
@@ -171,7 +172,7 @@ body {
 	border-radius: 15px;
 
 	background: var(--elt-bg-color);
-	background: linear-gradient(53deg, var(--elt-bg-color) 0%, var(--elt-bg-color) 80%, var(--elt-corner-color) 100%);
+	background: linear-gradient(186deg, var(--elt-bg-color) 75%, var(--elt-corner-color) 100%);
 }
 
 div h2 {
