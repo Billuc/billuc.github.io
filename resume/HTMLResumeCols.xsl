@@ -26,7 +26,7 @@
 
 	<xsl:template match="contact">
 		<div id="contact">
-		<h1><xsl:value-of select="./name/first"/><br><xsl:value-of select="./name/last"/></h1>
+		<h1><xsl:value-of select="./name/first"/><br/><xsl:value-of select="./name/last"/></h1>
 		<table>
 			<tr>
 				<td>Mail Address</td>
@@ -55,7 +55,7 @@
 
 	<xsl:template match="education">
 		<div id="education">
-			<h2>Education</h2>
+			<button onclick="expand_or_collapse()"><h2>Education</h2></button>
 			<div id="education_elements">
 				<xsl:apply-templates select="./element"></xsl:apply-templates>
 			</div>
