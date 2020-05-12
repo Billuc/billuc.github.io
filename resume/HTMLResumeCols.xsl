@@ -26,7 +26,7 @@
 
 	<xsl:template match="contact">
 		<div id="contact">
-		<h1><xsl:value-of select="./name/first"/>&#160;<xsl:value-of select="./name/last"/></h1>
+		<h1><xsl:value-of select="./name/first"/><br><xsl:value-of select="./name/last"/></h1>
 		<table>
 			<tr>
 				<td>Mail Address</td>
@@ -55,33 +55,37 @@
 
 	<xsl:template match="education">
 		<div id="education">
-		<h2>Education</h2>
-		<xsl:apply-templates select="./element">
-		</xsl:apply-templates>
+			<h2>Education</h2>
+			<div id="education_elements">
+				<xsl:apply-templates select="./element"></xsl:apply-templates>
+			</div>
 		</div>
 	</xsl:template>
 
 	<xsl:template match="experiences">
 		<div id="experiences">
-		<h2>Experiences</h2>
-		<xsl:apply-templates select="./element">
-		</xsl:apply-templates>
+			<h2>Experiences</h2>
+			<div id="experiences_elements">
+				<xsl:apply-templates select="./element"></xsl:apply-templates>
+			</div>
 		</div>
 	</xsl:template>
 
 	<xsl:template match="skills">
 		<div id="skills">
 		<h2>Skills</h2>
-		<xsl:apply-templates select="./skill-category">
-		</xsl:apply-templates>
+			<div id="skills_elements">
+				<xsl:apply-templates select="./skill-category"></xsl:apply-templates>
+			</div>
 		</div>
 	</xsl:template>
 
 	<xsl:template match="extras">
 		<div id="extras">
-		<h2>Extras</h2>
-		<xsl:apply-templates select="./element">
-		</xsl:apply-templates>
+			<h2>Extras</h2>
+			<div id="extras_elements">
+				<xsl:apply-templates select="./element"></xsl:apply-templates>
+			</div>
 		</div>
 	</xsl:template>
 
@@ -95,7 +99,9 @@
 				<td>
 					<xsl:apply-templates select="./title"></xsl:apply-templates><br/>
 					<i><xsl:apply-templates select="./location"></xsl:apply-templates></i>
-					<ul><xsl:apply-templates select="./comment"></xsl:apply-templates></ul>
+					<ul>
+						<xsl:apply-templates select="./comment"></xsl:apply-templates>
+					</ul>
 				</td>
 			</table>
 		</div>
@@ -118,7 +124,9 @@
 	<xsl:template match="skill-category">
 		<div class="skill_cat">
 			<b><xsl:value-of select="./cat-title"></xsl:value-of></b>
-			<ul><xsl:apply-templates select="./skill"></xsl:apply-templates></ul>
+			<ul>
+				<xsl:apply-templates select="./skill"></xsl:apply-templates>
+			</ul>
 		</div>
 	</xsl:template>
 
