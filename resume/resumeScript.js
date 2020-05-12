@@ -83,5 +83,4 @@ function expand_or_collapse() {
 	} else {
 		content.style.display = "none";
 	}
-	}
 }
