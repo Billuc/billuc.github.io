@@ -258,10 +258,24 @@ body {
 	background: var(--element-gradient);
 }
 
+#education_button, #experiences_button, #extras_button {
+	width: 100%;
+	height: auto;
+	padding: 0;
+
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
 div h2 {
 	/* background: #000000; */
 	/* color: #ffffff; */
 	/*border-bottom: 3px solid #ff0000;*/
+	width: 100%;
 	background: var(--title-bg-color);
 	background: linear-gradient(0deg, var(--title-grad-color) 0%, var(--title-bg-color) 20%);
 	color: #000000;
@@ -273,10 +287,15 @@ div h2 {
   	text-align: center;
 	font-weight: 800;
 	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 1.6em;
 
 	padding-bottom: 5px;
-  	margin-bottom: 15px;
+  	margin-bottom: 0px;
   	margin-top: 0px;
+}
+
+#skills h2 {
+	margin-bottom: 15px;
 }
 
 .element {
@@ -315,4 +334,10 @@ div h2 {
 .element ul {
 	margin: 2px 0px 2px 0px;
 	padding-inline-start: 30px;
+}
+
+#education_elements {
+	max-height: 0;
+	transition: max-height 0.2s ease-out;
+	visibility: hidden;
 }

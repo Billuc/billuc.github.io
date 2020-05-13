@@ -55,7 +55,9 @@
 
 	<xsl:template match="education">
 		<div id="education">
-			<button onclick="expand_or_collapse()"><h2>Education</h2></button>
+			<button id="education_button" onclick="expand_or_collapse('education_button', 'education_elements')">
+				<h2>Education</h2>
+			</button>
 			<div id="education_elements">
 				<xsl:apply-templates select="./element"></xsl:apply-templates>
 			</div>
@@ -64,7 +66,9 @@
 
 	<xsl:template match="experiences">
 		<div id="experiences">
-			<h2>Experiences</h2>
+			<button id="experiences_button" onclick="expand_or_collapse('experiences_button', 'experiences_elements')">
+				<h2>Experiences</h2>
+			</button>
 			<div id="experiences_elements">
 				<xsl:apply-templates select="./element"></xsl:apply-templates>
 			</div>
@@ -73,7 +77,7 @@
 
 	<xsl:template match="skills">
 		<div id="skills">
-		<h2>Skills</h2>
+			<h2>Skills</h2>
 			<div id="skills_elements">
 				<xsl:apply-templates select="./skill-category"></xsl:apply-templates>
 			</div>
@@ -82,7 +86,9 @@
 
 	<xsl:template match="extras">
 		<div id="extras">
-			<h2>Extras</h2>
+			<button id="extras_button" onclick="expand_or_collapse('extras_button', 'extras_elements')">
+				<h2>Extras</h2>
+			</button>
 			<div id="extras_elements">
 				<xsl:apply-templates select="./element"></xsl:apply-templates>
 			</div>

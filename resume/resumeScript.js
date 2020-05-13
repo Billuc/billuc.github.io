@@ -75,12 +75,17 @@ function goThroughArrayAndAddTo(pArray, pAddTo) {
 	});
 }
 
-function expand_or_collapse() {
-	var content = this.nextElementSibling;
+function expand_or_collapse(idSelf, idContent) {
+	var self = document.getElementById(idSelf);
+	self.classList.toggle("active");
 
-	if (content.style.display = "none"){
-		content.style.display = "block";
+	var content = document.getElementById(idContent);
+
+	if (content.style.maxHeight){
+		content.style.maxHeight = null;
+		content.style.visibility = "hidden";
 	} else {
-		content.style.display = "none";
+		content.style.maxHeight = content.scrollHeight + "px";
+		content.style.visibility = "visible";
 	}
 }
