@@ -72,8 +72,9 @@
 	<xsl:template match="skills">
 		<div id="skills">
 		<h2>Skills</h2>
-		<xsl:apply-templates select="./skill-category">
-		</xsl:apply-templates>
+		<table>
+			<xsl:apply-templates select="./skill-category"></xsl:apply-templates>
+		</table>
 		</div>
 	</xsl:template>
 
@@ -116,8 +117,15 @@
 	</xsl:template>
 
 	<xsl:template match="skill-category">
-		<tr><td><b><xsl:value-of select="./cat-title"></xsl:value-of></b></td>
-		<td><ul><xsl:apply-templates select="./skill"></xsl:apply-templates></ul></td></tr>
+		<tr>
+			<td><b><xsl:value-of select="./cat-title"></xsl:value-of></b></td>
+			<td>
+				<ul>
+					<xsl:apply-templates select="./skill[position()<=4]"></xsl:apply-templates>
+					<xsl:if test="./skill[5]"><li>...</li></xsl:if>
+				</ul>
+			</td>
+		</tr>
 	</xsl:template>
 
 	<xsl:template match="skill">
