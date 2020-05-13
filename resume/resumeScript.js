@@ -89,3 +89,5 @@ function expand_or_collapse(idSelf, idContent) {
 		content.style.visibility = "visible";
 	}
 }
+
+

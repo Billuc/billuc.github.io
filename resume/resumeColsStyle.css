@@ -271,6 +271,12 @@ body {
     outline:none;
 }
 
+#education_elements, #experiences_elements, #extras_elements {
+	max-height: 0;
+	transition: max-height 0.2s ease-out;
+	visibility: hidden;
+}
+
 div h2 {
 	/* background: #000000; */
 	/* color: #ffffff; */
@@ -336,8 +342,3 @@ div h2 {
 	padding-inline-start: 30px;
 }
 
-#education_elements {
-	max-height: 0;
-	transition: max-height 0.2s ease-out;
-	visibility: hidden;
-}
