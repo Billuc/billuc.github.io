@@ -1,6 +1,11 @@
 @charset "ISO-8859-1";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+:root {
+	--main-bg-color : #ffffff;
+	--button-bg-color : #11b811;
+}
+
 html {
 	margin: 0px;
 	padding: 0px;
@@ -100,6 +105,8 @@ body {
 #contact, #education, #experiences, #skills, #extras {
 	margin-left: 5%;
 	width: 90%;
+
+	margin-bottom: 2em;
 }
 
 #contact {
@@ -115,7 +122,7 @@ body {
 #contact table {
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 2em;
+	margin-bottom: 4em;
 
 	border: 3px solid #4078fd;
 	border-collapse: collapse;
@@ -137,14 +144,14 @@ div h2 {
 	color: #4078fd;
 	border-bottom: 3px solid #4078fd;
 	text-transform: uppercase;
-	font-weight: 600;
-	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 900;
+	font-family: Roboto;
 
 	padding-left: 5px;
 }
 
 .element {
-	padding: 0px 0px 0px 1em;
+	padding: 0.25em 0 0.5em 1em;
 	border-bottom: 1px solid #b0b0b0;
 	margin-left: 2%;
 	width: 96%;
@@ -176,6 +183,17 @@ div h2 {
 }
 
 .element ul {
+	margin: 2px 0px 2px 0px;
+	padding-inline-start: 2em;
+}
+
+.skills td {
+	text-align: left;
+	vertical-align: top;
+	padding: 0 1em 0 1em 0;
+}
+
+.skills ul {
 	margin: 2px 0px 2px 0px;
 	padding-inline-start: 2em;
 }
