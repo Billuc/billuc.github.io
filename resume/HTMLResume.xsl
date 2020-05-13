@@ -121,7 +121,7 @@
 			<td><b><xsl:value-of select="./cat-title"></xsl:value-of></b></td>
 			<td>
 				<ul>
-					<xsl:apply-templates select="./skill[position()<=4]"></xsl:apply-templates>
+					<xsl:apply-templates select="./skill[position() &lt; 5]"></xsl:apply-templates>
 					<xsl:if test="./skill[5]"><li>...</li></xsl:if>
 				</ul>
 			</td>
