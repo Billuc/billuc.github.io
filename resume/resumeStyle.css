@@ -4,6 +4,7 @@
 :root {
 	--main-bg-color : #ffffff;
 	--button-bg-color : #11b811;
+	--button-bar-color : #ffff8c;
 }
 
 html {
@@ -43,7 +44,7 @@ body {
 	padding-left: 1%;
 	padding-right: 1%;
 
-	background-color: var(--left-col-color);
+	background-color: var(--button-bar-color);
 	text-align: center;
 	z-index: 99;
 }
@@ -100,6 +101,10 @@ body {
 #fra-flag {
 	background-image: url("../resources/images/french-flag.png");
 	display: none;
+}
+
+#content {
+	margin-top: 4.5em;
 }
 
 #contact, #education, #experiences, #skills, #extras {
@@ -187,13 +192,13 @@ div h2 {
 	padding-inline-start: 2em;
 }
 
-.skills td {
+#skills td {
 	text-align: left;
 	vertical-align: top;
 	padding: 0 1em 0 1em 0;
 }
 
-.skills ul {
+#skills ul {
 	margin: 2px 0px 2px 0px;
 	padding-inline-start: 2em;
 }
