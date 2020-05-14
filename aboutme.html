@@ -7,15 +7,12 @@
 	<body onload="createResume('HTMLResumeCols.xsl')">
 		<div id="buttonDiv">
             <div id="CVTypeDiv">
-                <button class="cvtypebutton" onclick="createResume('HTMLResumeCols.xsl')">Columns CV</button>
-                <button class="cvtypebutton" onclick="createResume('HTMLResume.xsl')">Regular CV</button>
+                <a class="cvtypebutton" href="./" id="home_button"></a>
             </div>
 
-            <div id="CVButtonDiv">
-                <button class="cvbutton">Button</button>
-                <button class="cvbutton">Button</button>
-                <button class="cvbutton">Button</button>
-                <button class="cvbutton">Button</button>
+            <div id="CVButtonDiv">                
+                <button class="cvbutton" onclick="createResume('HTMLResumeCols.xsl')">Columns CV</button>
+                <button class="cvbutton" onclick="createResume('HTMLResume.xsl')">Regular CV</button>
             </div>
 
             <div id="LanguageDiv">
