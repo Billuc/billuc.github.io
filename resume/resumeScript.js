@@ -81,13 +81,24 @@ function expand_or_collapse(idSelf, idContent) {
 
 	var content = document.getElementById(idContent);
 
+
 	if (content.style.maxHeight){
+		collapseAll();
 		content.style.maxHeight = null;
 		content.style.visibility = "hidden";
 	} else {
+		collapseAll();
 		content.style.maxHeight = content.scrollHeight + "px";
 		content.style.visibility = "visible";
 	}
 }
 
+function collapseAll() {
+	var collapsibles = document.getElementsByClassName("collapsible");
 
+	for (var i = 0; i < collapsibles.length; i++) {
+		if (collapsibles[i].style.maxHeight)
+			collapsibles[i].style.maxHeight = null;
+		collapsibles[i].style.visibility = "hidden";
+	}
+}

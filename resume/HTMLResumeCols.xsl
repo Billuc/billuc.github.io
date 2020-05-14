@@ -55,7 +55,7 @@
 
 	<xsl:template match="education">
 		<div id="education">
-			<button id="education_button" onclick="expand_or_collapse('education_button', 'education_elements')">
+			<button id="education_button" class="collapsible" onclick="expand_or_collapse('education_button', 'education_elements')">
 				<h2>Education</h2>
 			</button>
 			<div id="education_elements">
@@ -66,7 +66,7 @@
 
 	<xsl:template match="experiences">
 		<div id="experiences">
-			<button id="experiences_button" onclick="expand_or_collapse('experiences_button', 'experiences_elements')">
+			<button id="experiences_button" class="collapsible" onclick="expand_or_collapse('experiences_button', 'experiences_elements')">
 				<h2>Experiences</h2>
 			</button>
 			<div id="experiences_elements">
@@ -86,7 +86,7 @@
 
 	<xsl:template match="extras">
 		<div id="extras">
-			<button id="extras_button" onclick="expand_or_collapse('extras_button', 'extras_elements')">
+			<button id="extras_button" class="collapsible" onclick="expand_or_collapse('extras_button', 'extras_elements')">
 				<h2>Extras</h2>
 			</button>
 			<div id="extras_elements">
@@ -131,7 +131,8 @@
 		<div class="skill_cat">
 			<b><xsl:value-of select="./cat-title"></xsl:value-of></b>
 			<ul>
-				<xsl:apply-templates select="./skill"></xsl:apply-templates>
+				<xsl:apply-templates select="./skill[position() &lt; 5]"></xsl:apply-templates>
+				<xsl:if test="./skill[5]"><li>...</li></xsl:if>
 			</ul>
 		</div>
 	</xsl:template>
