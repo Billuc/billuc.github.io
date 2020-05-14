@@ -65,7 +65,7 @@
 		</div>
 	</xsl:template>
 
-	<xsl:template match="education">
+	<xsl:template match="academic-projects">
 		<div id="academic-projects">
 			<button id="academic_projects_button" class="collapsible" onclick="expand_or_collapse('academic_projects_button', 'academic_projects_elements')">
 				<h2>Academic Projects</h2>

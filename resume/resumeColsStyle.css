@@ -74,7 +74,7 @@ body {
 	width: 6em;
 	height: 3em;
 
-	margin: 0.5em 0.25em 0.5em 0.25em;
+	margin: 0.25em 0.25em 0.25em 0.25em;
 
 	background-color: var(--button-bg-color);
 }
