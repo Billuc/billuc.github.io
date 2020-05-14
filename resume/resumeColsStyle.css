@@ -274,7 +274,16 @@ body {
 	background: var(--element-gradient);
 }
 
-#education_button, #experiences_button, #extras_button {
+#academic-projects {
+	margin-top: 10px;
+  /*border: 2px solid black;*/
+  border-radius: 15px;
+
+  background: var(--elt-bg-color);
+  background: var(--element-gradient);
+}
+
+#education_button, #experiences_button, #extras_button, #academic_projects_button {
 	width: 100%;
 	height: auto;
 	padding: 0;
@@ -287,7 +296,7 @@ body {
     outline:none;
 }
 
-#education_elements, #experiences_elements, #extras_elements {
+#education_elements, #experiences_elements, #extras_elements, #academic_projects_elements {
 	max-height: 0;
 	transition: max-height 0.2s ease-out;
 	visibility: hidden;

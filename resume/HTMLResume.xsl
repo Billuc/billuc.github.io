@@ -14,6 +14,8 @@
 
 					<xsl:apply-templates select="//education"/>
 
+					<xsl:apply-templates select="//academic-projects"/>
+
 					<xsl:apply-templates select="//experiences"/>
 
 					<xsl:apply-templates select="//skills"/>
@@ -55,9 +57,17 @@
 
 	<xsl:template match="education">
 		<div id="education">
-		<h2>Education</h2>
-		<xsl:apply-templates select="./element">
-		</xsl:apply-templates>
+			<h2>Education</h2>
+			<xsl:apply-templates select="./element">
+			</xsl:apply-templates>
+		</div>
+	</xsl:template>
+
+	<xsl:template match="academic-projects">
+		<div id="academic-projects">
+			<h2>Academic Projects</h2>
+			<xsl:apply-templates select="./element">
+			</xsl:apply-templates>
 		</div>
 	</xsl:template>
 

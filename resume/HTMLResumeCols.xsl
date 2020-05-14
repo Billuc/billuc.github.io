@@ -16,6 +16,7 @@
 					</div>
 					<div class="right-col">
 						<xsl:apply-templates select="//education"/>
+						<xsl:apply-templates select="//academic-projects"/>
 						<xsl:apply-templates select="//experiences"/>
 						<xsl:apply-templates select="//extras"/>
 					</div>
@@ -59,6 +60,17 @@
 				<h2>Education</h2>
 			</button>
 			<div id="education_elements">
+				<xsl:apply-templates select="./element"></xsl:apply-templates>
+			</div>
+		</div>
+	</xsl:template>
+
+	<xsl:template match="education">
+		<div id="academic-projects">
+			<button id="academic_projects_button" class="collapsible" onclick="expand_or_collapse('academic_projects_button', 'academic_projects_elements')">
+				<h2>Academic Projects</h2>
+			</button>
+			<div id="academic_projects_elements">
 				<xsl:apply-templates select="./element"></xsl:apply-templates>
 			</div>
 		</div>

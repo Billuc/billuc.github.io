@@ -19,6 +19,28 @@
     </extra>
   </contact>
   <education>
+    <element>
+  		<title>Master of Science in Computer Science Engineering</title>
+      	<start-date><year>2018</year></start-date>
+  		<end-date><year>2021</year></end-date>
+  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
+  		<comment><i>Courses included: </i> Object Oriented Programming, Software Engineering, Project Management</comment>
+  	</element>
+    <element>
+  		<title>Undergraduate Course in Engineering Sciences</title>
+      	<start-date><year>2016</year></start-date>
+  		<end-date><year>2018</year></end-date>
+  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
+  		<comment>Grade: 15/20 – Ranked 39th out of 770</comment>
+  	</element>
+  	<element>
+  		<title>Baccalaureate (Equivalent to A-Levels) passed with highest distinction</title>
+  		<end-date><year>2016</year></end-date>
+  		<location>Lycée Armand Peugeot, Valentigney, France</location>
+  		<comment><i>Options : </i> Computer Science and Physics in German</comment>
+  	</element>
+  </education>
+  <academic-projects>
 	<element>
 		<title>Development of Tri Select'IF</title>
 		<end-date><year>2020</year></end-date>
@@ -44,21 +66,7 @@
 	    <comment>Worked following the Agile software development model</comment>
 	    <comment><i>Languages used : </i> Java</comment>
   	</element>
-    <element>
-  		<title>Master of Science in Computer Science Engineering</title>
-      	<start-date><year>2018</year></start-date>
-  		<end-date><year>2021</year></end-date>
-  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
-  		<comment><i>Courses included: </i> Object Oriented Programming, Software Engineering, Project Management</comment>
-  	</element>
-    <element>
-  		<title>Undergraduate Course in Engineering Sciences</title>
-      	<start-date><year>2016</year></start-date>
-  		<end-date><year>2018</year></end-date>
-  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
-  		<comment>Grade: 15/20 – Ranked 39th out of 770</comment>
-  	</element>
-  	<element>
+	<element>
   		<title>Multidisciplinary Project in Mechatronics (team of 12)</title>
   		<end-date><year>2018</year></end-date>
   		<location>INSA (National Institute of Applied Sciences) Lyon</location>
@@ -66,13 +74,7 @@
   		<comment>Coded an Android app to control the robot</comment>
   		<comment><i>IT Manager</i></comment>
   	</element>
-  	<element>
-  		<title>Baccalaureate (Equivalent to A-Levels) passed with highest distinction</title>
-  		<end-date><year>2016</year></end-date>
-  		<location>Lycée Armand Peugeot, Valentigney, France</location>
-  		<comment><i>Options : </i> Computer Science and Physics in German</comment>
-  	</element>
-  </education>
+  </academic-projects>
   <experiences>
     <element>
       <title><![CDATA[Intern in the R&D service for 2 months]]></title>

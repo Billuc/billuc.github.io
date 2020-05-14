@@ -1,4 +1,4 @@
-<!ELEMENT resume (contact, education, experiences, skills, extras)>
+<!ELEMENT resume (contact, education, academic-projects, experiences, skills, extras)>
   <!ELEMENT contact (name, mail, tel, birth, nationality)>
     <!ELEMENT name (first, last)>
       <!ELEMENT first (#PCDATA)>
@@ -17,6 +17,7 @@
       <!ELEMENT end-date (day?, month?, year)>
       <!ELEMENT location (#PCDATA)>
       <!ELEMENT comment ANY>
+  <!ELEMENT academic-projects (element)*>
   <!ELEMENT experiences (element)*>
   <!ELEMENT skills (skill-category)*>
     <!ELEMENT skill-category (cat-title, skill*)>
