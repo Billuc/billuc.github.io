@@ -116,7 +116,6 @@ body {
 
 #fra-flag {
 	background-image: url("../resources/images/french-flag.png");
-	display: none;
 }
 
 #content {
@@ -364,10 +363,10 @@ div h2 {
 	padding-inline-start: 30px;
 }
 
-.en {
-	display: inline;
-}
-
 .fr {
 	display: none;
+}
+
+.en {
+	display: inline;
 }

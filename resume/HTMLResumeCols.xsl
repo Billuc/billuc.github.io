@@ -69,8 +69,10 @@
 	<xsl:template match="education">
 		<div id="education">
 			<button id="education_button" onclick="expand_or_collapse('education_button', 'education_elements')">
-				<h2 class="en">Education</h2>
-				<h2 class="fr">Formation</h2>
+				<h2>
+					<span class="en">Education</span>
+					<span class="fr">Formation</span>
+				</h2>
 			</button>
 			<div id="education_elements" class="collapsible">
 				<xsl:apply-templates select="./element"></xsl:apply-templates>
@@ -81,8 +83,10 @@
 	<xsl:template match="academic-projects">
 		<div id="academic-projects">
 			<button id="academic_projects_button" onclick="expand_or_collapse('academic_projects_button', 'academic_projects_elements')">
-				<h2 class="en">Academic Projects</h2>
-				<h2 class="fr">Projets académiques</h2>
+				<h2>
+					<span class="en">Academic Projects</span>
+					<span class="fr">Projets académiques</span>
+				</h2>
 			</button>
 			<div id="academic_projects_elements" class="collapsible">
 				<xsl:apply-templates select="./element"></xsl:apply-templates>
@@ -93,8 +97,10 @@
 	<xsl:template match="experiences">
 		<div id="experiences">
 			<button id="experiences_button" onclick="expand_or_collapse('experiences_button', 'experiences_elements')">
-				<h2 class="en">Experiences</h2>
-				<h2 class="fr">Experiences professionnelles</h2>
+				<h2>
+					<span class="en">Experiences</span>
+					<span class="fr">Experiences professionnelles</span>
+				</h2>
 			</button>
 			<div id="experiences_elements" class="collapsible">
 				<xsl:apply-templates select="./element"></xsl:apply-templates>
@@ -104,8 +110,10 @@
 
 	<xsl:template match="skills">
 		<div id="skills">
-			<h2 class="en">Skills</h2>
-			<h2 class="fr">Compétences</h2>
+			<h2>
+				<span class="en">Skills</span>
+				<span class="fr">Compétences</span>
+			</h2>
 			<div id="skills_elements">
 				<xsl:apply-templates select="./skill-category"></xsl:apply-templates>
 			</div>
