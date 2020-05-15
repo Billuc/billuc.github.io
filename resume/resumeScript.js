@@ -54,6 +54,8 @@ function createResume(xslName) {
 			// parties sont ajoutées !
 			goThroughArrayAndAddTo(newBody, $("body"));
 			goThroughArrayAndAddTo(newHead, $("head"));
+
+			expand_or_collapse('education_button', 'education_elements');
 		});
 	})
 	.fail(function(data2) {
