@@ -111,12 +111,12 @@ function setLangEn() {
 
 	for (let f = 0; f < fr.length; f++) {
 		const element = fr[f];
-		element.style = "display = none;"
+		element.style.display = "none";
 	}
 
 	for (let e = 0; e < en.length; e++) {
 		const element = en[e];
-		element.style = "display = inline;"
+		element.style.display = "inline";
 	}
 }
 
@@ -126,11 +126,11 @@ function setLangFr() {
 
 	for (let e = 0; e < en.length; e++) {
 		const element = en[e];
-		element.style = "display = none;"
+		element.style.display = "none";
 	}
 
 	for (let f = 0; f < fr.length; f++) {
 		const element = fr[f];
-		element.style = "display = inline;"
+		element.style.display = "inline";
 	}
 }
