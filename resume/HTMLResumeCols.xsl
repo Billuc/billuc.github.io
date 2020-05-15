@@ -167,7 +167,7 @@
 		<xsl:value-of select="."></xsl:value-of> -
 	</xsl:template>
 
-	<xsl:template match="comment">
+	<xsl:template match="element/comment">
 		<li>
 			<xsl:choose>
 				<xsl:when test="fr">
@@ -179,6 +179,18 @@
 				</xsl:otherwise>
 			</xsl:choose>
 		</li>
+	</xsl:template>
+
+	<xsl:template match="skill/comment">
+		<xsl:choose>
+			<xsl:when test="fr">
+				<span class="en"><xsl:value-of select="./en"></xsl:value-of></span>
+				<span class="fr"><xsl:value-of select="./fr"></xsl:value-of></span>
+			</xsl:when>
+			<xsl:otherwise>
+				<span class="en fr"><xsl:value-of select="./en"></xsl:value-of></span>				
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template match="skill-category">

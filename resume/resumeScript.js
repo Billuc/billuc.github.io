@@ -55,7 +55,9 @@ function createResume(xslName) {
 			goThroughArrayAndAddTo(newBody, $("body"));
 			goThroughArrayAndAddTo(newHead, $("head"));
 
-			expand_or_collapse('education_button', 'education_elements');
+			if (document.getElementById('education_button')) {
+				expand_or_collapse('education_button', 'education_elements');
+			}
 		});
 	})
 	.fail(function(data2) {

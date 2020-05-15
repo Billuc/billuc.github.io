@@ -58,7 +58,7 @@
 					<span class="en">Nationality</span>
 					<span class="fr">Nationalité</span>
 				</td>
-				<td><xsl:value-of select="./nationality" ></xsl:value-of></td>
+				<td><xsl:apply-templates select="./nationality" ></xsl:apply-templates></td>
 			</tr>
 			<tr>
 				<xsl:apply-templates select="./extra"></xsl:apply-templates>
