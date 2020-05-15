@@ -155,10 +155,25 @@ function generatePDF() {
 
 			var newXml = xsltProcessor.transformToDocument(xml);
 			console.log(newXml);
+			download('test.pdf', newXml);
 		});
 	})
 	.fail(function(data2) {
 		alert("Retrieving the xml failed !");
 		console.log(data2);
 	});
+}
+
+function download(filename, text) {
+	var element = document.createElement('a');
+	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+	encodeURIComponent(text));
+	element.setAttribute('download', filename);
+
+	element.style.display = 'none';
+	document.body.appendChild(element);
+
+	element.click();
+
+	document.body.removeChild(element);
 }
