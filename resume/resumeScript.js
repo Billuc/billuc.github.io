@@ -136,3 +136,29 @@ function setLangFr() {
 		element.style.display = "inline";
 	}
 }
+
+function generatePDF() {
+	var xsltProcessor = new XSLTProcessor();
+	var xsl;
+	var xml;
+
+	var xslAjax = loadXMLDoc("./resume/PDFGenerator.xsl", true);
+
+	xslAjax.done(function(data1) {
+		xsl = data1;
+
+		xsltProcessor.importStylesheet(xsl);
+
+		var xmlAjax = loadXMLDoc("./resume/resumeLucB.xml", true);
+		xmlAjax.done(function(data2) {
+			xml = data2;
+
+			var newXml = xsltProcessor.transformToDocument(xml);
+			console.log(newXml);
+		});
+	})
+	.fail(function(data2) {
+		alert("Retrieving the xml failed !");
+		console.log(data2);
+	});
+}
