@@ -41,7 +41,7 @@ body {
 	padding-left: 1%;
 	padding-right: 1%;
 
-	background-color: var(--button-bar-color);
+	background-color: silver;
 	text-align: center;
 	z-index: 99;
 }
@@ -87,7 +87,7 @@ body {
 	color: initial;
 	
 	width: 48px;
-	background-color: var(--right-col-color);
+	background-color: inherit;
 	background-image: url(../resources/images/home_button.png);
 	background-size: contain;
 	background-repeat: no-repeat;
