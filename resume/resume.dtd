@@ -1,5 +1,5 @@
 <!ELEMENT resume (contact, education, academic-projects, experiences, skills, extras)>
-  <!ELEMENT contact (name, mail, tel, birth, nationality)>
+  <!ELEMENT contact (name, mail, tel, birth, nationality, extra*)>
     <!ELEMENT name (first, last)>
       <!ELEMENT first (#PCDATA)>
       <!ELEMENT last (#PCDATA)>
@@ -9,19 +9,23 @@
       <!ELEMENT day (#PCDATA)>
       <!ELEMENT month (#PCDATA)>
       <!ELEMENT year (#PCDATA)>
-    <!ELEMENT nationality (#PCDATA)>
+    <!ELEMENT nationality (en, fr?)>
+      <!ELEMENT en (#PCDATA)>
+      <!ELEMENT fr (#PCDATA)>
+    <!ELEMENT extra (title?, value)>
+      <!ELEMENT value (en, fr?)>
   <!ELEMENT education (element)*>
     <!ELEMENT element (title, start-date?, end-date?, location?, comment*)>
-      <!ELEMENT title (#PCDATA)>
+      <!ELEMENT title (en, fr?)>
       <!ELEMENT start-date (day?, month?, year)>
       <!ELEMENT end-date (day?, month?, year)>
-      <!ELEMENT location (#PCDATA)>
-      <!ELEMENT comment ANY>
+      <!ELEMENT location (en, fr?)>
+      <!ELEMENT comment (en, fr?)>
   <!ELEMENT academic-projects (element)*>
   <!ELEMENT experiences (element)*>
   <!ELEMENT skills (skill-category)*>
     <!ELEMENT skill-category (cat-title, skill*)>
-      <!ELEMENT cat-title (#PCDATA)>
+      <!ELEMENT cat-title (en, fr?)>
       <!ELEMENT skill (sk-title, comment?)>
-        <!ELEMENT sk-title (#PCDATA)>
+        <!ELEMENT sk-title (en, fr?)>
   <!ELEMENT extras (element)*>

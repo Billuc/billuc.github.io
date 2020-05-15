@@ -364,3 +364,10 @@ div h2 {
 	padding-inline-start: 30px;
 }
 
+.en {
+	display: inline;
+}
+
+.fr {
+	display: none;
+}

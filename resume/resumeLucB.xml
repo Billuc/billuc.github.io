@@ -13,188 +13,409 @@
    		<month>01</month>
    		<year>2000</year>
    	</birth>
-    <nationality>French</nationality>
+    <nationality>
+		<en>French</en>
+		<fr>Française</fr>	
+	</nationality>
     <extra>
-    	<value>Driving License</value>
+    	<value>
+			<en>Driving License</en>
+			<fr>Permis de conduire (B)</fr>
+		</value>
     </extra>
   </contact>
   <education>
     <element>
-  		<title>Master of Science in Computer Science Engineering</title>
+  		<title>
+			<en>Master of Science in Computer Science Engineering</en>
+			<fr>Diplôme d'ingénieur en informatique</fr>
+		</title>
       	<start-date><year>2018</year></start-date>
   		<end-date><year>2021</year></end-date>
-  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
-  		<comment><i>Courses included: </i> Object Oriented Programming, Software Engineering, Project Management</comment>
+  		<location>
+			<en>INSA (National Institute of Applied Sciences) Lyon, France</en>
+			<fr>INSA (Institut National des Sciences Appliquées) de Lyon</fr>
+		</location>
+  		<comment>
+			<en><i>Courses included: </i> Object Oriented Programming, Software Engineering, Project Management</en>
+			<fr><i>Cours : </i>Programmation Orientée Objet, Génie Logiciel, Gestion de Projet</fr>	
+		</comment>
   	</element>
     <element>
-  		<title>Undergraduate Course in Engineering Sciences</title>
+  		<title>
+			<en>Undergraduate Course in Engineering Sciences</en>
+			<fr>Classes préparatoires intégrées aux études d'ingénieur</fr>
+		</title>
       	<start-date><year>2016</year></start-date>
   		<end-date><year>2018</year></end-date>
-  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
-  		<comment>Grade: 15/20 – Ranked 39th out of 770</comment>
+  		<location>
+			<en>INSA (National Institute of Applied Sciences) Lyon, France</en>
+			<fr>INSA (Institut National des Sciences Appliquées) de Lyon</fr>
+		</location>
+  		<comment>
+			<en>Grade: 15/20 – Ranked 39th out of 770</en>
+			<fr>Moyenne : 15/20 - Classé 39ème sur 770</fr>
+		</comment>
   	</element>
   	<element>
-  		<title>Baccalaureate (Equivalent to A-Levels) passed with highest distinction</title>
+  		<title>
+		  	<en>Baccalaureate (Equivalent to A-Levels) passed with highest distinction</en>
+			<fr>Baccalauréat scientifique - mention Très Bien</fr>
+		</title>
   		<end-date><year>2016</year></end-date>
-  		<location>Lycée Armand Peugeot, Valentigney, France</location>
-  		<comment><i>Options : </i> Computer Science and Physics in German</comment>
+  		<location><en>Lycée Armand Peugeot, Valentigney, France</en></location>
+  		<comment>
+			<en><i>Options: </i> Computer Science and Physics in German</en>
+			<fr><i>Options : </i> Informatique et Sciences du Numérique, classe européenne (Physique en allemand)</fr>
+		</comment>
   	</element>
   </education>
   <academic-projects>
 	<element>
-		<title>Development of Tri Select'IF</title>
+		<title>
+			<en>Development of Tri Select'IF</en>
+			<fr>Développement de l'application Tri Select'IF</fr>
+		</title>
 		<end-date><year>2020</year></end-date>
-  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
-		<comment>As a team of 6, developped an app to help children learn how to sort waste</comment>
-		<comment>Agile managment</comment>
-		<comment>Published the app on the Play Store</comment>
-		<comment><i>Languages and tools used : </i> Unity + C#, Gitlab + Issues Boards, Photoshop</comment>
+  		<location>
+			<en>INSA (National Institute of Applied Sciences) Lyon, France</en>
+			<fr>INSA (Institut National des Sciences Appliquées) de Lyon</fr>
+		</location>
+		<comment>
+			<en>As a team of 6, developped an app to help children learn how to sort waste</en>
+			<fr>En équipe de 6, nous avons développé une application pour que les enfants apprennent à trier</fr>
+		</comment>
+		<comment>
+			<en>Agile managment</en>
+			<fr>Developpement selon la méthode Agile</fr>
+		</comment>
+		<comment>
+			<en>Published the app on the Play Store</en>
+			<fr>Publication de l'application sur le Play Store</fr>
+		</comment>
+		<comment>
+			<en><i>Languages and tools used: </i> Unity + C#, Gitlab + Issues Boards, Photoshop</en>
+			<fr><i>Langages et outils utilisés : </i> Unity + C#, Gitlab + Issues Boards, Photoshop</fr>
+		</comment>
 	</element>
   	<element>
-  		<title>Team Leader in an academic Project (team of 6)</title>
+  		<title>
+			<en>Team Leader in an academic Project (team of 6)</en>
+			<fr>Chef de projet d'un projet academique (équipe de 6)</fr>
+		</title>
   		<end-date><year>2019</year></end-date>
-  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
-  		<comment>Divided tasks so that everybody had something they can do to do</comment>
-  		<comment>Conceived architectures for a bank management application</comment>
-  		<comment>Made a Proof of Concept and a simulation of our solution</comment>
+  		<location>
+			<en>INSA (National Institute of Applied Sciences) Lyon, France</en>
+			<fr>INSA (Institut National des Sciences Appliquées) de Lyon</fr>
+		</location>
+  		<comment>
+			<en>Divided tasks so that everybody had to do something they could do</en>
+			<fr>Répartition des tâches pour tous aient a faire une tâche qu'ils pouvaient réaliser</fr>
+		</comment>
+  		<comment>
+			<en>Conceived architectures for a bank management application</en>
+			<fr>Conception d'architectures pour une application de gestion de banque</fr>
+		</comment>
+  		<comment>
+			<en>Made a Proof of Concept and a simulation of our solution</en>
+			<fr>Réalisation d'une preuve de concept et d'une simulation de notre solution</fr>
+		</comment>
   	</element>
     <element>
-  		<title>Academic development project (team of 7)</title>
+  		<title>
+			<en>Academic development project (team of 7)</en>
+			<fr>Projet académique de développement d'application</fr>
+		</title>
   		<end-date><year>2019</year></end-date>
-  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
-  		<comment>Led the GUI team</comment>
-	    <comment>Worked following the Agile software development model</comment>
-	    <comment><i>Languages used : </i> Java</comment>
+  		<location>
+			<en>INSA (National Institute of Applied Sciences) Lyon, France</en>
+			<fr>INSA (Institut National des Sciences Appliquées) de Lyon</fr>
+		</location>
+  		<comment>
+			<en>Led the GUI team</en>
+			<fr>Direction de l'équipe en charge de l'interface</fr>
+		</comment>
+	    <comment>
+			<en>Worked following the Agile software development model</en>
+			<fr>Méthode de développement Agile encadrée par les enseignants</fr>
+		</comment>
+	    <comment>
+			<en><i>Languages used: </i> Java</en>
+			<fr><i>Langages utilisés : </i> Java</fr>
+		</comment>
   	</element>
 	<element>
-  		<title>Multidisciplinary Project in Mechatronics (team of 12)</title>
+  		<title>
+			<en>Multidisciplinary Project in Mechatronics (team of 12)</en>
+			<fr>Projet multidisciplinaire en Mécatronique (équipe de 12)</fr>
+		</title>
   		<end-date><year>2018</year></end-date>
-  		<location>INSA (National Institute of Applied Sciences) Lyon</location>
-  		<comment>Designed and built a ball-throwing robot usable by disabled persons</comment>
-  		<comment>Coded an Android app to control the robot</comment>
-  		<comment><i>IT Manager</i></comment>
+  		<location>
+			<en>INSA (National Institute of Applied Sciences) Lyon, France</en>
+			<fr>INSA (Institut National des Sciences Appliquées) de Lyon</fr>
+		</location>
+  		<comment>
+			<en>Designed and built a ball-throwing robot usable by disabled persons</en>
+			<fr>Conception et construction d'un robot lanceur de balles utilisable par des personnes tétraplégiques</fr>
+		</comment>
+  		<comment>
+			<en>Coded an Android app to control the robot</en>
+			<fr>Developpement d'une application Android pour controler le robot</fr>
+		</comment>
+  		<comment>
+			<en><i>IT Manager</i></en>
+			<fr><i>Responsable informatique</i></fr>
+		</comment>
   	</element>
   </academic-projects>
   <experiences>
     <element>
-      <title><![CDATA[Intern in the R&D service for 2 months]]></title>
-      <end-date><year>2019</year></end-date>
-      <location>Everwin SX (ERP software editor) – Villeurbanne, France</location>
-      <comment>Integrated APIs into the existing application</comment>
-      <comment>Updated some old code</comment>
-      <comment><i>Tools used: </i> Java, HTML, ExtJS, CSS, Maven, Gradle, SVN</comment>
+		<title>
+			<en><![CDATA[Intern in the R&D service for 2 months - Everwin SX (ERP software editor)]]></en>
+			<fr><![CDATA[Stage en R&D de 2 mois - Everwin SX (editeur de logiciel ERP/PGI)]]></fr>
+		</title>
+		<end-date><year>2019</year></end-date>
+		<location><en>Villeurbanne, France</en></location>
+		<comment>
+			<en>Integrated APIs into the existing application</en>
+			<fr>Intégration d'APIs à l'application existante</fr>
+		</comment>
+		<comment>
+			<en>Updated and improved code</en>
+			<fr>Maintenance de code</fr>
+		</comment>
+		<comment>
+			<en><i>Tools used: </i> Java, HTML, ExtJS, CSS, Maven, Gradle, SVN</en>
+			<fr><i>Outils utilisés : </i> Java, HTML, ExtJS, CSS, Maven, Gradle, SVN</fr>
+		</comment>
     </element>
     <element>
-      <title>Tutor in Mathematics for other students</title>
-      <start-date><year>2018</year></start-date>
-      <end-date><year>2019</year></end-date>
-      <location>INSA (National Institute of Applied Sciences) Lyon</location>
+		<title>
+			<en>Tutor in Mathematics for other students</en>
+			<fr>Tutorat en mathématiques</fr>
+		</title>
+		<start-date><year>2018</year></start-date>
+		<end-date><year>2019</year></end-date>
+		<location>
+			<en>INSA (National Institute of Applied Sciences) Lyon, France</en>
+			<fr>INSA (Institut National des Sciences Appliquées) de Lyon</fr>
+		</location>
     </element>
     <element>
-      <title>Summer job (1 month) - Faurecia (automotive supplier)</title>
-      <end-date><year>2018</year></end-date>
-      <location><![CDATA[R&D center – Bavans, France]]></location>
-      <comment>Reviewed different planning tools and chose to use one</comment>
-      <comment>Adapted an existing planning to the new tools</comment>
-      <comment><i>Tools used: </i> Excel, Trello, Gantt charts</comment>
+		<title>
+			<en>Summer job (1 month) - Faurecia (automotive supplier)</en>
+			<fr>Job d'été (1 mois) - Faurecia (équipementier automobile)</fr>
+		</title>
+		<end-date><year>2018</year></end-date>
+		<location>
+			<en><![CDATA[R&D center – Bavans, France]]></en>
+			<fr><![CDATA[Centre R&D - Bavans, France]]></fr>
+		</location>
+		<comment>
+			<en>Reviewed different planning tools and chose one to use</en>
+			<fr>Comparaison puis choix d'un outil de planning</fr>
+		</comment>
+		<comment>
+			<en>Adapted an existing planning to the new tools</en>
+			<fr>Adaptation du planning existant au nouvel outil</fr>
+		</comment>
+		<comment>
+			<en><i>Tools used: </i> Excel, Trello, Gantt charts</en>
+			<fr><i>Outils utilisés : </i> Excel, Trello, diagrammes de Gantt</fr>
+		</comment>
     </element>
     <element>
-      <title>Technical intern / worker (1 month) - Veolia (water, waste and energy services)</title>
-      <end-date><year>2017</year></end-date>
-      <location>Waste sorting center – Rillieux-La-Pape, France</location>
-      <comment>Discovered the working world from the inside</comment>
+      	<title>
+			<en>Technical intern / worker (1 month) - Veolia (water, waste and energy services)</en>
+			<fr>Stage ouvrier (1 mois) - Veolia (services de gestion de l'eau, des déchets et de l'énergie)</fr>
+		</title>
+		<end-date><year>2017</year></end-date>
+		<location>
+			<en>Waste sorting center – Rillieux-La-Pape, France</en>
+			<fr>Centre de tri de déchets - Rillieux-La-Pape, France</fr>
+		</location>
+		<comment>
+			<en>Discovered the working world from the inside</en>
+			<fr>Découverte du monde ouvrier de l'intérieur</fr>
+		</comment>
     </element>
   </experiences>
   <skills>
   	<skill-category>
-  		<cat-title>Languages</cat-title>
+  		<cat-title>
+		  	<en>Languages</en>
+			<fr>Langues</fr>
+		</cat-title>
   		<skill>
-  			<sk-title>French</sk-title>
-  			<comment>Mother Tongue</comment>
+  			<sk-title>
+				<en>French</en>
+				<fr>Francais</fr>
+			</sk-title>
+  			<comment>
+				<en>Mother Tongue</en>
+				<fr>Langue maternelle</fr>
+			</comment>
   		</skill>
   		<skill>
-  			<sk-title>English</sk-title>
-  			<comment>C1 level (LinguaSkill : 180+/200 in Reading and Listening)</comment>
+			<sk-title>
+				<en>English</en>
+				<fr>Anglais</fr>
+			</sk-title>
+  			<comment>
+				<en>C1 level (LinguaSkill : 180+/200 in Reading and Listening)</en>
+				<fr>Niveau C1 (LinguaSkill : 180+/200 points en compréhension écrite et orale)</fr>
+			</comment>
   		</skill>
   		<skill>
-  			<sk-title>German</sk-title>
-  			<comment>Proficient, B2 level</comment>
+			<sk-title>
+				<en>German</en>
+				<fr>Allemand</fr>
+			</sk-title>
+  			<comment>
+				<en>Proficient, B2 level</en>
+				<fr>Bon niveau (B2)</fr>
+			</comment>
   		</skill>
   	</skill-category>
   	<skill-category>
-  		<cat-title>Programming Languages</cat-title>
-  		<skill><sk-title>Java/JavaEE</sk-title></skill>
-  		<skill><sk-title>C/C++</sk-title></skill>
-  		<skill><sk-title>HTML</sk-title></skill>
-  		<skill><sk-title>JavaScript</sk-title></skill>
-  		<skill><sk-title>SQL</sk-title></skill>
-  		<skill><sk-title>XML/XSL</sk-title></skill>
-		<skill><sk-title>Unity + C#</sk-title></skill>
-  		<skill><sk-title>Matlab</sk-title></skill>
-  		<skill><sk-title>Python</sk-title></skill>
-  		<skill><sk-title>Batch/Shell</sk-title></skill>
-  		<skill><sk-title>Prolog</sk-title></skill>
-  		<skill><sk-title>RDF/SPARQL</sk-title></skill>
+  		<cat-title>
+			<en>Programming Languages</en>
+			<fr>Langages de programmation</fr>	
+		</cat-title>
+  		<skill><sk-title><en>Java/JavaEE</en></sk-title></skill>
+  		<skill><sk-title><en>C/C++</en></sk-title></skill>
+  		<skill><sk-title><en>HTML</en></sk-title></skill>
+  		<skill><sk-title><en>JavaScript</en></sk-title></skill>
+  		<skill><sk-title><en>SQL</en></sk-title></skill>
+  		<skill><sk-title><en>XML/XSL</en></sk-title></skill>
+		<skill><sk-title><en>Unity + C#</en></sk-title></skill>
+  		<skill><sk-title><en>Matlab</en></sk-title></skill>
+  		<skill><sk-title><en>Python</en></sk-title></skill>
+  		<skill><sk-title><en>Batch/Shell</en></sk-title></skill>
+  		<skill><sk-title><en>Prolog</en></sk-title></skill>
+  		<skill><sk-title><en>RDF/SPARQL</en></sk-title></skill>
   	</skill-category>
   	<skill-category>
-  		<cat-title>IT skills</cat-title>
-  		<skill>
-  			<sk-title>Microsoft Office</sk-title>
+  		<cat-title>
+			<en>IT skills</en>
+			<fr>Compétences informatiques</fr>
+		</cat-title>
+		<skill>
+  			<sk-title>
+				<en>Operating Systems</en>
+				<fr>Systèmes d'exploitation</fr>
+			</sk-title>
+  			<comment><en>Linux, Windows</en></comment>
+  		</skill>
+		<skill>
+  			<sk-title>
+				<en>Versionning Tools</en>
+				<fr>Outils de gestion de version</fr>
+			</sk-title>
+  			<comment><en>Git (Github, Gitlab, CI), SVN</en></comment>
   		</skill>
   		<skill>
-  			<sk-title>Adobe Suite</sk-title>
-  			<comment>Acrobat, Photoshop, Premiere, Illustrator</comment>
+  			<sk-title><en>Maven, Gradle</en></sk-title>
   		</skill>
   		<skill>
-  			<sk-title>Operating Systems</sk-title>
-  			<comment>Linux, Windows</comment>
+  			<sk-title>
+				<en>Adobe Suite</en>
+				<fr>Suite Adobe</fr>
+			</sk-title>
+  			<comment><en>Acrobat, Photoshop, Premiere, Illustrator</en></comment>
   		</skill>
   		<skill>
-  			<sk-title>SolidEdge</sk-title>
+  			<sk-title><en>Microsoft Office</en></sk-title>
   		</skill>
   		<skill>
-  			<sk-title>Versionning Tools</sk-title>
-  			<comment>Git (Github, Gitlab, CI), SVN</comment>
+  			<sk-title><en>Tomcat</en></sk-title>
+  		</skill>
+      	<skill>
+			<sk-title><en>Docker</en></sk-title>
+		</skill>
+  		<skill>
+  			<sk-title>
+				<en>Networks</en>
+				<fr>Réseaux</fr>
+			</sk-title>
+  			<comment>
+				<en>HTTP, TCP, UDP, IP protocols</en>
+				<fr>Protocoles HTTP, TCP, UDP, IP</fr>
+			</comment>
   		</skill>
   		<skill>
-  			<sk-title>Maven, Gradle</sk-title>
+  			<sk-title><en>SolidEdge</en></sk-title>
   		</skill>
   		<skill>
-  			<sk-title>Tomcat</sk-title>
-  		</skill>
-      <skill><sk-title>Docker</sk-title></skill>
-  		<skill>
-  			<sk-title>Networks</sk-title>
-  			<comment>HTTP, TCP, UDP, IP protocols</comment>
-  		</skill>
-  		<skill>
-  			<sk-title>KNIME</sk-title>
-  			<comment>Basics</comment>
+  			<sk-title><en>KNIME</en></sk-title>
+  			<comment>
+				<en>Basics</en>
+				<fr>Bases</fr>
+			</comment>
   		</skill>
   	</skill-category>
   </skills>
   <extras>
     <element>
-      <title>Treasurer of the association INSA Esport (video games)</title>
-      <start-date><year>2018</year></start-date>
-      <end-date><year>2020</year></end-date>
-      <location>INSA (National Institute of Applied Sciences) Lyon</location>
-      <comment>Organized tournaments on different games</comment>
-      <comment>Managed a treasury</comment>
-      <comment>Managed teams</comment>
-      <comment>Led meetings with the executive board</comment>
+		<title>
+			<en>Treasurer of the association INSA Esport (video games)</en>
+			<fr>Trésorier de l'association INSA Esport (jeux électroniques)</fr>
+		</title>
+		<start-date><year>2018</year></start-date>
+		<end-date><year>2020</year></end-date>
+		<location>
+			<en>INSA (National Institute of Applied Sciences) Lyon, France</en>
+			<fr>INSA (Institut National des Sciences Appliquées) de Lyon</fr>
+		</location>
+		<comment>
+			<en>Organized tournaments on different games</en>
+			<fr>Organisation de tounois sur différents jeux</fr>
+		</comment>
+		<comment>
+			<en>Managed a treasury</en>
+			<fr>Gestion de trésorerie</fr>
+		</comment>
+		<comment>
+			<en>Managed teams</en>
+			<fr>Gestion d'équipes</fr>
+		</comment>
+		<comment>
+			<en>Led meetings with the executive board</en>
+			<fr>Direction de réunions avec le bureau de l'association</fr>
+		</comment>
     </element>
     <element>
-      <title>3 months linguistic exchange</title>
-      <end-date><year>2014</year></end-date>
-      <location>Wolfenbüttel, Germany</location>
-      <comment>Followed courses in German</comment>
-      <comment>Lived with a German family</comment>
+		<title>
+			<en>3 months linguistic exchange</en>
+			<fr>Echange linguistique de 3 mois (échange Sauzay)</fr>
+		</title>
+		<end-date><year>2014</year></end-date>
+		<location>
+			<en>Wolfenbüttel, Germany</en>
+			<fr>Wolfenbüttel, Allemagne</fr>
+		</location>
+		<comment>
+			<en>Followed courses in German</en>
+			<fr>Cours dans une classe allemande</fr>
+		</comment>
+		<comment>
+			<en>Lived with a German family</en>
+			<fr>Découverte de la vie d'une famille allemande de l'intérieur</fr>
+		</comment>
     </element>
     <element>
-    	<title>Interests</title>
-    	<comment>Sport : Climbing, team sports</comment>
-    	<comment>Reading</comment>
+    	<title>
+			<en>Interests</en>
+			<fr>Centres d'interet</fr>
+		</title>
+    	<comment>
+			<en>Sport : Climbing, team sports</en>
+			<fr>Sports : Escalade, sports d'équipe</fr>
+		</comment>
+    	<comment>
+			<en>Reading</en>
+			<fr>Lecture</fr>
+		</comment>
     </element>
   </extras>
 </resume>
