@@ -1,55 +1,124 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Welcome to my website</title>
+		<title>Welcome to my website - Luc Billaud</title>
 		<style>
+			:root {
+				--black-color: #2c3531;
+				--blue-color: #116466;
+				--orange-color: #c5976f;
+				--yellow-color: #ffcb9a;
+				--white-color: #d1e8e2;
+			}
+
 			html {
-				background-image: url("./resources/images/cool-background.png");
-			  background-size: 100% auto;
-			  background-repeat: repeat;
+				width: 100%;
+				height: 100%;
+				
+				background: var(--black-color);
+				/*background: linear-gradient(186deg, var(--black-color) 50%, var(--blue-color) 100%);*/
+				background: radial-gradient(circle,  var(--black-color) 50%, var(--blue-color) 70%);
+
+				font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			}
 
 			body {
 				width: 90%;
-				margin-left: auto;
-				margin-right: auto;
+				height: 90%;
+
+				margin: 5vh auto 4vh auto;
+				vertical-align: middle;
+			}
+
+			#content {
+				width: 30em;
+
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				/*margin: auto;*/
+
+				background-color: var(--black-color);
+				/*box-shadow: 1px 3px 10px 10px var(--orange-color);*/
+				color: var(--white-color);
+
+				text-align: center;
+			}
+
+			#titles {
+				margin: auto;
+				padding: 1em;
+			}
+
+			h1 {
+				font-size: 3em;
+				font-weight: 900;
+				color: var(--yellow-color);
+			}
+
+			h2 {
+				font-size: 2em;
+				font-weight: 700;
+				color: var(--yellow-color);
+			}
+			
+			#choices {
+				margin: auto;
+				padding: 1em;
+			}
+
+			a {
+				display: block;
+
+				width: 80%;
+				padding: 1em 1em 1em 1em;
+				margin: 1em auto 1em auto;
+
+				line-height: 1.5em;
+				font-size: 1.2em;
+
+				border-radius: 1em;
+
+				background-color: var(--blue-color);
+				background: radial-gradient(closest-side, var(--blue-color) 80%, var(--black-color) 100%);
+			}
+
+			a:link {
+				color: var(--white-color);
+			}
+
+			a:visited {
+				color: var(--orange-color);
+			}
+
+			a:hover {
+				text-shadow: 0.5em 0.5em 0.5em var(--black-color);
+				background: radial-gradient(closest-side, var(--blue-color) 80%, var(--white-color) 85%, var(--black-color) 100%);
+				/*box-shadow: 0.25em 0.25em 0.5em var(--white-color);*/
+			}
+
+			a:active {
+				text-shadow: 0.25em 0.25em 0.25em var(--black-color);
+				background: radial-gradient(closest-side, var(--blue-color) 80%, var(--white-color) 85%, var(--black-color) 100%);
+				/*box-shadow: 0.1em 0.1em 0.25em var(--white-color);*/
+				transform: translate(0.1em, 0.25em);
 			}
 		</style>
 	</head>
 	<body>
-
-		<h1>Welcome !</h1>
-		<h2>This is my website. What do you want to do ?</h2>
-		<ul>
-			<li><a href="aboutme.html">Know more about me (my CV)</a></li>
-			<li><a href="github.html">Discover my Github repositories</a></li>
-			<li><a href="articles/index.html">Read my articles (in French)</a></li>
-		</ul>
-
-		<!-- <a style="background-color:black;
-              color:white;
-              text-decoration:none;
-              padding:4px 6px;
-              font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;
-              font-size:12px;
-              font-weight:bold;
-              line-height:1.2;
-              display:inline-block;
-              border-radius:3px;
-              position: absolute;
-							top: 0px;
-							right: 0px;"
-      href="https://unsplash.com/@shapelined?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-      target="_blank"
-      rel="noopener noreferrer"
-      title="Download free do whatever you want high-resolution photos from Shapelined">
-        <span style="display:inline-block;padding:2px 3px">
-          <svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32">
-            <title>unsplash-logo</title>
-            <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
-          </svg>
-        </span>
-        <span style="display:inline-block;padding:2px 3px">Shapelined</span>
-    </a> -->
+		<div id="content">
+			<div id="titles">
+				<h1>Welcome !</h1>
+				<h2>This is my website.<br>What do you want to do ?</h2>
+			</div>
+			<hr>
+			<div id="choices">
+				<a href="aboutme.html">Know more about me (my CV)</a>
+				<a href="github.html">Discover my Github repositories</a>
+				<a href="articles/index.html">Read my articles (in French)</a>
+			</div>
+		</div>
 	</body>
 </html>
