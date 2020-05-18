@@ -17,9 +17,15 @@
 				
 				background: var(--black-color);
 				/*background: linear-gradient(186deg, var(--black-color) 50%, var(--blue-color) 100%);*/
-				background: linear-gradient(190deg, var(--black-color) -30%, transparent 80%),
+				background: /*linear-gradient(0deg, var(--white-color) 0%, transparent 3%),
+							linear-gradient(90deg, var(--white-color) 0%, transparent 3%),
+							linear-gradient(180deg, var(--white-color) 0%, transparent 3%),
+							linear-gradient(270deg, var(--white-color) 0%, transparent 3%),*/
+							linear-gradient(190deg, var(--black-color) -30%, transparent 80%),
 							radial-gradient(circle,  var(--blue-color) 50%, var(--black-color) 55%);
 
+
+				font-family: "Source Sans Pro", Helvetica, sans-serif;
 				font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			}
 
@@ -29,6 +35,8 @@
 
 				margin: 5vh auto 4vh auto;
 				vertical-align: middle;
+
+				/*transition:  margin-top 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s;*/
 			}
 
 			#content {
@@ -63,6 +71,8 @@
 				font-size: 2em;
 				font-weight: 700;
 				color: var(--yellow-color);
+
+				margin-bottom: 0.1em;
 			}
 			
 			#choices {
@@ -70,7 +80,7 @@
 				padding: 1em;
 			}
 
-			a {
+			#choices a {
 				display: block;
 
 				width: 80%;
@@ -84,23 +94,46 @@
 
 				background-color: var(--black-color);
 				background: radial-gradient(closest-side, var(--black-color) 80%, transparent 100%);
+
+				transition: transform ease 0.5s;
 			}
 
-			a:link {
+			#choices a:link {
 				color: var(--white-color);
 			}
 
-			a:visited {
+			#choices a:visited {
 				color: var(--orange-color);
 			}
 
-			a:hover {
-				text-shadow: 0.5em 0.5em 0.5em var(--black-color);
+			#choices a::before {
+				position: absolute;
+				content: "";
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+
 				background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
-				/*box-shadow: 0.25em 0.25em 0.5em var(--white-color);*/
+				
+				z-index: -1;
+				transition: opacity 0.5s ease-out;
+				opacity: 0;
 			}
 
-			a:active {
+			#choices a:hover {
+				text-shadow: 0.5em 0.5em 0.5em var(--black-color);
+				/*background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
+				box-shadow: 0.25em 0.25em 0.5em var(--white-color);*/
+
+				transform: scale(1.2);
+			}
+
+			#choices a:hover::before {
+				opacity: 1;
+			}
+
+			#choices a:active {
 				text-shadow: 0.25em 0.25em 0.25em var(--black-color);
 				background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
 				/*box-shadow: 0.1em 0.1em 0.25em var(--white-color);*/
@@ -113,21 +146,30 @@
 				text-align: center;
 			}
 		</style>
+		<script>
+			function whenLoaded() {
+				var body = document.body;
+				body.style.marginTop = "5vh";
+				body.style.transform = "scale(1.1)";
+			}
+		</script>
 	</head>
 	<body>
 		<div id="content">
 			<div id="titles">
-				<h1>Welcome !</h1>
-				<h2>This is my website.<br>What do you want to do ?</h2>
+				<h1>Welcome !</h1><hr>
+				<h2>BILLAUD Luc<br>Computer Science Student</h2>
 			</div>
 			<hr>
 			<div id="choices">
 				<a href="aboutme.html">Know more about me (my CV)</a>
-				<a href="github.html">Discover my Github repositories</a>
+				<a href="github.html">Discover my Github projects</a>
 				<a href="articles/index.html">Read my articles (in French)</a>
 			</div>
 			<div id="footer">
-				© Luc Billaud
+				© Luc Billaud<br>
+				<a>Git</a>
+				<a>LinkedIn</a>
 			</div>
 		</div>
 	</body>
