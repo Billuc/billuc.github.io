@@ -5,7 +5,7 @@
 		<style>
 			:root {
 				--black-color: #2c3531;
-				--blue-color: #116466;
+				--blue-color: #048688;
 				--orange-color: #c5976f;
 				--yellow-color: #ffcb9a;
 				--white-color: #d1e8e2;
@@ -17,7 +17,8 @@
 				
 				background: var(--black-color);
 				/*background: linear-gradient(186deg, var(--black-color) 50%, var(--blue-color) 100%);*/
-				background: radial-gradient(circle,  var(--black-color) 50%, var(--blue-color) 70%);
+				background: linear-gradient(190deg, var(--black-color) -30%, transparent 80%),
+							radial-gradient(circle,  var(--blue-color) 50%, var(--black-color) 55%);
 
 				font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			}
@@ -40,7 +41,7 @@
 				transform: translate(-50%, -50%);
 				/*margin: auto;*/
 
-				background-color: var(--black-color);
+				background-color: transparent;
 				/*box-shadow: 1px 3px 10px 10px var(--orange-color);*/
 				color: var(--white-color);
 
@@ -81,8 +82,8 @@
 
 				border-radius: 1em;
 
-				background-color: var(--blue-color);
-				background: radial-gradient(closest-side, var(--blue-color) 80%, var(--black-color) 100%);
+				background-color: var(--black-color);
+				background: radial-gradient(closest-side, var(--black-color) 80%, transparent 100%);
 			}
 
 			a:link {
@@ -95,13 +96,13 @@
 
 			a:hover {
 				text-shadow: 0.5em 0.5em 0.5em var(--black-color);
-				background: radial-gradient(closest-side, var(--blue-color) 80%, var(--white-color) 85%, var(--black-color) 100%);
+				background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
 				/*box-shadow: 0.25em 0.25em 0.5em var(--white-color);*/
 			}
 
 			a:active {
 				text-shadow: 0.25em 0.25em 0.25em var(--black-color);
-				background: radial-gradient(closest-side, var(--blue-color) 80%, var(--white-color) 85%, var(--black-color) 100%);
+				background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
 				/*box-shadow: 0.1em 0.1em 0.25em var(--white-color);*/
 				transform: translate(0.1em, 0.25em);
 			}
