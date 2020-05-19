@@ -5,7 +5,7 @@
 		<style>
 			:root {
 				--black-color: #2c3531;
-				--blue-color: #116466;
+				--blue-color: #048688;
 				--orange-color: #c5976f;
 				--yellow-color: #ffcb9a;
 				--white-color: #d1e8e2;
@@ -15,19 +15,44 @@
 				width: 100%;
 				height: 100%;
 				
-				background: var(--black-color);
-				/*background: linear-gradient(186deg, var(--black-color) 50%, var(--blue-color) 100%);*/
-				background: radial-gradient(circle,  var(--black-color) 50%, var(--blue-color) 70%);
+				background: black;
 
+				font-family: "Source Sans Pro", Helvetica, sans-serif;
 				font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			}
 
 			body {
-				width: 90%;
-				height: 90%;
-
-				margin: 5vh auto 4vh auto;
+				width: 100%;
+				height: 100%;
+				margin: 0;
 				vertical-align: middle;
+			}
+
+			#stars {
+				position: absolute;
+				content: "";
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: 0;				
+
+				background: url("./resources/images/stars.png") repeat-x;
+				z-index: 1;
+			}
+
+			#planet {
+				position: absolute;
+				content: "";
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: 0;
+
+				background: linear-gradient(190deg, var(--black-color) -40%, transparent 80%), 
+							radial-gradient(circle,  var(--yellow-color) 40%, transparent 45%);
+				z-index: 2;
 			}
 
 			#content {
@@ -40,41 +65,47 @@
 				transform: translate(-50%, -50%);
 				/*margin: auto;*/
 
-				background-color: var(--black-color);
+				background-color: transparent;
 				/*box-shadow: 1px 3px 10px 10px var(--orange-color);*/
 				color: var(--white-color);
 
 				text-align: center;
+				z-index: 3;
 			}
 
 			#titles {
 				margin: auto;
-				padding: 1em;
+				padding: 0 1em;
 			}
 
 			h1 {
 				font-size: 3em;
 				font-weight: 900;
-				color: var(--yellow-color);
+				color: var(--black-color);
+
+				margin: 0.5em 0;
 			}
 
 			h2 {
 				font-size: 2em;
 				font-weight: 700;
-				color: var(--yellow-color);
+				color: var(--black-color);
+
+				margin: 0.5em 0;
 			}
 			
 			#choices {
 				margin: auto;
-				padding: 1em;
+				padding: 0.5em 1em;
 			}
 
-			a {
+			#choices a {
 				display: block;
+				position: relative;
 
 				width: 80%;
 				padding: 1em 1em 1em 1em;
-				margin: 1em auto 1em auto;
+				margin: 0.75em auto;
 
 				line-height: 1.5em;
 				font-size: 1.2em;
@@ -82,51 +113,84 @@
 				border-radius: 1em;
 
 				background-color: var(--blue-color);
-				background: radial-gradient(closest-side, var(--blue-color) 80%, var(--black-color) 100%);
+				background: radial-gradient(closest-side, var(--blue-color) 80%, transparent 100%);
+
+				transition: transform ease 0.5s;
 			}
 
-			a:link {
+			#choices a:link {
 				color: var(--white-color);
 			}
 
-			a:visited {
-				color: var(--orange-color);
+			#choices a:visited {
+				color: var(--yellow-color);
 			}
 
-			a:hover {
+			#choices a::before {
+				position: absolute;
+				content: "";
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+
+				background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
+				
+				z-index: -1;
+				transition: opacity 0.5s ease-out;
+				opacity: 0;
+			}
+
+			#choices a:hover {
 				text-shadow: 0.5em 0.5em 0.5em var(--black-color);
-				background: radial-gradient(closest-side, var(--blue-color) 80%, var(--white-color) 85%, var(--black-color) 100%);
-				/*box-shadow: 0.25em 0.25em 0.5em var(--white-color);*/
+				/*background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
+				box-shadow: 0.25em 0.25em 0.5em var(--white-color);*/
+
+				transform: scale(1.2);
 			}
 
-			a:active {
+			#choices a:hover::before {
+				opacity: 1;
+			}
+
+			#choices a:active {
 				text-shadow: 0.25em 0.25em 0.25em var(--black-color);
-				background: radial-gradient(closest-side, var(--blue-color) 80%, var(--white-color) 85%, var(--black-color) 100%);
+				background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
 				/*box-shadow: 0.1em 0.1em 0.25em var(--white-color);*/
 				transform: translate(0.1em, 0.25em);
 			}
 
 			#footer {
-				color: var(--white-color);
-				padding: 0.5em;
+				color: var(--black-color);
+				padding: 0.5em 0 0 0;
 				text-align: center;
 			}
 		</style>
+		<script>
+			function whenLoaded() {
+				var body = document.body;
+				body.style.transform = "scale(1.1)";
+			}
+		</script>
 	</head>
 	<body>
+		<div id="stars"></div>
+		<div id="planet"></div>
 		<div id="content">
 			<div id="titles">
-				<h1>Welcome !</h1>
-				<h2>This is my website.<br>What do you want to do ?</h2>
+				<h1>Welcome !</h1><hr>
+				<h2>BILLAUD Luc<br>Computer Science Student</h2>
 			</div>
 			<hr>
 			<div id="choices">
 				<a href="aboutme.html">Know more about me (my CV)</a>
-				<a href="github.html">Discover my Github repositories</a>
+				<a href="github.html">Discover my Github projects</a>
 				<a href="articles/index.html">Read my articles (in French)</a>
 			</div>
 			<div id="footer">
-				© Luc Billaud
+				© Luc Billaud<br>
+				<a>Git</a>
+				<a>LinkedIn</a>
 			</div>
 		</div>
 	</body>
