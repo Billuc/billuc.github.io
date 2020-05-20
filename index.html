@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Welcome to my website - Luc Billaud</title>
+		<link rel="stylesheet" href="resources/images/font-awesome-4.7.0/css/font-awesome.min.css">
 		<style>
 			:root {
 				--black-color: #2c3531;
@@ -62,7 +63,7 @@
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%) scale(0.8);
 				/*margin: auto;*/
 
 				background-color: transparent;
@@ -71,6 +72,8 @@
 
 				text-align: center;
 				z-index: 3;
+
+				transition: transform 1s ease-in-out;
 			}
 
 			#titles {
@@ -165,15 +168,35 @@
 				padding: 0.5em 0 0 0;
 				text-align: center;
 			}
+
+			#footer a {
+				text-decoration: none;
+				vertical-align: top;
+				margin: 0.1em;
+				color: var(--black-color);
+				transition: transform 0.5s ease;
+			}
+
+			#footer a:hover {
+				transform: scale(1.2);
+			}
+
+			#github-button:hover {
+				color: black;
+			}
+
+			#linkedin-button:hover {
+				color: var(--blue-color);
+			}
 		</style>
 		<script>
 			function whenLoaded() {
-				var body = document.body;
-				body.style.transform = "scale(1.1)";
+				var content = document.getElementById("content");
+				content.style.transform = "translate(-50%, -50%) scale(1)";
 			}
 		</script>
 	</head>
-	<body>
+	<body onload="whenLoaded();">
 		<div id="stars"></div>
 		<div id="planet"></div>
 		<div id="content">
@@ -189,8 +212,8 @@
 			</div>
 			<div id="footer">
 				© Luc Billaud<br>
-				<a>Git</a>
-				<a>LinkedIn</a>
+				<a href="https://github.com/Billuc" class="fa fa-2x fa-github" id="github-button"></a>
+				<a href="https://www.linkedin.com/in/luc-billaud-414a85172/" class="fa fa-2x fa-linkedin-square" id="linkedin-button"></a>
 			</div>
 		</div>
 	</body>
