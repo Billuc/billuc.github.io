@@ -51,9 +51,25 @@
 				left: 0;
 				margin: 0;
 
-				background: linear-gradient(190deg, var(--black-color) -40%, transparent 80%), 
-							radial-gradient(circle,  var(--yellow-color) 40%, transparent 45%);
+				background: radial-gradient(circle closest-side,  var(--yellow-color) 90%, transparent 100%);
 				z-index: 2;
+
+				
+				transform: scale(0.8);
+				transition: transform 1s ease-in-out;
+			}
+
+			#effect{
+				position: absolute;
+				content: "";
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: 0;
+
+				background: linear-gradient(190deg, var(--black-color) -40%, transparent 80%);
+				z-index: 3;
 			}
 
 			#content {
@@ -71,7 +87,7 @@
 				color: var(--white-color);
 
 				text-align: center;
-				z-index: 3;
+				z-index: 4;
 
 				transition: transform 1s ease-in-out;
 			}
@@ -191,14 +207,18 @@
 		</style>
 		<script>
 			function whenLoaded() {
+				var planet = document.getElementById("planet");
+				planet.style.transform = "scale(1)";
+
 				var content = document.getElementById("content");
-				content.style.transform = "translate(-50%, -50%) scale(1)";
+				content.style.transform = "translate(-50%, -50%) scale(0.95)";
 			}
 		</script>
 	</head>
 	<body onload="whenLoaded();">
 		<div id="stars"></div>
 		<div id="planet"></div>
+		<div id="effect"></div>
 		<div id="content">
 			<div id="titles">
 				<h1>Welcome !</h1><hr>
