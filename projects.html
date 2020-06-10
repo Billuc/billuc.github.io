@@ -6,11 +6,13 @@
 
     <style>
       :root{
-        --color-1: #000000;
-        --color-2: #ff0000;
-        --color-3: #00ff00;
-        --color-4: #0000ff;
-        --color-5: #ffffff;
+        --color-1: #e7717d;
+        --color-2: #f6cfa4;
+        --color-3: #fff023;/*#fff023;*/
+        --color-3-hover: #17e9e0;
+        --border-on-hover: #a64ac9;
+        --color-4: #afd275;
+        --color-5: #c2b9b0;
       }
       
       html {
@@ -20,7 +22,7 @@
         height: 100%;
 
         background-color: black;
-        background: linear-gradient(0deg, var(--color-2), var(--color-1)30%, var(--color-1) 70%, var(--color-2));
+        background: linear-gradient(0deg, var(--color-1) 0%, var(--color-2) 70%);
       }
       
       body {
@@ -35,8 +37,11 @@
         flex-flow: column;
 			}
 
+      #header {
+        position: relative;
+      }
+
       h1 {
-        display: block;
         text-align: center;
         text-decoration: underline;
         font-size: 3em;
@@ -46,9 +51,11 @@
 
       #home {
         width: 3em;
-        position: fixed;
-        top: 0.5em;
+        
+        position: absolute;
+        top: 45%;
         left: 0.5em;
+        transform: translate(0%, -50%);
 
         z-index: 99;
       }
@@ -60,6 +67,8 @@
       #projects{
         display: grid;
         flex: 1;
+
+        margin: 1em 1.5em;
         
         grid-gap: 1em;
         
@@ -94,16 +103,25 @@
         height: 30vmin;
         margin: 2vmin;*/
 
+        border: solid 10px var(--color-3);
+        border-radius: 10px;
+        font-size: 1.5em;
       }
 
       .project:hover {
-        background: #55ff00;
+        background: var(--color-3-hover);
         cursor: pointer;
+        border: solid 10px var(--border-on-hover);
+      }
+
+      .project:hover a {
+        color: #900000;
       }
 
       .project .title {
         display: block;
         margin: 5% auto;
+        pointer-events: none;
       }
 
       .project .desc {
@@ -122,28 +140,69 @@
         height: 100%;
         overflow: auto;
         background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.5);
       }
 
       .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
         background-color: var(--color-5);
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888888;
+        border-radius: 15px;
         width: 60%;
+        height: 50%;
+
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+      }
+
+      .modal-header {
+        position: relative;
+        text-align: center;
+        background-color: var(--color-4);
+        border-radius: inherit;
+        
+        font-size: 2em;
+        font-weight: bold;
       }
 
       .close {
+        position: absolute;
+        top: 45%;
+        right: 0.5em;
+        transform: translateY(-50%);
+
         color: #aaaaaa;
-        float: right;
-        font-size: 2em;
-        font-weight: bold;
       }
 
       .close:hover, .close:focus {
         color: #000000;
         text-decoration: none;
         cursor: pointer;
+      }
+
+      .modal-header p {
+        padding: 0.5em;
+        margin: 0;
+      }
+
+      .modal-body {
+        text-align: center;
+        padding: 1em;
+        font-size: 1.25em;
+      }
+
+      @keyframes animatetop {
+        from {top: -300px; opacity: 0}
+        to {top: 50%; opacity: 1}
+      }
+
+      #footer {
+        position: relative;
+        text-align: center;
+        padding: 0.5em;
       }
     </style>
     <script src="./resources/jquery-3.4.1.js"></script>
@@ -158,12 +217,13 @@
           const p = projects[i];
           p.onclick = function() {
             modal.style.display = "block";
-            var mContent = $(".modal-content")[0];
-            var mLink = $(mContent).find("a")[0];
-            var mText = $(mContent).find("p")[0];
+            var mHead = $(".modal-header")[0];
+            var mBody = $(".modal-body")[0];
+            var mLink = $(mHead).find("a")[0];
+            var mText = $(mBody).find("p")[0];
 
-            var pLink = $(p).find("a")[0];
-            var pText = $(p).find("span")[0];
+            var pLink = $(p).find(".title")[0];
+            var pText = $(p).find(".desc")[0];
 
             $(mLink).replaceWith($(pLink).clone());
             $(mText).text($(pText).text());
@@ -182,26 +242,13 @@
           }
         }
       }
-
-      function onHover(p) {
-        var projects = $(".project");
-        for (let i = 0; i < projects.length; i++) {
-          const proj = projects[i];
-          if (proj != p) {
-            proj.style.display = "none";
-          }
-          else {
-            proj.style.width = "100%";
-            proj.style.height = "100%";
-          }
-        }
-      }
     </script>
   </head>
   <body onload="init();">
-    <h1>My projects</h1>
-
-    <a href="./index.html" id="home"><img src="./resources/images/home_button.png" alt="Home"></a>
+    <div id="header">
+      <h1>My projects</h1>  
+      <a href="./index.html" id="home"><img src="./resources/images/home_button.png" alt="Home"></a>
+    </div>
 
     <div id="projects">
       <div class="project">
@@ -233,14 +280,29 @@
         <a href="https://github.com/Billuc/music_downloader" class="title">music_downloader</a>
         <span class="desc">a self-made Java interface for a music downloader</span>
       </div>
+
+      <div class="project">
+        <a href="https://hexanome-thermopropulsif.gitlab.io/tri-selectif/" class="title">Tri Sélect'IF</a>
+        <span class="desc">End-of-year project : a mobile game to help children learn how to sort</span>
+      </div>
     </div>
 
-    <div class="modal">
+    <div class="modal">  
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <a>Modal Link</a>
-        <p>Modal Text</p>
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <p><a>Modal Link</a></p>
+        </div>
+        <div class="modal-body">
+          <p>Modal Text</p>
+        </div>
       </div>
+    </div>
+
+    <div id="footer">
+      © Luc Billaud<br>
+      <a href="https://github.com/Billuc" class="fa fa-2x fa-github" id="github-button"></a>
+      <a href="https://www.linkedin.com/in/luc-billaud-414a85172/" class="fa fa-2x fa-linkedin-square" id="linkedin-button"></a>
     </div>
   </body>
 </html>
