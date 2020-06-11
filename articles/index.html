@@ -131,6 +131,36 @@
       #home img {
         width: inherit;
       }
+
+      #footer {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        text-align: center;
+        padding: 0.5em;
+      }
+
+      #footer a {
+				text-decoration: none;
+				vertical-align: top;
+				margin: 0.1em;
+				color: var(--black-color);
+				transition: transform 0.5s ease;
+			}
+
+			#footer a:hover {
+				transform: scale(1.2);
+			}
+
+			#github-button:hover {
+				color: black;
+			}
+
+			#linkedin-button:hover {
+				color: darkcyan;
+			}
     </style>
 
     <script>
@@ -209,6 +239,12 @@
       <span class="i">Les écarts générationnels n'ont jamais été aussi importants que depuis l'apparition d'Internet et des réseaux sociaux.
       Comment ces technologies ont-elles bouleversé nos vies ?</span>
       <span class="small">Mon Projet Personnel en Humanités (PPH) à l'INSA de Lyon</span>
+    </div>
+
+    <div id="footer">
+      © Luc Billaud<br>
+      <a href="https://github.com/Billuc" class="fa fa-2x fa-github" id="github-button"></a>
+      <a href="https://www.linkedin.com/in/luc-billaud-414a85172/" class="fa fa-2x fa-linkedin-square" id="linkedin-button"></a>
     </div>
   </body>
 </html>
