@@ -12,14 +12,14 @@ function createResume(xslName) {
 	var xsl;
 	var xml;
 
-	var xslAjax = loadXMLDoc("./resume/" + xslName, true);
+	var xslAjax = loadXMLDoc("./" + xslName, true);
 
 	xslAjax.done(function(data1) {
 		xsl = data1;
 
 		xsltProcessor.importStylesheet(xsl);
 
-		var xmlAjax = loadXMLDoc("./resume/resumeLucB.xml", true);
+		var xmlAjax = loadXMLDoc("./resumeLucB.xml", true);
 		xmlAjax.done(function(data2) {
 			xml = data2;
 
@@ -149,7 +149,7 @@ function generatePDF() {
 
 		xsltProcessor.importStylesheet(xsl);
 
-		var xmlAjax = loadXMLDoc("./resume/resumeLucB.xml", true);
+		var xmlAjax = loadXMLDoc("./resumeLucB.xml", true);
 		xmlAjax.done(function(data2) {
 			xml = data2;
 
