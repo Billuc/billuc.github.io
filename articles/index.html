@@ -23,6 +23,10 @@
         background: linear-gradient(0deg, var(--color-2), var(--color-1)30%, var(--color-1) 70%, var(--color-2));
       }
 
+      #header {
+        position: relative;
+      }
+
       h1 {
         text-align: center;
         text-decoration: underline;
@@ -121,9 +125,11 @@
 
       #home {
         width: 3em;
-        position: fixed;
-        top: 0.5em;
+        
+        position: absolute;
+        top: 45%;
         left: 0.5em;
+        transform: translate(0%, -50%);
 
         z-index: 99;
       }
@@ -131,6 +137,36 @@
       #home img {
         width: inherit;
       }
+
+      #footer {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        text-align: center;
+        padding: 0.5em;
+      }
+
+      #footer a {
+				text-decoration: none;
+				vertical-align: top;
+				margin: 0.1em;
+				color: var(--black-color);
+				transition: transform 0.5s ease;
+			}
+
+			#footer a:hover {
+				transform: scale(1.2);
+			}
+
+			#github-button:hover {
+				color: black;
+			}
+
+			#linkedin-button:hover {
+				color: darkcyan;
+			}
     </style>
 
     <script>
@@ -185,11 +221,14 @@
     </script>
   </head>
   <body onload="init();">
-    <h1>Mes productions</h1>
+    <div id="header">
+      <h1>Mes productions</h1>
+
+      <a href="../index.html" id="home"><img src="../resources/images/home_button.png" alt="Home"></a>
+    </div>
 
     <button class="fa fa-2x fa-chevron-circle-left" id="left" onclick="toLeft();"></button>
     <button class="fa fa-2x fa-chevron-circle-right" id="right" onclick="toRight();"></button>
-    <a href="../index.html" id="home"><img src="../resources/images/home_button.png" alt="Home"></a>
 
     <div class="article">
       <a href="./articleSN.html">Rendre le numérique plus écologique - Premier Article ^^</a>
@@ -209,6 +248,12 @@
       <span class="i">Les écarts générationnels n'ont jamais été aussi importants que depuis l'apparition d'Internet et des réseaux sociaux.
       Comment ces technologies ont-elles bouleversé nos vies ?</span>
       <span class="small">Mon Projet Personnel en Humanités (PPH) à l'INSA de Lyon</span>
+    </div>
+
+    <div id="footer">
+      © Luc Billaud<br>
+      <a href="https://github.com/Billuc" class="fa fa-2x fa-github" id="github-button"></a>
+      <a href="https://www.linkedin.com/in/luc-billaud-414a85172/" class="fa fa-2x fa-linkedin-square" id="linkedin-button"></a>
     </div>
   </body>
 </html>

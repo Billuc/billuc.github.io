@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script type="text/javascript" src="./resources/jquery-3.4.1.js"></script>
-		<script type="text/javascript" src="./resume/resumeScript.js"></script>
+        <style>
+            div {
+                display: none;
+            }
+        </style>
+		<script type="text/javascript" src="../resources/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="./resumeScript.js"></script>
 	</head>
 	<body onload="createResume('HTMLResume.xsl');">
 		<div id="buttonDiv">
@@ -13,7 +18,7 @@
             <div id="CVButtonDiv">                
                 <button class="cvbutton" onclick="createResume('HTMLResumeCols.xsl')">Columns CV</button>
                 <button class="cvbutton" onclick="createResume('HTMLResume.xsl')">Regular CV</button>
-                <button class="cvbutton" onclick="generatePDF();" disabled>PDF CV</button>
+                <button class="cvbutton" onclick="generatePDF();" disabled>PDF CV (WIP)</button>
             </div>
 
             <div id="LanguageDiv">
