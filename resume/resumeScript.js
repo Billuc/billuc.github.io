@@ -61,8 +61,8 @@ function createResume(xslName) {
 		});
 	})
 	.fail(function(data2) {
-		alert("Retrieving the xml failed !");
-		console.log(data2);
+		console.log("Retrieving the xml failed !");
+		window.location.replace("./MyResume.pdf");
 	});
 }
 
@@ -159,8 +159,8 @@ function generatePDF() {
 		});
 	})
 	.fail(function(data2) {
-		alert("Retrieving the xml failed !");
-		console.log(data2);
+		console.log("Retrieving the xml failed !");
+		window.location.replace("./MyResume.pdf");
 	});
 }
 
