@@ -131,6 +131,10 @@
         text-align: center;
       }
 
+      .project img {
+        display: none;
+      }
+
       .modal {
         display: none;
         position: fixed;
@@ -152,11 +156,14 @@
 
         background-color: var(--color-5);
         border-radius: 15px;
-        width: 60%;
-        height: 50%;
+        width: 70%;
+        max-height: 100%;
 
         animation-name: animatetop;
         animation-duration: 0.4s;
+
+        display: flex;
+        flex-direction: column;
       }
 
       .modal-header {
@@ -174,6 +181,7 @@
         top: 45%;
         right: 0.5em;
         transform: translateY(-50%);
+        z-index: 99;
 
         color: #aaaaaa;
       }
@@ -185,14 +193,23 @@
       }
 
       .modal-header p {
+        position: relative;
+
         padding: 0.5em;
         margin: 0;
       }
 
       .modal-body {
+        position: relative;
+
         text-align: center;
         padding: 1em;
         font-size: 1.25em;
+      }
+
+      .modal-body img {
+        max-width: 100%;
+        height: auto;
       }
 
       @keyframes animatetop {
@@ -242,12 +259,15 @@
             var mBody = $(".modal-body")[0];
             var mLink = $(mHead).find("a")[0];
             var mText = $(mBody).find("p")[0];
+            var mImg =  $(mBody).find("img")[0];
 
             var pLink = $(p).find(".title")[0];
             var pText = $(p).find(".desc")[0];
+            var pImg =  $(p).find("img")[0];
 
             $(mLink).replaceWith($(pLink).clone());
             $(mText).text($(pText).text());
+            $(mImg).replaceWith($(pImg).clone());
           }
         }
 
@@ -275,36 +295,43 @@
       <div class="project">
         <a href="https://github.com/Billuc/RayTracing2D" class="title">RayTracing2D</a>
         <span class="desc">Simple project where I trace rays until I detect an obstacle</span>
+        <img src="./projets/resources/ray-tracing.PNG" alt="RayTracing2D">
       </div>
       
       <div class="project">
         <a href="https://github.com/Billuc/Ball-and-Stars" class="title">Balls and Stars</a>
         <span class="desc">A little game, where you control a bouncing ball</span>
+        <img src="./projets/resources/ball-and-stars.PNG" alt="Balls-and-Stars">
       </div>
       
       <div class="project">
         <a href="https://github.com/Billuc/Py2048" class="title">Py2048</a>
         <span class="desc">My first project : a Python version of the game 2048</span>
+        <img src="./projets/resources/py2048.PNG" alt="Py2048">
       </div>
       
       <div class="project">
         <a href="https://github.com/Billuc/Balistics" class="title">Balistics</a>
         <span class="desc">A simple game using balistics</span>
+        <img src="./projets/resources/balistics.PNG" alt="Balistics">
       </div>
       
       <div class="project">
         <a href="https://github.com/Billuc/Fractals" class="title">Fractals</a>
         <span class="desc">A fractal drawer (I love fractals ^^)</span>
+        <img src="./projets/resources/fractals.PNG" alt="Fractals">
       </div>
       
       <div class="project">
         <a href="https://github.com/Billuc/music_downloader" class="title">music_downloader</a>
         <span class="desc">a self-made Java interface for a music downloader</span>
+        <img src="./projets/resources/music-downloader.PNG" alt="music_downloader">
       </div>
 
       <div class="project">
         <a href="https://hexanome-thermopropulsif.gitlab.io/tri-selectif/" class="title">Tri Sélect'IF</a>
         <span class="desc">End-of-year project : a mobile game to help children learn how to sort</span>
+        <img src="./projets/resources/TriSelect'IF.jpg" alt="Tri Sélect'IF">
       </div>
     </div>
 
@@ -316,6 +343,7 @@
         </div>
         <div class="modal-body">
           <p>Modal Text</p>
+          <img src="" alt="">
         </div>
       </div>
     </div>

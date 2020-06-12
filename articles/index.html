@@ -23,6 +23,10 @@
         background: linear-gradient(0deg, var(--color-2), var(--color-1)30%, var(--color-1) 70%, var(--color-2));
       }
 
+      #header {
+        position: relative;
+      }
+
       h1 {
         text-align: center;
         text-decoration: underline;
@@ -121,9 +125,11 @@
 
       #home {
         width: 3em;
-        position: fixed;
-        top: 0.5em;
+        
+        position: absolute;
+        top: 45%;
         left: 0.5em;
+        transform: translate(0%, -50%);
 
         z-index: 99;
       }
@@ -215,11 +221,14 @@
     </script>
   </head>
   <body onload="init();">
-    <h1>Mes productions</h1>
+    <div id="header">
+      <h1>Mes productions</h1>
+
+      <a href="../index.html" id="home"><img src="../resources/images/home_button.png" alt="Home"></a>
+    </div>
 
     <button class="fa fa-2x fa-chevron-circle-left" id="left" onclick="toLeft();"></button>
     <button class="fa fa-2x fa-chevron-circle-right" id="right" onclick="toRight();"></button>
-    <a href="../index.html" id="home"><img src="../resources/images/home_button.png" alt="Home"></a>
 
     <div class="article">
       <a href="./articleSN.html">Rendre le numérique plus écologique - Premier Article ^^</a>
