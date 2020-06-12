@@ -63,7 +63,7 @@ function createResume(xslName) {
 	.fail(function(data2) {
 		console.log("Retrieving the xml failed !");
 		console.log(data2);
-		//window.location.replace("./MyResume.pdf");
+		window.location.replace("./MyResume.pdf");
 	});
 }
 

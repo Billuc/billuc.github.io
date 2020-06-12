@@ -99,6 +99,7 @@ body {
 
 .cvbutton {
 	visibility: visible;
+	width: 108px;
 }
 
 .languagebutton {
