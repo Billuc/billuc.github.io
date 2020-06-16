@@ -8,8 +8,8 @@
       :root{
         --color-1: #41b3a3;
         --color-2: #85cdcb;
-        --color-3: #c38d9e;
-        --color-4: #e27d60;
+        --color-3: #f13973;
+        --color-4: #f8f530;
         --color-5: #e8a87c;
       }
 
@@ -20,7 +20,11 @@
         height: 100%;
 
         background-color: black;
-        background: linear-gradient(0deg, var(--color-2), var(--color-1)30%, var(--color-1) 70%, var(--color-2));
+        background: linear-gradient(0deg, var(--color-1) 30%, var(--color-2));
+      }
+
+      body {
+        min-width: 550px;
       }
 
       #header {
@@ -43,6 +47,7 @@
 
         width: 60%;
         height: 50%;
+        min-width: 300px;
 
         border-radius: 0.75em;
         padding: 1em;
@@ -57,29 +62,18 @@
 
         transition: all ease-out 0.5s;
         z-index: 1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
       }
 
-      .article a {
-        position: absolute;
-        /*display: block;
-        /*margin: 1em 0;*/
-        left: 50%;
-        top: 10%;
-        width: 90%;
-        transform: translate(-50%, 0%);
-        
+      .article a {        
         font-weight: bold;
         font-size: 2em;
       }
 
       .article .i {
-        position: absolute;
-        /*display: block;
-        /*margin: 0.5em 0;*/
-        left: 50%;
-        top: 50%;
-        width: 90%;
-        transform: translate(-50%, 0%);
         background-color: var(--color-3);
         padding: 2% 5%;
 
@@ -88,14 +82,6 @@
       }
 
       .article .small{
-        position: absolute;
-        /*display: block;
-        /*margin: 0.25em 0;*/
-        left: 50%;
-        top: 85%;
-        width: 90%;
-        transform: translate(-50%, 0%);
-
         font-size: 1em;
       }
 
@@ -166,7 +152,27 @@
 
 			#linkedin-button:hover {
 				color: darkcyan;
-			}
+      }
+      
+      @media screen and (max-width: 1000px) {
+        .article {
+          padding: 0.5em;
+          transform-origin: 50% 50% 250px;
+          
+        }
+
+        .article a {
+          font-size: 1.5em;
+        }
+
+        .article .i {
+          font-size: 1em;
+        }
+
+        .article .small {
+          font-size: 0.75em;
+        }
+      }
     </style>
 
     <script>
