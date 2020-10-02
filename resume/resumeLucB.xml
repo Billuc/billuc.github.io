@@ -43,6 +43,22 @@
   	</element>
     <element>
   		<title>
+			<en>ERASMUS academic exchange</en>
+			<fr>Echange académique ERASMUS</fr>
+		</title>
+      	<start-date><year>2020</year><month>8</month></start-date>
+  		<end-date><year>2021</year><month>1</month></end-date>
+  		<location>
+			<en>Stockholm's university, Sweden</en>
+			<fr>Université de Stockholm, Suède</fr>
+		</location>
+  		<comment>
+			<en><i>Courses included: </i> Agile requirement engineering, Management of global IT resources</en>
+			<fr><i>Cours : </i>Ingénierie des besoins pour la méthode AGILE, Gestion de ressources IT globales</fr>	
+		</comment>
+  	</element>
+    <element>
+  		<title>
 			<en>Undergraduate Course in Engineering Sciences</en>
 			<fr>Classes préparatoires intégrées aux études d'ingénieur</fr>
 		</title>
@@ -169,6 +185,50 @@
   	</element>
   </academic-projects>
   <experiences>
+	<element>
+		<title>
+			<en><![CDATA[Development of a tournament's website]]></en>
+			<fr><![CDATA[Developpement du site du GIT]]></fr>
+		</title>
+		<end-date><year>2020</year></end-date>
+		<location><en>www.gaminginsatournament.com</en></location>
+		<comment>
+			<en>In charge of the development of the Gaming INSA Tournament's website (team of 2)</en>
+			<fr>Responsable du développement du site du Gaming INSA Tournament (équipe de 2)</fr>
+		</comment>
+		<comment>
+			<en>Developping the back-end and creating the HTML pages</en>
+			<fr>Developpement de la partie back-end et des pages HTML</fr>
+		</comment>
+		<comment>
+			<en><i>Tools used: </i> Python (Flask, SQLAlchemy), SQL, HTML, CSS, JS, GIT (CI), FTP</en>
+			<fr><i>Outils utilisés : </i> Python (Flask, SQLAlchemy), SQL, HTML, CSS, JS, GIT (CI), FTP</fr>
+		</comment>
+	</element>
+	<element>
+		<title>
+			<en><![CDATA[Internship - HARDIS GROUP (IT service company)]]></en>
+			<fr><![CDATA[Stage - HARDIS GROUP (ESN)]]></fr>
+		</title>
+		<end-date><year>2020</year></end-date>
+		<location><en>Lyon, France</en></location>
+		<comment>
+			<en>Upgrading an Excel management tool</en>
+			<fr>Modification d'un outil Excel de gestion</fr>
+		</comment>
+		<comment>
+			<en>Gathering and analysing requirements, communicating with the stakeholders, following an Agile management</en>
+			<fr>Recueil et analyse de besoins, communication avec les parties prenantes, développement Agile</fr>
+		</comment>
+		<comment>
+			<en>Developping of a tool for analysing the management tool's data</en>
+			<fr>Développement d'un outil d'analyse des données de l'outil de gestion</fr>
+		</comment>
+		<comment>
+			<en><i>Tools used: </i> Excel, VBA</en>
+			<fr><i>Outils utilisés : </i> Excel, VBA</fr>
+		</comment>
+	</element>
     <element>
 		<title>
 			<en><![CDATA[Intern in the R&D service for 2 months - Everwin SX (ERP software editor)]]></en>
@@ -276,6 +336,16 @@
 				<fr>Bon niveau (B2)</fr>
 			</comment>
   		</skill>
+  		<skill>
+			<sk-title>
+				<en>Swedish</en>
+				<fr>Suédois</fr>
+			</sk-title>
+  			<comment>
+				<en>Basics, beginner level</en>
+				<fr>Bases, niveau débutant</fr>
+			</comment>
+  		</skill>
   	</skill-category>
   	<skill-category>
   		<cat-title>
@@ -283,14 +353,14 @@
 			<fr>Langages de programmation</fr>	
 		</cat-title>
   		<skill><sk-title><en>Java/JavaEE</en></sk-title></skill>
-  		<skill><sk-title><en>C/C++</en></sk-title></skill>
-  		<skill><sk-title><en>HTML</en></sk-title></skill>
+  		<skill><sk-title><en>Python</en></sk-title></skill>
   		<skill><sk-title><en>JavaScript</en></sk-title></skill>
+  		<skill><sk-title><en>HTML</en></sk-title></skill>
+  		<skill><sk-title><en>C/C++</en></sk-title></skill>
   		<skill><sk-title><en>SQL</en></sk-title></skill>
   		<skill><sk-title><en>XML/XSL</en></sk-title></skill>
 		<skill><sk-title><en>Unity + C#</en></sk-title></skill>
   		<skill><sk-title><en>Matlab</en></sk-title></skill>
-  		<skill><sk-title><en>Python</en></sk-title></skill>
   		<skill><sk-title><en>Batch/Shell</en></sk-title></skill>
   		<skill><sk-title><en>Prolog</en></sk-title></skill>
   		<skill><sk-title><en>RDF/SPARQL</en></sk-title></skill>
