@@ -121,6 +121,9 @@ function setLangEn() {
 		const element = en[e];
 		element.style.display = "inline";
 	}
+
+	$('#eng-flag').addClass("selected");
+	$('#fra-flag').removeClass("selected");
 }
 
 function setLangFr() {
@@ -136,4 +139,7 @@ function setLangFr() {
 		const element = fr[f];
 		element.style.display = "inline";
 	}
+
+	$('#fra-flag').addClass("selected");
+	$('#eng-flag').removeClass("selected");
 }
