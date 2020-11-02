@@ -33,7 +33,7 @@ function createResume(xslName) {
 				content.parentNode.removeChild(content);
 			}
 
-			var currentHead = document.head;
+			/*var currentHead = document.head;
 			if (currentHead) {
 				var headElements = currentHead.children;
 				if (headElements) {
@@ -46,7 +46,7 @@ function createResume(xslName) {
 						}
 					}
 				}
-			}
+			}*/
 
 			//Partie moche ou l'on sort les éléments de newBody pour les mettre dans le *
 			// tableau elements que l'on parcourt pour ajouter les elements au body !
