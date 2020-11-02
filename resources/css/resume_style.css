@@ -86,3 +86,11 @@ html {
     }
 }
 
+
+.fr {
+	display: none;
+}
+
+.en {
+	display: inline;
+}
