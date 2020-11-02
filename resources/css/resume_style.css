@@ -12,6 +12,7 @@ html {
 
     height: 50%;
     width: auto;
+    max-width: 150px;
 
     display: flex;
     flex-flow: column nowrap;
@@ -26,7 +27,7 @@ html {
     height: auto;
 
     margin: 0;
-    padding: 30%;
+    padding: 15%;
     background: var(--main-color);
     color: var(--bg-color);
 
@@ -39,20 +40,14 @@ html {
 }
 
 #options a.cvbutton {
-	visibility: visible;
-	width: 108px;
 }
 
 #options a.languagebutton {
-	background-size: contain;
-	background-repeat: no-repeat;
-    background-position: center center;
-    
     padding: 0;
 }
 
 .languagebutton img {
-    width: 96px;
+    width: inherit;
     height: auto;
     padding: 0;
     margin: 0;
