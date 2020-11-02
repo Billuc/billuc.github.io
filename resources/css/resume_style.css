@@ -52,7 +52,7 @@ html {
 }
 
 .languagebutton img {
-    width: inherit;
+    width: 96px;
     height: auto;
     padding: 0;
     margin: 0;
@@ -69,7 +69,7 @@ html {
         flex-flow: row nowrap;
     }
 
-    #options button {
+    #options a {
         width: auto;
         height: 100%;
     }
