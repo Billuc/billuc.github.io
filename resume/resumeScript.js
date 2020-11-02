@@ -53,7 +53,7 @@ function createResume(xslName) {
 			// Pour une raison inconnue, l'ajout direct au body bugue et seuls 3 des 5
 			// parties sont ajoutées !
 			goThroughArrayAndAddTo(newBody, $("#content"));
-			goThroughArrayAndAddTo(newHead, $("head"));
+			//goThroughArrayAndAddTo(newHead, $("head"));
 
 			if (document.getElementById('education_button')) {
 				expand_or_collapse('education_button', 'education_elements');
