@@ -16,11 +16,16 @@
         </div>
 
 		<div id="options">
-            <button class="cvbutton" onclick="createResume('HTMLResume.xsl')">Regular CV</button>
-            <button class="cvbutton" onclick="createResume('HTMLResumeCols.xsl')">Columns CV</button>
+            <a class="cvbutton" onclick="createResume('HTMLResume.xsl')" href="#">Regular CV</a>
+            <a class="cvbutton" onclick="createResume('HTMLResumeCols.xsl')" href="#">Columns CV</a>
 
-            <button class="languagebutton" id="eng-flag" onclick="setLangEn();"></button>
-            <button class="languagebutton" id="fra-flag" onclick="setLangFr();"></button>
+            <a class="languagebutton" id="eng-flag" onclick="setLangEn();" href="#">
+                <img src="../resources/images/english-flag.png" alt="English">
+            </a>
+
+            <a class="languagebutton" id="fra-flag" onclick="setLangFr();" href="#">
+                <img src="../resources/images/french-flag.png" alt="Français">
+            </a>
         </div>
 
         <div id="content"></div>
