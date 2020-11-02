@@ -3,263 +3,54 @@
   <head>
     <meta charset="utf-8">
     <title>Mes Articles</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="../resources/images/favicon.ico">
+    
     <link rel="stylesheet" href="../resources/images/font-awesome-4.7.0/css/font-awesome.min.css">
-    <style media="screen">
-      :root{
-        --color-1: #41b3a3;
-        --color-2: #85cdcb;
-        --color-3: #f13973;
-        --color-4: #f8f530;
-        --color-5: #e8a87c;
-      }
+    <link rel="stylesheet" href="../resources/css/general_style.css">
+    <link rel="stylesheet" href="../resources/css/articles_style.css">
 
-      html {
-        font-family: Tahoma, Geneva, sans-serif;
-
-        width: 100%;
-        height: 100%;
-
-        background-color: black;
-        background: linear-gradient(0deg, var(--color-1) 30%, var(--color-2));
-      }
-
-      body {
-        min-width: 550px;
-      }
-
-      #header {
-        position: relative;
-      }
-
-      h1 {
-        text-align: center;
-        text-decoration: underline;
-        font-size: 3em;
-      }
-
-      .article {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        transform-origin: 50% 50% 400px;
-        transform: translate(-50%, -50%) rotateY(0);
-
-        width: 60%;
-        height: 50%;
-        min-width: 300px;
-
-        border-radius: 0.75em;
-        padding: 1em;
-        background-color: var(--color-3);
-        background: linear-gradient(-15deg, var(--color-4), var(--color-5));
-
-
-        color: black;
-        margin-top: 20px;
-        text-align: center;
-        vertical-align: middle;
-
-        transition: all ease-out 0.5s;
-        z-index: 1;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-      }
-
-      .article a {        
-        font-weight: bold;
-        font-size: 2em;
-      }
-
-      .article .i {
-        background-color: var(--color-3);
-        padding: 2% 5%;
-
-        font-size: 1.25em;
-        font-style: italic;
-      }
-
-      .article .small{
-        font-size: 1em;
-      }
-
-      #left {
-        position: fixed;
-        top: 50%;
-        left: 0.5em;
-
-        background:none;border:none;
-
-        z-index: 99;
-      }
-
-      #right {
-        position: fixed;
-        top: 50%;
-        right: 0.5em;
-
-        background:none;border:none;
-
-        z-index: 99;
-      }
-
-      #left:hover, #right:hover {
-        cursor: pointer;
-      }
-
-      #home {
-        width: 3em;
-        
-        position: absolute;
-        top: 45%;
-        left: 0.5em;
-        transform: translate(0%, -50%);
-
-        z-index: 99;
-      }
-
-      #home img {
-        width: inherit;
-      }
-
-      #footer {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-
-        text-align: center;
-        padding: 0.5em;
-      }
-
-      #footer a {
-				text-decoration: none;
-				vertical-align: top;
-				margin: 0.1em;
-				color: var(--black-color);
-				transition: transform 0.5s ease;
-			}
-
-			#footer a:hover {
-				transform: scale(1.2);
-			}
-
-			#github-button:hover {
-				color: black;
-			}
-
-			#linkedin-button:hover {
-				color: darkcyan;
-      }
-      
-      @media screen and (max-width: 1000px) {
-        .article {
-          padding: 0.5em;
-          transform-origin: 50% 50% 250px;
-          
-        }
-
-        .article a {
-          font-size: 1.5em;
-        }
-
-        .article .i {
-          font-size: 1em;
-        }
-
-        .article .small {
-          font-size: 0.75em;
-        }
-      }
-    </style>
-
-    <script>
-      var index;
-      var articles;
-      var nbArticles;
-      var angleRotation;
-
-      function init() {
-        index = 0;
-        articles = document.getElementsByClassName("article");
-        nbArticles = articles.length;
-        angleRotation = 0;
-
-        makeRotations();
-      }
-
-      function toRight() {
-        index = index+1;
-        if (index == nbArticles) index = 0;
-        angleRotation = angleRotation - 360/nbArticles;
-
-        makeRotations();
-      }
-
-      function toLeft() {
-        index = index-1;
-        if (index == -1) index = nbArticles-1;
-        angleRotation = angleRotation + 360/nbArticles;
-
-        makeRotations();
-      }
-      
-      function makeRotations() {
-        for (let i = 0; i < articles.length; i++) {
-          const element = articles[i];
-
-          if (i == index) {
-            element.style.transform = "translate(-50%, -50%) rotateY(" + (angleRotation + i*360/nbArticles) + "deg) scale(1)";
-            element.style.zIndex = "1";
-            element.style.opacity = "1";
-            element.style.pointerEvents = "auto";
-          }
-          else {
-            element.style.transform = "translate(-50%, -50%) rotateY(" + (angleRotation + i*360/nbArticles) + "deg) scale(0.8)";
-            element.style.zIndex = "0";
-            element.style.opacity = "0.2";
-            element.style.pointerEvents = "none";
-          }
-        }
-      }
-    </script>
+    <script src="../resources/js/rotation_cartes.js"></script>
   </head>
   <body onload="init();">
-    <div id="header">
-      <h1>Mes productions</h1>
-
-      <a href="../index.html" id="home"><img src="../resources/images/home_button.png" alt="Home"></a>
+		<div id="choices">
+      <a href="../index.html" class="fa fa-2x fa-home" id="home"></a>
+			<a href="../resume/index.html">CV</a>
+			<a href="../projets/index.html">Projects</a>
+			<a href="../articles/index.html" class="selected">Articles</a>
     </div>
 
-    <button class="fa fa-2x fa-chevron-circle-left" id="left" onclick="toLeft();"></button>
-    <button class="fa fa-2x fa-chevron-circle-right" id="right" onclick="toRight();"></button>
+    <div id="header"></div>
 
-    <div class="article">
-      <a href="./articleSN.html">Rendre le numérique plus écologique - Premier Article ^^</a>
-      <span class="i">Le numérique est l'un des plus gros pollueurs au monde. D'où vient cette pollution et que pouvons nous faire pour la réduire ?</span>
-      <span class="small">Un travail dans le cadre du cours de Société Numérique à l'INSA de Lyon.</span>
-    </div>
+    <div id="content">
+      <button class="fa fa-2x fa-chevron-circle-left" id="left" onclick="toLeft();"></button>
+      <button class="fa fa-2x fa-chevron-circle-right" id="right" onclick="toRight();"></button>
 
-    <div class="article">
-      <a href="./superheroes.html">Avons-nous tué nos superhéros ? - Un sujet que j'ai trouvé intéressant</a>
-      <span class="i">Avec les avancées toujours plus rapides de la technologie, tuons-nous nos superhéros ? Devenons-nous des superhéros ?</span>
-      <span class="small">Mon premier travail d'invention sur un sujet un peu philosophique que j'ai trouvé au cours de réflexions personnelles.</span>
-    </div>
+      <div class="article">
+        <a href="./articleSN.html">Rendre le numérique plus écologique - Premier Article ^^</a>
+        <span class="i">Le numérique est l'un des plus gros pollueurs au monde. D'où vient cette pollution et que pouvons nous faire pour la réduire ?</span>
+        <span class="small">Un travail dans le cadre du cours de Société Numérique à l'INSA de Lyon.</span>
+      </div>
 
-    
-    <div class="article">
-      <a href="./PPH.pdf">Quelle est l’influence d’Internet et des réseaux sociaux sur nos vies professionnelles et personnelles ?</a>
-      <span class="i">Les écarts générationnels n'ont jamais été aussi importants que depuis l'apparition d'Internet et des réseaux sociaux.
-      Comment ces technologies ont-elles bouleversé nos vies ?</span>
-      <span class="small">Mon Projet Personnel en Humanités (PPH) à l'INSA de Lyon</span>
-    </div>
+      <div class="article">
+        <a href="./superheroes.html">Avons-nous tué nos superhéros ? - Un sujet que j'ai trouvé intéressant</a>
+        <span class="i">Avec les avancées toujours plus rapides de la technologie, tuons-nous nos superhéros ? Devenons-nous des superhéros ?</span>
+        <span class="small">Mon premier travail d'invention sur un sujet un peu philosophique que j'ai trouvé au cours de réflexions personnelles.</span>
+      </div>
 
-    <div class="article">
-      <a href="./reflexions.html">Mes idées pour les prochains articles</a>
-      <span class="i">Des sujets d'écriture, des sujets philosophiques, .... Plein d'idées différentes sur des sujets qui m'interessent
-        et sur lesquels j'écrirai plus tard</span>
+      
+      <div class="article">
+        <a href="./PPH.pdf">Quelle est l’influence d’Internet et des réseaux sociaux sur nos vies professionnelles et personnelles ?</a>
+        <span class="i">Les écarts générationnels n'ont jamais été aussi importants que depuis l'apparition d'Internet et des réseaux sociaux.
+        Comment ces technologies ont-elles bouleversé nos vies ?</span>
+        <span class="small">Mon Projet Personnel en Humanités (PPH) à l'INSA de Lyon</span>
+      </div>
+
+      <div class="article">
+        <a href="./reflexions.html">Mes idées pour les prochains articles</a>
+        <span class="i">Des sujets d'écriture, des sujets philosophiques, .... Plein d'idées différentes sur des sujets qui m'interessent
+          et sur lesquels j'écrirai plus tard</span>
+      </div>
     </div>
 
     <div id="footer">

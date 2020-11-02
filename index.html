@@ -2,244 +2,43 @@
 <html>
 	<head>
 		<title>Welcome to my website - Luc Billaud</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
+
 		<link rel="stylesheet" href="resources/images/font-awesome-4.7.0/css/font-awesome.min.css">
-		<style>
-			:root {
-				--black-color: #2c3531;
-				--blue-color: #048688;
-				--orange-color: #c5976f;
-				--yellow-color: #ffcb9a;
-				--white-color: #d1e8e2;
-				--blue-color-2: #0897bb;
-				--green-color: #00ff40;
-			}
+		<link rel="stylesheet" href="resources/css/general_style.css">
+		<link rel="stylesheet" href="resources/css/index_style.css">
 
-			html {
-				width: 100%;
-				height: 100%;
-				
-				background: black;
-				background-image: 	radial-gradient(ellipse, var(--blue-color) 0%, transparent 80%);
-									/*linear-gradient(30deg, transparent 48%, var(--blue-color) 50%, var(--blue-color) 50%, transparent 52%), 
-									linear-gradient(-30deg, transparent 48%, var(--blue-color) 50%, var(--blue-color) 50%, transparent 52%);
-				*/
-				font-family: "Source Sans Pro", Helvetica, sans-serif;
-				font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-			}
-
-			body {
-				width: 100%;
-				height: 100%;
-				margin: 0;
-				vertical-align: middle;
-			}
-
-			#stars {
-				position: absolute;
-				content: "";
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				margin: 0;				
-
-				background: url("./resources/images/stars.png") repeat-x;
-				z-index: 1;
-			}
-
-			#planet {
-				position: absolute;
-				content: "";
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				margin: 0;
-
-				background: radial-gradient(circle closest-side,  var(--yellow-color) 90%, transparent 100%);
-				z-index: 2;
-
-				
-				transform: scale(0.8);
-				transition: transform 1s ease-in-out;
-			}
-
-			#effect{
-				position: absolute;
-				content: "";
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				margin: 0;
-
-				background: linear-gradient(190deg, var(--black-color) -70%, transparent 80%);
-				z-index: 3;
-			}
-
-			#content {
-				width: 30em;
-
-				margin: 0;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%) scale(0.8);
-				/*margin: auto;*/
-
-				background-color: transparent;
-				/*box-shadow: 1px 3px 10px 10px var(--orange-color);*/
-				color: var(--white-color);
-
-				text-align: center;
-				z-index: 4;
-
-				transition: transform 1s ease-in-out;
-			}
-
-			#titles {
-				margin: auto;
-				padding: 0 1em;
-			}
-
-			h1 {
-				font-size: 3em;
-				font-weight: 900;
-				color: var(--black-color);
-
-				margin: 0.5em 0;
-			}
-
-			h2 {
-				font-size: 2em;
-				font-weight: 700;
-				color: var(--black-color);
-
-				margin: 0.5em 0;
-			}
-			
-			#choices {
-				margin: auto;
-				padding: 0.5em 1em;
-			}
-
-			#choices a {
-				display: block;
-				position: relative;
-
-				width: 80%;
-				padding: 1em 1em 1em 1em;
-				margin: 0.75em auto;
-
-				line-height: 1.5em;
-				font-size: 1.2em;
-
-				border-radius: 1em;
-
-				background-color: var(--blue-color);
-				background: radial-gradient(closest-side, var(--blue-color-2) 80%, transparent 100%);
-
-				transition: transform ease 0.5s;
-			}
-
-			#choices a:link {
-				color: var(--white-color);
-			}
-
-			#choices a:visited {
-				color: var(--yellow-color);
-			}
-
-			#choices a::before {
-				position: absolute;
-				content: "";
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-
-				background: radial-gradient(closest-side, var(--green-color) 80%, var(--blue-color-2) 85%, transparent 100%);
-				
-				z-index: -1;
-				transition: opacity 0.5s ease-out;
-				opacity: 0;
-			}
-
-			#choices a:hover {
-				text-shadow: 0.25em 0.25em 0.5em var(--black-color);
-				/*background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
-				box-shadow: 0.25em 0.25em 0.5em var(--white-color);*/
-
-				transform: scale(1.2);
-			}
-
-			#choices a:hover::before {
-				opacity: 1;
-			}
-
-			#choices a:active {
-				text-shadow: 0.25em 0.25em 0.25em var(--black-color);
-				background: radial-gradient(closest-side, var(--black-color) 80%, var(--white-color) 85%, transparent 100%);
-				/*box-shadow: 0.1em 0.1em 0.25em var(--white-color);*/
-				transform: translate(0.1em, 0.25em);
-			}
-
-			#footer {
-				color: var(--black-color);
-				padding: 0.5em 0 0 0;
-				text-align: center;
-			}
-
-			#footer a {
-				text-decoration: none;
-				vertical-align: top;
-				margin: 0.1em;
-				color: var(--black-color);
-				transition: transform 0.5s ease;
-			}
-
-			#footer a:hover {
-				transform: scale(1.2);
-			}
-
-			#github-button:hover {
-				color: black;
-			}
-
-			#linkedin-button:hover {
-				color: var(--blue-color);
-			}
-		</style>
 		<script>
 			function whenLoaded() {
-				var planet = document.getElementById("planet");
-				planet.style.transform = "scale(1)";
+				var content = document.getElementById('content');
+				content.style.transform = "scale(1)";
 
-				var content = document.getElementById("content");
-				content.style.transform = "translate(-50%, -50%) scale(0.95)";
+				var name = document.getElementById("name");
+				var desc = document.getElementById("desc");
+				typeElement(name);
+				typeElement(desc);
 			}
 		</script>
 	</head>
 	<body onload="whenLoaded();">
-		<div id="stars"></div>
-		<div id="planet"></div>
-		<div id="effect"></div>
-		<div id="content">
-			<div id="titles">
-				<h1>Welcome !</h1><hr>
-				<h2>BILLAUD Luc<br>Computer Science Student</h2>
-			</div>
-			<hr>
-			<div id="choices">
-				<a href="resume/index.html">Know more about me (my CV)</a>
-				<a href="projets/index.html">Discover my projects</a>
-				<a href="articles/index.html">Read my articles (in French)</a>
-			</div>
-			<div id="footer">
-				© Luc Billaud<br>
-				<a href="https://github.com/Billuc" class="fa fa-2x fa-github" id="github-button"></a>
-				<a href="https://www.linkedin.com/in/luc-billaud-414a85172/" class="fa fa-2x fa-linkedin-square" id="linkedin-button"></a>
-			</div>
+		<div id="choices">
+			<a href="." class="fa fa-2x fa-home selected" id="home"></a>
+			<a href="resume/index.html">CV</a>
+			<a href="projets/index.html">Projects</a>
+			<a href="articles/index.html">Articles</a>
 		</div>
+		<div id="header"></div>
+		<div id="content">
+			<h2 id="name">BILLAUD Luc</h2>
+			<h2 id="desc">Computer Science Student</h2>
+		</div>
+		<div id="footer">
+			© Luc Billaud<br>
+			<a href="https://github.com/Billuc" class="fa fa-2x fa-github" id="github-button"></a>
+			<a href="https://www.linkedin.com/in/luc-billaud-414a85172/" class="fa fa-2x fa-linkedin-square" id="linkedin-button"></a>
+		</div>
+		
+		<script src="resources/js/anim_writing.js"></script>
 	</body>
 </html>

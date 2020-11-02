@@ -1,0 +1,21 @@
+#name {
+    font-size: 4em;
+}
+
+h2:after{
+    content: '';
+    display: inline-block;
+    background-color: white;
+    margin-left: 0.15em;
+    height: 0.65em;
+    width: 4px;
+    animation: cursor 1s infinite;
+}
+
+/* The typewriter cursor effect */
+@keyframes cursor {
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
