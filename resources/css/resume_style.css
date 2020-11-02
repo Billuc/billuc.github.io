@@ -1,0 +1,88 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html {
+	font-family: 'Palatino Linotype';
+}
+
+#options {
+    position: fixed !important;
+    top: 25%;
+    right: 0px;
+
+    height: 50%;
+    width: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#options button {
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
+    height: auto;
+
+    transition: transform ease 0.5s;
+}
+
+
+.cvtypebutton, .cvbutton, .languagebutton {
+	width: 96px;
+	height: 48px;
+
+	margin: 4px 4px 4px 4px;
+
+	background-color: var(--main-color);
+}
+
+.cvbutton:hover, .cvtypebutton:hover, .languagebutton:hover {
+	opacity: 67%;
+	box-shadow: 0 6px 12px 0 rgba(0,0,0,0.24);
+}
+
+.cvbutton {
+	visibility: visible;
+	width: 108px;
+}
+
+.languagebutton {
+	width: 72px;
+
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#eng-flag {
+	background-image: url("../resources/images/english-flag.png");
+}
+
+#fra-flag {
+	background-image: url("../resources/images/french-flag.png");
+}
+
+@media screen and (max-width: 700px) {
+    #options {
+        bottom: 0px;
+        right: 25%;
+
+        height: auto;
+        width: 50%;
+        
+        flex-flow: row nowrap;
+    }
+
+    #options button {
+        width: auto;
+        height: 100%;
+    }
+
+    #content {
+        width: 100%;
+        margin-top: 5em;
+    }
+}
+

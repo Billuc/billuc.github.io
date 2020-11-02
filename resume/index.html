@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        <style>
-            div {
-                display: none;
-            }
-        </style>
+		<link rel="stylesheet" href="../resources/css/general_style.css">
+        <link rel="stylesheet" href="../resources/css/resume_style.css">
+        
 		<script type="text/javascript" src="../resources/jquery-3.4.1.js"></script>
 		<script type="text/javascript" src="./resumeScript.js"></script>
 	</head>
 	<body onload="createResume('HTMLResume.xsl');">
-		<div id="buttonDiv">
-            <div id="CVTypeDiv">
-                <a class="cvtypebutton" href="../" id="home_button"></a>
-            </div>
-
-            <div id="CVButtonDiv">                
-                <button class="cvbutton" onclick="createResume('HTMLResumeCols.xsl')">Columns CV</button>
-                <button class="cvbutton" onclick="createResume('HTMLResume.xsl')">Regular CV</button>
-                <button class="cvbutton" onclick="generatePDF();" disabled>PDF CV (WIP)</button>
-            </div>
-
-            <div id="LanguageDiv">
-                <button class="languagebutton" id="eng-flag" onclick="setLangEn();"></button>
-                <button class="languagebutton" id="fra-flag" onclick="setLangFr();"></button>
-            </div>
+		<div id="choices">
+            <a href="../index.html" class="fa fa-2x fa-home" id="home"></a>
+			<a href="../resume/index.html" class="selected">CV</a>
+			<a href="../projets/index.html">Projects</a>
+			<a href="../articles/index.html">Articles</a>
         </div>
+
+		<div id="options">
+            <button class="cvbutton" onclick="createResume('HTMLResume.xsl')">Regular CV</button>
+            <button class="cvbutton" onclick="createResume('HTMLResumeCols.xsl')">Columns CV</button>
+
+            <button class="languagebutton" id="eng-flag" onclick="setLangEn();"></button>
+            <button class="languagebutton" id="fra-flag" onclick="setLangFr();"></button>
+        </div>
+
+        <div id="content"></div>
 	</body>
 </html>
