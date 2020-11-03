@@ -30,24 +30,26 @@ function createResume(xslName) {
 
 			setLangEn();
 
-			if (document.getElementById('education_button')) {
+			//if (document.getElementById('education_button')) {
+			if ($('#education_button')) {
 				expand_or_collapse('education_button', 'education_elements');
 			}
 		});
 	})
-	.fail(function(data2) {
+	.fail(function(data3) {
 		console.log("Retrieving the xml failed !");
-		console.log(data2);
+		console.log(data3);
 		window.location.replace("./MyResume.pdf");
 	});
 }
 
 function expand_or_collapse(idSelf, idContent) {
-	var self = document.getElementById(idSelf);
+	//var self = document.getElementById(idSelf);
+	var self = $("#" + idSelf);
 	self.classList.toggle("active");
 
-	var content = document.getElementById(idContent);
-
+	//var content = document.getElementById(idContent);
+	var content = $("#" + idContent);
 
 	if (content.style.maxHeight){
 		collapseAll();
@@ -61,7 +63,8 @@ function expand_or_collapse(idSelf, idContent) {
 }
 
 function collapseAll() {
-	var collapsibles = document.getElementsByClassName("collapsible");
+	//var collapsibles = document.getElementsByClassName("collapsible");
+	var collapsibles = $(".collapsible");
 
 	for (var i = 0; i < collapsibles.length; i++) {
 		if (collapsibles[i].style.maxHeight)
@@ -85,8 +88,10 @@ function createColumnResume() {
 }
 
 function setLangEn() {
-	var fr = document.getElementsByClassName("fr");
-	var en = document.getElementsByClassName("en");
+	//var fr = document.getElementsByClassName("fr");
+	//var en = document.getElementsByClassName("en");
+	var fr = $(".fr");
+	var en = $(".en");
 
 	for (let f = 0; f < fr.length; f++) {
 		const element = fr[f];
@@ -105,8 +110,10 @@ function setLangEn() {
 }
 
 function setLangFr() {
-	var fr = document.getElementsByClassName("fr");
-	var en = document.getElementsByClassName("en");
+	//var fr = document.getElementsByClassName("fr");
+	//var en = document.getElementsByClassName("en");
+	var fr = $(".fr");
+	var en = $(".en");
 
 	for (let e = 0; e < en.length; e++) {
 		const element = en[e];
