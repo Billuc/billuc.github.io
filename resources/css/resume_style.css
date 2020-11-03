@@ -20,6 +20,8 @@ html {
     align-items: flex-start;
 
     z-index: 4;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #options a {

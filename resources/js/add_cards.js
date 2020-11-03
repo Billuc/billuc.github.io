@@ -14,7 +14,7 @@ function init_cards() {
 
 function displayCard(i) {
     if (i < projects.length) {
-        projects[i].style.display = "block";
+        projects[i].style.display = "flex";
         setTimeout(() => displayCard(i + 1), def_speed);
     }
 }
