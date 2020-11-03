@@ -27,7 +27,7 @@
 	</xsl:template>
 
 	<xsl:template match="contact">
-		<div id="contact">
+		<div id="contact" class="cat">
 		<h1><xsl:value-of select="./name/first"/>&#160;<xsl:value-of select="./name/last"/></h1>
 		<table>
 			<tr>
@@ -68,7 +68,7 @@
 	</xsl:template>
 
 	<xsl:template match="education">
-		<div id="education">
+		<div id="education" class="cat">
 			<h2>
 				<span class="en">Education</span>
 				<span class="fr">Formation</span>
@@ -79,7 +79,7 @@
 	</xsl:template>
 
 	<xsl:template match="academic-projects">
-		<div id="academic-projects">
+		<div id="academic-projects" class="cat">
 			<h2>
 				<span class="en">Academic Projects</span>
 				<span class="fr">Projets académiques</span>
@@ -90,7 +90,7 @@
 	</xsl:template>
 
 	<xsl:template match="experiences">
-		<div id="experiences">
+		<div id="experiences" class="cat">
 			<h2>
 				<span class="en">Experiences</span>
 				<span class="fr">Experiences professionnelles</span>
@@ -100,7 +100,7 @@
 		</div>
 	</xsl:template>
 
-	<xsl:template match="skills">
+	<xsl:template match="skills" class="cat">
 		<div id="skills">
 			<h2>
 				<span class="en">Skills</span>
@@ -113,7 +113,7 @@
 	</xsl:template>
 
 	<xsl:template match="extras">
-		<div id="extras">
+		<div id="extras" class="cat">
 			<h2>Extras</h2>
 			<xsl:apply-templates select="./element">
 			</xsl:apply-templates>
@@ -151,7 +151,23 @@
 	</xsl:template>
 
 	<xsl:template match="start-date">
-		<xsl:value-of select="."></xsl:value-of> -
+		<xsl:if test="./day">
+			<xsl:value-of select="./day"></xsl:value-of> / 
+		</xsl:if>
+		<xsl:if test="./month">
+			<xsl:value-of select="./month"></xsl:value-of> / 
+		</xsl:if>
+		<xsl:value-of select="./year"></xsl:value-of> -
+	</xsl:template>
+	
+	<xsl:template match="end-date">
+		<xsl:if test="./day">
+			<xsl:value-of select="./day"></xsl:value-of> / 
+		</xsl:if>
+		<xsl:if test="./month">
+			<xsl:value-of select="./month"></xsl:value-of> / 
+		</xsl:if>
+		<xsl:value-of select="./year"></xsl:value-of>
 	</xsl:template>
 
 	<xsl:template match="element/comment">

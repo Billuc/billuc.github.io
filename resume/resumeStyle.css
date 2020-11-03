@@ -4,32 +4,23 @@
 html {
 	font-family: 'Palatino Linotype';
 	
-    background-image: url("../resources/images/shapelined_.33.jpg");
+    /*background-image: url("../resources/images/shapelined_.33.jpg");
     background-size: 100% auto;
-    background-repeat: repeat;
+	background-repeat: repeat;*/
+	background-color: var(--third-color);
 }
 
 #contact, #education, #experiences, #skills, #extras, #academic-projects {
-	margin-left: 5%;
-	width: 90%;
-
-	margin-bottom: 2em;
+	margin-bottom: 1.5em;
 }
 
 #contact {
 	text-align: center;
-}
-
-#contact h1 {
-	font-weight: 800;
-	font-size: 3em;
-	text-decoration: underline;
+	margin-top: 1em;
 }
 
 #contact table {
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 4em;
+	margin: 1em auto 2em;
 
 	border: 3px solid #4078fd;
 	border-collapse: collapse;
@@ -47,7 +38,7 @@ html {
 	font-weight: bold;
 }
 
-div h2 {
+.cat h2 {
 	color: #4078fd;
 	border-bottom: 3px solid #4078fd;
 	text-transform: uppercase;
@@ -55,12 +46,13 @@ div h2 {
 	font-family: Roboto;
 
 	padding-left: 5px;
+	font-size: 1.5em;
 }
 
 .element {
-	padding: 0.25em 0 0.5em 1em;
+	padding: 0.25em 0;
 	border-bottom: 1px solid #b0b0b0;
-	margin-left: 2%;
+	margin: auto;
 	width: 96%;
 }
 
@@ -80,18 +72,20 @@ div h2 {
 
 .element table{
 	width: 100%;
-	margin: 0.5em 0px 0.5em 0px;
+	margin: 0.4em 0px;
 }
 
 .element table td:first-child {
 	text-align: left;
 	vertical-align: top;
-	width: 8em;
+	width: 6em;
+	padding-top: 0.4em;
 }
 
 .element ul {
 	margin: 2px 0px 2px 0px;
 	padding-inline-start: 2em;
+	text-align: start;
 }
 
 #skills td {

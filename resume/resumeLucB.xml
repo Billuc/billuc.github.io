@@ -191,7 +191,9 @@
 			<fr><![CDATA[Developpement du site du GIT]]></fr>
 		</title>
 		<end-date><year>2020</year></end-date>
-		<location><en>www.gaminginsatournament.com</en></location>
+		<location><en>
+			<a href="https://www.gaminginsatournament.com">www.gaminginsatournament.com</a>
+		</en></location>
 		<comment>
 			<en>In charge of the development of the Gaming INSA Tournament's website (team of 2)</en>
 			<fr>Responsable du développement du site du Gaming INSA Tournament (équipe de 2)</fr>
