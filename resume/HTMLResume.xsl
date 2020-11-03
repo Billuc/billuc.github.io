@@ -101,7 +101,7 @@
 	</xsl:template>
 
 	<xsl:template match="skills" class="cat">
-		<div id="skills">
+		<div id="skills" class="cat">
 			<h2>
 				<span class="en">Skills</span>
 				<span class="fr">Compétences</span>
