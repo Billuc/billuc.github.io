@@ -169,6 +169,7 @@ h2 {
         height: auto;
         width: 50%;
         max-height: 80px;
+        max-width: none;
         
         flex-flow: row nowrap;
     }
