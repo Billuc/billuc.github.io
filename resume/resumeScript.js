@@ -37,7 +37,7 @@ function createResume(xslName) {
 			//goThroughArrayAndAddTo(newHead, $("head"));
 
 			$("#cvstyle").remove();
-			$("head").prepend($("#cvstyle", newXml));
+			$("head").append($("#cvstyle", newXml));
 
 			$("#content").replaceWith($("#content", newXml));
 
@@ -99,6 +99,8 @@ function createRegularResume() {
 	
 	$('#regular-cv').addClass("selected");
 	$('#column-cv').removeClass("selected");
+
+	setLangEn();
 }
 
 function createColumnResume() {
@@ -106,6 +108,8 @@ function createColumnResume() {
 	
 	$('#column-cv').addClass("selected");
 	$('#regular-cv').removeClass("selected");
+
+	setLangEn();
 }
 
 function setLangEn() {
