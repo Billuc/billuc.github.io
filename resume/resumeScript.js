@@ -22,24 +22,13 @@ function createResume(xslName) {
 		var xmlAjax = loadXMLDoc("./resumeLucB.xml", true);
 		xmlAjax.done(function(data2) {
 			xml = data2;
-
 			var newXml = xsltProcessor.transformToDocument(xml);
-
-			//var newHead = $("#cvstyle", newXml);
-			//var newBody = $("#content *", newXml);
-
-
-			//Partie moche ou l'on sort les éléments de newBody pour les mettre dans le *
-			// tableau elements que l'on parcourt pour ajouter les elements au body !
-			// Pour une raison inconnue, l'ajout direct au body bugue et seuls 3 des 5
-			// parties sont ajoutées !
-			//goThroughArrayAndAddTo(newBody, $("#content"));
-			//goThroughArrayAndAddTo(newHead, $("head"));
 
 			$("#cvstyle").remove();
 			$("head").append($("#cvstyle", newXml));
-
 			$("#content").replaceWith($("#content", newXml));
+
+			setLangEn();
 
 			if (document.getElementById('education_button')) {
 				expand_or_collapse('education_button', 'education_elements');
@@ -50,19 +39,6 @@ function createResume(xslName) {
 		console.log("Retrieving the xml failed !");
 		console.log(data2);
 		window.location.replace("./MyResume.pdf");
-	});
-}
-
-function goThroughArrayAndAddTo(pArray, pAddTo) {
-	var elements = [];
-
-	for (var i = 0; i < pArray.length; i++) {
-		var element = pArray[i];
-		elements.push(element);
-	}
-
-	elements.forEach(function(item, index, array) {
-		pAddTo.append(item);
 	});
 }
 
@@ -99,8 +75,6 @@ function createRegularResume() {
 	
 	$('#regular-cv').addClass("selected");
 	$('#column-cv').removeClass("selected");
-
-	setLangEn();
 }
 
 function createColumnResume() {
@@ -108,8 +82,6 @@ function createColumnResume() {
 	
 	$('#column-cv').addClass("selected");
 	$('#regular-cv').removeClass("selected");
-
-	setLangEn();
 }
 
 function setLangEn() {
