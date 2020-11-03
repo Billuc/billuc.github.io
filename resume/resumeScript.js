@@ -25,13 +25,13 @@ function createResume(xslName) {
 
 			var newXml = xsltProcessor.transformToDocument(xml);
 
-			var newHead = newXml.head.children;
-			var newBody = newXml.body.children;
+			var newHead = $("#cvstyle", newXml);//newXml.head.children;
+			var newBody = $("#content", newXml);//newXml.body.children;
 
-			var content = document.getElementById("content");
-			if (content) {
-				content.parentNode.removeChild(content);
-			}
+			console.log(newHead);
+			console.log(newBody);
+
+			$("#cvstyle").remove();
 
 			/*var currentHead = document.head;
 			if (currentHead) {
@@ -53,7 +53,7 @@ function createResume(xslName) {
 			// Pour une raison inconnue, l'ajout direct au body bugue et seuls 3 des 5
 			// parties sont ajoutées !
 			goThroughArrayAndAddTo(newBody, $("#content"));
-			//goThroughArrayAndAddTo(newHead, $("head"));
+			goThroughArrayAndAddTo(newHead, $("head"));
 
 			if (document.getElementById('education_button')) {
 				expand_or_collapse('education_button', 'education_elements');
