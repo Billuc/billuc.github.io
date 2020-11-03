@@ -24,7 +24,6 @@ function init_modal() {
         $(mImg).replaceWith($(pImg).clone());
         $(mLink).replaceWith($(pLink).clone());
         $(mLink).text($(pLink).attr("href"));
-        console.log($(pLink).attr("href"));
       }
     }
 
