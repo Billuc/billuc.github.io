@@ -152,20 +152,20 @@
 
 	<xsl:template match="start-date">
 		<xsl:if test="./day">
-			<xsl:value-of select="./day"></xsl:value-of> / 
+			<xsl:value-of select="./day"></xsl:value-of>/
 		</xsl:if>
 		<xsl:if test="./month">
-			<xsl:value-of select="./month"></xsl:value-of> / 
+			<xsl:value-of select="./month"></xsl:value-of>/
 		</xsl:if>
 		<xsl:value-of select="./year"></xsl:value-of> -
 	</xsl:template>
 	
 	<xsl:template match="end-date">
 		<xsl:if test="./day">
-			<xsl:value-of select="./day"></xsl:value-of> / 
+			<xsl:value-of select="./day"></xsl:value-of>/
 		</xsl:if>
 		<xsl:if test="./month">
-			<xsl:value-of select="./month"></xsl:value-of> / 
+			<xsl:value-of select="./month"></xsl:value-of>/
 		</xsl:if>
 		<xsl:value-of select="./year"></xsl:value-of>
 	</xsl:template>

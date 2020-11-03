@@ -92,10 +92,13 @@ html {
 	text-align: left;
 	vertical-align: top;
 	padding: 0.4em 0em 0.4em 0.5em;
-	border-bottom: solid 1px black;
 }
 
-#skills td:last-of-type {
+#skills tr {
+	border-bottom: solid 1px black;	
+}
+
+#skills tr:last-of-type {
 	border-bottom: none;
 }
 
