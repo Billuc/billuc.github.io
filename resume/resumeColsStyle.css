@@ -128,6 +128,7 @@ html {
 	max-height: 0;
 	transition: max-height 0.2s ease-out;
 	visibility: hidden;
+	display: none;
 }
 
 .cat h2 {
