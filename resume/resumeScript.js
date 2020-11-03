@@ -25,28 +25,10 @@ function createResume(xslName) {
 
 			var newXml = xsltProcessor.transformToDocument(xml);
 
-			var newHead = $("#cvstyle", newXml);//newXml.head.children;
-			var newBody = $("#content", newXml);//newXml.body.children;
-
-			console.log(newHead);
-			console.log(newBody);
+			var newHead = $("#cvstyle", newXml);
+			var newBody = $("#content *", newXml);
 
 			$("#cvstyle").remove();
-
-			/*var currentHead = document.head;
-			if (currentHead) {
-				var headElements = currentHead.children;
-				if (headElements) {
-					var i, elt;
-					for (i = 0; i < headElements.length; i++) {
-						elt = headElements[i];
-						if (elt.nodeName != "SCRIPT") {
-							elt.parentNode.removeChild(elt);
-							i--;
-						}
-					}
-				}
-			}*/
 
 			//Partie moche ou l'on sort les éléments de newBody pour les mettre dans le *
 			// tableau elements que l'on parcourt pour ajouter les elements au body !
@@ -106,6 +88,20 @@ function collapseAll() {
 			collapsibles[i].style.maxHeight = null;
 		collapsibles[i].style.visibility = "hidden";
 	}
+}
+
+function createRegularResume() {
+	createResume('HTMLResume.xsl');
+	
+	$('#regular-cv').addClass("selected");
+	$('#column-cv').removeClass("selected");
+}
+
+function createColumnResume() {
+	createResume('HTMLResumeCols.xsl');
+	
+	$('#column-cv').addClass("selected");
+	$('#regular-cv').removeClass("selected");
 }
 
 function setLangEn() {

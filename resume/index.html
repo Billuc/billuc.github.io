@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="../resources/jquery-3.4.1.js"></script>
 		<script type="text/javascript" src="./resumeScript.js"></script>
 	</head>
-	<body onload="createResume('HTMLResume.xsl');">
+	<body onload="createRegularResume(); setLangEn();">
 		<div id="choices">
             <a href="../index.html" class="fa fa-2x fa-home" id="home"></a>
 			<a href="../resume/index.html" class="selected">CV</a>
@@ -22,13 +22,12 @@
         </div>
 
 		<div id="options">
-            <a class="cvbutton selected" id="regular-cv" onclick="createResume('HTMLResume.xsl')" href="#">Regular CV</a>
-            <a class="cvbutton" id="regular-cv" onclick="createResume('HTMLResumeCols.xsl')" href="#">Columns CV</a>
+            <a class="cvbutton" id="regular-cv" onclick="createRegularResume();" href="#">Regular CV</a>
+            <a class="cvbutton" id="column-cv" onclick="createColumnResume();" href="#">Columns CV</a>
 
-            <a class="languagebutton selected" id="eng-flag" onclick="setLangEn();" href="#">
+            <a class="languagebutton" id="eng-flag" onclick="setLangEn();" href="#">
                 <img src="../resources/images/english-flag.png" alt="English">
             </a>
-
             <a class="languagebutton" id="fra-flag" onclick="setLangFr();" href="#">
                 <img src="../resources/images/french-flag.png" alt="Français">
             </a>

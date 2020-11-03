@@ -62,8 +62,10 @@ html {
         bottom: 0px;
         right: 25%;
 
-        height: auto;
         width: 50%;
+        max-width: none;
+        height: auto;
+        max-height: 100px;
         
         flex-flow: row nowrap;
     }
@@ -80,10 +82,12 @@ html {
 }
 
 
-.fr {
-	display: none;
-}
 
-.en {
-	display: inline;
+
+#content {
+    width: 60%;
+    transform: none;
+    transition: none;
+    color: var(--bg-color);
+    display: block;
 }
