@@ -48,12 +48,10 @@ function expand_or_collapse(idSelf, idContent) {
 		collapseAll();
 		content.style.maxHeight = null;
 		content.style.visibility = "hidden";
-		content.style.display = "none";
 	} else {
 		collapseAll();
 		content.style.maxHeight = content.scrollHeight + "px";
 		content.style.visibility = "visible";
-		content.style.display = "block";
 	}
 }
 
