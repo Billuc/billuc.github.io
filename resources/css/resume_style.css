@@ -44,6 +44,8 @@ html {
     text-shadow: 0.25em 0.25em 0.5em var(--black-color);
     transform: scale(1.2);
     right: 0;
+
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.24);
 }
 
 #options a.languagebutton {
@@ -73,6 +75,11 @@ html {
     #options a {
         width: auto;
         height: 100%;
+    }
+
+    .languagebutton img {
+        width: auto;
+        height: inherit;
     }
 
     #content {
