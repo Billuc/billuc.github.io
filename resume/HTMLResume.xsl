@@ -128,7 +128,7 @@
 					<xsl:apply-templates select="./end-date"></xsl:apply-templates>
 				</td>
 				<td>
-					<xsl:apply-templates select="./title"></xsl:apply-templates><br/>
+					<xsl:apply-templates select="./title"></xsl:apply-templates>
 					<i><xsl:apply-templates select="./location"></xsl:apply-templates></i>
 					<ul><xsl:apply-templates select="./comment"></xsl:apply-templates></ul>
 				</td>

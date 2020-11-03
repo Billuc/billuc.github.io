@@ -11,7 +11,7 @@ html {
 }
 
 #contact, #education, #experiences, #skills, #extras, #academic-projects {
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 
 #contact {
@@ -63,14 +63,17 @@ html {
 .element .title {
 	font-weight: 600;	
 	font-size: 1.4em;
+	display: block;
 }
 
 .element i {
 	font-size: 0.95em;
 	color: #4078fd; /*#4f4f4f;*/
+	margin-bottom: 0.75em;
+	display: block;
 }
 
-.element table{
+.element table {
 	width: 100%;
 	margin: 0.4em 0px;
 }
