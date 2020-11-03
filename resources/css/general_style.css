@@ -74,31 +74,6 @@ body {
     box-shadow: 0 6px 12px 0 rgba(0,0,0,0.24);
 }
 
-@media screen and (max-width: 700px) {
-    #choices {
-        top: 0px;
-        left: 25%;
-
-        height: auto;
-        width: 50%;
-        
-        flex-flow: row nowrap;
-    }
-
-    #choices a {
-        width: auto;
-        height: 100%;
-
-        padding: 10%;
-        font-size: 1.25em;
-    }
-
-    #content {
-        width: 100%;
-        margin-top: 5em;
-    }
-}
-
 
 
 
@@ -122,8 +97,6 @@ h1 {
 
     margin: 0.25em 0;
 }
-
-
 
 
 
@@ -180,4 +153,31 @@ h2 {
 
 #footer a:hover {
     transform: scale(1.2);
+}
+
+
+
+@media screen and (max-width: 700px) {
+    #choices {
+        top: 0px;
+        left: 25%;
+
+        height: auto;
+        width: 50%;
+        
+        flex-flow: row nowrap;
+    }
+
+    #choices a {
+        width: auto;
+        height: 100%;
+
+        padding: 10%;
+        font-size: 1.25em;
+    }
+
+    #content {
+        width: 100%;
+        margin-top: 5em;
+    }
 }
