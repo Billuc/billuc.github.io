@@ -28,6 +28,7 @@ html {
 
     margin: 0;
     padding: 15%;
+    box-sizing: border-box;
     background: var(--main-color);
     color: var(--bg-color);
 
@@ -45,12 +46,8 @@ html {
     right: 0;
 }
 
-#options a.cvbutton {
-    box-sizing: border-box;
-}
-
 #options a.languagebutton {
-    padding: 0;
+    padding: 10%;
 }
 
 .languagebutton img {
