@@ -25,10 +25,9 @@ function createResume(xslName) {
 
 			var newXml = xsltProcessor.transformToDocument(xml);
 
-			var newHead = $("#cvstyle", newXml);
-			var newBody = $("#content *", newXml);
+			//var newHead = $("#cvstyle", newXml);
+			//var newBody = $("#content *", newXml);
 
-			//$("#cvstyle").remove();
 
 			//Partie moche ou l'on sort les éléments de newBody pour les mettre dans le *
 			// tableau elements que l'on parcourt pour ajouter les elements au body !
@@ -37,8 +36,10 @@ function createResume(xslName) {
 			//goThroughArrayAndAddTo(newBody, $("#content"));
 			//goThroughArrayAndAddTo(newHead, $("head"));
 
+			$("#cvstyle").remove();
+			$("head").append($("#cvstyle", newXml));
+
 			$("#content").replaceWith($("#content", newXml));
-			$("#cvstyle").replaceWith($("#cvstyle", newXml));
 
 			if (document.getElementById('education_button')) {
 				expand_or_collapse('education_button', 'education_elements');
