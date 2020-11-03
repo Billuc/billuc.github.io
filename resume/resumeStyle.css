@@ -79,7 +79,7 @@
 .element table td:first-child {
 	text-align: left;
 	vertical-align: top;
-	width: 6em;
+	width: 15%;
 	padding-top: 0.4em;
 }
 
@@ -87,6 +87,11 @@
 	margin: 2px 0px 2px 0px;
 	padding-inline-start: 2em;
 	text-align: start;
+}
+
+#skills table {
+	width: 100%;
+	margin: 0.4em 0px;
 }
 
 #skills td {
