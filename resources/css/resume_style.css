@@ -89,6 +89,8 @@ html {
     #options a {
         width: auto;
         height: 100%;
+        padding: 8%;
+        font-size: 1.25em;
     }
 
     .languagebutton img {
