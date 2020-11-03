@@ -1,123 +1,12 @@
 @charset "ISO-8859-1";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-:root {
-	--main-bg-color : #ffffff;
-	--button-bg-color : #11b811;
-	--button-bar-color : #ffff8c;
-}
-
 html {
-	margin: 0px;
-	padding: 0px;
 	font-family: 'Palatino Linotype';
 	
     background-image: url("../resources/images/shapelined_.33.jpg");
     background-size: 100% auto;
     background-repeat: repeat;
-	
-	width: 100%;
-	height: 100%;
-	font-size: 1.2em;
-}
-
-body {
-	width: 100%;
-	height: 100%;
- 	margin: 0 0 2em 0;
-  	padding: 0;
-}
-
-#buttonDiv {
-	width: 98%;
-	height: 56px;
-
-	position: fixed;
-	top: 0;
-	
-	margin-left: auto;
-	margin-right: auto;
-
-	padding-left: 1%;
-	padding-right: 1%;
-
-	background-color: silver;
-	text-align: center;
-	z-index: 99;
-}
-
-#CVTypeDiv, #CVButtonDiv, #LanguageDiv {
-	display: inline;
-}
-
-#CVTypeDiv {
-	position: absolute;
-	left: 1%;
-}
-
-#CVButtonDiv {
-	margin: auto;
-}
-
-#LanguageDiv {
-	position: absolute;
-	right: 1%;
-}
-
-.cvtypebutton, .cvbutton, .languagebutton {
-	width: 96px;
-	height: 48px;
-
-	margin: 4px 4px 4px 4px;
-
-	background-color: var(--button-bg-color);
-}
-
-.cvbutton:hover, .cvtypebutton:hover, .languagebutton:hover {
-	opacity: 67%;
-	box-shadow: 0 6px 12px 0 rgba(0,0,0,0.24)/*, 0 17px 20px 0 rgba(0,0,0,0.19);*/
-}
-
-#home_button {
-	-webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-	color: initial;
-	
-	width: 48px;
-	background-color: inherit;
-	background-image: url(../resources/images/home_button.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.cvbutton {
-	visibility: visible;
-	width: 108px;
-}
-
-.languagebutton {
-	width: 72px;
-
-	background-color: var(--right-col-color);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-#eng-flag {
-	background-image: url("../resources/images/english-flag.png");
-}
-
-#fra-flag {
-	background-image: url("../resources/images/french-flag.png");
-}
-
-#content {
-	margin-top: 72px;
 }
 
 #contact, #education, #experiences, #skills, #extras, #academic-projects {
@@ -214,12 +103,4 @@ div h2 {
 #skills ul {
 	margin: 2px 0px 2px 0px;
 	padding-inline-start: 2em;
-}
-
-.fr {
-	display: none;
-}
-
-.en {
-	display: inline;
 }

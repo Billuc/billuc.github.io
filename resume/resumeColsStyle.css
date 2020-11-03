@@ -14,131 +14,10 @@
 }
 
 html {
-	margin: 0;
-	padding: 0;
 	font-family: 'Palatino Linotype';
 
  	background-color: var(--main-bg-color);
-
-	width: 100%;
-	height: 100%;
 }
-
-body {
-  	width: 100%;
-  	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-#buttonDiv {
-	width: 98%;
-	height: 56px;
-
-	position: fixed;
-	top: 0;
-	
-	margin-left: auto;
-	margin-right: auto;
-
-	padding-left: 1%;
-	padding-right: 1%;
-
-	background-color: silver;
-	text-align: center;
-	z-index: 99;
-}
-
-#CVTypeDiv, #CVButtonDiv, #LanguageDiv {
-	display: inline;
-}
-
-#CVTypeDiv {
-	position: absolute;
-	left: 1%;
-}
-
-#CVButtonDiv {
-	margin: auto;
-}
-
-#LanguageDiv {
-	position: absolute;
-	right: 1%;
-}
-
-.cvtypebutton, .cvbutton, .languagebutton {
-	width: 96px;
-	height: 48px;
-
-	margin: 4px 4px 4px 4px;
-
-	background-color: var(--button-bg-color);
-}
-
-.cvbutton:hover, .cvtypebutton:hover, .languagebutton:hover {
-	opacity: 67%;
-	box-shadow: 0 6px 12px 0 rgba(0,0,0,0.24)/*, 0 17px 20px 0 rgba(0,0,0,0.19);*/
-}
-
-#home_button {
-	-webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-	color: initial;
-	
-	width: 48px;
-	background-color: inherit;
-	background-image: url(../resources/images/home_button.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.cvbutton {
-	visibility: visible;
-	width: 108px;
-}
-
-.languagebutton {
-	width: 72px;
-
-	background-color: var(--right-col-color);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-#eng-flag {
-	background-image: url("../resources/images/english-flag.png");
-}
-
-#fra-flag {
-	background-image: url("../resources/images/french-flag.png");
-}
-
-#content {
-	/*width: 73%;*/
-	width: 95%;
-
-	margin-top: 72px;
-	margin-bottom: 1em;
-	margin-left: auto;
-	margin-right: auto;
-	/*box-shadow: 0 0 10px 10px #0000001a;*/
-	display: flex;
-	
-	/*transform: scale(1.3);
-	transition: transform ease 1s, margin-top ease 1s;*/
-}
-
-/* #content > div {
-  flex: 50%;
-  width: 50%;
-  padding: 1%;
-} */
 
 .left-col {
 	width: 30%;
@@ -244,40 +123,13 @@ body {
 	/* column-count: 2; */
 }
 
-#extras {
+#extras, #experiences, #education, #academic-projects {
   	margin-top: 10px;
 	/*border: 2px solid black;*/
 	border-radius: 15px;
 
 	background: var(--elt-bg-color);
 	background: var(--element-gradient);
-}
-
-#experiences {
-  	margin-top: 10px;
-	/*border: 2px solid black;*/
-	border-radius: 15px;
-
-	background: var(--elt-bg-color);
-	background: var(--element-gradient);
-}
-
-#education {
-  	margin-top: 10px;
-	/*border: 2px solid black;*/
-	border-radius: 15px;
-
-	background: var(--elt-bg-color);
-	background: var(--element-gradient);
-}
-
-#academic-projects {
-	margin-top: 10px;
-  /*border: 2px solid black;*/
-  border-radius: 15px;
-
-  background: var(--elt-bg-color);
-  background: var(--element-gradient);
 }
 
 #education_button, #experiences_button, #extras_button, #academic_projects_button {
@@ -362,12 +214,4 @@ div h2 {
 .element ul {
 	margin: 2px 0px 2px 0px;
 	padding-inline-start: 30px;
-}
-
-.fr {
-	display: none;
-}
-
-.en {
-	display: inline;
 }

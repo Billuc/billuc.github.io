@@ -37,7 +37,7 @@ function createResume(xslName) {
 			//goThroughArrayAndAddTo(newHead, $("head"));
 
 			$("#cvstyle").remove();
-			$("head").append($("#cvstyle", newXml));
+			$("head").prepend($("#cvstyle", newXml));
 
 			$("#content").replaceWith($("#content", newXml));
 
