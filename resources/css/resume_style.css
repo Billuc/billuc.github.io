@@ -61,6 +61,18 @@ html {
     margin: 0;
 }
 
+
+
+#content {
+    width: 60%;
+    transform: none;
+    transition: none;
+    color: var(--bg-color);
+    display: block;
+}
+
+
+
 @media screen and (max-width: 700px) {
     #options {
         top: auto;
@@ -86,17 +98,6 @@ html {
 
     #content {
         width: 100%;
-        margin-top: 5em;
+        margin: 5em 5% 0;
     }
-}
-
-
-
-
-#content {
-    width: 60%;
-    transform: none;
-    transition: none;
-    color: var(--bg-color);
-    display: block;
 }
