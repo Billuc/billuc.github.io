@@ -6,7 +6,7 @@ function init_cards() {
 
     for (let i = 0; i < projects.length; i++) {
         const p = projects[i];
-        p.style.display = "none";
+        p.style.visibility = "hidden";
     }
 
     displayCard(0);
@@ -14,7 +14,7 @@ function init_cards() {
 
 function displayCard(i) {
     if (i < projects.length) {
-        projects[i].style.display = "flex";
+        projects[i].style.visibility = "visible";
         setTimeout(() => displayCard(i + 1), def_speed);
     }
 }

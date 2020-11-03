@@ -37,6 +37,7 @@ body {
 
     height: 50%;
     width: auto;
+    max-width: 120px;
 
     display: flex;
     flex-flow: column nowrap;
@@ -165,8 +166,8 @@ h2 {
         top: 0px;
         left: 25%;
 
-        height: auto;
         width: 50%;
+        height: 80px;
         
         flex-flow: row nowrap;
     }

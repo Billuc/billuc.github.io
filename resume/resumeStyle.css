@@ -1,14 +1,6 @@
 @charset "ISO-8859-1";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-html {
-	font-family: 'Palatino Linotype';
-	
-    /*background-image: url("../resources/images/shapelined_.33.jpg");
-    background-size: 100% auto;
-	background-repeat: repeat;*/
-}
-
 #content {
 	background: var(--third-color);
 	padding: 0 1em;
