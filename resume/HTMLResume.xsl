@@ -210,7 +210,7 @@
 
 	<xsl:template match="skill">
 		<li>
-			<u><xsl:apply-templates select="./sk-title"></xsl:apply-templates></u>
+			<b><xsl:apply-templates select="./sk-title"></xsl:apply-templates></b>
 			<xsl:if test="sk-title and comment"> : </xsl:if>
 			<xsl:apply-templates select="./comment"></xsl:apply-templates>
 		</li>
