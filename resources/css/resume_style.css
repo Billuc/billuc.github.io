@@ -18,6 +18,8 @@ html {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
+
+    z-index: 4;
 }
 
 #options a {
