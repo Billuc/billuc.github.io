@@ -6,7 +6,9 @@ function init_cards() {
 
     for (let i = 0; i < projects.length; i++) {
         const p = projects[i];
-        p.style.visibility = "hidden";
+        p.style.opacity = "0";
+        p.style.marginTop = "-100px";
+        p.style.marginBottom = "100px";
     }
 
     displayCard(0);
@@ -14,7 +16,14 @@ function init_cards() {
 
 function displayCard(i) {
     if (i < projects.length) {
-        projects[i].style.visibility = "visible";
+        console.log(projects[i].style);
+
+        projects[i].style.opacity = "1";
+        projects[i].style.marginTop = "10px";
+        projects[i].style.marginBottom = "0px";
+
+        console.log(projects[i].style);
+        
         setTimeout(() => displayCard(i + 1), def_speed);
     }
 }

@@ -32,15 +32,9 @@
     border-radius: 10px;
     font-size: 1.7em;
 
-    animation-name: animatetopcard;
-    animation-duration: 0.5s;
-
-    visibility: hidden;
-}
-
-@keyframes animatetopcard {
-    from {margin-top: -100px; opacity: 0}
-    to {margin-top: 10px; opacity: 1}
+    margin-top: -100px;
+    margin-bottom: 100px;
+    opacity: 0;
 }
 
 .not-click {
