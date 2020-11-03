@@ -30,8 +30,7 @@ function createResume(xslName) {
 
 			setLangEn();
 
-			//if (document.getElementById('education_button')) {
-			if ($('#education_button')) {
+			if (document.getElementById('education_button')) {
 				expand_or_collapse('education_button', 'education_elements');
 			}
 		});
@@ -44,12 +43,10 @@ function createResume(xslName) {
 }
 
 function expand_or_collapse(idSelf, idContent) {
-	//var self = document.getElementById(idSelf);
-	var self = $("#" + idSelf);
+	var self = document.getElementById(idSelf);
 	self.toggleClass("active");
 
-	//var content = document.getElementById(idContent);
-	var content = $("#" + idContent);
+	var content = document.getElementById(idContent);
 
 	if (content.style.maxHeight){
 		collapseAll();
