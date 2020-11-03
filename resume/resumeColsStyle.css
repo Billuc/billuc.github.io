@@ -19,21 +19,24 @@ html {
  	background-color: var(--main-bg-color);
 }
 
+#content {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	justify-content: center;
+}
+
 .left-col {
-	width: 30%;
-	min-width: 400px;
-	padding: 1%;
-	margin-right: 5px;
+	padding: 0.5em;
+	flex: 1 1 auto;
 	z-index: 2;
 	
 	background-color: var(--left-col-color);
 }
 
 .right-col {
-	width: 70%;
-	padding: 1%;
-	margin-left: 5px;
-
+	padding: 0.5em;
+	flex: 1 1 auto;
 	background-color: var(--right-col-color);
 }
 
@@ -44,10 +47,8 @@ html {
 #contact h1 {
 	font-weight: 1200;
 	font-size: 4em;
-	text-decoration: underline;
-	/*overflow-wrap: break-word;*/
 	white-space: pre-wrap;
-	margin: 5px 0px 25px 0px;
+	margin: 0.4em auto;
 	color: #4472C4;
 }
 
@@ -56,14 +57,14 @@ html {
 	margin-right: auto;
 
 	border-collapse: collapse;
-	border-radius: 10px;
+	border-radius: 15px;
 	  
-	background: var(--left-col-color);
+	background: var(--right-col-color);
 }
 
 #contact td {
-	width: 20em; /*30%;*/
-	padding: 5px 15px 5px 15px;
+	width: 20em;
+	padding: 0.2em 0.7em;
 }
 
 #contact td:first-child {
@@ -105,7 +106,7 @@ html {
 }
 
 .skill_cat b {
-	font-size: 1.5em;
+	font-size: 1.4em;
 }
 
 .skill_cat li b {
@@ -113,19 +114,18 @@ html {
 }
 
 .skill_cat:last-child {
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 .skill_cat ul {
 	margin-top: 5px;
 	margin-bottom: 5px;
-	padding-left: 30px;
-	/* column-count: 2; */
+	padding-left: 2em;
+	text-align: start;
 }
 
 #extras, #experiences, #education, #academic-projects {
   	margin-top: 10px;
-	/*border: 2px solid black;*/
 	border-radius: 15px;
 
 	background: var(--elt-bg-color);
@@ -137,12 +137,12 @@ html {
 	height: auto;
 	padding: 0;
 
-	background-color: Transparent;
-    background-repeat:no-repeat;
+	background-color: transparent;
+    background-repeat: no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     overflow: hidden;
-    outline:none;
+    outline: none;
 }
 
 #education_elements, #experiences_elements, #extras_elements, #academic_projects_elements {
@@ -151,23 +151,19 @@ html {
 	visibility: hidden;
 }
 
-div h2 {
-	/* background: #000000; */
-	/* color: #ffffff; */
-	/*border-bottom: 3px solid #ff0000;*/
+.cat h2 {
 	width: 100%;
 	background: var(--title-bg-color);
-	background: linear-gradient(0deg, var(--title-grad-color) 0%, var(--title-bg-color) 20%);
-	color: #000000;
-
+	background: linear-gradient(0deg, var(--title-grad-color) 0%, var(--title-bg-color) 15%);
+	
 	border-bottom: 2px solid black;
 	border-radius: 15px;
 
 	text-transform: uppercase;
   	text-align: center;
-	font-weight: 800;
+	font-weight: 900;
 	font-family: "Arial Black", Gadget, sans-serif;
-	font-size: 1.6em;
+	font-size: 1.5em;
 
 	padding-bottom: 5px;
   	margin-bottom: 0px;
@@ -179,9 +175,9 @@ div h2 {
 }
 
 .element {
-	padding: 0.125em 0 0.25em 0.5em;
+	padding: 0.25em 0;
 	border-bottom: 1px solid #4f4f4f;
-	margin-left: 2%;
+	margin: auto;
 	width: 96%;
 }
 
@@ -192,26 +188,32 @@ div h2 {
 .element .title {
 	font-weight: 600;
 	font-size: 1.05em;
+	display: block;
 }
 
 .element i {
 	font-size: 0.95em;
 	font-style: italic;
 	color: #4078fd; /*#4f4f4f;*/
+
+	display: block;
+	margin-bottom: 0.5em;
 }
 
-.element table{
+.element table {
 	width: 100%;
-	margin: 5px 0px 5px 0px;
+	margin: 0.4em 0px;
 }
 
 .element table td:first-child {
 	text-align: left;
 	vertical-align: top;
-	width: 6em;
+	width: 4em;
+	padding-top: 0.4em;
 }
 
 .element ul {
 	margin: 2px 0px 2px 0px;
-	padding-inline-start: 30px;
+	padding-inline-start: 2em;
+	text-align: start;
 }

@@ -12,7 +12,7 @@ html {
 
     height: 50%;
     width: auto;
-    max-width: 150px;
+    max-width: 120px;
 
     display: flex;
     flex-flow: column nowrap;
@@ -66,7 +66,7 @@ html {
 
 
 #content {
-    width: 60%;
+    width: 70%;
     transform: none;
     transition: none;
     color: var(--bg-color);
@@ -83,7 +83,7 @@ html {
 
         width: 50%;
         max-width: none;
-        height: 100px;
+        height: 80px;
         
         flex-flow: row nowrap;
     }

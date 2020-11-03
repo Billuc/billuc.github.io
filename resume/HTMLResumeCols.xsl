@@ -67,7 +67,7 @@
 	</xsl:template>
 
 	<xsl:template match="education">
-		<div id="education">
+		<div id="education" class="cat">
 			<button id="education_button" onclick="expand_or_collapse('education_button', 'education_elements')">
 				<h2>
 					<span class="en">Education</span>
@@ -81,7 +81,7 @@
 	</xsl:template>
 
 	<xsl:template match="academic-projects">
-		<div id="academic-projects">
+		<div id="academic-projects" class="cat">
 			<button id="academic_projects_button" onclick="expand_or_collapse('academic_projects_button', 'academic_projects_elements')">
 				<h2>
 					<span class="en">Academic Projects</span>
@@ -95,7 +95,7 @@
 	</xsl:template>
 
 	<xsl:template match="experiences">
-		<div id="experiences">
+		<div id="experiences" class="cat">
 			<button id="experiences_button" onclick="expand_or_collapse('experiences_button', 'experiences_elements')">
 				<h2>
 					<span class="en">Experiences</span>
@@ -109,7 +109,7 @@
 	</xsl:template>
 
 	<xsl:template match="skills">
-		<div id="skills">
+		<div id="skills" class="cat">
 			<h2>
 				<span class="en">Skills</span>
 				<span class="fr">Compétences</span>
@@ -121,7 +121,7 @@
 	</xsl:template>
 
 	<xsl:template match="extras">
-		<div id="extras">
+		<div id="extras" class="cat">
 			<button id="extras_button" onclick="expand_or_collapse('extras_button', 'extras_elements')">
 				<h2>Extras</h2>
 			</button>
@@ -164,7 +164,23 @@
 	</xsl:template>
 
 	<xsl:template match="start-date">
-		<xsl:value-of select="."></xsl:value-of> -
+		<xsl:if test="./day">
+			<xsl:value-of select="./day"></xsl:value-of> /
+		</xsl:if>
+		<xsl:if test="./month">
+			<xsl:value-of select="./month"></xsl:value-of> /
+		</xsl:if>
+		<xsl:value-of select="./year"></xsl:value-of> -
+	</xsl:template>
+	
+	<xsl:template match="end-date">
+		<xsl:if test="./day">
+			<xsl:value-of select="./day"></xsl:value-of> /
+		</xsl:if>
+		<xsl:if test="./month">
+			<xsl:value-of select="./month"></xsl:value-of> /
+		</xsl:if>
+		<xsl:value-of select="./year"></xsl:value-of>
 	</xsl:template>
 
 	<xsl:template match="element/comment">
