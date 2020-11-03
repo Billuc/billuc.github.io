@@ -16,7 +16,7 @@
 html {
 	font-family: 'Palatino Linotype';
 
- 	background-color: var(--main-bg-color);
+ 	background-color: var(--third-color);
 }
 
 #content {
@@ -31,13 +31,13 @@ html {
 	flex: 1 1 auto;
 	z-index: 2;
 	
-	background-color: var(--left-col-color);
+	background-color: var(--fourth-color);
 }
 
 .right-col {
 	padding: 0.5em;
 	flex: 1 1 auto;
-	background-color: var(--right-col-color);
+	background-color: var(--light-gray);
 }
 
 #contact {
@@ -45,11 +45,11 @@ html {
 }
 
 #contact h1 {
-	font-weight: 1200;
+	font-weight: 900;
 	font-size: 4em;
 	white-space: pre-wrap;
 	margin: 0.4em auto;
-	color: #4472C4;
+	color: var(--bg-color);
 }
 
 #contact table {
@@ -59,7 +59,7 @@ html {
 	border-collapse: collapse;
 	border-radius: 15px;
 	  
-	background: var(--right-col-color);
+	background: var(--light-gray);
 }
 
 #contact td {
@@ -93,16 +93,14 @@ html {
 }
 
 #skills h2 {
-	background-color: var(--title-bg-color);
+	background-color: var(--third-color);
 }
 
 .skill_cat {
 	margin: 5px 5px 15px 5px;
 	border-radius: 15px;
 	padding: 10px;
-
-	background: var(--elt-bg-color);
-	background: var(--element-gradient);
+	background-color: var(--third-color);
 }
 
 .skill_cat b {
@@ -127,9 +125,7 @@ html {
 #extras, #experiences, #education, #academic-projects {
   	margin-top: 10px;
 	border-radius: 15px;
-
-	background: var(--elt-bg-color);
-	background: var(--element-gradient);
+	background-color: var(--third-color);
 }
 
 #education_button, #experiences_button, #extras_button, #academic_projects_button {
@@ -153,8 +149,8 @@ html {
 
 .cat h2 {
 	width: 100%;
-	background: var(--title-bg-color);
-	background: linear-gradient(0deg, var(--title-grad-color) 0%, var(--title-bg-color) 15%);
+	background: var(--third-color);
+	background: linear-gradient(0deg, var(--bg-color) 0%, var(--third-color) 15%);
 	
 	border-bottom: 2px solid black;
 	border-radius: 15px;
@@ -194,7 +190,7 @@ html {
 .element i {
 	font-size: 0.95em;
 	font-style: italic;
-	color: #4078fd; /*#4f4f4f;*/
+	color: var(--fourth-color);
 
 	display: block;
 	margin-bottom: 0.5em;
