@@ -7,7 +7,11 @@ html {
     /*background-image: url("../resources/images/shapelined_.33.jpg");
     background-size: 100% auto;
 	background-repeat: repeat;*/
-	background-color: var(--third-color);
+}
+
+#content {
+	background: var(--third-color);
+	padding: 0 1em;
 }
 
 #contact, #education, #experiences, #skills, #extras, #academic-projects {

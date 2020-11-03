@@ -29,10 +29,6 @@ function createResume(xslName) {
 			$("#content").replaceWith($("#content", newXml));
 
 			setLangEn();
-
-			if (document.getElementById('education_button')) {
-				expand_or_collapse('education_button', 'education_elements');
-			}
 		});
 	})
 	.fail(function(data3) {

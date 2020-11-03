@@ -1,22 +1,5 @@
-@charset "ISO-8859-1";
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-:root {
-	--main-bg-color : #ffffff;
-	--button-bg-color : #11b811;
-	--left-col-color : #d4d4d4;
-	--right-col-color : #efefef;
-	--elt-bg-color : #ffffff;
-	--elt-corner-color : #ffffff;
-	--title-bg-color: #ffffff;
-	--title-grad-color: #00000088;
-	--element-gradient: linear-gradient(183deg, var(--elt-bg-color) 92%, var(--elt-corner-color) 100%);
-}
-
 html {
 	font-family: 'Palatino Linotype';
-
- 	background-color: var(--third-color);
 }
 
 #content {
