@@ -100,6 +100,8 @@ function setLangEn() {
 
 	$('#eng-flag').addClass("selected");
 	$('#fra-flag').removeClass("selected");
+
+	collapseAll();
 }
 
 function setLangFr() {
@@ -118,4 +120,6 @@ function setLangFr() {
 
 	$('#fra-flag').addClass("selected");
 	$('#eng-flag').removeClass("selected");
+
+	collapseAll();
 }
