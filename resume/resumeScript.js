@@ -44,7 +44,7 @@ function createResume(xslName) {
 
 function expand_or_collapse(idSelf, idContent) {
 	var self = document.getElementById(idSelf);
-	self.toggleClass("active");
+	self.classList.toggle("active");
 
 	var content = document.getElementById(idContent);
 
