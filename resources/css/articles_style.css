@@ -52,7 +52,7 @@ body {
     border-radius: 0.75em;
     padding: 2vh 2vw;
     background-color: var(--third-color);
-    background: linear-gradient(-15deg, var(--sec-color) -20%, var(--third-color) 90%);
+    background: linear-gradient(190deg, var(--third-color) -100%, var(--sec-color) 75%);
     color: var(--bg-color);
 
     margin-top: 20px;
@@ -87,6 +87,7 @@ body {
 
 .article .small{
     font-size: 1.5em;
+    color: var(--third-color);
 }
 
 

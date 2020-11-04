@@ -22,8 +22,11 @@ function init_modal() {
         $(mTitle).text($(pLink).text());
         $(mText).text($(pText).text());
         $(mImg).replaceWith($(pImg).clone());
-        $(mLink).replaceWith($(pLink).clone());
-        $(mLink).text($(pLink).attr("href"));
+
+        var link_in_a = $(pLink).attr("href");
+        var newLink = $(pLink).clone();
+        $(newLink).text(link_in_a);
+        $(mLink).replaceWith(newLink);
       }
     }
 

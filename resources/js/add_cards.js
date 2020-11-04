@@ -21,8 +21,6 @@ function displayCard(i) {
         projects[i].style.opacity = "1";
         projects[i].style.marginTop = "10px";
         projects[i].style.marginBottom = "0px";
-
-        console.log(projects[i].style);
         
         setTimeout(() => displayCard(i + 1), def_speed);
     }
