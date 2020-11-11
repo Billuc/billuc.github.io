@@ -1,25 +1,7 @@
 var page_number = 0;
 
 function extract() {
-    var iframes = document.getElementsByTagName('iframe');
-
-    for (let i = 0; i < iframes.length; i++) {
-        var ifr = iframes[i].contentWindow || iframes[i].contentDocument;
-
-        console.log(ifr);
-
-        var ifrContent = ifr.document.body.innerHTML;
-
-        console.log(ifrContent);
-
-        if (ifrContent && ifrContent.getElementById("epub_container")) {
-            var theone = ifrContent.getElementById("epub-container");
-            var frameContent = theone.contentWindow.document.body.innerHTML;
-            break;
-        }
-    }
-
-    var image = frameContent.getElementById("pbk-page");
+    var image = document.getElementById("pbk-page");
     var url = image.getAttribute("src");
 
     console.log(url);
