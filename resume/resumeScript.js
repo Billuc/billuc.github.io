@@ -15,13 +15,19 @@ function createResume(xslName) {
 	var xslAjax = loadXMLDoc("./" + xslName, true);
 
 	xslAjax.done(function(data1) {
-		xsl = data1;
+		try {
+			xsl = data1;
+			console.log(data1);
 
-		xsltProcessor.importStylesheet(xsl);
+			xsltProcessor.importStylesheet(xsl);
+		} catch(e) {
+			console.error(e);
+		}
 
 		var xmlAjax = loadXMLDoc("./resumeLucB.xml", true);
 		xmlAjax.done(function(data2) {
 			xml = data2;
+			console.log(data2);
 			var newXml = xsltProcessor.transformToDocument(xml);
 
 			$("#cvstyle").remove();
