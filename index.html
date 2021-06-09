@@ -2,43 +2,38 @@
 <html>
 	<head>
 		<title>Welcome to my website - Luc Billaud</title>
+		<meta charset="utf8">
 
 		<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.ico">
 
 		<link rel="stylesheet" href="resources/images/font-awesome-4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="resources/css/general_style.css">
-		<link rel="stylesheet" href="resources/css/index_style.css">
-
-		<script>
-			function whenLoaded() {
-				var content = document.getElementById('content');
-				content.style.transform = "scale(1)";
-
-				var name = document.getElementById("name");
-				var desc = document.getElementById("desc");
-				typeElement(name);
-				typeElement(desc);
-			}
-		</script>
+		<link rel="stylesheet" href="resources/css/billuc.css">
+		<link rel="stylesheet" href="resources/css/writing.css">
 	</head>
 	<body onload="whenLoaded();">
-		<div id="choices">
-			<a href="." class="fa fa-2x fa-home selected" id="home"></a>
+		<div class="navbar">
+			<a href="." class="fa fa-home selected"></a>
 			<a href="resume/index.html">CV</a>
 			<a href="projets/index.html">Projects</a>
 			<a href="articles/index.html">Articles</a>
 		</div>
 		<div id="header"></div>
 		<div id="content">
-			<h2 id="name">BILLAUD Luc</h2>
-			<h2 id="desc">Computer Science and Engineering Student</h2>
+			<h1 class="cursor-anim">BILLAUD Luc</h1>
+			<h2 class="cursor-anim">Computer Science and Engineering Student</h2>
 		</div>
-		<div id="footer">
+		<div id="footer" class="yellow-fg">
 			© Luc Billaud<br>
-			<a href="https://github.com/Billuc" class="fa fa-2x fa-github" id="github-button"></a>
-			<a href="https://www.linkedin.com/in/luc-billaud-414a85172/" class="fa fa-2x fa-linkedin-square" id="linkedin-button"></a>
+			<a 
+				href="https://github.com/Billuc" 
+				class="fa fa-2x fa-github yellow-fg" 
+				id="github-button"></a>
+			<a 
+				href="https://www.linkedin.com/in/luc-billaud/" 
+				class="fa fa-2x fa-linkedin-square yellow-fg" 
+				id="linkedin-button"></a>
 		</div>
 		
-		<script src="resources/js/anim_writing.js"></script>
+		<script src="resources/js/writing.js"></script>
 	</body>
 </html>

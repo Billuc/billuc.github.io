@@ -1,101 +1,89 @@
-#content{
-    width: 70%;
-    height: 85%;
-
-    transform: none;
-    transition: none;
-
+.cards{
     display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: start;
-    align-content: center;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
 }
 
-.project {
+.card {
+    flex: 0 1 calc(25% - 1em);
+
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    padding: 0.5em;
 
-    width: 25%;
-    margin: 10px;
-    box-sizing: border-box;
+    padding: 0.5em;
+    border: solid 7px var(--brown1);
+    border-radius: 10px;
+    margin-top: 10px;
 
     transition: all 0.5s ease;
 
-    background: var(--sec-color);
+    background: var(--yellow);
+    color: var(--black);
     text-align: center;
 
-    border: solid 7px var(--fourth-color);
-    border-radius: 10px;
-    font-size: 1.7em;
+    font-size: 1.4em;
 
+    /*
     margin-top: -100px;
     margin-bottom: 100px;
     opacity: 0;
+    */
 }
 
-.not-click {
+.disabled {
     pointer-events: none;
 }
 
-.project a {
+.card a {
     color: var(--main-color);
 }
 
-.project:hover {
-    background: var(--fourth-color);
-    border: solid 7px var(--sec-color);
+.card:hover {
+    background: var(--brown2);
+    color: var(--white);
+    border: solid 7px var(--orange1);
     cursor: pointer;
 }
 
-.project .title {
+.card .title {
     display: block;
     margin: 2% auto;
     pointer-events: none;
 }
 
-.project .desc {
+.card .desc {
+    /* display: none; */
+    font-size: small;
     margin: 2% auto;
     text-align: center;
 }
 
-.project img {
+.card img {
     display: none;
 }
 
 @media screen and (max-width: 1050px) {
-    .project {
+    .card {
         font-size: 1.4em;
         border-width: 5px;
-        margin: 5px;
 
-        width: 33%;
-    }
-
-    .project:hover {
-        border-width: 6px;
+        flex: 0 1 calc(33% - 1em);
     }
 }
 
 @media screen and (max-width: 700px) {
-    .project {
+    .card {
         font-size: 1em;
         border-width: 3px;
 
-        width: 45%;
+        flex: 0 1 calc(50% - 1em);
     }
 
-    .project:hover {
+    .card:hover {
         border-width: 5px;
-    }
-
-    #content {
-        width: 100%;
-        height: 75%;
-        margin-top: 5em;
     }
 }
 
