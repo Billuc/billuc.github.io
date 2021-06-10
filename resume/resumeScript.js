@@ -7,34 +7,26 @@ function loadXMLDoc(xmlUrl, pAsync) {
 	})
 }
 
-function createResume(xslName) {
-	var xsltProcessor = new XSLTProcessor();
-	var xsl;
-	var xml;
+async function createResume(xslName) {
+	const xsltProcessor = new XSLTProcessor();
 
-	var xslAjax = loadXMLDoc("./" + xslName, true);
-
-	xslAjax.done(function(data1) {
-		xsl = data1;
+	try {
+		let xsl = await loadXMLDoc(xslName, true);
 		xsltProcessor.importStylesheet(xsl);
 
-		var xmlAjax = loadXMLDoc("./resumeLucB.xml", true);
-		xmlAjax.done(function(data2) {
-			xml = data2;
-			var newXml = xsltProcessor.transformToDocument(xml);
+		let xml = await loadXMLDoc("resumeLucB.xml", true);
+		let newXml = xsltProcessor.transformToDocument(xml);
 
-			$("#cvstyle").remove();
-			$("head").append($("#cvstyle", newXml));
-			$("#content").replaceWith($("#content", newXml));
+		$("#cvstyle").remove();
+		$("head").append($("#cvstyle", newXml));
+		$("#content").replaceWith($("#content", newXml));
 
-			setLangEn();
-		});
-	})
-	.fail(function(data3) {
-		console.log("Retrieving the xml failed !");
-		console.log(data3);
-		window.location.replace("./MyResume.pdf");
-	});
+		setLangEn();
+	}
+	catch (e) {
+		console.error("Retrieving the xml failed !");
+		window.location.replace("./CV_Luc_Billaud.pdf");
+	}
 }
 
 function expand_or_collapse(idSelf, idContent) {
@@ -55,13 +47,11 @@ function expand_or_collapse(idSelf, idContent) {
 }
 
 function collapseAll() {
-	//var collapsibles = document.getElementsByClassName("collapsible");
-	var collapsibles = $(".collapsible");
+	const collapsibles = $(".collapsible");
 
-	for (var i = 0; i < collapsibles.length; i++) {
-		if (collapsibles[i].style.maxHeight)
-			collapsibles[i].style.maxHeight = null;
-		collapsibles[i].style.visibility = "hidden";
+	for (let collapse of collapsibles) {
+		if (collapse.style.maxHeight) 	collapse.style.maxHeight = null;
+		collapse.style.visibility = "hidden";
 	}
 }
 
@@ -80,19 +70,15 @@ function createColumnResume() {
 }
 
 function setLangEn() {
-	//var fr = document.getElementsByClassName("fr");
-	//var en = document.getElementsByClassName("en");
-	var fr = $(".fr");
-	var en = $(".en");
+	const fr = $(".fr");
+	const en = $(".en");
 
-	for (let f = 0; f < fr.length; f++) {
-		const element = fr[f];
-		element.style.display = "none";
+	for (let french_elt of fr) {
+		french_elt.style.display = "none";
 	}
 
-	for (let e = 0; e < en.length; e++) {
-		const element = en[e];
-		element.style.display = "inline";
+	for (let english_elt of en) {
+		english_elt.style.display = "inline";
 	}
 
 	$('#eng-flag').addClass("selected");
@@ -102,19 +88,15 @@ function setLangEn() {
 }
 
 function setLangFr() {
-	//var fr = document.getElementsByClassName("fr");
-	//var en = document.getElementsByClassName("en");
-	var fr = $(".fr");
-	var en = $(".en");
+	const fr = $(".fr");
+	const en = $(".en");
 
-	for (let e = 0; e < en.length; e++) {
-		const element = en[e];
-		element.style.display = "none";
+	for (let french_elt of fr) {
+		french_elt.style.display = "inline";
 	}
 
-	for (let f = 0; f < fr.length; f++) {
-		const element = fr[f];
-		element.style.display = "inline";
+	for (let english_elt of en) {
+		english_elt.style.display = "none";
 	}
 
 	$('#fra-flag').addClass("selected");

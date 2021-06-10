@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 #content {
-	background: var(--third-color);
+	background: var(--white);
 	padding: 0 1em;
 }
 
@@ -18,9 +18,9 @@
 #contact table {
 	margin: 1em auto 2em;
 
-	border: 3px solid var(--sec-color);
+	border: 3px solid var(--orange1);
 	border-collapse: collapse;
-	background-color: var(--light-gray);
+	background-color: var(--yellow);
 }
 
 #contact td {
@@ -36,15 +36,15 @@
 }
 
 .cat h2 {
-	color: var(--sec-color);
-	border-bottom: 3px solid var(--sec-color);
+	color: var(--orange1);
+	border-bottom: 3px solid var(--orange1);
 	text-transform: uppercase;
 	font-weight: 900;
 	font-family: Roboto;
 
 	padding: 0.2em 0 0.1em 0;
 	font-size: 1.5em;
-	background-color: var(--light-gray);
+	background-color: var(--yellow);
 }
 
 .element {
@@ -66,7 +66,7 @@
 
 .element i {
 	font-size: 0.95em;
-	color: var(--fourth-color);
+	color: var(--red2);
 	margin-bottom: 0.75em;
 	display: block;
 }

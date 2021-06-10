@@ -51,7 +51,7 @@ html {
     min-width: 400px;
 
     background: url('../images/cool-background.png');/*var(--black);*/
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
     color: var(--white);
 
@@ -99,8 +99,6 @@ body {
     padding: 20% 25%;
     background: var(--yellow);
     color: var(--black);
-
-    transition: transform ease 0.5s;
 }
 
 .navbar a.selected {

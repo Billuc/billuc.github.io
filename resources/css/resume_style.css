@@ -3,7 +3,6 @@
 
 html {
     font-family: 'Palatino Linotype';
-    background-color: var(--light-gray);
 }
 
 #options {
@@ -11,9 +10,10 @@ html {
     top: 25%;
     right: 0px;
 
+    font-size: 1.4em;
     height: 50%;
     width: auto;
-    max-width: 120px;
+    max-width: 4.5em;
 
     display: flex;
     flex-flow: column nowrap;
@@ -21,40 +21,24 @@ html {
     align-items: flex-start;
 
     z-index: 4;
-
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #options a {
-    font-size: 1.5em;
     text-align: center;
     width: 100%;
     height: auto;
 
-    margin: 0;
-    padding: 15%;
-    box-sizing: border-box;
-    background: var(--main-color);
-    color: var(--bg-color);
-
-    transition: transform ease 0.5s;
+    padding: 10%;
+    background: var(--yellow);
 }
 
 #options a.selected {
-    background-color: var(--fourth-color);
     pointer-events: none;
+    background-color: var(--orange2);
 }
 
 #options a:not(.selected):hover {
-    text-shadow: 0.25em 0.25em 0.5em var(--black-color);
-    transform: scale(1.2);
-    right: 0;
-
-    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.24);
-}
-
-#options a.languagebutton {
-    padding: 10%;
+    background-color: var(--orange1);
 }
 
 .languagebutton img {
@@ -62,15 +46,15 @@ html {
     height: auto;
     padding: 0;
     margin: 0;
+
+    margin-bottom: -6px;
 }
 
 
 
 #content {
     width: 70%;
-    transform: none;
-    transition: none;
-    color: var(--bg-color);
+    color: var(--black);
     display: block;
     margin: 1em 0;
 }
