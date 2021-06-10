@@ -3,15 +3,6 @@ body {
 }
 
 
-
-#content {
-    width: 75%;
-
-    transform: none;
-    transition: none;
-}
-
-
 #left, #right {
     position: absolute;
     top: 50%;
@@ -37,37 +28,35 @@ body {
 
 
 
-.article {
-    position: absolute;
-    top: 50%;
-    left: 50%;
 
-    transform-origin: 50% 50% 400px;
-    transform: translate(-50%, -50%) rotateY(0);
+.carousel {
+    position: relative;
+    background-color: var(--white);
+}
 
-    width: 75%;
-    min-width: 300px;
-    min-height: 200px;
 
-    border-radius: 0.75em;
-    padding: 2vh 2vw;
-    background-color: var(--third-color);
-    background: linear-gradient(190deg, var(--third-color) -100%, var(--sec-color) 75%);
-    color: var(--bg-color);
 
-    margin-top: 20px;
+.carousel-element {
+    height: 100%;
+    display: none;
+
+    padding: 2vh 3em;
+    background: var(--red2);
+    color: var(--black);
+
     text-align: center;
-    vertical-align: middle;
 
     transition: all ease-out 0.5s;
     z-index: 1;
+}
 
+.carousel-element.active {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.article a {
+.carousel-element a {
     background-color: var(--third-color);
     padding: 2vh 1vw;
 
@@ -75,7 +64,7 @@ body {
     font-size: 2.25em;
 }
 
-.article .i {
+.carousel-element .i {
     padding: 1vh 1vw;
     margin: 0 0 0.5em 0;
 
@@ -85,7 +74,7 @@ body {
     font-style: italic;
 }
 
-.article .small{
+.carousel-element .small{
     font-size: 1.5em;
     color: var(--third-color);
 }
@@ -94,19 +83,19 @@ body {
 
   
 @media screen and (max-width: 1000px) {
-    .article {
+    .carousel-element {
         transform-origin: 50% 50% 250px;
     }
 
-    .article a {
+    .carousel-element a {
         font-size: 2em;
     }
 
-    .article .i {
+    .carousel-element .i {
         font-size: 1.5em;
     }
 
-    .article .small {
+    .carousel-element .small {
         font-size: 1.25em;
     }
 }
