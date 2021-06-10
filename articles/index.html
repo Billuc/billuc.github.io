@@ -8,11 +8,12 @@
     
     <link rel="stylesheet" href="../resources/images/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/css/billuc.css">
-    <link rel="stylesheet" href="../resources/css/articles_style.css">
+    <link rel="stylesheet" href="../resources/css/carousel.css">
 
-    <script src="../resources/js/rotation_cartes.js"></script>
+    <script src="../resources/jquery-3.4.1.js"></script>
+    <script defer src="../resources/js/carousel.js"></script>
   </head>
-  <body onload="init();">
+  <body>
 		<div class="navbar">
       <a href="../index.html" class="fa fa-home"></a>
 			<a href="../resume/index.html">CV</a>
@@ -24,32 +25,32 @@
 
     <div id="content">
       <div class="carousel">
-        <button class="fa fa-2x fa-chevron-circle-left" id="left" onclick="toLeft();"></button>
-        <button class="fa fa-2x fa-chevron-circle-right" id="right" onclick="toRight();"></button>
+        <button class="fa fa-2x fa-chevron-circle-left" id="left"></button>
+        <button class="fa fa-2x fa-chevron-circle-right" id="right"></button>
 
         <div class="carousel-element active">
           <a href="./articleSN.html">Rendre le numérique plus écologique - Premier Article</a>
-          <span class="i">Le numérique est l'un des plus gros pollueurs au monde. D'où vient cette pollution et que pouvons nous faire pour la réduire ?</span>
-          <span class="small">Un travail dans le cadre du cours de Société Numérique à l'INSA de Lyon.</span>
+          <span class="abstract">Le numérique est l'un des plus gros pollueurs au monde. D'où vient cette pollution et que pouvons nous faire pour la réduire ?</span>
+          <span class="comment">Un travail dans le cadre du cours de Société Numérique à l'INSA de Lyon.</span>
         </div>
   
         <div class="carousel-element">
           <a href="./superheroes.html">Avons-nous tué nos superhéros ? - Un sujet que j'ai trouvé intéressant</a>
-          <span class="i">Avec les avancées toujours plus rapides de la technologie, tuons-nous nos superhéros ? Devenons-nous des superhéros ?</span>
-          <span class="small">Mon premier travail d'invention sur un sujet un peu philosophique que j'ai trouvé au cours de réflexions personnelles.</span>
+          <span class="abstract">Avec les avancées toujours plus rapides de la technologie, tuons-nous nos superhéros ? Devenons-nous des superhéros ?</span>
+          <span class="comment">Mon premier travail d'invention sur un sujet un peu philosophique que j'ai trouvé au cours de réflexions personnelles.</span>
         </div>
   
         
         <div class="carousel-element">
           <a href="./PPH.pdf">Quelle est l’influence d’Internet et des réseaux sociaux sur nos vies professionnelles et personnelles ?</a>
-          <span class="i">Les écarts générationnels n'ont jamais été aussi importants que depuis l'apparition d'Internet et des réseaux sociaux.
+          <span class="abstract">Les écarts générationnels n'ont jamais été aussi importants que depuis l'apparition d'Internet et des réseaux sociaux.
           Comment ces technologies ont-elles bouleversé nos vies ?</span>
-          <span class="small">Mon Projet Personnel en Humanités (PPH) à l'INSA de Lyon</span>
+          <span class="comment">Mon Projet Personnel en Humanités (PPH) à l'INSA de Lyon</span>
         </div>
   
         <div class="carousel-element">
           <a href="./reflexions.html">Mes idées pour les prochains articles</a>
-          <span class="i">Des sujets d'écriture, des sujets philosophiques, .... Plein d'idées différentes sur des sujets qui m'interessent
+          <span class="abstract">Des sujets d'écriture, des sujets philosophiques, .... Plein d'idées différentes sur des sujets qui m'interessent
             et sur lesquels j'écrirai plus tard</span>
         </div>
       </div>

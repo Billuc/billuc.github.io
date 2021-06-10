@@ -185,9 +185,11 @@ h2 {
         top: 0px;
         left: 25%;
 
+        font-size: 1em;
+
         height: auto;
         width: 50%;
-        max-height: 80px;
+        max-height: 2em;
         max-width: none;
         
         flex-flow: row nowrap;
@@ -196,17 +198,16 @@ h2 {
     .navbar a {
         width: auto;
         height: 100%;
-
-        padding: 8%;
-        font-size: 1.25em;
+        
+        padding: 5% 10%;
     }
 
-    .navbar a#home {
-        font-size: 1.5em;
+    .navbar a:first-of-type {
+        font-size: 1.15em;
     }
 
     #content {
-        width: 100%;
-        margin-top: 5em;
+        margin-top: 2em;
+        padding: 0;
     }
 }
