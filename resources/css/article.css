@@ -5,7 +5,7 @@ html {
 	padding: 0px;
 	font-family: "Book Antiqua", Palatino, serif;
 
-  background-image: url("../resources/images/shapelined_.33.jpg");
+  background-image: url("../images/shapelined_.33.jpg");
   background-size: 100% auto;
   background-repeat: repeat;
 
@@ -19,6 +19,31 @@ body {
   margin-right: auto;
 }
 
+#back {
+	font-size: 1.3em;
+	font-family: "Segoe UI", sans-serif;
+	color: red;
+	font-weight: bold;
+
+		position: absolute;
+		display: inline-block;
+		top: 10px;
+		left: 15px;
+
+	background-color: black;
+	padding: 5px 8px;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px black;
+}
+
+#back:active {
+	transform: translate(3px, 3px);
+	box-shadow: 0px 0px 10px black;
+}
+
+
+
+
 .entete {
   margin-bottom: 30px;
 }
@@ -26,7 +51,7 @@ body {
 .entete h1 {
   font-family: "Segoe UI", sans-serif;
   font-weight: bold;
-  font-size: 4.5em;
+  font-size: 4em;
   text-align: center;
   text-decoration: underline;
 }
@@ -45,12 +70,15 @@ body {
 	background-color: white;
 }
 
+
+
+
 .contenu p {
-  text-indent: 50px;
+  text-indent: 30px;
   text-align: justify;
 	font-size: 1.35em;
 
-	margin-left: 15px;
+	margin-left: 40px;
 }
 
 .contenu h2 {
@@ -59,20 +87,19 @@ body {
 
 	font-family: "Segoe UI", sans-serif;
 	text-decoration: underline;
-	font-size: 2.3em;
+	font-size: 2em;
 	text-transform: uppercase;
 }
 
 .contenu figure {
 	text-align: center;
-	color: blue;
+	color: #420b05;
 	font-family: "Segoe UI", sans-serif;
 	font-style: italic;
 
-	padding: 5px;
-	border: 2px solid black;
-	border-radius: 15px;
-	background-color: #d2d2d2;
+	padding: 0;
+	border-radius: 10px;
+	background-color: #bebebe;
 
 	width: 50%;
 	margin-left: auto;
@@ -84,14 +111,22 @@ body {
 	border-radius: 10px;
 }
 
+.contenu figcaption {
+	padding: 0 10px;
+}
+
 .contenu figcaption a {
-	display: block;
+	display: inline-block;
+	margin-top: 3px;
+	margin-bottom: 5px;
+	
+	color: #420b05;
 }
 
 .contenu .intro {
-	background-color: #d2d2d2;
-	padding: 10px 15px 10px 15px;
-	border-radius: 8px;
+	background-color: #bebebe;
+	padding: 20px 25px;
+	border-radius: 10px;
 }
 
 .contenu .intro p {
@@ -106,8 +141,11 @@ body {
 	margin-bottom: 0px;
 }
 
+
+
+
 .sources div {
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
 

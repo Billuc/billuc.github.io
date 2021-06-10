@@ -1,4 +1,4 @@
-const SPEED = 400;
+const DELAY = 300;
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 function displayCard(card) {
@@ -11,7 +11,7 @@ async function doAnim() {
     const cards = $(".card.anim");
 
     for (let card of cards) {
-        await delay(SPEED);
+        await delay(DELAY);
         displayCard(card);
     }
 }

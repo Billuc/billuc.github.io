@@ -23,7 +23,7 @@ function toRight() {
   // pareil que index = (index + 1) % carousel_elements.length;
 
   carousel_elements[index].classList.add("active");
-  carousel_elements[index].classList.add("from-left");
+  carousel_elements[index].classList.add("from-right");
 }
 
 function toLeft() {
@@ -35,5 +35,5 @@ function toLeft() {
   // PAS pareil que index = (index - 1) % carousel_elements.length;
   
   carousel_elements[index].classList.add("active");
-  carousel_elements[index].classList.add("from-right");
+  carousel_elements[index].classList.add("from-left");
 }
