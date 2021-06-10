@@ -103,7 +103,7 @@ body {
 
 .navbar a.selected {
     pointer-events: none;
-    opacity: 80%;
+    background-color: var(--orange2);
 }
 
 .navbar a:not(.selected):hover {

@@ -1,4 +1,7 @@
 .cards{
+    width: 95%;
+    margin: auto;
+
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
@@ -11,53 +14,42 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: baseline;
 
-    padding: 0.5em;
-    border: solid 7px var(--brown1);
-    border-radius: 10px;
     margin-top: 10px;
 
     transition: all 0.5s ease;
 
-    background: var(--yellow);
+    background: var(--orange3);
     color: var(--black);
     text-align: center;
 
     font-size: 1.4em;
-
-    /*
-    margin-top: -100px;
-    margin-bottom: 100px;
-    opacity: 0;
-    */
 }
 
 .disabled {
     pointer-events: none;
 }
 
-.card a {
-    color: var(--main-color);
-}
-
 .card:hover {
-    background: var(--brown2);
-    color: var(--white);
-    border: solid 7px var(--orange1);
     cursor: pointer;
+    transform: scale(1.2);
 }
 
 .card .title {
     display: block;
-    margin: 2% auto;
+
+    width: 100%;
+    padding: 0.5em 10px;
+
     pointer-events: none;
+    background-color: var(--brown1);
+    color: var(--white);
 }
 
 .card .desc {
-    /* display: none; */
-    font-size: small;
-    margin: 2% auto;
+    font-size: 0.6em;
+    padding: 10px;
     text-align: center;
 }
 
@@ -68,8 +60,6 @@
 @media screen and (max-width: 1050px) {
     .card {
         font-size: 1.4em;
-        border-width: 5px;
-
         flex: 0 1 calc(33% - 1em);
     }
 }
@@ -77,14 +67,14 @@
 @media screen and (max-width: 700px) {
     .card {
         font-size: 1em;
-        border-width: 3px;
-
         flex: 0 1 calc(50% - 1em);
     }
+}
 
-    .card:hover {
-        border-width: 5px;
-    }
+.card.anim {    
+    margin-top: -100px;
+    margin-bottom: 100px;
+    opacity: 0;
 }
 
 
@@ -93,7 +83,7 @@
 
 
 
-.modal {
+.modal-container {
     display: none;
     position: fixed;
     z-index: 100;
@@ -114,9 +104,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-color: var(--main-color);
-    border: 10px solid var(--bg-color);
-    border-radius: 15px;
+    background-color: var(--white);
+    border-radius: 10px;
     width: 70%;
     min-width: 320px;
 
@@ -130,8 +119,8 @@
 .modal-header {
     position: relative;
     text-align: center;
-    background-color: var(--sec-color);
-    border-radius: 5px;
+    background-color: var(--red3);
+    border-radius: 10px;
 
     font-size: 2em;
     font-weight: bold;
@@ -148,7 +137,7 @@
 }
 
 .close:hover, .close:focus {
-    color: var(--third-color);
+    color: var(--white);
     text-decoration: none;
     cursor: pointer;
 }
@@ -158,7 +147,6 @@
 
     padding: 0.5em;
     margin: 0;
-    color: var(--third-color);
 }
 
 .modal-body {
@@ -166,6 +154,7 @@
 
     text-align: center;
     font-size: 1.25em;
+    color: var(--black);
 
     height: 50vh;
 
