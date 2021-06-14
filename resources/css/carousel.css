@@ -103,17 +103,19 @@
 
   
 @media screen and (max-width: 1000px) {
+    
     .carousel-element a {
-        font-size: 1.75em;
+        font-size: 1.5em;
     }
 
     .carousel-element .abstract {
-        font-size: 1.25em;
+        font-size: 1.15em;
     }
 
     .carousel-element .comment {
         font-size: 1em;
     }
+    
 }
 
 
