@@ -43,7 +43,15 @@
         <style>
             #cv-canvas {
                 width: 90%;
-                margin: 3em auto;
+            }
+
+            #download-btn {
+                padding: 0.8em;
+                margin: 3em auto 1em;
+                display: block;
+                width: max-content;
+
+                border-radius: 1em;
             }
         </style>
 	</head>
@@ -56,7 +64,26 @@
         </div>
 
         <div id="content">
+            <a 
+                href="./CV_Luc_Billaud.pdf" 
+                download 
+                id="download-btn"
+                class="red3 white-fg">
+                Download my resume
+            </a>
             <canvas id="cv-canvas"></canvas>
         </div>
+        
+		<div id="footer" class="black-fg">
+			© Luc Billaud<br>
+			<a 
+				href="https://github.com/Billuc" 
+				class="fa fa-2x fa-github black-fg" 
+				id="github-button"></a>
+			<a 
+				href="https://www.linkedin.com/in/luc-billaud/" 
+				class="fa fa-2x fa-linkedin-square black-fg" 
+				id="linkedin-button"></a>
+		</div>
 	</body>
 </html>

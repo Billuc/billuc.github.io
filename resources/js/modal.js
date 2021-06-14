@@ -29,12 +29,24 @@ for (let one_card of cards) {
 
 // When the user clicks on <span> (x), close the modal
 close.onclick = function() {
-  modal.style.display = "none";
+  const modal_content = $(".modal-content")[0];
+  modal_content.classList.add("onclose");
+
+  setTimeout(() => {
+    modal.style.display = "none";
+    modal_content.classList.remove("onclose");
+  }, 400);
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    const modal_content = $(".modal-content")[0];
+    modal_content.classList.add("onclose");
+  
+    setTimeout(() => {
+      modal.style.display = "none";
+      modal_content.classList.remove("onclose");
+    }, 400);
   }
 }

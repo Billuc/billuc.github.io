@@ -18,7 +18,7 @@
 
     margin-top: 10px;
 
-    transition: all 0.5s ease;
+    transition: all 0.8s ease;
 
     background: var(--orange3);
     color: var(--black);
@@ -107,13 +107,16 @@
     background-color: var(--white);
     border-radius: 10px;
     width: 70%;
-    min-width: 320px;
 
     animation-name: animatetop;
     animation-duration: 0.4s;
 
     display: flex;
     flex-direction: column;
+}
+
+.modal-content.onclose {
+    animation: animatetopreverse 0.4s;
 }
 
 .modal-header {
@@ -162,6 +165,8 @@
     flex-flow: column nowrap;
     align-items: stretch;
     justify-content: space-evenly;
+
+    padding: 0 0.3em;
 }
 
 .modal-body p {
@@ -189,4 +194,9 @@
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 50%; opacity: 1}
+}
+
+@keyframes animatetopreverse {
+    from {top: 50%; opacity: 1}
+    to {top: -300px; opacity: 0}
 }
