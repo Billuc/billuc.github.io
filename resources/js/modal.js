@@ -10,7 +10,7 @@ for (let one_card of cards) {
     var mTitle = $(mHead).find("p")[0];
     var mText = $(mBody).find("p")[0];
     var mImg =  $(mBody).find("img")[0];
-    var mGithub = $(mBody).find(".fa-github")[0];
+    var mGithub = $(mBody).find(".fa-git")[0];
     var mDemo = $(mBody).find(".toDemo")[0];
 
     var pLink = $(one_card).find(".title")[0];
