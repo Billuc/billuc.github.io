@@ -53,7 +53,7 @@
     text-align: center;
 }
 
-.card img {
+.card img, .card .script-name {
     display: none;
 }
 
