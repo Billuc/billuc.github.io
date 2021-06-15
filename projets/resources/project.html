@@ -14,6 +14,15 @@
 
         <script src="../../resources/jquery-3.4.1.js"></script>
         <script defer src="./js/importer.js"></script>
+
+        <style>
+            #demo-canvas {
+                max-height: calc(75vh - 3em);
+                max-width: 90vw;
+
+                background-color: var(--white);
+            }
+        </style>
     </head>
     <body>
 		<div class="navbar">
@@ -23,9 +32,10 @@
             <a href="/articles/index.html">Articles</a>
         </div>
 
+        <div id="header"></div>
         
         <div id="content">
-            <canvas id="demo-canvas"></canvas>
+            <canvas id="demo-canvas" width="800" height="600"></canvas>
         </div>
 
 

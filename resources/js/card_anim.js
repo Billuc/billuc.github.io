@@ -5,6 +5,10 @@ function displayCard(card) {
     card.style.opacity = "1";
     card.style.marginTop = "10px";
     card.style.marginBottom = "0px";
+
+    setTimeout(() => {
+        card.style.cursor = "pointer";
+    }, 800);
 }
 
 async function doAnim() {
