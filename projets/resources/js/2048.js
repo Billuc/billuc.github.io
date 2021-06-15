@@ -29,6 +29,9 @@ function init() {
     lost = false;
     $(header).html("<b>Py2048</b><br/> Use the arrows to play, U to undo");
 
+    placeRandom();
+    placeRandom();
+
     prevGrid = [...grid];
     window.requestAnimationFrame(drawCanvas);
 }
@@ -180,11 +183,139 @@ function undo() {
 }
 
 function makeMove(direction) {
-    prevGrid = [...grid];
+    let tempGrid = [...grid];
+    let moved = false;
 
-    if (grid[direction] == 0)   grid[direction] = 2;
-    else                        grid[direction] *= 2;
+    if (direction == UP) {
+        for (let c = 0; c < 4; c++) {
+            let fusionned = 0;
 
-    checkIfWon();
-    checkIfLost();
+            for (let r = 1; r < 4; r++) {
+                if (grid[4 * r + c] != 0) {
+                    let val = grid[4 * r + c];
+
+                    for (let newR = r - 1; newR >= fusionned; newR--) {
+                        if (grid[4 * newR + c] == 0) {
+                            grid[4 * newR + c] = val;
+                            grid[4 * (newR + 1) + c] = 0;
+                            moved = true;
+                        }
+                        else if (grid[4 * newR + c] == val) {
+                            grid[4 * newR + c] = 2 * val;
+                            grid[4 * (newR + 1) + c] = 0;
+                            fusionned++;
+                            moved = true;
+                        }
+                        else {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (direction == DOWN) {
+        for (let c = 0; c < 4; c++) {
+            let fusionned = 0;
+
+            for (let r = 2; r >= 0; r--) {
+                if (grid[4 * r + c] != 0) {
+                    let val = grid[4 * r + c];
+
+                    for (let newR = r + 1; newR <= 3 - fusionned; newR++) {
+                        if (grid[4 * newR + c] == 0) {
+                            grid[4 * newR + c] = val;
+                            grid[4 * (newR - 1) + c] = 0;
+                            moved = true;
+                        }
+                        else if (grid[4 * newR + c] == val) {
+                            grid[4 * newR + c] = 2 * val;
+                            grid[4 * (newR - 1) + c] = 0;
+                            fusionned++;
+                            moved = true;
+                        }
+                        else {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (direction == LEFT) {
+        for (let r = 0; r < 4; r++) {
+            let fusionned = 0;
+
+            for (let c = 1; c < 4; c++) {
+                if (grid[4 * r + c] != 0) {
+                    let val = grid[4 * r + c];
+
+                    for (let newC = c - 1; newC >= fusionned; newC--) {
+                        if (grid[4 * r + newC] == 0) {
+                            grid[4 * r + newC] = val;
+                            grid[4 * r + (newC + 1)] = 0;
+                            moved = true;
+                        }
+                        else if (grid[4 * r + newC] == val) {
+                            grid[4 * r + newC] = 2 * val;
+                            grid[4 * r + (newC + 1)] = 0;
+                            fusionned++;
+                            moved = true;
+                        }
+                        else {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (direction == RIGHT) {
+        for (let r = 0; r < 4; r++) {
+            let fusionned = 0;
+
+            for (let c = 2; c >= 0; c--) {
+                if (grid[4 * r + c] != 0) {
+                    let val = grid[4 * r + c];
+
+                    for (let newC = c + 1; newC <= 3 - fusionned; newC++) {
+                        if (grid[4 * r + newC] == 0) {
+                            grid[4 * r + newC] = val;
+                            grid[4 * r + (newC - 1)] = 0;
+                            moved = true;
+                        }
+                        else if (grid[4 * r + newC] == val) {
+                            grid[4 * r + newC] = 2 * val;
+                            grid[4 * r + (newC - 1)] = 0;
+                            fusionned++;
+                            moved = true;
+                        }
+                        else {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if (moved) {
+        prevGrid = tempGrid;
+        placeRandom();
+    
+        checkIfWon();
+        checkIfLost();
+    }
+}
+
+function placeRandom() {
+    let freeBoxes = []
+    
+    grid.forEach((element, index) => {
+        if (element == 0) {
+            freeBoxes = [...freeBoxes, index];
+        }
+    });
+
+    grid[freeBoxes[Math.floor(Math.random() * freeBoxes.length)]] = Math.random() > 0.75 ? 4 : 2;
 }
