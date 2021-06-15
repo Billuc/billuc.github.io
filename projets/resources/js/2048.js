@@ -1,5 +1,5 @@
 let header = $("#header").addClass("black-fg");
-const INIT_HEADER = "<b>Py2048</b><br/> Use the arrows to play, U to undo";
+const INIT_HEADER = "<b>JS2048</b><br/> Use the arrows to play, U to undo";
 const WON_HEADER = "<br/>You won !";
 const LOST_HEADER = "<br/>You lost :( Press R to restart !";
 
