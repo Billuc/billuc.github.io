@@ -1,4 +1,7 @@
 let header = $("#header").addClass("black-fg");
+const INIT_HEADER = "<b>Py2048</b><br/> Use the arrows to play, U to undo";
+const WON_HEADER = "<br/>You won !";
+const LOST_HEADER = "<br/>You lost :( Press R to restart !";
 
 const canvas = $("#demo-canvas")[0];
 const ctx = canvas.getContext("2d");
@@ -15,6 +18,10 @@ let grid;
 let prevGrid;
 let won, lost;
 
+let movements;
+let anim;
+let animTime;
+
 init();
 document.addEventListener('keydown', handleEvent);
 
@@ -27,7 +34,11 @@ function init() {
     ];
     won = false;
     lost = false;
-    $(header).html("<b>Py2048</b><br/> Use the arrows to play, U to undo");
+    $(header).html(INIT_HEADER);
+
+    movements = {};
+    anim = false;
+    animTime = 0;
 
     placeRandom();
     placeRandom();
@@ -72,7 +83,7 @@ function drawCanvas() {
         const col = j % 4;
         const row = (j - col) / 4;
 
-        const val = grid[j];
+        const val = (anim) ? prevGrid[j] : grid[j];
         let r, g, b;
 
         if (val != 0) {
@@ -98,20 +109,54 @@ function drawCanvas() {
             }
             ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
 
-            const lineWidth = ctx.lineWidth;
-            ctx.fillRect(
-                col * boxSize + lineWidth / 2,
-                row * boxSize + lineWidth / 2,
-                boxSize - lineWidth,
-                boxSize - lineWidth
-            );
+            if (anim) {
+                let newCol, newRow;
+                if (j in movements) {
+                    newCol = movements[j] % 4;
+                    newRow = (movements[j] - newCol) / 4;
+                }
+                else {
+                    newCol = col;
+                    newRow = row;
+                }
 
-            ctx.fillStyle = "#000000";
-            ctx.fillText(
-                val, 
-                (col + 0.5) * boxSize - fontSize * String(val).length / 4, 
-                (row + 0.5) * boxSize + fontSize / 3
-            );
+                const cAnim = col + (newCol - col) * animTime;
+                const rAnim = row + (newRow - row) * animTime;
+
+                const lineWidth = ctx.lineWidth;
+                ctx.fillRect(
+                    cAnim * boxSize + lineWidth / 2,
+                    rAnim * boxSize + lineWidth / 2,
+                    boxSize - lineWidth,
+                    boxSize - lineWidth
+                );
+    
+                ctx.fillStyle = "#000000";
+                ctx.fillText(
+                    val, 
+                    (cAnim + 0.5) * boxSize - fontSize * String(val).length / 4, 
+                    (rAnim + 0.5) * boxSize + fontSize / 3
+                );
+
+                if (animTime >= 1)  anim = false;
+                else                animTime += 0.01;
+            }
+            else {
+                const lineWidth = ctx.lineWidth;
+                ctx.fillRect(
+                    col * boxSize + lineWidth / 2,
+                    row * boxSize + lineWidth / 2,
+                    boxSize - lineWidth,
+                    boxSize - lineWidth
+                );
+    
+                ctx.fillStyle = "#000000";
+                ctx.fillText(
+                    val, 
+                    (col + 0.5) * boxSize - fontSize * String(val).length / 4, 
+                    (row + 0.5) * boxSize + fontSize / 3
+                );
+            }
         }
     }
 
@@ -122,6 +167,8 @@ function drawCanvas() {
 }
 
 function handleEvent(keyEvent) {
+    if (anim) return;
+
     switch (keyEvent.keyCode) {
         case 37:                // Left
             makeMove(LEFT);
@@ -157,20 +204,12 @@ function checkIfLost() {
         ) return false;
     }
 
-    if (!lost) {
-        $(header).html($(header).html() + "<br/>You lost :( Press R to restart !");
-        lost  = true;
-    }
     return true;
 }
 
 function checkIfWon() {
     for (let val of grid) {
         if (val >= 2048) {
-            if (!won) {
-                $(header).html($(header).html() + "<br/>You won !");
-                won = true;
-            }
             return true;
         }
     }
@@ -180,11 +219,13 @@ function checkIfWon() {
 
 function undo() {
     grid = [...prevGrid];
+    updateHeader();
 }
 
 function makeMove(direction) {
     let tempGrid = [...grid];
     let moved = false;
+    movements = {};
 
     if (direction == UP) {
         for (let c = 0; c < 4; c++) {
@@ -198,12 +239,16 @@ function makeMove(direction) {
                         if (grid[4 * newR + c] == 0) {
                             grid[4 * newR + c] = val;
                             grid[4 * (newR + 1) + c] = 0;
+
+                            movements[4 * r + c] = 4 * newR + c;
                             moved = true;
                         }
                         else if (grid[4 * newR + c] == val) {
                             grid[4 * newR + c] = 2 * val;
                             grid[4 * (newR + 1) + c] = 0;
-                            fusionned++;
+                            fusionned = newR + 1;
+                            
+                            movements[4 * r + c] = 4 * newR + c;
                             moved = true;
                         }
                         else {
@@ -216,22 +261,26 @@ function makeMove(direction) {
     }
     if (direction == DOWN) {
         for (let c = 0; c < 4; c++) {
-            let fusionned = 0;
+            let fusionned = 3;
 
             for (let r = 2; r >= 0; r--) {
                 if (grid[4 * r + c] != 0) {
                     let val = grid[4 * r + c];
 
-                    for (let newR = r + 1; newR <= 3 - fusionned; newR++) {
+                    for (let newR = r + 1; newR <= fusionned; newR++) {
                         if (grid[4 * newR + c] == 0) {
                             grid[4 * newR + c] = val;
                             grid[4 * (newR - 1) + c] = 0;
+                            
+                            movements[4 * r + c] = 4 * newR + c;
                             moved = true;
                         }
                         else if (grid[4 * newR + c] == val) {
                             grid[4 * newR + c] = 2 * val;
                             grid[4 * (newR - 1) + c] = 0;
-                            fusionned++;
+                            fusionned = newR - 1;
+                            
+                            movements[4 * r + c] = 4 * newR + c;
                             moved = true;
                         }
                         else {
@@ -254,12 +303,16 @@ function makeMove(direction) {
                         if (grid[4 * r + newC] == 0) {
                             grid[4 * r + newC] = val;
                             grid[4 * r + (newC + 1)] = 0;
+                            
+                            movements[4 * r + c] = 4 * r + newC;
                             moved = true;
                         }
                         else if (grid[4 * r + newC] == val) {
                             grid[4 * r + newC] = 2 * val;
                             grid[4 * r + (newC + 1)] = 0;
-                            fusionned++;
+                            fusionned = newC + 1;
+                            
+                            movements[4 * r + c] = 4 * r + newC;
                             moved = true;
                         }
                         else {
@@ -272,22 +325,26 @@ function makeMove(direction) {
     }
     if (direction == RIGHT) {
         for (let r = 0; r < 4; r++) {
-            let fusionned = 0;
+            let fusionned = 3;
 
             for (let c = 2; c >= 0; c--) {
                 if (grid[4 * r + c] != 0) {
                     let val = grid[4 * r + c];
 
-                    for (let newC = c + 1; newC <= 3 - fusionned; newC++) {
+                    for (let newC = c + 1; newC <= fusionned; newC++) {
                         if (grid[4 * r + newC] == 0) {
                             grid[4 * r + newC] = val;
                             grid[4 * r + (newC - 1)] = 0;
+                            
+                            movements[4 * r + c] = 4 * r + newC;
                             moved = true;
                         }
                         else if (grid[4 * r + newC] == val) {
                             grid[4 * r + newC] = 2 * val;
                             grid[4 * r + (newC - 1)] = 0;
-                            fusionned++;
+                            fusionned = newC - 1;
+                            
+                            movements[4 * r + c] = 4 * r + newC;
                             moved = true;
                         }
                         else {
@@ -302,9 +359,10 @@ function makeMove(direction) {
     if (moved) {
         prevGrid = tempGrid;
         placeRandom();
-    
-        checkIfWon();
-        checkIfLost();
+        updateHeader();
+
+        anim = true;
+        animTime = 0;
     }
 }
 
@@ -318,4 +376,19 @@ function placeRandom() {
     });
 
     grid[freeBoxes[Math.floor(Math.random() * freeBoxes.length)]] = Math.random() > 0.75 ? 4 : 2;
+}
+
+function updateHeader() {
+    won = checkIfWon();
+    lost = checkIfLost();
+
+    let newHeader = INIT_HEADER;
+    if (lost) {
+        newHeader += LOST_HEADER;
+    }
+    else if (won) {
+        newHeader += WON_HEADER;
+    }
+
+    $(header).html(newHeader);
 }
