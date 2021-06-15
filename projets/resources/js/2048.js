@@ -192,7 +192,7 @@ function handleEvent(keyEvent) {
 }
 
 function checkIfLost() {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 16; i++) {
         const val = grid[i];
         const col = i % 4;
         const row = (i - col) / 4;
