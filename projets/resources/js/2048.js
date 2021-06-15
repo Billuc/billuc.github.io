@@ -1,6 +1,4 @@
-$("#header")
-    .html("<b>Py2048</b><br/> Use the arrows to play, U to undo and R to restart")
-    .addClass("black-fg");
+let header = $("#header").addClass("black-fg");
 
 const canvas = $("#demo-canvas")[0];
 const ctx = canvas.getContext("2d");
@@ -8,24 +6,30 @@ const ctx = canvas.getContext("2d");
 const width = canvas.width;
 const height = canvas.height;
 
-let grid = [
-    0,0,0,0,
-    0,0,0,0,
-    0,0,0,0,
-    0,0,0,0
-];
-let prevGrid = [
-    0,0,0,0,
-    0,0,0,0,
-    0,0,0,0,
-    0,0,0,0
-];
+const UP = 0;
+const RIGHT = 1;
+const DOWN = 2;
+const LEFT = 3;
 
-let won = false;
+let grid;
+let prevGrid;
+let won, lost;
 
 init();
+document.addEventListener('keydown', handleEvent);
 
 function init() {
+    grid = [
+        0,0,0,0,
+        0,0,0,0,
+        0,0,0,0,
+        0,0,0,0
+    ];
+    won = false;
+    lost = false;
+    $(header).html("<b>Py2048</b><br/> Use the arrows to play, U to undo");
+
+    prevGrid = [...grid];
     window.requestAnimationFrame(drawCanvas);
 }
 
@@ -114,32 +118,73 @@ function drawCanvas() {
     window.requestAnimationFrame(drawCanvas);
 }
 
-function handleEvent() {}
-
-function checkIfLost() {
-    let one_is_ok = false;
-
-    grid.forEach((val, i) => {
-        if (!one_is_ok && val != 0) {
-            const col = i % 4;
-            const row = (i - col) / 4;
-
-            if (row > 0) {
-                one_is_ok = one_is_ok || grid[(row - 1) * 4 + col] == val || grid[(row - 1) * 4 + col] == 0;
-            }
-            if (row < 3) {
-                one_is_ok = one_is_ok || grid[(row + 1) * 4 + col] == val || grid[(row + 1) * 4 + col] == 0;
-            }
-            if (col > 0) {
-                one_is_ok = one_is_ok || grid[row * 4 + col - 1] == val || grid[row * 4 + col - 1] == 0;
-            }
-            if (col < 3) {
-                one_is_ok = one_is_ok || grid[row * 4 + col + 1] == val || grid[row * 4 + col + 1] == 0;
-            }
-        }
-    });
-
-    return !one_is_ok;
+function handleEvent(keyEvent) {
+    switch (keyEvent.keyCode) {
+        case 37:                // Left
+            makeMove(LEFT);
+            break;
+        case 38:                // Up
+            makeMove(UP);
+            break;
+        case 39:                // Right
+            makeMove(RIGHT);
+            break;
+        case 40:                // Down
+            makeMove(DOWN);
+            break;
+        case 82:                // R
+            init();
+            break;
+        case 85:                // U
+            undo();
+            break;
+    }
 }
 
-function undo() {}
+function checkIfLost() {
+    for (let i = 0; i < 15; i++) {
+        const val = grid[i];
+        const col = i % 4;
+        const row = (i - col) / 4;
+
+        if (
+            val == 0 ||
+            (row < 3 && grid[i + 4] == val) ||
+            (col < 3 && grid[i + 1] == val)            
+        ) return false;
+    }
+
+    if (!lost) {
+        $(header).html($(header).html() + "<br/>You lost :( Press R to restart !");
+        lost  = true;
+    }
+    return true;
+}
+
+function checkIfWon() {
+    for (let val of grid) {
+        if (val >= 2048) {
+            if (!won) {
+                $(header).html($(header).html() + "<br/>You won !");
+                won = true;
+            }
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function undo() {
+    grid = [...prevGrid];
+}
+
+function makeMove(direction) {
+    prevGrid = [...grid];
+
+    if (grid[direction] == 0)   grid[direction] = 2;
+    else                        grid[direction] *= 2;
+
+    checkIfWon();
+    checkIfLost();
+}
