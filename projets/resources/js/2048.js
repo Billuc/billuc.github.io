@@ -42,6 +42,7 @@ document.addEventListener('touchstart', (e) => {
         e.touches[0].clientY
     ];
 });
+document.addEventListener('touchmove', (e) => { e.preventDefault(); });
 document.addEventListener('touchend', handleTouch);
 
 function init() {
