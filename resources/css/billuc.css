@@ -47,7 +47,7 @@
 
 html {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 
     background: url('../images/cool-background.png');/*var(--black);*/
     background-repeat: repeat-y;
@@ -59,7 +59,7 @@ html {
 
 body {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
 
     margin: 0;
     vertical-align: middle;
