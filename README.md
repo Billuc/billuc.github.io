@@ -1,10 +1,10 @@
 # billuc.github.io
 
-Version en ligne de mon site Web
+My website (in English ^\_^)
 
-Pour l'instant, il y a :
- - une belle page d'accueil
- - mes CVs (anglais et français)
- - un lien vers mon Github et mon Linkedin
- - une page pour mes projets Github (mais pas encore pimpée)
- - une jolie page avec des articles
+There is :
+ - A nice homepage
+ - My CV (in English aswell)
+ - Links to my Github and Linkedin
+ - A page with my Git projects (some with a JS demo)
+ - A page with some papers I wrote
