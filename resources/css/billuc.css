@@ -207,7 +207,7 @@ h2 {
     }
 
     #header {
-        margin-top: 3em;
+        margin-top: calc(2em + 5%);
     }
 
     #content {

@@ -9,6 +9,11 @@ class MobileHandler {
         if (this.isMobile()) {
             $('html').css('height', window.innerHeight + "px");
             $('body').css('height', window.innerHeight + "px");
+
+            window.onresize = () => {
+                $('html').css('height', window.innerHeight + "px");
+                $('body').css('height', window.innerHeight + "px");
+            };
         }
     }
 
