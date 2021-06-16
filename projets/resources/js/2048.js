@@ -37,12 +37,14 @@ let touchStart = null;
 init();
 document.addEventListener('keydown', handleKey);
 document.addEventListener('touchstart', (e) => {
-    touchStart = [
-        e.touches[0].clientX, 
-        e.touches[0].clientY
-    ];
+    if (e.target == canvas) {
+        touchStart = [
+            e.touches[0].clientX, 
+            e.touches[0].clientY
+        ];
+    }
 });
-document.addEventListener('touchmove', (e) => { e.preventDefault(); });
+document.addEventListener('touchmove', (e) => { if (e.target == canvas) e.preventDefault(); }, { passive: false });
 document.addEventListener('touchend', handleTouch);
 
 function init() {
@@ -212,33 +214,35 @@ function handleKey(keyEvent) {
 }
 
 function handleTouch(event) {
-    let touchEnd = [
-        event.changedTouches[0].clientX,
-        event.changedTouches[0].clientY
-    ];
+    if (event.target == canvas) {
+        let touchEnd = [
+            event.changedTouches[0].clientX,
+            event.changedTouches[0].clientY
+        ];
 
-    let delta = [
-        touchEnd[0] - touchStart[0],
-        touchEnd[1] - touchStart[1]
-    ];
+        let delta = [
+            touchEnd[0] - touchStart[0],
+            touchEnd[1] - touchStart[1]
+        ];
 
-    if (lost && (Math.abs(delta[0]) > 5 || Math.abs(delta[1]) > 5)) {
-        init();
-    }
-    else if (Math.abs(delta[0]) > Math.abs(delta[1])) {
-        if (delta[0] > 5) {
-            makeMove(RIGHT);
+        if (lost && (Math.abs(delta[0]) > 5 || Math.abs(delta[1]) > 5)) {
+            init();
         }
-        else if (delta[0] < -5) {
-            makeMove(LEFT);
+        else if (Math.abs(delta[0]) > Math.abs(delta[1])) {
+            if (delta[0] > 5) {
+                makeMove(RIGHT);
+            }
+            else if (delta[0] < -5) {
+                makeMove(LEFT);
+            }
         }
-    }
-    else if (Math.abs(delta[0]) < Math.abs(delta[1])) {
-        if (delta[1] > 5) {
-            makeMove(DOWN);
-        }
-        else if (delta[1] < -5) {
-            makeMove(UP);
+        else if (Math.abs(delta[0]) < Math.abs(delta[1])) {
+            if (delta[1] > 5) {
+                makeMove(DOWN);
+            }
+            else if (delta[1] < -5) {
+                makeMove(UP);
+            }
         }
     }
 }

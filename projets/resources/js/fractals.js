@@ -237,13 +237,15 @@ let touchStart = null;
 
 $(header).html(INIT_HEADER + "<br/>" + fractalCollection[fractalIndex].name);
 document.addEventListener('keydown', handleKey);
-document.addEventListener('touchstart', function (e) {
-    touchStart = [
-        e.touches[0].clientX, 
-        e.touches[0].clientY
-    ]; 
+document.addEventListener('touchstart', (e) => {
+    if (e.target == canvas) {
+        touchStart = [
+            e.touches[0].clientX, 
+            e.touches[0].clientY
+        ];
+    }
 });
-document.addEventListener('touchmove', (e) => { e.preventDefault(); });
+document.addEventListener('touchmove', (e) => { if (e.target == canvas) e.preventDefault(); }, { passive: false });
 document.addEventListener('touchend', handleTouch);
 window.requestAnimationFrame(drawCanvas);
 
@@ -276,27 +278,29 @@ function handleKey(keyEvent) {
 }
 
 function handleTouch(event) {
-    let touchEnd = [
-        event.changedTouches[0].clientX,
-        event.changedTouches[0].clientY
-    ];
+    if (event.target == canvas) {
+        let touchEnd = [
+            event.changedTouches[0].clientX,
+            event.changedTouches[0].clientY
+        ];
 
-    let delta = [
-        touchEnd[0] - touchStart[0],
-        touchEnd[1] - touchStart[1]
-    ];
+        let delta = [
+            touchEnd[0] - touchStart[0],
+            touchEnd[1] - touchStart[1]
+        ];
 
-    if (Math.abs(delta[0]) > Math.abs(delta[1])) {
-        if (delta[0] > 5) {
-            doIteration();
+        if (Math.abs(delta[0]) > Math.abs(delta[1])) {
+            if (delta[0] > 5) {
+                doIteration();
+            }
         }
-    }
-    else if (Math.abs(delta[0]) < Math.abs(delta[1])) {
-        if (delta[1] > 5) {
-            nextFractal();
-        }
-        else if (delta[1] < -5) {
-            previousFractal();
+        else if (Math.abs(delta[0]) < Math.abs(delta[1])) {
+            if (delta[1] > 5) {
+                nextFractal();
+            }
+            else if (delta[1] < -5) {
+                previousFractal();
+            }
         }
     }
 }
