@@ -148,7 +148,6 @@ class Fractal {
 let header = $("#header").addClass("black-fg");
 const INIT_HEADER = "<b>JsFractals</b><br/> Right = Next iteration | Up/Down = change pattern";
 
-
 const canvas = $("#demo-canvas")[0];
 const ctx = canvas.getContext("2d");
 
