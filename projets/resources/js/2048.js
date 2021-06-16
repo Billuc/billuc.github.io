@@ -33,6 +33,7 @@ let anim;
 let animTime;
 
 let touchStart = null;
+let firstTouchTime;
 
 init();
 document.addEventListener('keydown', handleKey);
@@ -244,6 +245,11 @@ function handleTouch(event) {
                 makeMove(UP);
             }
         }
+        else if (performance.now() - firstTouchTime < 500) {
+            undo();
+        }
+
+        firstTouchTime = performance.now();
     }
 }
 
