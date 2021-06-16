@@ -37,6 +37,7 @@ document.addEventListener('touchstart', function (e) {
         e.originalEvent.touches[0].clientY
     ); 
 });
+document.addEventListener('touchmove', (e) => { e.preventDefault(); })
 document.addEventListener('touchend', handleTouch);
 
 function init() {
@@ -206,6 +207,8 @@ function handleKey(keyEvent) {
 }
 
 function handleTouch(event) {
+    event.preventDefault();
+    
     let touchEnd = new Point(
         event.originalEvent.changedTouches[0].clientX,
         event.originalEvent.changedTouches[0].clientY
