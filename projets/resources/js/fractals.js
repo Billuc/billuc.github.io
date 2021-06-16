@@ -60,6 +60,7 @@ class Fractal {
     ]) {
         this.points = pStart;
         this.pattern = pPattern;
+        this.iterationsCounter = 0;
     }
 
     doIterations(nbIter) {
@@ -68,7 +69,12 @@ class Fractal {
         }
     }
 
-    iterate() {
+    async iterate() {
+        if (this.iterationsCounter >= 4) {
+            console.warn("Not doing iteration number " + this.iterationsCounter + "\n Doing this iteration would take a lot of time !");
+            return;
+        }
+
         let newPoints = new Array(this.points.length - 1);
         let promises = []
 
@@ -79,14 +85,14 @@ class Fractal {
             }));
         }
 
-        Promise.all(promises)
-            .then(() => {
-                this.points = [];
-                for (let ptArr of newPoints) {
-                    this.points = this.points.concat(ptArr);
-                    console.log(this.points);
-                }
-            });
+        await Promise.all(promises);
+
+        this.points = [];
+        for (let ptArr of newPoints) {
+            this.points = this.points.concat(ptArr);
+        }
+
+        this.iterationsCounter++;
     }
 
     paint(pCtx, pWidth, pHeight) {
@@ -142,6 +148,7 @@ class Fractal {
 let header = $("#header").addClass("black-fg");
 const INIT_HEADER = "<b>JsFractals</b><br/> Right = Next iteration | Up/Down = change pattern";
 
+
 const canvas = $("#demo-canvas")[0];
 const ctx = canvas.getContext("2d");
 
@@ -157,7 +164,13 @@ const fractalCollection = [
             new Point(2/3, 1),
             new Point(1, 1)
         ],
-        start: undefined
+        start: [
+            new Point(0.1, 0.5 - 0.4 / Math.sqrt(3)),
+            new Point(0.9, 0.5 - 0.4 / Math.sqrt(3)),
+            new Point(0.5, 0.5 + 0.8 / Math.sqrt(3)),
+            new Point(0.1, 0.5 - 0.4 / Math.sqrt(3))
+        ],
+        name: "Von Koch Snowflake"
     },
     {
         pattern: [
@@ -168,7 +181,43 @@ const fractalCollection = [
             new Point(0.5, 1),
             new Point(1, 1)
         ],
-        start: undefined
+        start: undefined,
+        name: "Sierpinsky Triangle"
+    },
+    {
+        pattern: [
+            new Point(0, 1),
+            new Point(1/3, 1),
+            new Point(1/3, 2/3),
+            new Point(2/3, 2/3),
+            new Point(2/3, 1),
+            new Point(1, 1)
+        ],
+        start: [
+            new Point(1/3, 1/3),
+            new Point(2/3, 1/3),
+            new Point(2/3, 2/3),
+            new Point(1/3, 2/3),
+            new Point(1/3, 1/3)
+        ],
+        name: "Custom Fractal 1"
+    },
+    {
+        pattern: [
+            new Point(0, 1),
+            new Point(0.25, 1),
+            new Point(0.25, 0.75),
+            new Point(0.5, 0.75),
+            new Point(0.5, 1.25),
+            new Point(0.75, 1.25),
+            new Point(0.75, 1),
+            new Point(1, 1)
+        ],
+        start: [
+            new Point(0.1, 0.5),
+            new Point(0.9, 0.5)
+        ],
+        name: "Custom Fractal 2"
     }
 ];
 let fractalIndex = 0;
@@ -177,8 +226,17 @@ let currentFractal = new Fractal(
     fractalCollection[fractalIndex].start
 );
 
-$(header).html(INIT_HEADER);
-document.addEventListener('keydown', handleEvent);
+let touchStart = null;
+
+$(header).html(INIT_HEADER + "<br/>" + fractalCollection[fractalIndex].name);
+document.addEventListener('keydown', handleKey);
+document.addEventListener('touchstart', function (e) {
+    touchStart = new Point(
+        e.originalEvent.touches[0].clientX, 
+        e.originalEvent.touches[0].clientY
+    ); 
+});
+document.addEventListener('touchend', handleTouch);
 window.requestAnimationFrame(drawCanvas);
 
 
@@ -195,30 +253,67 @@ function drawCanvas() {
     ctx.restore();
 }
 
-function handleEvent(keyEvent) {
+function handleKey(keyEvent) {
     switch (keyEvent.keyCode) {
         case 38:                // Up
-            fractalIndex = (fractalIndex - 1 < 0) ? fractalCollection.length - 1 : fractalIndex - 1;
-            currentFractal = new Fractal(
-                fractalCollection[fractalIndex].pattern, 
-                fractalCollection[fractalIndex].start
-            );
-
-            window.requestAnimationFrame(drawCanvas);
+            previousFractal();
             break;
         case 39:                // Right
-            currentFractal.iterate();
-
-            window.requestAnimationFrame(drawCanvas);
+            doIteration();
             break;
         case 40:                // Down
-            fractalIndex = (fractalIndex + 1 >= fractalCollection.length) ? 0 : fractalIndex + 1;
-            currentFractal = new Fractal(
-                fractalCollection[fractalIndex].pattern, 
-                fractalCollection[fractalIndex].start
-            );
-            
-            window.requestAnimationFrame(drawCanvas);
+            nextFractal();
             break;
     }
+}
+
+function handleTouch(event) {
+    let touchEnd = new Point(
+        event.originalEvent.changedTouches[0].clientX,
+        event.originalEvent.changedTouches[0].clientY
+    );
+
+    let delta = touchEnd.substract(touchStart);
+
+    if (Math.abs(delta.x) > Math.abs(delta.y)) {
+        if (delta.x > 5) {
+            doIteration();
+        }
+    }
+    else {
+        if (delta.y > 5) {
+            previousFractal();
+        }
+        else if (delta.y < -5) {
+            nextFractal();
+        }
+    }
+}
+
+function previousFractal() {
+    fractalIndex = (fractalIndex - 1 < 0) ? fractalCollection.length - 1 : fractalIndex - 1;
+    currentFractal = new Fractal(
+        fractalCollection[fractalIndex].pattern, 
+        fractalCollection[fractalIndex].start
+    );
+    $(header).html(INIT_HEADER + "<br/>" + fractalCollection[fractalIndex].name);
+
+    window.requestAnimationFrame(drawCanvas);
+}
+
+function nextFractal() {
+    fractalIndex = (fractalIndex + 1 >= fractalCollection.length) ? 0 : fractalIndex + 1;
+    currentFractal = new Fractal(
+        fractalCollection[fractalIndex].pattern, 
+        fractalCollection[fractalIndex].start
+    );
+    $(header).html(INIT_HEADER + "<br/>" + fractalCollection[fractalIndex].name);
+    
+    window.requestAnimationFrame(drawCanvas);
+}
+
+async function doIteration() {
+    await currentFractal.iterate();
+
+    window.requestAnimationFrame(drawCanvas);
 }

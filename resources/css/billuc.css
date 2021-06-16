@@ -205,8 +205,11 @@ h2 {
         font-size: 1.15em;
     }
 
-    #content {
+    #header {
         margin-top: 2em;
+    }
+
+    #content {
         padding: 0;
     }
 }

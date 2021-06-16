@@ -22,8 +22,17 @@ let movements;
 let anim;
 let animTime;
 
+let touchStart = null;
+
 init();
-document.addEventListener('keydown', handleEvent);
+document.addEventListener('keydown', handleKey);
+document.addEventListener('touchstart', function (e) {
+    touchStart = new Point(
+        e.originalEvent.touches[0].clientX, 
+        e.originalEvent.touches[0].clientY
+    ); 
+});
+document.addEventListener('touchend', handleTouch);
 
 function init() {
     grid = [
@@ -166,7 +175,7 @@ function drawCanvas() {
     window.requestAnimationFrame(drawCanvas);
 }
 
-function handleEvent(keyEvent) {
+function handleKey(keyEvent) {
     if (anim) return;
 
     switch (keyEvent.keyCode) {
@@ -188,6 +197,32 @@ function handleEvent(keyEvent) {
         case 85:                // U
             undo();
             break;
+    }
+}
+
+function handleTouch(event) {
+    let touchEnd = new Point(
+        event.originalEvent.changedTouches[0].clientX,
+        event.originalEvent.changedTouches[0].clientY
+    );
+
+    let delta = touchEnd.substract(touchStart);
+
+    if (Math.abs(delta.x) > Math.abs(delta.y)) {
+        if (delta.x > 5) {
+            makeMove(RIGHT);
+        }
+        else if (delta.x < -5) {
+            makeMove(LEFT);
+        }
+    }
+    else {
+        if (delta.y > 5) {
+            makeMove(UP);
+        }
+        else if (delta.y < -5) {
+            makeMove(DOWN);
+        }
     }
 }
 
