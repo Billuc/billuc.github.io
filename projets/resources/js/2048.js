@@ -26,7 +26,7 @@ const LEFT = 3;
 
 let grid;
 let prevGrid;
-let won, lost;
+let won, lost = false;
 
 let movements;
 let anim;
@@ -36,13 +36,12 @@ let touchStart = null;
 
 init();
 document.addEventListener('keydown', handleKey);
-document.addEventListener('touchstart', function (e) {
-    touchStart = new Point(
-        e.originalEvent.touches[0].clientX, 
-        e.originalEvent.touches[0].clientY
-    ); 
+document.addEventListener('touchstart', (e) => {
+    touchStart = [
+        e.touches[0].clientX, 
+        e.touches[0].clientY
+    ];
 });
-document.addEventListener('touchmove', (e) => { e.preventDefault(); })
 document.addEventListener('touchend', handleTouch);
 
 function init() {
@@ -212,31 +211,33 @@ function handleKey(keyEvent) {
 }
 
 function handleTouch(event) {
-    event.preventDefault();
+    let touchEnd = [
+        event.changedTouches[0].clientX,
+        event.changedTouches[0].clientY
+    ];
 
-    let touchEnd = new Point(
-        event.originalEvent.changedTouches[0].clientX,
-        event.originalEvent.changedTouches[0].clientY
-    );
+    let delta = [
+        touchEnd[0] - touchStart[0],
+        touchEnd[1] - touchStart[1]
+    ];
 
-    let delta = touchEnd.substract(touchStart);
-
-    if (lost && (Math.abs(delta.x) > 5 || Math.abs(delta.y) > 5)) init();
-    
-    if (Math.abs(delta.x) > Math.abs(delta.y)) {
-        if (delta.x > 5) {
+    if (lost && (Math.abs(delta[0]) > 5 || Math.abs(delta[1]) > 5)) {
+        init();
+    }
+    else if (Math.abs(delta[0]) > Math.abs(delta[1])) {
+        if (delta[0] > 5) {
             makeMove(RIGHT);
         }
-        else if (delta.x < -5) {
+        else if (delta[0] < -5) {
             makeMove(LEFT);
         }
     }
-    else {
-        if (delta.y > 5) {
-            makeMove(UP);
-        }
-        else if (delta.y < -5) {
+    else if (Math.abs(delta[0]) < Math.abs(delta[1])) {
+        if (delta[1] > 5) {
             makeMove(DOWN);
+        }
+        else if (delta[1] < -5) {
+            makeMove(UP);
         }
     }
 }

@@ -238,10 +238,10 @@ let touchStart = null;
 $(header).html(INIT_HEADER + "<br/>" + fractalCollection[fractalIndex].name);
 document.addEventListener('keydown', handleKey);
 document.addEventListener('touchstart', function (e) {
-    touchStart = new Point(
-        e.originalEvent.touches[0].clientX, 
-        e.originalEvent.touches[0].clientY
-    ); 
+    touchStart = [
+        e.touches[0].clientX, 
+        e.touches[0].clientY
+    ]; 
 });
 document.addEventListener('touchend', handleTouch);
 window.requestAnimationFrame(drawCanvas);
@@ -275,24 +275,27 @@ function handleKey(keyEvent) {
 }
 
 function handleTouch(event) {
-    let touchEnd = new Point(
-        event.originalEvent.changedTouches[0].clientX,
-        event.originalEvent.changedTouches[0].clientY
-    );
+    let touchEnd = [
+        event.changedTouches[0].clientX,
+        event.changedTouches[0].clientY
+    ];
 
-    let delta = touchEnd.substract(touchStart);
+    let delta = [
+        touchEnd[0] - touchStart[0],
+        touchEnd[1] - touchStart[1]
+    ];
 
-    if (Math.abs(delta.x) > Math.abs(delta.y)) {
-        if (delta.x > 5) {
+    if (Math.abs(delta[0]) > Math.abs(delta[1])) {
+        if (delta[0] > 5) {
             doIteration();
         }
     }
-    else {
-        if (delta.y > 5) {
-            previousFractal();
-        }
-        else if (delta.y < -5) {
+    else if (Math.abs(delta[0]) < Math.abs(delta[1])) {
+        if (delta[1] > 5) {
             nextFractal();
+        }
+        else if (delta[1] < -5) {
+            previousFractal();
         }
     }
 }
