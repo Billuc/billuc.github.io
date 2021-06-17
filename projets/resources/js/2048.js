@@ -410,7 +410,7 @@ function placeRandom() {
 function updateHeader() {
     won = checkIfWon();
     lost = checkIfLost();
-    let isMobile = mobile.isMobile();
+    let isMobile = isMobile();
 
     let newHeader = isMobile ? TOUCH_HEADER : INIT_HEADER;
     if (lost) {
