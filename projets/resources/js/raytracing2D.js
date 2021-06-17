@@ -262,7 +262,7 @@ let mobile = new MobileHandler();
 mobile.setTargets(canvas);
 mobile.addTouchAndDragListeners(castRays);
 
-$(header).html(INIT_HEADER + (mobile.isMobile() ? TOUCH_HEADER : MOUSE_HEADER));
+$(header).html(INIT_HEADER + (isMobile() ? TOUCH_HEADER : MOUSE_HEADER));
 
 
 const handler = new RayHandler();
