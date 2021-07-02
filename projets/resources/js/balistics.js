@@ -12,6 +12,7 @@ const width = canvas.width;
 const height = canvas.height;
 
 const cubeSize = 50;
+const gravity = 10;
 
 let cubePos;
 let lost, won;
@@ -81,24 +82,26 @@ function drawCanvas() {
     
         if (!angleFixed) {
             angle += angleIncrement;
-    
-            if (angle <= 0 || angle >= 90) {
-                angleIncrement *= -1;
-            }
         }
         else if (!powerFixed) {
             power += powerIncrement;
-
-            if (power <= 25 || power >= 125) {
-                powerIncrement *= -1;
-            }
+        }
+        
+        if (angle <= 0 || angle >= 90) {
+            angleIncrement *= -1;
+        }
+        if (power <= 25 || power >= 125) {
+            powerIncrement *= -1;
         }
 
         ctx.restore();
     }
     else if (anim) {
-        let delta = new Date().getTime() - timePrevFrame;
+        let timeNow = new Date().getTime()
+        let delta = timeNow - timePrevFrame;
         calcNewPos(delta);
+
+        console.log(newPos);
 
         ctx.beginPath();
         ctx.save();
@@ -112,7 +115,7 @@ function drawCanvas() {
         ctx.stroke();
         ctx.restore();
 
-        timePrevFrame = new Date().getTime();
+        timePrevFrame = timeNow;
         oldPos[0] = newPos[0];
         oldPos[1] = newPos[1];
 
@@ -144,8 +147,10 @@ function play() {
 }
 
 function calcNewPos(delta) {
-    newPos[0] = oldPos[0] + delta;
-    newPos[1] = oldPos[1] + delta;
+    timeElapsed += 2 * delta / 1000; // *2 to make it go faster
+
+    newPos[0] = power * Math.cos(angle * Math.PI / 180) * timeElapsed;
+    newPos[1] = - gravity * timeElapsed * timeElapsed + power * Math.sin(angle * Math.PI / 180) * timeElapsed;
 }
 
 function detectCollision() {
