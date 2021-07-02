@@ -116,7 +116,7 @@ function drawCanvas() {
         oldPos[0] = newPos[0];
         oldPos[1] = newPos[1];
 
-        if (oldPos[0] >= width || oldPos[1] <= 0) anim = false;
+        if (detectCollision()) anim = false;
     }
 
     // ------------------ Next Frame -------------------
@@ -146,6 +146,29 @@ function play() {
 function calcNewPos(delta) {
     newPos[0] = oldPos[0] + delta;
     newPos[1] = oldPos[1] + delta;
+}
+
+function detectCollision() {
+    if (oldPos[0] >= width || oldPos[1] <= 0) {
+        lost = true;
+        updateHeader();
+        return true;
+    }
+    else {
+        if (
+            oldPos[0] >= cubePos - cubeSize && 
+            oldPos[0] <= cubePos &&
+            oldPos[1] >= 0 &&
+            oldPos[1] <= cubeSize
+        ) {
+            won = true;
+            updateHeader();
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
 
 function updateHeader() {
