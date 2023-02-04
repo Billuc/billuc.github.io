@@ -1,0 +1,9 @@
+.theme-component[data-theme='black-and-blue'] {
+	--primary: #66fcf1;
+	--secondary: #45a29e;
+	--tertiary: #448f89;
+	--text: #ebfeff;
+	--second-text: #c5c6c7;
+	--background: #0b0c10;
+	--second-background: #1f2833;
+}

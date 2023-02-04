@@ -1,0 +1,9 @@
+.theme-component[data-theme='classy'] {
+	--primary: #938e93;
+	--secondary: #5d5c61;
+	--tertiary: #b1a296;
+	--text: #ebfeff;
+	--second-text: #b1a296;
+	--background: #557a95;
+	--second-background: #7395ae;
+}
