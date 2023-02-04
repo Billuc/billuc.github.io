@@ -1,10 +1,8 @@
 # billuc.github.io
 
-My website (in English ^\_^)
+My website
 
 There is :
- - A nice homepage
- - My CV (in English aswell)
- - Links to my Github and Linkedin
- - A page with my Git projects (some with a JS demo)
- - A page with some papers I wrote
+ - My experiences and my CV
+ - Links to my Github, LinkedIn and e-mail
+ - Some of my personal projects
