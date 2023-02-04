@@ -1,0 +1,119 @@
+{
+  "src/lib/assets/luc.webp": {
+    "file": "_app/immutable/assets/luc-7edfa27c.webp",
+    "src": "src/lib/assets/luc.webp"
+  },
+  "src/lib/assets/CV_Luc_Billaud.pdf": {
+    "file": "_app/immutable/assets/CV_Luc_Billaud-6fa52707.pdf",
+    "src": "src/lib/assets/CV_Luc_Billaud.pdf"
+  },
+  "src/routes/+layout.css": {
+    "file": "_app/immutable/assets/_layout-d4a29986.css",
+    "src": "src/routes/+layout.css"
+  },
+  "src/routes/+page.css": {
+    "file": "_app/immutable/assets/_page-e848f75d.css",
+    "src": "src/routes/+page.css"
+  },
+  ".svelte-kit/generated/client-optimized/nodes/1.js": {
+    "file": "_app/immutable/chunks/1-69556c32.js",
+    "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
+    ]
+  },
+  "__layout-da46b06b.js": {
+    "file": "_app/immutable/chunks/_layout-da46b06b.js"
+  },
+  "src/routes/+layout.ts": {
+    "file": "_app/immutable/modules/pages/_layout.ts-9cbb603b.js",
+    "src": "src/routes/+layout.ts",
+    "isEntry": true,
+    "imports": [
+      "__layout-da46b06b.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "_app/immutable/components/error.svelte-02ae7dc4.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-08a7162c.js",
+      "_singletons-0d55f4a1.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/2.js": {
+    "file": "_app/immutable/chunks/2-dc45df89.js",
+    "src": ".svelte-kit/generated/client-optimized/nodes/2.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/+page.svelte"
+    ]
+  },
+  "_index-08a7162c.js": {
+    "file": "_app/immutable/chunks/index-08a7162c.js"
+  },
+  "_singletons-0d55f4a1.js": {
+    "file": "_app/immutable/chunks/singletons-0d55f4a1.js",
+    "imports": [
+      "_index-08a7162c.js"
+    ]
+  },
+  ".svelte-kit/generated/client-optimized/nodes/0.js": {
+    "file": "_app/immutable/chunks/0-dd6c602c.js",
+    "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "__layout-da46b06b.js",
+      "src/routes/+layout.svelte"
+    ]
+  },
+  "_luc-7403b469.js": {
+    "file": "_app/immutable/chunks/luc-7403b469.js",
+    "assets": [
+      "_app/immutable/assets/luc-7edfa27c.webp"
+    ]
+  },
+  "src/routes/+layout.svelte": {
+    "file": "_app/immutable/components/pages/_layout.svelte-f6235f48.js",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-08a7162c.js",
+      "_luc-7403b469.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout-d4a29986.css"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
+    "file": "_app/immutable/start-4aedfd8e.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-08a7162c.js",
+      "_singletons-0d55f4a1.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/generated/client-optimized/nodes/0.js",
+      ".svelte-kit/generated/client-optimized/nodes/1.js",
+      ".svelte-kit/generated/client-optimized/nodes/2.js"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "_app/immutable/components/pages/_page.svelte-a75abddc.js",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-08a7162c.js",
+      "_luc-7403b469.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-e848f75d.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/CV_Luc_Billaud-6fa52707.pdf"
+    ]
+  }
+}
