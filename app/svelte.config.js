@@ -1,5 +1,22 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import { exec } from 'child_process';
+
+function getBranchName() {
+	return new Promise((res, rej) => 
+		exec('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
+			if (err) rej(err);
+			if (typeof stdout !== 'string') rej("Not a string");
+		
+			res(stdout.trim());
+		})
+	);
+}
+
+function getBasePath() {
+	return getBranchName().then(branch => (branch === 'master' ? '' : '/' + branch));
+}
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,7 +27,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		paths: {
-			base: '/website' // because we deploy to /website
+			base: await getBasePath()
 		}
 	}
 };
