@@ -1,24 +1,14 @@
-<script>
-	import '$lib/styles/global.css';
+<script lang="ts">
+	import '../app.css';
 
-	import NavigationDrawer from '$lib/components/layout/NavigationDrawer.svelte';
 	import ThemeComponent from '$lib/components/layout/ThemeComponent.svelte';
-
-	let theme = 'black-and-blue';
+	import Navigation from '$lib/components/layout/Navigation.svelte';
 </script>
 
-<ThemeComponent bind:theme withPicker>
-	<NavigationDrawer />
+<ThemeComponent>
+	<Navigation />
 
-	<div class="container">
+	<div class="container mx-auto">
 		<slot />
 	</div>
 </ThemeComponent>
-
-<style>
-	.container {
-		padding-left: var(--nav-drawer-width);
-		width: 80%;
-		margin: auto;
-	}
-</style>

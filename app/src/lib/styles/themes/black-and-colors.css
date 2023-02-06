@@ -1,9 +1,0 @@
-.theme-component[data-theme='black-and-colors'] {
-	--primary: #ff652f;
-	--secondary: #ffe400;
-	--tertiary: #77d3ed;
-	--text: #ebfeff;
-	--second-text: #09c57a; /* #20cfff; */
-	--background: #272727;
-	--second-background: #8a8a8a;
-}
