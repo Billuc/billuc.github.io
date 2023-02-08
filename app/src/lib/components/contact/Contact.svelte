@@ -1,39 +1,34 @@
 <script lang="ts">
 	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+	import Card from '../general/Card.svelte';
+	import SectionTitle from '../general/SectionTitle.svelte';
 	import ContactOption from './ContactOption.svelte';
 
 	export let fullHeight: boolean = false;
 </script>
 
-<div id="contact" class:full-height={fullHeight}>
-	<div class="contact-title second-text">Contact</div>
+<div id="contact" class:min-h-screen={fullHeight} class="mb-12">
+	<SectionTitle>Contact</SectionTitle>
 
-	<div class="contact-options tertiary">
-        <ContactOption icon={faGithub} link="https://github.com/Billuc" title="Github" iconColor="black" />
-        <ContactOption icon={faLinkedin} link="https://www.linkedin.com/in/luc-billaud/" title="LinkedIn" iconColor="#0a66c2" />
-        <ContactOption icon={faEnvelope} link="mailto:luc.billaud.pro@gmail.com" title="luc.billaud.pro@gmail.com" iconColor="var(--primary)" />
-	</div>
+	<Card class="drop-shadow-xl bg-zinc-800 text-teal-50 w-5/6 sm:w-1/2 lg:w-1/3 px-4 py-2 mx-auto">
+		<ContactOption
+			icon={faGithub}
+			link="https://github.com/Billuc"
+			title="Github"
+			class="text-teal-50"
+		/>
+		<ContactOption
+			icon={faLinkedin}
+			link="https://www.linkedin.com/in/luc-billaud/"
+			title="LinkedIn"
+			class="text-sky-600"
+		/>
+		<ContactOption
+			icon={faEnvelope}
+			link="mailto:luc.billaud.pro@gmail.com"
+			title="luc.billaud.pro@gmail.com"
+			class="text-orange-700"
+		/>
+	</Card>
 </div>
-
-<style>
-    #contact {
-        margin-bottom: 2rem;
-    }
-
-	.contact-title {
-		font-size: 2.5rem;
-		text-align: center;
-		margin: 3rem 0 2rem;
-	}
-
-    .contact-options {
-        width: min(90%, 500px);
-        margin: auto;
-
-        padding: 0.75rem;
-        border-radius: 0.15rem;
-
-        box-shadow: 0px 15px 10px -5px black;
-    }
-</style>

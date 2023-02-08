@@ -1,58 +1,38 @@
 <script lang="ts">
+	import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+	import Card from '../general/Card.svelte';
+	import ResumeElementSkills from './ResumeElementSkill.svelte';
 	import ResumeElementText from './ResumeElementText.svelte';
 
 	export let title: string;
-	export let dates: string;
-	export let description: string;
+	export let image: string = '';
 
-	export let color: string;
-	export let onLeft: boolean = false;
+	export let dates: string;
+	export let location: string;
+	export let skills: (IconDefinition | string)[];
+	export let description: string[];
 </script>
 
-<div class="resume-element">
-	<div class="text align-right" class:empty={!onLeft}>
-		{#if onLeft}
-			<ResumeElementText {title} {dates} {description} {color}>
-				<slot />
-			</ResumeElementText>
+<Card
+	class="
+	text-teal-50 bg-teal-700 w-1/2 my-4 py-2 px-4
+	flex flex-col flex-nowrap justify-start items-center
+"
+>
+	<div class="text-teal-50 uppercase font-semibold text-2xl text-center">{title}</div>
+	<div class="flex flex-row flex-nowrap justify-between items-center w-full">
+		{#if image}
+			<div class="mr-2">
+				<img src={image} alt="" class="max-h-32 max-w-32" />
+			</div>
 		{/if}
+
+		<ResumeElementText {dates} {location} {description} />
+
+		<div class="flex flex-col flex-wrap ml-2">
+			{#each skills as skill}
+				<ResumeElementSkills {skill} />
+			{/each}
+		</div>
 	</div>
-	<div class={color + ' vertical-color-line'} />
-	<div class="text" class:empty={onLeft}>
-		{#if !onLeft}
-			<ResumeElementText {title} {dates} {description} {color}>
-				<slot />
-			</ResumeElementText>
-		{/if}
-	</div>
-</div>
-
-<style>
-	.resume-element {
-		display: flex;
-		width: 100%;
-		flex-flow: row nowrap;
-		justify-content: center;
-		align-items: stretch;
-		margin-bottom: 1rem;
-	}
-
-	.resume-element .text {
-		flex: 1 1 50%;
-	}
-
-	.resume-element .vertical-color-line {
-		width: 5px;
-		margin: 0 0.5rem;
-	}
-
-	.align-right {
-		text-align: end;
-	}
-
-	@media screen and (max-width: 960px) {
-		.resume-element .text.empty {
-			flex: 0 0 0%;
-		}
-	}
-</style>
+</Card>

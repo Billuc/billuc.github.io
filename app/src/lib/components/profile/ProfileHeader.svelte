@@ -9,7 +9,7 @@
 
 <div
 	id="profile"
-	class:h-screen={fullHeight}
+	class:min-h-screen={fullHeight}
 	class="flex flex-col flex-nowrap justify-center items-center mx-auto mb-4"
 >
 	<img alt="" src={image} class="ring-4 ring-current rounded-full mb-12" />
