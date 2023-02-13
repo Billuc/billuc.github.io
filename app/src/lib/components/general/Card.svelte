@@ -3,6 +3,6 @@
     export { className as class };
 </script>
 
-<div class={`rounded-md drop-shadow-xl ${className}`}>
+<div class={`rounded-md shadow-xl ${className}`}>
 	<slot />
 </div>

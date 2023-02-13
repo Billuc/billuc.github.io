@@ -7,12 +7,12 @@
 	export let description: string[];
 </script>
 
-<div class="flex flex-col flex-nowrap items-center">
+<div class="flex flex-col flex-nowrap items-center gap-2">
 	<div>
-		<Chip icon={faCalendarWeek} class="bg-zinc-900">{dates}</Chip>
-		<Chip icon={faLocationDot} class="bg-zinc-900">{location}</Chip>
+		<Chip icon={faCalendarWeek} class="bg-teal-500 dark:bg-zinc-800">{dates}</Chip>
+		<Chip icon={faLocationDot} class="bg-teal-500 dark:bg-zinc-800">{location}</Chip>
 	</div>
-	<ul class="">
+	<ul class="text-sm">
 		{#each description as desc}
 			<li>{desc}</li>
 		{/each}

@@ -11,6 +11,6 @@
 	<IconButton
 		on:click={() => (isDark = !isDark)}
 		{icon}
-		class="drop-shadow-xl bg-teal-500 dark:bg-zinc-800"
+		class="shadow-xl bg-teal-500 dark:bg-zinc-800"
 	/>
 </div>

@@ -11,7 +11,7 @@
 	class="
 		rounded-full bg-teal-50 text-zinc-900 
 		flex justify-center items-center 
-		w-6 h-6 my-1 drop-shadow-xl text-xs
+		w-6 h-6 shadow-xl text-xs
 	"
 >
 	{#if isIcon}
