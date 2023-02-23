@@ -9,6 +9,6 @@
 <div id="projects" class:min-h-screen={fullHeight}>
 	<SectionTitle>My Projects</SectionTitle>
 	
-	<div>WIP...</div>
+	<div>Coming soon...</div>
 </div>
 

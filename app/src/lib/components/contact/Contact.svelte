@@ -12,7 +12,6 @@
 	<SectionTitle>Contact</SectionTitle>
 
 	<Card class="
-		bg-zinc-800 text-teal-50 dark:bg-teal-500
 		w-5/6 sm:w-1/2 lg:w-1/3 
 		px-4 py-2 mx-auto
 	">

@@ -10,7 +10,7 @@
 		class="
             absolute top-8 left-0 
             flex flex-col flex-nowrap 
-            h-0 group-hover:h-24 truncate
+            h-0 group-hover:h-32 truncate
             transition-[height] duration-500 ease-out 
             border-l-2 border-zinc-900 dark:border-teal-50
             bg-teal-600 text-teal-50 rounded-r-md rounded-bl-md
@@ -18,6 +18,7 @@
 	>
 		<NavigationLink link="#profile">Home</NavigationLink>
 		<NavigationLink link="#resume">Experiences</NavigationLink>
+		<NavigationLink link="#skills">Skills</NavigationLink>
 		<NavigationLink link="#projects">Projects</NavigationLink>
 		<NavigationLink link="#contact">Contact</NavigationLink>
 	</div>

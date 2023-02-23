@@ -22,7 +22,7 @@
 		<div
 			class="
 			absolute h-full w-2 top-0 left-1/2 -translate-x-1/2
-			bg-gradient-to-b from-teal-50 via-teal-50 
+			bg-gradient-to-b from-amber-600 via-amber-600 
 		"
 		/>
 
@@ -65,7 +65,13 @@
 
 	<div class="flex flex-col flex-nowrap items-center">
 		<Button>
-			<a href={resume} download class="px-2 uppercase font-bold text-xl text-teal-50">And more...</a>
+			<a
+				href={resume}
+				download
+				class="px-2 uppercase font-bold text-xl text-zinc-800 dark:text-teal-500"
+			>
+				And more...
+			</a>
 		</Button>
 	</div>
 </div>

@@ -1,19 +1,16 @@
 <script lang="ts">
 	import '../app.css';
 
-	import ThemeComponent from '$lib/components/layout/ThemeComponent.svelte';
-	import Navigation from '$lib/components/layout/Navigation.svelte';
+	import Layout from '$lib/components/layout/Layout.svelte';
 </script>
 
-<ThemeComponent>
-	<Navigation />
-
-	<div class="container mx-auto">
+<Layout>
+	<div class="px-4">
 		<slot />
 	</div>
 
-	<div class="mx-auto mb-4">
+	<div class="mx-auto mb-4 text-center">
 		Website developped by Luc Billaud using Svelte, Vite, Tailwind, FontAwesome, Github & Github
 		Actions
 	</div>
-</ThemeComponent>
+</Layout>

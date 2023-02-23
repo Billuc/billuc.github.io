@@ -4,6 +4,7 @@
 	import Resume from '$lib/components/resume/Resume.svelte';
 	import Projects from '$lib/components/projects/Projects.svelte';
 	import Contact from '$lib/components/contact/Contact.svelte';
+	import Skills from '$lib/components/skills/Skills.svelte';
 </script>
 
 <ProfileHeader
@@ -14,6 +15,8 @@
 />
 
 <Resume fullHeight />
+
+<Skills fullHeight />
 
 <Projects fullHeight />
 

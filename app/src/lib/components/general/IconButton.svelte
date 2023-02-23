@@ -9,7 +9,11 @@
 
 <button
 	on:click
-	class={'border-2 border-current w-8 h-8 flex justify-center items-center rounded ' + className}
+	class={`
+		border-2 border-current rounded
+		w-8 h-8 flex justify-center items-center 
+		${className}`
+	}
 >
 	<Fa {icon} />
 </button>
