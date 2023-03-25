@@ -12,7 +12,7 @@
 	export let size: string = 'text-xl';
 </script>
 
-<div class="w-10 group/card relative transition-all duration-300 hover:mr-3">
+<div class="w-10 group/card relative transition-all duration-300 hover:mr-3 hover:scale-125">
 	<SkillIcon {skill} {color} {size} class="ring-2 ring-yellow-400 dark:ring-yellow-600" />
 
 	<div

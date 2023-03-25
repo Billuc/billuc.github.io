@@ -2,7 +2,7 @@
 	<div
 		class="
 		rounded-md shadow-xl p-4
-		text-teal-50 bg-zinc-800 dark:bg-teal-600
+		text-zinc-800 dark:text-zinc-700 bg-yellow-400 dark:bg-yellow-600
 		font-black uppercase text-center text-4xl
 	"
 	>

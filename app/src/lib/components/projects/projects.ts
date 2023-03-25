@@ -1,5 +1,5 @@
-import engine3D from '$lib/assets/projects/3d.png';
-import balistics from '$lib/assets/projects/balistics.png';
+import engine3D from '$lib/assets/images/3d.png';
+import balistics from '$lib/assets/images/balistics.png';
 
 export interface Project {
     imgSrc: string;
