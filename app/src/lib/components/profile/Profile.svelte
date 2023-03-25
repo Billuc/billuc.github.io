@@ -12,9 +12,9 @@
 	class:min-h-screen={fullHeight}
 	class="flex flex-col flex-nowrap justify-center items-center mx-auto mb-4"
 >
-	<img alt="" src={image} class="ring-4 ring-amber-600 rounded-full mb-12 shadow-xl" />
+	<img alt="" src={image} class="ring-4 ring-current rounded-full mb-12 shadow-xl" />
 
-	<Card class="text-center p-4 text-teal-50 bg-zinc-800 dark:bg-teal-500">
+	<Card class="text-center p-4" background="bg-zinc-800 dark:bg-teal-500" color="text-teal-50">
 		<div class="uppercase font-black text-5xl">{name}</div>
 		<div class="text-3xl font-bold mt-2">{description}</div>
 	</Card>

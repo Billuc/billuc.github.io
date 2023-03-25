@@ -2,7 +2,7 @@
 	<slot name="activator" />
 	<div
 		class="
-			scale-0 group-hover:scale-100 transition-transform duration-500
+			scale-0 group-hover:scale-100 transition-transform duration-300
 			-translate-x-1/2
 			absolute bottom-full left-1/2 z-10 origin-bottom px-2 mb-1
 			bg-amber-600 rounded-md

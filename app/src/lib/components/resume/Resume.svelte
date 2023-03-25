@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ResumeElement from '$lib/components/resume/ResumeElement.svelte';
 	import resume from '$lib/assets/CV_Luc_Billaud.pdf';
 	import SectionTitle from '../general/SectionTitle.svelte';
 	import Button from '../general/Button.svelte';
@@ -11,6 +10,7 @@
 		faVuejs
 	} from '@fortawesome/free-brands-svg-icons';
 	import ExpandingResumeElement from './ExpandingResumeElement.svelte';
+	import Card from '../general/Card.svelte';
 
 	export let fullHeight: boolean = false;
 </script>
@@ -18,14 +18,7 @@
 <div id="resume" class:min-h-screen={fullHeight}>
 	<SectionTitle>My experiences</SectionTitle>
 
-	<div class="flex flex-col flex-nowrap justify-center items-center relative">
-		<div
-			class="
-			absolute h-full w-2 top-0 left-1/2 -translate-x-1/2
-			bg-gradient-to-b from-amber-600 via-amber-600 
-		"
-		/>
-
+	<div class="flex flex-col flex-nowrap w-full justify-center items-center relative">
 		<ExpandingResumeElement
 			title="Software Engineer (Fullstack Developper)"
 			dates="2021-2023"
@@ -42,7 +35,7 @@
 
 		<ExpandingResumeElement
 			title="End of studies internship (VR research project)"
-			dates="2021-2021"
+			dates="2021"
 			location="LIRIS (IT laboratory in Lyon)"
 			image="https://liris.cnrs.fr/sites/default/files/logo_liris_160_0.png"
 			description={[
@@ -64,14 +57,8 @@
 	</div>
 
 	<div class="flex flex-col flex-nowrap items-center">
-		<Button>
-			<a
-				href={resume}
-				download
-				class="px-2 uppercase font-bold text-xl text-zinc-800 dark:text-teal-500"
-			>
-				And more...
-			</a>
-		</Button>
+		<Card class="px-2 py-1 uppercase font-semibold">
+			<a href={resume} download> Download my resume </a>
+		</Card>
 	</div>
 </div>

@@ -14,6 +14,8 @@
 		faVuejs
 	} from '@fortawesome/free-brands-svg-icons';
 	import SectionTitle from '../general/SectionTitle.svelte';
+	import Profile from '../profile/Profile.svelte';
+	import SkillCategory from './SkillCategory.svelte';
 	import SkillElement from './SkillElement.svelte';
 
 	export let fullHeight: boolean = false;
@@ -22,7 +24,7 @@
 <div id="skills" class:min-h-screen={fullHeight}>
 	<SectionTitle>My Skills</SectionTitle>
 
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mb-10">
+	<SkillCategory title="Programming Languages">
 		<SkillElement
 			skill="https://iconape.com/wp-content/png_logo_vector/c.png"
 			name="C# / .Net"
@@ -50,9 +52,9 @@
 		<SkillElement skill="SQL" name="SQL" proficiency={Proficiency.Proficient} color="#0276b9" />
 		<SkillElement skill={faPhp} name="PHP" proficiency={Proficiency.Intermediate} color="#0276b9" />
 		<SkillElement skill="GLSL" name="GLSL" proficiency={Proficiency.Basic} />
-	</div>
+	</SkillCategory>
 
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mb-10">
+	<SkillCategory title="Frameworks">
 		<SkillElement
 			skill={faReact}
 			name="React"
@@ -84,16 +86,17 @@
 			proficiency={Proficiency.Intermediate}
 			size="text-sm"
 		/>
-	</div>
+	</SkillCategory>
 
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mb-10">
+	<SkillCategory title="Technologies">
 		<SkillElement skill="Linux" name="Linux" proficiency={Proficiency.Proficient} size="text-md" />
-		<SkillElement skill={faDocker} name="Docker" proficiency={Proficiency.Proficient} color="#2597ef" />
 		<SkillElement
-			skill={faGit}
-			name="Git / Github Actions"
+			skill={faDocker}
+			name="Docker"
 			proficiency={Proficiency.Proficient}
+			color="#2597ef"
 		/>
+		<SkillElement skill={faGit} name="Git / Github Actions" proficiency={Proficiency.Proficient} />
 		<SkillElement
 			skill="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg"
 			name="Kubernetes"
@@ -104,5 +107,28 @@
 			name="Azure / Azure DevOps"
 			proficiency={Proficiency.Intermediate}
 		/>
-	</div>
+	</SkillCategory>
+
+	<SkillCategory title="Languages">
+		<SkillElement
+			skill="https://worldflags.net/assets/flaggor/flags/4x3/fr.svg"
+			name="French"
+			proficiency={Proficiency.Master}
+		/>
+		<SkillElement
+			skill="https://worldflags.net/assets/flaggor/flags/4x3/gb.svg"
+			name="English"
+			proficiency={Proficiency.Master}
+		/>
+		<SkillElement
+			skill="https://worldflags.net/assets/flaggor/flags/4x3/de.svg"
+			name="German"
+			proficiency={Proficiency.Proficient}
+		/>
+		<SkillElement
+			skill="https://worldflags.net/assets/flaggor/flags/4x3/se.svg"
+			name="Swedish"
+			proficiency={Proficiency.Basic}
+		/>
+	</SkillCategory>
 </div>

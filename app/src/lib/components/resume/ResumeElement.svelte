@@ -30,7 +30,7 @@
 <Card
 	class="
 		text-teal-50 bg-zinc-800 dark:bg-teal-500
-		w-80 h-72 overflow-hidden
+		h-72 overflow-hidden
 	"
 >
 	<div class="transition-transform duration-300 -translate-y-0 h-full" bind:this={card}>
@@ -38,11 +38,11 @@
 			{#if image}
 				<div
 					class="
-						bg-zinc-200 rounded-t-md
-						shadow-[inset_0_-20px_30px_-15px_rgba(0,0,0,0.5)]
+						bg-zinc-200 dark:bg-teal-50 rounded-t-md
+						shadow-[inset_0_-20px_20px_-20px_rgba(0,0,0,0.5)]
 					"
 				>
-					<img src={image} alt="" class="w-80 h-40 object-contain px-4 py-2" />
+					<img src={image} alt="" class="w-full h-40 object-contain px-4 py-2" />
 				</div>
 			{/if}
 
@@ -50,12 +50,12 @@
 				class="
 					flex flex-col flex-nowrap
 					justify-center items-center 
-					w-80 h-32 px-4 py-2 gap-2
+					h-32 px-4 py-2 gap-2
 				"
 			>
 				<div
 					class="
-						text-teal-50 uppercase font-semibold text-xl
+						uppercase font-semibold text-xl
 						text-center max-w-full
 						whitespace-nowrap overflow-hidden overflow-ellipsis
 					"
@@ -75,14 +75,14 @@
 		<div class="min-h-full">
 			<div
 				class="
-				w-80 h-72 px-4 py-2
+				h-72 px-4 py-2
 				flex flex-col flex-nowrap justify-start items-center
 			"
 			>
 				<IconButton icon={faArrowUp} on:click={showFront} class="shadow-xl self-center" />
 				<div
 					class="
-						text-teal-50 uppercase font-semibold text-md
+						uppercase font-semibold text-md
 						text-center my-2
 					"
 				>

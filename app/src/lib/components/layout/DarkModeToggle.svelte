@@ -7,10 +7,12 @@
 	export let isDark: boolean;
 </script>
 
-<div class="fixed top-4 right-4 z-10">
-	<IconButton
-		on:click={() => (isDark = !isDark)}
-		{icon}
-		class="shadow-xl bg-teal-500 dark:bg-zinc-800"
-	/>
+<div
+	class="
+	px-2 rounded-full 
+	hover:bg-zinc-700 dark:hover:bg-teal-700 
+	flex flex-col justify-center
+	"
+>
+	<IconButton on:click={() => (isDark = !isDark)} {icon} noBorder />
 </div>

@@ -2,6 +2,12 @@
 	export let link: string;
 </script>
 
-<a href={link} class="w-full px-4 rounded-md hover:underline hover:bg-teal-700">
+<a
+	href={link}
+	class="
+		px-4 py-2 rounded-full 
+		hover:bg-zinc-700 dark:hover:bg-teal-700
+	"
+>
 	<slot />
 </a>
