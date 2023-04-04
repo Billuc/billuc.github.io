@@ -10,7 +10,5 @@
 <div id="projects" class:min-h-screen={fullHeight}>
 	<SectionTitle>My Projects</SectionTitle>
 
-	WIP...<br/>
-
 	<ProjectCarousel elements={projects} />
 </div>

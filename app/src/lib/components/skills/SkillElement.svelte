@@ -19,7 +19,7 @@
 		class="
 			absolute bottom-14 left-1/2 -translate-x-1/2
 			w-48 p-2 rounded-md z-10
-			bg-yellow-400 dark:bg-yellow-600
+			bg-yellow-500 dark:bg-yellow-500
 			scale-0 group-hover/card:scale-100 transition-transform duration-500
 			"
 	>

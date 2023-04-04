@@ -27,12 +27,7 @@
 	export let description: string[];
 </script>
 
-<Card
-	class="
-		text-teal-50 bg-zinc-800 dark:bg-teal-500
-		h-72 overflow-hidden
-	"
->
+<Card class="h-72 overflow-hidden" background="bg-zinc-800 dark:bg-teal-500" color="text-teal-50">
 	<div class="transition-transform duration-300 -translate-y-0 h-full" bind:this={card}>
 		<div class="min-h-full">
 			{#if image}
