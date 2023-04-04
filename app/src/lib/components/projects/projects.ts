@@ -4,7 +4,7 @@ import ballAndStars from '$lib/assets/images/ball-and-stars.png';
 import py2048 from '$lib/assets/images/py2048.png';
 import rayTracing from '$lib/assets/images/ray-tracing.png';
 import fractals from '$lib/assets/images/fractals.png';
-import triSelectIF from '$lib/assets/images/TriSelect\'if.jpg';
+import triSelectIF from '$lib/assets/images/TriSelect\'IF.jpg';
 import git from '$lib/assets/images/GIT.png';
 
 export interface Project {
