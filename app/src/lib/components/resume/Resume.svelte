@@ -1,64 +1,31 @@
 <script lang="ts">
-	import resume from '$lib/assets/CV_Luc_Billaud.pdf';
-	import SectionTitle from '../general/SectionTitle.svelte';
+	import resume from '$lib/assets/CV_Luc_Billaud_2023.pdf';
 	import Button from '../general/Button.svelte';
-	import {
-		faDocker,
-		faPython,
-		faSquareJs,
-		faUnity,
-		faVuejs
-	} from '@fortawesome/free-brands-svg-icons';
-	import ExpandingResumeElement from './ExpandingResumeElement.svelte';
-	import Card from '../general/Card.svelte';
+	import LinkButton from '../general/LinkButton.svelte';
 
-	export let fullHeight: boolean = false;
+	import { Experiences, type Experience } from '$lib/model/experiences';
+	import ResumeExperience from './ResumeExperience.svelte';
+
+	let selected: Experience = Experiences[0];
 </script>
 
-<div id="resume" class:min-h-screen={fullHeight}>
-	<SectionTitle>My experiences</SectionTitle>
+<div
+	class="
+		flex flex-col md:flex-row gap-16
+		justify-evenly items-center
+		w-full
+	"
+>
+	<div class="flex flex-col">
+		<span class="text-4xl font-black text-slate-900">My experience</span>
 
-	<div class="flex flex-col flex-nowrap w-full justify-center items-center relative">
-		<ExpandingResumeElement
-			title="Software Engineer (Fullstack Developper)"
-			dates="2021-2023"
-			location="Dative (Lyon)"
-			image="https://www.gerard-perrier.com/wp-content/uploads/dativelogo2-400x400.png"
-			description={[
-				'Developped features for a data acquisition application',
-				'Created extensions for a cloud data vizualisation platform',
-				'Increased test coverage by more than 20 percent',
-				"Created tools to increase the team's efficiency"
-			]}
-			skills={[faVuejs, 'C#', faDocker, faPython]}
-		/>
-
-		<ExpandingResumeElement
-			title="End of studies internship (VR research project)"
-			dates="2021"
-			location="LIRIS (IT laboratory in Lyon)"
-			image="https://liris.cnrs.fr/sites/default/files/logo_liris_160_0.png"
-			description={[
-				'Created a protocol to dynamically stream compressed 3D meshes',
-				'Implemented different strategies and metrics',
-				'Performed a statistical analysis to determine the best combination'
-			]}
-			skills={[faUnity, faSquareJs, faPython, 'GLSL']}
-		/>
-
-		<ExpandingResumeElement
-			title="Master of Science in Computer Science and Engineering"
-			dates="2016-2021"
-			location="INSA Lyon"
-			image="https://www.insa-lyon.fr/sites/www.insa-lyon.fr/files/logo-coul.png"
-			description={[]}
-			skills={[]}
-		/>
+		<div class="flex flex-col gap-2 mt-8">
+			{#each Experiences as ex}
+				<Button on:click={() => (selected = ex)}>{`${ex.company}   ${ex.dates}`}</Button>
+			{/each}
+			<LinkButton label="Download my resume" to={resume} download class="mt-2" />
+		</div>
 	</div>
 
-	<div class="flex flex-col flex-nowrap items-center">
-		<Card class="px-2 py-1 uppercase font-semibold">
-			<a href={resume} download> Download my resume </a>
-		</Card>
-	</div>
+	<ResumeExperience experience={selected} />
 </div>

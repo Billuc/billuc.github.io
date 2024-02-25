@@ -13,8 +13,7 @@
 	class={`
 		${!noBorder ? 'border-2 border-current' : ''} rounded
 		w-8 h-8 flex justify-center items-center 
-		${className}`
-	}
+		${className}`}
 >
 	<Fa {icon} />
 </button>

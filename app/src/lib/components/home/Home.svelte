@@ -1,5 +1,5 @@
 <script>
-	import Profile from '../profile/Profile.svelte';
+	import Profile from './Profile.svelte';
 	import image from '$lib/assets/luc.webp';
 	import LinkButton from '../general/LinkButton.svelte';
 </script>

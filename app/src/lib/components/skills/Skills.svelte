@@ -14,7 +14,6 @@
 		faVuejs
 	} from '@fortawesome/free-brands-svg-icons';
 	import SectionTitle from '../general/SectionTitle.svelte';
-	import Profile from '../profile/Profile.svelte';
 	import SkillCategory from './SkillCategory.svelte';
 	import SkillElement from './SkillElement.svelte';
 

@@ -1,7 +1,5 @@
 <script lang="ts">
-	import img from '$lib/assets/luc.webp';
 	import NavBar from '$lib/components/layout/NavBar.svelte';
-	import Profile from '../profile/Profile.svelte';
 
 	let isDark: boolean = false;
 </script>
