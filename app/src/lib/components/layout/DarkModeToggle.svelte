@@ -9,7 +9,7 @@
 
 <div
 	class="
-	px-2 rounded-full 
+	rounded-full 
 	hover:bg-zinc-700 dark:hover:bg-teal-700 
 	flex flex-col justify-center
 	"

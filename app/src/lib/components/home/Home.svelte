@@ -1,26 +1,29 @@
 <script>
-	import Card from '$lib/components/general/Card.svelte';
-	import SectionTitle from '../general/SectionTitle.svelte';
-	import HomeText from './HomeText.svelte';
+	import Profile from '../profile/Profile.svelte';
+	import image from '$lib/assets/luc.webp';
+	import LinkButton from '../general/LinkButton.svelte';
 </script>
 
-<SectionTitle>Introduction</SectionTitle>
-
-<Card
+<div
 	class="
-	px-8 py-4
-	w-fit mx-auto
-"
+		flex flex-col md:flex-row gap-16
+		justify-evenly items-center
+		w-full
+	"
 >
-	<HomeText>
-		I am currently working for <a
-			href="https://www.gerard-perrier.com/dative/"
-			class="underline underline-offset-4 decoration-dotted"
-		>
-			Dative
-		</a>
-		as a Fullstack Developer in Lyon, France.
-	</HomeText>
-	<HomeText>I am interested in backend development, software architecture and DevOps.</HomeText>
-	<HomeText>In my free time, I like bouldering, reading and playing video games.</HomeText>
-</Card>
+	<Profile {image} />
+
+	<div class="flex flex-col">
+		<span class="text-4xl font-black text-slate-900">Hi, I am Luc Billaud</span>
+		<span class="text-2xl font-semibold text-slate-900 pt-4">
+			I am a fullstack developer, currently based in Lyon, France.
+		</span>
+
+		<div class="pt-10 flex flex-col gap-2 w-fit">
+			<LinkButton label="More about my experience" to="resume" />
+			<LinkButton label="My skills" to="skills" />
+			<LinkButton label="Discover some of my projects" to="projects" />
+			<LinkButton label="Contact me" to="contact" />
+		</div>
+	</div>
+</div>
