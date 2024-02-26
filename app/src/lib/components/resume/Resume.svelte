@@ -1,5 +1,5 @@
 <script lang="ts">
-	import resume from '$lib/assets/CV_Luc_Billaud_2023.pdf';
+	import resume from '$lib/assets/CV_Luc_Billaud_2024.pdf';
 	import Button from '../general/Button.svelte';
 	import LinkButton from '../general/LinkButton.svelte';
 
@@ -23,7 +23,9 @@
 			{#each Experiences as ex}
 				<Button on:click={() => (selected = ex)}>{`${ex.company}   ${ex.dates}`}</Button>
 			{/each}
-			<LinkButton label="Download my resume" to={resume} download class="mt-2" />
+			<LinkButton to={resume} download="CV_Luc_Billaud_2024.pdf" class="mt-2">
+				Download my resume
+			</LinkButton>
 		</div>
 	</div>
 

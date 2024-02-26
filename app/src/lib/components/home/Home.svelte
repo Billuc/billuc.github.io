@@ -20,10 +20,10 @@
 		</span>
 
 		<div class="pt-10 flex flex-col gap-2 w-fit">
-			<LinkButton label="More about my experience" to="resume" />
-			<LinkButton label="My skills" to="skills" />
-			<LinkButton label="Discover some of my projects" to="projects" />
-			<LinkButton label="Contact me" to="contact" />
+			<LinkButton to="resume">More about my experience</LinkButton>
+			<LinkButton to="skills">My skills</LinkButton>
+			<LinkButton to="projects">Discover some of my projects</LinkButton>
+			<LinkButton to="contact">Contact me</LinkButton>
 		</div>
 	</div>
 </div>

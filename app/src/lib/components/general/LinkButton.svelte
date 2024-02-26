@@ -2,9 +2,8 @@
 	import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
-	export let label: string;
 	export let to: string;
-	export let download: boolean | undefined = undefined;
+	export let download: string | undefined = undefined;
 
 	let className: string = '';
 
@@ -21,6 +20,6 @@
 		group duration-150 ${className}`}
 	{download}
 >
-	{label}
+	<slot />
 	<Fa icon={faArrowRight} class="ml-2 group-hover:ml-6 duration-150" />
 </a>
