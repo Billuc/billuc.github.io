@@ -8,11 +8,11 @@
 
 <div
 	class="
-		px-2 py-0
+		px-4 py-0
 		flex flex-row items-center 
 		gap-2
 		rounded-full
-		bg-sky-50 text-slate-900
+		bg-blue-950 text-sky-50
 	"
 >
 	{#if icon}<Fa {icon} />{/if}

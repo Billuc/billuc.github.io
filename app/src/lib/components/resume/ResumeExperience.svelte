@@ -6,14 +6,12 @@
 	export let experience: Experience;
 </script>
 
-<div
-	class="flex flex-col gap-4 rounded-lg bg-blue-800 text-slate-50 px-4 py-4 shadow-xl max-w-full"
->
-	<div class="rounded-md px-4 py-2 bg-slate-300 shadow-inner">
-		<img src={experience.imgLink} alt={`${experience.company} Logo`} class="w-96" />
+<div class="flex flex-col gap-4 rounded-2xl bg-blue-800 text-slate-50 px-2 py-2 shadow-xl max-w-md">
+	<div class="rounded-lg px-4 py-2 bg-blue-300 shadow-inner">
+		<img src={experience.imgLink} alt={`${experience.company} Logo`} class="w-96 mx-auto" />
 	</div>
 
-	<div class="mx-auto px-4 flex flex-col text-center">
+	<div class="mx-auto px-8 pb-4 flex flex-col text-center">
 		<div class="text-xl">
 			<span class="text-2xl font-black">{experience.title}</span> @
 			<a href={experience.companyLink} class="font-bold underline">
