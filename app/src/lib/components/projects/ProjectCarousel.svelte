@@ -2,7 +2,7 @@
 	import { faArrowLeft, faArrowRight, faExternalLink } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import IconButton from '../general/IconButton.svelte';
-	import type { Project } from './projects';
+	import type { Project } from '../../model/projects';
 
 	$: displayedElement = elements[projectIndex];
 

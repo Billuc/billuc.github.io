@@ -85,7 +85,8 @@ export const Skills: SkillCategory[] = [
 	{
 		title: 'Devops',
 		imgLink:
-			'https://images.unsplash.com/photo-1667372335937-d03be6fb0a9c?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+			'https://images.unsplash.com/photo-1667372459510-55b5e2087cd0?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+		//'https://images.unsplash.com/photo-1667372335937-d03be6fb0a9c?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 		skills: [
 			{ name: 'Docker', icon: faDocker, proficiency: Proficiency.Master, color: '#2597ef' },
 			{ name: 'Git / Github Actions', icon: faGit, proficiency: Proficiency.Proficient },

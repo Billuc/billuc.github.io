@@ -1,14 +1,20 @@
 <script lang="ts">
-	import { projects } from './projects';
-
-	import ProjectCarousel from './ProjectCarousel.svelte';
-	import SectionTitle from '../general/SectionTitle.svelte';
-
-	export let fullHeight: boolean = false;
+	import { Projects } from '$lib/model/projects';
+	import ProjectCard from './ProjectCard.svelte';
 </script>
 
-<div id="projects" class:min-h-screen={fullHeight}>
-	<SectionTitle>My Projects</SectionTitle>
+<div
+	class="
+		flex flex-col gap-8
+		justify-center items-start
+		w-full
+	"
+>
+	<span class="text-4xl font-black text-slate-900">Some of my projects</span>
 
-	<ProjectCarousel elements={projects} />
+	<div class="columns-1 md:columns-3 gap-4 w-full">
+		{#each Projects as p}
+			<ProjectCard project={p} />
+		{/each}
+	</div>
 </div>
