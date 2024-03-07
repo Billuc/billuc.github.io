@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { Projects } from '$lib/model/projects';
 	import ProjectCard from './ProjectCard.svelte';
+	import '$lib/assets/css/projects.css';
 </script>
 
 <div
 	class="
 		flex flex-col gap-8
 		justify-center items-start
-		w-full
+		w-full h-auto
 	"
 >
 	<span class="text-4xl font-black text-slate-900">Some of my projects</span>
