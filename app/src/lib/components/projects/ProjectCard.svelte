@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Project } from '$lib/model/projects';
-	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 	import { faArrowDown, faArrowUp, faLink } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
@@ -13,7 +12,7 @@
 	class="project break-inside-avoid-column
 		flex flex-col items-center
 		shadow-xl bg-gradient-to-b from-blue-700 to-blue-900
-		rounded-md p-4 mb-8
+		rounded-md p-4 mb-4
 		"
 	class:expanded
 >
@@ -21,7 +20,7 @@
 		<img
 			src={project.imgSrc}
 			alt={`Image for project ${project.label}`}
-			class="rounded-sm cursor-pointer max-h-44"
+			class="rounded-sm cursor-pointer max-h-40"
 			on:click={() => (expanded = !expanded)}
 		/>
 	</div>
@@ -29,7 +28,9 @@
 	<div class="details flex flex-col items-center text-sky-50 my-2">
 		<a href={project.projectLink} class="underline text-lg font-black mb-2 flex items-center gap-2">
 			{project.label}
-			<Fa icon={faLink} size="sm" />
+			{#if project.projectLink}
+				<Fa icon={faLink} size="sm" />
+			{/if}
 		</a>
 		<p class="text-sm text-justify italic">{project.description}</p>
 	</div>
