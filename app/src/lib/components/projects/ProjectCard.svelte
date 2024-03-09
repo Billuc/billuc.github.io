@@ -20,7 +20,7 @@
 		<img
 			src={project.imgSrc}
 			alt={`Image for project ${project.label}`}
-			class="rounded-sm cursor-pointer max-h-40"
+			class="rounded-sm cursor-pointer max-h-72"
 			on:click={() => (expanded = !expanded)}
 		/>
 	</div>

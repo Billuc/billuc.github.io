@@ -11,7 +11,7 @@
 
 <div
 	class="
-		flex flex-col md:flex-row gap-16
+		flex flex-col md:flex-row gap-8
 		justify-evenly items-center
 		w-full
 	"
@@ -21,7 +21,9 @@
 
 		<div class="flex flex-col gap-2 mt-8">
 			{#each Experiences as ex}
-				<Button on:click={() => (selected = ex)}>{`${ex.company}   ${ex.dates}`}</Button>
+				<Button on:click={() => (selected = ex)} selected={selected == ex}>
+					{`${ex.company}   ${ex.dates}`}
+				</Button>
 			{/each}
 			<LinkButton to={resume} download="CV_Luc_Billaud_2024.pdf" class="mt-2">
 				Download my resume
@@ -29,5 +31,7 @@
 		</div>
 	</div>
 
-	<ResumeExperience experience={selected} />
+	{#key selected}
+		<ResumeExperience experience={selected} />
+	{/key}
 </div>

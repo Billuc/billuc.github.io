@@ -10,7 +10,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="w-full md:w-1/4 relative h-80 rounded-md overflow-hidden"
+	class="w-full md:w-1/4 relative h-80 rounded-md overflow-hidden cursor-pointer"
 	class:flipped
 	on:click={(_) => (flipped = !flipped)}
 >
