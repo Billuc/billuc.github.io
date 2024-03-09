@@ -1,0 +1,1 @@
+.project .details{transition:all .5s ease-in-out;overflow-y:hidden;max-height:0px;opacity:0}.project.expanded .details{max-height:200px;opacity:1}
