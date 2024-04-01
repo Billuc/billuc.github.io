@@ -7,18 +7,18 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="Billuc's website, developped by Luc Billaud" />
 		
-		<link href="./_app/immutable/assets/0.3950c024.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/0.9016a9f9.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/fa.95b16411.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/Profile.cb10e1cd.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.67ba2246.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.b1b789b9.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.b139090d.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.e283aad3.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.225e54e9.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/fa.9c4bbdfb.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.78c05836.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Profile.b7e90a14.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/LinkButton.73071778.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.0b113788.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.c1b86c61.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.30084126.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.f93507dd.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.571f0da4.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/fa.9816df3d.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.e9441df0.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Profile.eda3fcaa.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/LinkButton.97a30de9.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
@@ -54,38 +54,65 @@
 		<div class="min-h-screen bg-sky-200 bg-gradient-to-r from-sky-200 via-sky-200 to-sky-300 dark:bg-sky-700 dark:from-sky-700 dark:via-sky-700 dark:to-blue-800 flex flex-col justify-between mr-12 ml-0 md:mr-0 md:ml-12 "><div class="w-11/12 mx-auto py-6 flex-grow flex"><div class="flex flex-col md:flex-row gap-16 justify-evenly items-center w-full "><div id="profile" class="flex flex-col flex-nowrap justify-center items-center "><img alt="" src="/_app/immutable/assets/luc.7edfa27c.webp" class="shadow-xl rounded-xl svelte-1u0cmp">
 </div>
 
-	<div class="flex flex-col"><span class="text-4xl font-black text-slate-900">Hi, I am Luc Billaud</span>
-		<span class="text-2xl font-semibold text-slate-900 pt-4">I am a fullstack developer, currently based in Lyon, France.
-		</span>
+	<div class="flex flex-col"><div class="text-4xl font-extrabold"><span class="text-slate-900">Hi, I am </span>
+			<span class="text-pink-600 font-black">Luc Billaud</span></div>
 
-		<div class="pt-10 flex flex-col gap-2 w-fit"><a href="resume" class="rounded-full overflow-hidden 
+		<div class="text-2xl font-semibold pt-4"><span class="text-slate-900">I am a </span>
+			<span class="text-pink-600 font-bold">fullstack developer </span>
+			<span class="text-slate-900">, currently based in Lyon, France. </span></div>
+
+		<div class="pt-10 flex flex-col gap-2 w-fit"><a href="resume" class="
+		rounded-full overflow-hidden 
 		flex justify-center items-center 
-		shadow-xl
-		bg-slate-900 text-slate-50 hover:bg-slate-800
-		px-8 py-1 hover:px-6
-		group duration-150 ">More about my experience
-	<svg class="svelte-fa ml-2 group-hover:ml-6 duration-150 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 448 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(224 256)" transform-origin="112 0"><g transform="translate(0,0) scale(1,1)"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" fill="currentColor" transform="translate(-224 -256)"></path></g></g></svg></a>
-			<a href="skills" class="rounded-full overflow-hidden 
+		bg-stone-900 text-slate-100 hover:bg-slate-900 hover:text-pink-100
+		border-2 border-stone-900 hover:border-pink-600
+		py-1 px-8 hover:px-6
+		text-base
+		group duration-150 
+	">More about my experience
+	<div class="
+		ml-4 group-hover:ml-8
+		duration-150 rotate-90
+	"><svg class="svelte-fa animate-bounce svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 384 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(192 256)" transform-origin="96 0"><g transform="translate(0,0) scale(1,1)"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" fill="currentColor" transform="translate(-192 -256)"></path></g></g></svg></div></a>
+			<a href="skills" class="
+		rounded-full overflow-hidden 
 		flex justify-center items-center 
-		shadow-xl
-		bg-slate-900 text-slate-50 hover:bg-slate-800
-		px-8 py-1 hover:px-6
-		group duration-150 ">My skills
-	<svg class="svelte-fa ml-2 group-hover:ml-6 duration-150 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 448 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(224 256)" transform-origin="112 0"><g transform="translate(0,0) scale(1,1)"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" fill="currentColor" transform="translate(-224 -256)"></path></g></g></svg></a>
-			<a href="projects" class="rounded-full overflow-hidden 
+		bg-stone-900 text-slate-100 hover:bg-slate-900 hover:text-pink-100
+		border-2 border-stone-900 hover:border-pink-600
+		py-1 px-8 hover:px-6
+		text-base
+		group duration-150 
+	">My skills
+	<div class="
+		ml-4 group-hover:ml-8
+		duration-150 rotate-90
+	"><svg class="svelte-fa animate-bounce svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 384 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(192 256)" transform-origin="96 0"><g transform="translate(0,0) scale(1,1)"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" fill="currentColor" transform="translate(-192 -256)"></path></g></g></svg></div></a>
+			<a href="projects" class="
+		rounded-full overflow-hidden 
 		flex justify-center items-center 
-		shadow-xl
-		bg-slate-900 text-slate-50 hover:bg-slate-800
-		px-8 py-1 hover:px-6
-		group duration-150 ">Discover some of my projects
-	<svg class="svelte-fa ml-2 group-hover:ml-6 duration-150 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 448 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(224 256)" transform-origin="112 0"><g transform="translate(0,0) scale(1,1)"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" fill="currentColor" transform="translate(-224 -256)"></path></g></g></svg></a>
-			<a href="contact" class="rounded-full overflow-hidden 
+		bg-stone-900 text-slate-100 hover:bg-slate-900 hover:text-pink-100
+		border-2 border-stone-900 hover:border-pink-600
+		py-1 px-8 hover:px-6
+		text-base
+		group duration-150 
+	">Discover some of my projects
+	<div class="
+		ml-4 group-hover:ml-8
+		duration-150 rotate-90
+	"><svg class="svelte-fa animate-bounce svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 384 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(192 256)" transform-origin="96 0"><g transform="translate(0,0) scale(1,1)"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" fill="currentColor" transform="translate(-192 -256)"></path></g></g></svg></div></a>
+			<a href="contact" class="
+		rounded-full overflow-hidden 
 		flex justify-center items-center 
-		shadow-xl
-		bg-slate-900 text-slate-50 hover:bg-slate-800
-		px-8 py-1 hover:px-6
-		group duration-150 ">Contact me
-	<svg class="svelte-fa ml-2 group-hover:ml-6 duration-150 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 448 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(224 256)" transform-origin="112 0"><g transform="translate(0,0) scale(1,1)"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" fill="currentColor" transform="translate(-224 -256)"></path></g></g></svg></a></div></div></div></div>
+		bg-stone-900 text-slate-100 hover:bg-slate-900 hover:text-pink-100
+		border-2 border-stone-900 hover:border-pink-600
+		py-1 px-8 hover:px-6
+		text-base
+		group duration-150 
+	">Contact me
+	<div class="
+		ml-4 group-hover:ml-8
+		duration-150 rotate-90
+	"><svg class="svelte-fa animate-bounce svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 384 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(192 256)" transform-origin="96 0"><g transform="translate(0,0) scale(1,1)"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" fill="currentColor" transform="translate(-192 -256)"></path></g></g></svg></div></a></div></div></div></div>
 
 			<div class="mx-auto mb-4 text-center w-11/12 opacity-60 text-sm">Website developped by Luc Billaud using Svelte, Vite, Tailwind, FontAwesome, Github &amp; Github
 				Actions
@@ -95,7 +122,7 @@
 			
 			<script>
 				{
-					__sveltekit_1ffj70c = {
+					__sveltekit_ztscwq = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -105,8 +132,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.67ba2246.js"),
-						import("./_app/immutable/entry/app.e283aad3.js")
+						import("./_app/immutable/entry/start.0b113788.js"),
+						import("./_app/immutable/entry/app.f93507dd.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
