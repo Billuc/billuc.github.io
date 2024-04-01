@@ -6,7 +6,7 @@
 	export let category: SkillCategory;
 </script>
 
-<div class="front flex flex-col justify-between items-center px-2 py-8">
+<div class="front flex flex-col justify-evenly items-center px-2 py-8">
 	<img
 		src={category.imgLink}
 		alt={`Image ${category.title}`}

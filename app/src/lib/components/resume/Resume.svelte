@@ -5,33 +5,33 @@
 
 	import { Experiences, type Experience } from '$lib/model/experiences';
 	import ResumeExperience from './ResumeExperience.svelte';
+	import Fa from 'svelte-fa';
+	import { faChevronRight, faHandPointRight } from '@fortawesome/free-solid-svg-icons';
 
 	let selected: Experience = Experiences[0];
 </script>
 
 <div
 	class="
-		flex flex-col md:flex-row gap-8
-		justify-evenly items-center
+		flex flex-col gap-8
+		justify-center items-start
 		w-full
 	"
 >
-	<div class="flex flex-col">
-		<span class="text-4xl font-black text-slate-900">My experience</span>
+	<span class="text-4xl font-black text-slate-900">My experience</span>
 
-		<div class="flex flex-col gap-2 mt-8">
-			{#each Experiences as ex}
-				<Button on:click={() => (selected = ex)} selected={selected == ex}>
-					{`${ex.company}   ${ex.dates}`}
-				</Button>
-			{/each}
-			<LinkButton to={resume} download="CV_Luc_Billaud_2024.pdf" class="mt-2">
-				Download my resume
-			</LinkButton>
-		</div>
+	<div
+		class="
+			flex flex-row gap-8
+			max-w-full overflow-x-scroll
+			p-2
+		"
+	>
+		{#each Experiences as ex}
+			<ResumeExperience experience={ex} />
+			<Fa icon={faHandPointRight} size="lg" class="relative top-1/2 last:hidden" />
+		{/each}
 	</div>
 
-	{#key selected}
-		<ResumeExperience experience={selected} />
-	{/key}
+	<LinkButton to={resume} download="CV_Luc_Billaud_2024.pdf">Download my resume</LinkButton>
 </div>

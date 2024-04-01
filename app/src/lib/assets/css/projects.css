@@ -1,14 +1,16 @@
 .project .details {
 	transition: all 500ms ease-in-out;
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
 .project .details {
+	max-width: 0px;
 	max-height: 0px;
 	opacity: 0;
 }
 
 .project.expanded .details {
-	max-height: 200px;
+	max-width: 400px;
+	max-height: 250px;
 	opacity: 1;
 }

@@ -14,11 +14,10 @@
 		w-full h-auto
 	"
 >
-	<span class="text-4xl font-black text-slate-900">Some of my projects</span>
-	<span class="text-sm italic text-slate-800 mt-4">From the oldest to the most recent</span>
+	<span class="text-4xl font-black text-slate-900 mb-4">Some of my projects</span>
 
-	<div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-8 w-full">
-		{#each Projects as p}
+	<div class="flex flex-col items-center gap-4 w-full">
+		{#each Projects.reverse() as p}
 			<ProjectCard project={p} />
 		{/each}
 	</div>

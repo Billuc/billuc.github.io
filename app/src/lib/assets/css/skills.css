@@ -8,7 +8,15 @@
 	left: 0;
 	transform-origin: center center 2px;
 	overflow-y: auto;
-	@apply shadow-xl bg-gradient-to-b from-blue-700 to-blue-900 rounded-lg;
+	@apply shadow-xl bg-gradient-to-b rounded-lg;
+}
+
+.front {
+	@apply from-blue-700 to-blue-900;
+}
+
+.back {
+	@apply from-pink-700 to-pink-900;
 }
 
 .front {
