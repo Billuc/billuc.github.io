@@ -9,12 +9,12 @@
 <div
 	class="
 		px-4 py-0
-		flex flex-row items-center 
+		flex flex-row items-center
 		gap-2
 		rounded-full
-		bg-blue-950 text-sky-50
+		bg-red-900 text-slate-100
 	"
 >
 	{#if icon}<Fa {icon} />{/if}
-	<span>{name}</span>
+	<span class="whitespace-nowrap">{name}</span>
 </div>

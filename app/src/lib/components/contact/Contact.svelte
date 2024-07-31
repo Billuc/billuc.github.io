@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ContactOption from './ContactOption.svelte';
-	import Profile from '../home/Profile.svelte';
+	import Profile from '../layout/Profile.svelte';
 	import { ContactOptions } from '$lib/model/contact';
 	import image from '$lib/assets/luc2.jpg';
 </script>

@@ -2,8 +2,8 @@
 	export let details: string[];
 </script>
 
-<ul class="list-disc text-justify text-sm italic">
+<ul class="list-disc text-justify text-sm">
 	{#each details as d}
-		<li class="mt-1 first:mt-4">{d}</li>
+		<li class="mb-1">{d}</li>
 	{/each}
 </ul>

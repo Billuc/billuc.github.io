@@ -1,14 +1,15 @@
 import {
-	type IconDefinition,
-	faVuejs,
 	faDocker,
-	faPython,
+	faGitlab,
 	faJs,
-	faUnity,
+	faPython,
 	faReact,
-	faGitlab
+	faUnity,
+	faVuejs
 } from '@fortawesome/free-brands-svg-icons';
 import { faVrCardboard } from '@fortawesome/free-solid-svg-icons';
+
+import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
 export interface Experience {
 	imgLink: string;
@@ -19,13 +20,14 @@ export interface Experience {
 	location: string;
 	skills: { name: string; icon: IconDefinition | null }[];
 	details: string[];
+	imgBackground: 'light' | 'dark';
 }
 
 export const Experiences: Experience[] = [
 	{
 		company: 'CREATIS',
 		title: 'Software engineer',
-		dates: '2023 - 2024',
+		dates: '2023 - now',
 		location: 'Villeurbanne',
 		imgLink: 'https://www.creatis.insa-lyon.fr/site/sites/default/files/logo-creatis_0-1.png',
 		companyLink: 'https://www.creatis.insa-lyon.fr/site',
@@ -39,7 +41,8 @@ export const Experiences: Experience[] = [
 			'Dockerized apps for simplified deployment and developer onboarding',
 			'Improved maintainability with good practices and refactoring',
 			'Wrote tests and set a CI pipeline'
-		]
+		],
+		imgBackground: 'light'
 	},
 	{
 		company: 'Dative',
@@ -59,7 +62,8 @@ export const Experiences: Experience[] = [
 			'Created extensions for a cloud data vizualisation platform',
 			'Increased test coverage by more than 20 percent',
 			"Created tools to increase the team's efficiency"
-		]
+		],
+		imgBackground: 'dark'
 	},
 	{
 		company: 'LIRIS',
@@ -79,7 +83,8 @@ export const Experiences: Experience[] = [
 			'Created a protocol to dynamically stream compressed 3D meshes',
 			'Implemented different strategies and metrics',
 			'Performed a statistical analysis to determine the best combination'
-		]
+		],
+		imgBackground: 'light'
 	},
 	{
 		company: 'INSA Lyon',
@@ -89,6 +94,7 @@ export const Experiences: Experience[] = [
 		imgLink: 'https://www.insa-lyon.fr/sites/all/themes/insa/logo.png',
 		companyLink: 'https://www.insa-lyon.fr/',
 		skills: [],
-		details: []
+		details: [],
+		imgBackground: 'light'
 	}
 ];
