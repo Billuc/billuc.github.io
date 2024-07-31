@@ -22,6 +22,7 @@
 			flex justify-between items-center gap-4
 			h-14 py-2 px-4
 			border-y border-slate-100 border-opacity-30
+			cursor-pointer hover:bg-slate-700
 		"
 		on:click={() => {
 			open = !open;

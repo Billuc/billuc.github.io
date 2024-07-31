@@ -17,7 +17,7 @@
 		rounded-sm overflow-hidden 
 		flex justify-center items-center 
 		transition-colors duration-200
-		bg-slate-900 text-slate-100 hover:text-red-400
+		bg-slate-900 text-slate-100 hover:text-red-300
 		${compact ? 'py-0 px-6' : 'py-1 px-8'}
 		${compact ? 'text-sm' : 'text-base'}
 		${className}
@@ -26,6 +26,6 @@
 >
 	<slot />
 	<div class={`${compact ? 'ml-2' : 'ml-4'} duration-150 rotate-90`}>
-		<Fa icon={faArrowUp} class="animate-bounce" />
+		<Fa icon={faArrowUp} />
 	</div>
 </a>
