@@ -3,6 +3,8 @@
 	import NavigationLink from './NavigationLink.svelte';
 	import image from '$lib/assets/luc2.jpg';
 	import Profile from './Profile.svelte';
+	import { ContactOptions } from '$lib/model/contact';
+	import ContactLink from './ContactLink.svelte';
 </script>
 
 <div class="relative bg-slate-900 text-slate-50" style="max-width: min(30%, 400px);">
@@ -21,7 +23,12 @@
 			<NavigationLink link="/resume" icon={faTimeline}>Experiences</NavigationLink>
 			<NavigationLink link="/skills" icon={faCode}>Skills</NavigationLink>
 			<NavigationLink link="/projects" icon={faFlask}>Projects</NavigationLink>
-			<NavigationLink link="/contact" icon={faPhone}>Contact</NavigationLink>
+		</div>
+
+		<div class="flex justify-center my-2">
+			{#each ContactOptions as c}
+				<ContactLink icon={c.icon} link={c.link} />
+			{/each}
 		</div>
 	</div>
 </div>
