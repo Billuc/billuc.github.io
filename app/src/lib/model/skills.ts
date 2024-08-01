@@ -69,6 +69,11 @@ export const Skills: SkillCategory[] = [
 			{ name: 'Java', icon: faJava, proficiency: Proficiency.Proficient, color: '#0276b9' },
 			{ name: 'SQL', icon: 'SQL', proficiency: Proficiency.Proficient, color: '#0276b9' },
 			{
+				name: 'C++',
+				icon: 'https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg',
+				proficiency: Proficiency.Intermediate
+			},
+			{
 				name: 'Flask',
 				icon: 'https://flask.palletsprojects.com/en/2.2.x/_static/flask-icon.png',
 				proficiency: Proficiency.Intermediate
@@ -76,7 +81,7 @@ export const Skills: SkillCategory[] = [
 			{
 				name: 'PHP / Symfony',
 				icon: faPhp,
-				proficiency: Proficiency.Intermediate,
+				proficiency: Proficiency.Basic,
 				color: '#0276b9'
 			},
 			{ name: 'GLSL', icon: 'GLSL', proficiency: Proficiency.Basic }
@@ -89,8 +94,8 @@ export const Skills: SkillCategory[] = [
 		//'https://images.unsplash.com/photo-1667372335937-d03be6fb0a9c?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 		skills: [
 			{ name: 'Docker', icon: faDocker, proficiency: Proficiency.Master, color: '#2597ef' },
+			{ name: 'Bash', icon: faTerminal, proficiency: Proficiency.Master },
 			{ name: 'Git / Github Actions', icon: faGit, proficiency: Proficiency.Proficient },
-			{ name: 'Bash', icon: faTerminal, proficiency: Proficiency.Proficient },
 			{
 				name: 'Kubernetes',
 				icon: 'https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg',
