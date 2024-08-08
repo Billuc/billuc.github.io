@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { faCode, faFlask, faHome, faPhone, faTimeline } from '@fortawesome/free-solid-svg-icons';
+	import {
+		faCode,
+		faFilePen,
+		faFlask,
+		faHome,
+		faTimeline
+	} from '@fortawesome/free-solid-svg-icons';
 	import NavigationLink from './NavigationLink.svelte';
 	import image from '$lib/assets/luc2.jpg';
 	import Profile from './Profile.svelte';
@@ -41,6 +47,7 @@
 			<NavigationLink link="/resume" icon={faTimeline}>Experiences</NavigationLink>
 			<NavigationLink link="/skills" icon={faCode}>Skills</NavigationLink>
 			<NavigationLink link="/projects" icon={faFlask}>Projects</NavigationLink>
+			<NavigationLink link="/blog" icon={faFilePen}>Blog</NavigationLink>
 		</div>
 
 		<div class="flex justify-center my-2">
