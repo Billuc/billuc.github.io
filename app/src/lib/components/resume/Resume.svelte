@@ -6,7 +6,7 @@
 	import ResumeExperience from './ResumeExperience.svelte';
 </script>
 
-<div class="py-16 text-center">
+<div class="py-16 text-center w-full">
 	<div class="flex flex-col items-center">
 		<span class="text-4xl font-black text-slate-900">My experience</span>
 		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40" />

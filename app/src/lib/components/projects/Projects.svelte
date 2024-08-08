@@ -15,7 +15,7 @@
 			<div>
 				<div class="text-2xl font-bold my-4">{p}</div>
 
-				<div class="flex flex-row flex-wrap gap-2">
+				<div class="flex flex-row flex-wrap justify-evenly gap-2">
 					{#each Projects.filter((proj) => proj.category == p) as proj}
 						<ProjectCard project={proj} />
 					{/each}
