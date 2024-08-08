@@ -2,6 +2,7 @@
 // https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
 
 import type { BlogPostMetadata } from '$lib/model/blogpost';
+import { error } from '@sveltejs/kit';
 
 export async function load({ params }): Promise<BlogPostMetadata & { content: any }> {
 	try {
@@ -16,6 +17,8 @@ export async function load({ params }): Promise<BlogPostMetadata & { content: an
 			lastUpdatedAt
 		};
 	} catch {
-		throw new Error('Not Found');
+		throw error(404, {
+			message: 'Not found'
+		});
 	}
 }
