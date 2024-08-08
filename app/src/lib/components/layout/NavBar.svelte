@@ -5,10 +5,28 @@
 	import Profile from './Profile.svelte';
 	import { ContactOptions } from '$lib/model/contact';
 	import ContactLink from './ContactLink.svelte';
+
+	let opened: boolean = false;
 </script>
 
-<div class="relative bg-slate-900 text-slate-50" style="max-width: min(30%, 400px);">
-	<div class="sticky top-0 left-0 p-8 max-h-screen overflow-auto">
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div
+	class="fixed top-4 left-4 block md:hidden w-8 h-8 shadow-md cursor-pointer"
+	on:click={() => (opened = true)}
+>
+	<Profile {image} />
+</div>
+
+<div
+	class={`
+		fixed md:relative top-0 left-0 
+		bg-slate-900 text-slate-50 
+		navbar z-10
+		transition-transform duration-300 ${
+			opened ? 'translate-x-0' : '-translate-x-full'
+		} md:translate-x-0`}
+>
+	<div class="sticky top-0 left-0 p-8 h-screen overflow-auto">
 		<Profile {image} />
 
 		<div class="text-center">
@@ -32,3 +50,23 @@
 		</div>
 	</div>
 </div>
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div
+	class={`fixed top-0 left-0 w-screen h-screen bg-slate-900 opacity-50 cursor-pointer ${
+		opened ? 'block' : 'hidden'
+	}`}
+	on:click={() => (opened = false)}
+/>
+
+<style>
+	.navbar {
+		max-width: 80%;
+	}
+
+	@media (min-width: 768px) {
+		.navbar {
+			max-width: min(30%, 400px);
+		}
+	}
+</style>

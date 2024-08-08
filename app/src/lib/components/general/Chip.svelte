@@ -8,7 +8,10 @@
 	export let iconColor: string | null = null;
 </script>
 
-<div class={'rounded-full inline-flex items-center px-2 text-sm w-fit ' + className}>
+<div
+	class={'rounded-full inline-flex flex-wrap md:flex-nowrap justify-evenly items-center px-2 text-sm w-fit ' +
+		className}
+>
 	{#if icon}
 		<Icon {icon} {iconColor} size="md" />
 	{/if}
