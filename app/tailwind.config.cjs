@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-  darkMode: 'class',
-  variants: {
-    extend: {
-      height: ["responsive", "group-hover", "hover", "focus"]
-    },
-  },
-}
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	theme: {
+		extend: {}
+	},
+	plugins: [require('@tailwindcss/typography')],
+	darkMode: 'class',
+	variants: {
+		extend: {
+			height: ['responsive', 'group-hover', 'hover', 'focus']
+		}
+	}
+};
