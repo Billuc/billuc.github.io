@@ -1,7 +1,10 @@
 ---
 title: Using Dependency Injection in Vue3 + Vite with Tsyringe
 createdAt: '17/08/2024'
+lastUpdatedAt: '18/08/2024'
 ---
+
+> _DISCLAIMER:_ this does not work, I managed to make tsyringe work in one project, but it doesn't in [this example repo](https://github.com/Billuc/vue-vite-tsyringe) and the reason why is not trivial. Since the last release of tsyringe dates to 2020, I recommend using another library such as [InversifyJS](https://github.com/inversify/InversifyJS) !
 
 ## Introduction
 
@@ -41,7 +44,7 @@ npm install --save-dev typescript reflect-metadata @rollup/plugin-typescript
 
 > `@rollup/plugin-typescript` is a plugin for Rollup (which is the bundler used by Vite under the hood). This is a crucial dependency to make tsyringe work with Vite as Rollup does not support decorators by default.
 
-Next, add those properties to the `tsconfig.json` file
+Next, add those properties to the `tsconfig.json` file (or `tsconfig.app.json` in the repo)
 
 ```json
 {
@@ -71,7 +74,7 @@ export default defineConfig({
 })
 ```
 
-> Note that the rollupTypescript plugin has to be in second position -right after the vue plugin- in order for this to work !
+> _IMPORTANT:_ Note that the rollupTypescript plugin has to be in second position -right after the vue plugin- in order for this to work !
 
 Finally, import the Reflect polyfill in the `main.ts` file.
 
@@ -80,7 +83,60 @@ import "reflect-metadata";
 ...
 ```
 
-<!-- ## My way of using it in Vue -->
+This is enough to use tsyringe in your Vite project.
+
+## My way of using it in Vue
+
+In my Vue project, I added some stuff to simplify my life when coding services and components. You can take inspiration from them if you want to !
+
+First I created a Vue plugin to register my services.
+
+```ts
+import { container } from 'tsyringe';
+import { Plugin } from 'vue';
+
+const containerPlugin: Plugin = (app) => {
+	// This not necessary, container is already the default container provided by tsyringe and can be used directly
+	const myContainer = container.createChildContainer();
+
+	// Register services here
+	// Example
+	// myContainer.registerSingleton(Database);
+
+	// That allows us to get an easy access to our container in the components
+	app.provide('container', myContainer);
+	return app;
+};
+export default containerPlugin;
+```
+
+Then, registered the plugin in `main.ts`.
+
+```ts
+const app = createApp(App);
+app.use(containerPlugin);
+app.mount('#app');
+```
+
+Then, I created a utility composable / hook to resolve the services in the components.
+
+```ts
+import { inject } from 'vue';
+
+import type { DependencyContainer, InjectionToken } from 'tsyringe';
+
+export const useService = <T>(token: InjectionToken<T>): T => {
+	// This returns the container provided in the plugin
+	const myContainer: DependencyContainer | undefined = inject('container');
+
+	if (!myContainer)
+		throw Error('DependencyContainer not available ! Are you using the DI plugin ?');
+
+	return myContainer.resolve(token);
+};
+```
+
+Create your services, add them to the container in the plugin and use `useService` to resolve them in your components.
 
 ## Conclusion
 
