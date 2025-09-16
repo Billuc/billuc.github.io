@@ -1,12 +1,5 @@
 <script>
-	import {
-		faCode,
-		faFilePen,
-		faFlask,
-		faHome,
-		faTimeline
-	} from '@fortawesome/free-solid-svg-icons';
-	import NavigationLink from '../layout/NavigationLink.svelte';
+	import { faCode, faFilePen, faFlask, faTimeline } from '@fortawesome/free-solid-svg-icons';
 	import LinkButton from '../general/LinkButton.svelte';
 	import Fa from 'svelte-fa';
 	import { ContactOptions } from '$lib/model/contact';
@@ -32,10 +25,10 @@
 				<Fa icon={faTimeline} class="mr-2" />
 				Discover my resume
 			</LinkButton>
-			<LinkButton to="/skills">
-				<Fa icon={faCode} class="mr-2" />
-				More about my skills
-			</LinkButton>
+			<!-- <LinkButton to="/skills"> -->
+			<!-- 	<Fa icon={faCode} class="mr-2" /> -->
+			<!-- 	More about my skills -->
+			<!-- </LinkButton> -->
 			<LinkButton to="/projects">
 				<Fa icon={faFlask} class="mr-2" />
 				Project showcase

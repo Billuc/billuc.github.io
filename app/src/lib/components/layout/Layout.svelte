@@ -15,7 +15,7 @@
 		<NavBar />
 
 		<div
-			class="min-h-screen max-w-full
+			class="min-h-screen grow max-w-full
 				bg-slate-100
 				flex flex-col justify-between
 				"
