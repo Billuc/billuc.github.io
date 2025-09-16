@@ -1,7 +1,7 @@
 <script lang="ts">
 	import NavBar from '$lib/components/layout/NavBar.svelte';
 
-	let isDark: boolean = false;
+	let isDark = false;
 </script>
 
 <div class:dark={isDark}>
@@ -15,7 +15,7 @@
 		<NavBar />
 
 		<div
-			class="min-h-screen grow max-w-full md:max-w-[70%]
+			class="min-h-screen max-w-full
 				bg-slate-100
 				flex flex-col justify-between
 				"

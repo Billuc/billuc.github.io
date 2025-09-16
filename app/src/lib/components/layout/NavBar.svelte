@@ -12,7 +12,7 @@
 	import { ContactOptions } from '$lib/model/contact';
 	import ContactLink from './ContactLink.svelte';
 
-	let opened: boolean = false;
+	let opened = false;
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -73,7 +73,7 @@
 
 	@media (min-width: 768px) {
 		.navbar {
-			max-width: min(30%, 400px);
+			min-width: min(350px, max(30%, 350px));
 		}
 	}
 </style>
