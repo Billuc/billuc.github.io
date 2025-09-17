@@ -7,7 +7,7 @@
 </script>
 
 {#key data.currentRoute}
-	<main in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
+	<main in:fade|global={{ duration: 150, delay: 150 }} out:fade|global={{ duration: 150 }}>
 		<Layout>
 			<slot />
 		</Layout>
