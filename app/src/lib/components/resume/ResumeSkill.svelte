@@ -8,13 +8,13 @@
 
 <div
 	class="
-		px-4 py-0
-		flex flex-row items-center
-		gap-2
+		px-2 py-0
+		flex flex-row items-center justify-center gap-2
 		rounded-full
 		bg-red-900 text-slate-100
+	h-6
 	"
 >
 	{#if icon}<Fa {icon} />{/if}
-	<span class="whitespace-nowrap">{name}</span>
+	<span class={`truncate ${icon ? 'hidden' : ''} md:inline`}>{name}</span>
 </div>

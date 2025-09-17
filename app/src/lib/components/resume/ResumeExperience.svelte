@@ -7,7 +7,7 @@
 
 	export let experience: Experience;
 
-	let open: boolean = false;
+	let open = false;
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

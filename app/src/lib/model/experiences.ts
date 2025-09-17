@@ -1,13 +1,15 @@
 import {
 	faDocker,
 	faGitlab,
+	faJava,
 	faJs,
+	faPhp,
 	faPython,
 	faReact,
 	faUnity,
 	faVuejs
 } from '@fortawesome/free-brands-svg-icons';
-import { faVrCardboard } from '@fortawesome/free-solid-svg-icons';
+import { faC, faVrCardboard } from '@fortawesome/free-solid-svg-icons';
 
 import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
@@ -25,9 +27,28 @@ export interface Experience {
 
 export const Experiences: Experience[] = [
 	{
+		company: 'Dedalus Healthcare France',
+		title: 'Backend developer',
+		dates: '2024 - now',
+		location: 'Villeurbanne',
+		imgLink:
+			'https://www.dedalus.com/fr/wp-content/themes/dedalus/assets/img/dedalus-logo-white.svg',
+		companyLink: 'https://www.dedalus.com/fr/fr/',
+		skills: [
+			{ name: 'C', icon: null },
+			{ name: 'Java', icon: faJava },
+			{ name: 'Php', icon: faPhp }
+		],
+		details: [
+			'Developed drivers for medical devices in a healthcare software',
+			'Integrated a test framework to a legacy codebase'
+		],
+		imgBackground: 'dark'
+	},
+	{
 		company: 'CREATIS',
 		title: 'Software engineer',
-		dates: '2023 - now',
+		dates: '2023 - 2024',
 		location: 'Villeurbanne',
 		imgLink: 'https://www.creatis.insa-lyon.fr/site/sites/default/files/logo-creatis_0-1.png',
 		companyLink: 'https://www.creatis.insa-lyon.fr/site',

@@ -18,7 +18,7 @@
 		<div
 			class="
 			flex flex-col
-			max-w-full overflow-x-scroll
+			max-w-full overflow-x-auto
 			p-2
 		"
 		>
