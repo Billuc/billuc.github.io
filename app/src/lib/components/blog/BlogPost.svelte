@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { BlogPostMetadata } from '$lib/model/blogpost';
+	import type { FullBlogPost } from '$lib/model/blogpost';
 
 	// Took inspiration from this post
-	
+
 	interface Props {
 		// https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
-		data: BlogPostMetadata & { content: any };
+		data: FullBlogPost;
 	}
 
 	let { data }: Props = $props();
@@ -13,11 +13,12 @@
 
 <div class="py-16 text-center w-full">
 	<article class="flex flex-col items-center">
-		<span class="text-4xl font-black text-slate-900">{data.title}</span>
+		<span class="text-4xl font-black text-slate-900">{data.metadata.title}</span>
 		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40"></div>
 
 		<p class="text-sm italic mb-8">
-			Published: {data.createdAt}, last updated: {data.lastUpdatedAt ?? data.createdAt}
+			Published: {data.metadata.createdAt}, last updated: {data.metadata.lastUpdatedAt ??
+				data.metadata.createdAt}
 		</p>
 
 		<div

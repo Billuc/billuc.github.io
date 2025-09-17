@@ -20,13 +20,15 @@
 </div>
 
 <div
-	class={`
-		fixed md:relative top-0 left-0 
-		bg-slate-900 text-slate-50 
-		navbar z-10
-		transition-transform duration-300 ${
-			opened ? 'translate-x-0' : '-translate-x-full'
-		} md:translate-x-0`}
+	class={[
+		'fixed md:relative top-0 left-0',
+		'bg-slate-900 text-slate-50',
+		'z-10',
+		'max-w-[80%] md:min-w-xs md:max-w-xs',
+		'transition-transform duration-300',
+		opened ? 'translate-x-0' : '-translate-x-full',
+		'md:translate-x-0'
+	]}
 >
 	<div class="sticky top-0 left-0 p-8 h-screen overflow-auto">
 		<Profile {image} />
@@ -62,16 +64,3 @@
 	}`}
 	onclick={() => (opened = false)}
 ></div>
-
-<style>
-	.navbar {
-		max-width: 80%;
-	}
-
-	@media (min-width: 768px) {
-		.navbar {
-			min-width: min(350px, max(30%, 350px));
-			max-width: min(350px, max(30%, 350px));
-		}
-	}
-</style>

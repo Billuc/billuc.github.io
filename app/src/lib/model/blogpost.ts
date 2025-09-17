@@ -6,4 +6,9 @@ export interface BlogPostMetadata {
 
 export interface BlogPost {
 	metadata: BlogPostMetadata;
+	path?: string;
+}
+
+export interface FullBlogPost extends BlogPost {
+	content: any;
 }

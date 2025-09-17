@@ -10,20 +10,15 @@
 </script>
 
 <div class:dark={isDark}>
-	<div
-		class="
-			text-slate-900
-			transition-all duration-500 ease-in-out relative
-			flex flex-row w-full
-		"
-	>
+	<div class={['text-slate-900', 'flex flex-row w-full', 'relative']}>
 		<NavBar />
 
 		<div
-			class="min-h-screen grow max-w-full
-				bg-slate-100
-				flex flex-col justify-between
-				"
+			class={[
+				'min-h-screen grow max-w-full md:max-w-screen--xs',
+				'bg-slate-100',
+				'flex flex-col justify-between'
+			]}
 		>
 			<div class="w-11/12 mx-auto py-6 grow flex">
 				{@render children?.()}

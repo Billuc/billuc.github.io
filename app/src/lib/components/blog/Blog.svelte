@@ -2,14 +2,14 @@
 	import type { BlogPost } from '$lib/model/blogpost';
 
 	interface Props {
-		posts: (BlogPost & { path: string })[];
+		posts: BlogPost[];
 	}
 
 	let { posts }: Props = $props();
 
-	let postsByCreatedDate = $derived(posts.sort(
-		(a, b) => Date.parse(a.metadata.createdAt) - Date.parse(b.metadata.createdAt)
-	));
+	let postsByCreatedDate = $derived(
+		posts.sort((a, b) => Date.parse(a.metadata.createdAt) - Date.parse(b.metadata.createdAt))
+	);
 </script>
 
 <div class="py-16 text-center w-full">

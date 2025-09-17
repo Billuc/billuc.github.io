@@ -1,8 +1,10 @@
 ---
 title: Using Dependency Injection in Vue3 + Vite with Tsyringe
 createdAt: '17/08/2024'
-lastUpdatedAt: '18/08/2024'
+lastUpdatedAt: '17/09/2025'
 ---
+
+> _UPDATE_: I managed to make it work ! However, you have to explicitely inject every dependency for each service, which is quite cumbersome. Even though it seems development has resumed on tsyringe, I still recommend not using it :/
 
 > _DISCLAIMER:_ this does not work, I managed to make tsyringe work in one project, but it doesn't in [this example repo](https://github.com/Billuc/vue-vite-tsyringe) and the reason why is not trivial. Since the last release of tsyringe dates to 2020, I recommend using another library such as [InversifyJS](https://github.com/inversify/InversifyJS) !
 

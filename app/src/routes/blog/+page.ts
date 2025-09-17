@@ -1,6 +1,6 @@
 import type { BlogPost } from '$lib/model/blogpost';
 
-export async function load({}): Promise<{ posts: (BlogPost & { path: string })[] }> {
+export async function load({ }): Promise<{ posts: BlogPost[] }> {
 	const allPostFiles = import.meta.glob<boolean, string, BlogPost>('/src/routes/blog/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
