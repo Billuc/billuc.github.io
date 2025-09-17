@@ -38,6 +38,7 @@
 		"@fortawesome/free-brands-svg-icons": "^6.2.1",
 		"@fortawesome/free-regular-svg-icons": "^6.6.0",
 		"@fortawesome/free-solid-svg-icons": "^6.2.1",
+		"caniuse-lite": "^1.0.30001743",
 		"svelte-fa": "^3.0.3"
 	}
 }
