@@ -34,7 +34,7 @@
 		<div class="text-center">
 			<div class="text-xl font-black my-4">Luc Billaud</div>
 			<div class="text-sm my-2">
-				Fullstack developer based in Lyon, backend and DevOps enjoyer, geek and nerd
+				Curious developer, Gleam enthusiast, backend enjoyer and open-source lover.
 			</div>
 		</div>
 

@@ -4,22 +4,19 @@
 	import ResumeDetails from './ResumeDetails.svelte';
 	import ResumeSkills from './ResumeSkills.svelte';
 	import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+	import { slide } from 'svelte/transition';
+	import { quadInOut } from 'svelte/easing';
 
 	interface Props {
 		experience: Experience;
+		opened?: boolean;
+		toggle?: () => void;
 	}
 
-	let { experience }: Props = $props();
-
-	let open = $state(false);
+	let { experience, opened, toggle }: Props = $props();
 </script>
 
-<div
-	class="
-		bg-slate-800 text-slate-100
-		rounded-sm overflow-clip
-	"
->
+<div class={['bg-slate-800 text-slate-100', 'rounded-sm', 'overflow-clip', 'md:w-sm', 'lg:w-lg']}>
 	<!-- svelte-ignore a11y_interactive_supports_focus -->
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -27,12 +24,10 @@
 		class="
 			flex justify-between items-center gap-4
 			h-14 py-2 px-4
-			border-y border-slate-100 border-opacity-30
+			border-t border-slate-100 border-opacity-30
 			cursor-pointer hover:bg-slate-700
 		"
-		onclick={() => {
-			open = !open;
-		}}
+		onclick={toggle}
 	>
 		<span class="font-bold">{experience.dates}</span>
 
@@ -49,28 +44,30 @@
 		<Fa
 			icon={faChevronDown}
 			class={`
-			${open ? 'rotate-180' : 'rotate-0'}
+			${opened ? 'rotate-180' : 'rotate-0'}
 			transition-transform duration-150
 		`}
 		/>
 	</div>
 
-	<div class={`transition-all duration-500 max-h-96 ${open ? 'h-fit' : 'h-0'}`}>
-		<div class="text-center p-4 bg-slate-700">
-			<div>
-				<span class="font-black">{experience.title}</span> @
-				<a href={experience.companyLink} class="font-bold underline">
-					{experience.company}
-				</a>
-			</div>
-			<div class="italic font-light">
-				{experience.location}
-			</div>
+	{#if opened}
+		<div transition:slide={{ duration: 300, easing: quadInOut }}>
+			<div class="text-center p-4 bg-slate-600">
+				<div>
+					<span class="font-black">{experience.title}</span> @
+					<a href={experience.companyLink} class="font-bold underline">
+						{experience.company}
+					</a>
+				</div>
+				<div class="italic font-light">
+					{experience.location}
+				</div>
 
-			<div class="flex flex-row flex-nowrap gap-8 mt-4">
-				<ResumeSkills skills={experience.skills} />
-				<ResumeDetails details={experience.details} />
+				<div class="flex flex-row flex-nowrap gap-8 mt-4">
+					<ResumeSkills skills={experience.skills} />
+					<ResumeDetails details={experience.details} />
+				</div>
 			</div>
 		</div>
-	</div>
+	{/if}
 </div>

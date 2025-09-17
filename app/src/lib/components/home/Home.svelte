@@ -11,12 +11,12 @@
 		<div class="text-4xl font-extrabold">Hi, I am Luc Billaud</div>
 		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40"></div>
 
-		<div class="self-stretch w-full md:w-2/3 mx-auto px-4 md:px-20">
-			<p class="text-base md:text-lg font-semibold text-justify">
-				I am a fullstack developer, currently based in Lyon, France. I like development, especially
-				backend and Devops-related development, even though I experimented a lot with frontend.
-				Other centers of interest include video games, bouldering, science-fiction and playing the
-				guitar.
+		<div class="self-stretch w-full mx-auto px-4 max-w-lg">
+			<p class="text-base md:text-lg text-justify">
+				I am a developer currently based in Lyon, France. I like backend development, even though I
+				experimented a lot with frontend. I have a strong interest in language design, my currently
+				favourite language is Gleam and I published several open-source libraries. Other centers of
+				interest include video games, science-fiction and sports.
 			</p>
 		</div>
 
