@@ -33,6 +33,26 @@ export interface Project {
 
 export const Projects: Project[] = [
 	{
+		imgSrc:
+			'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Cigogne_%28Oberbronn%29_%2836129332332%29.jpg/330px-Cigogne_%28Oberbronn%29_%2836129332332%29.jpg',
+		projectLink: 'https://github.com/Billuc/cigogne',
+		label: 'Cigogne',
+		description:
+			'Cigogne is a SQL migration tool for Gleam projects. It relies on SQL files to define migrations and apply them.',
+		category: ProjectCategory.Libraries
+	},
+	{
+		imgSrc: muninn,
+		projectLink: 'https://billuc.github.io/Muninn',
+		label: 'Muninn',
+		description: `
+			A selfmade productivity app. It only has lists and notes for now.
+			It was built as a PWA, so that it can be installed on every device regardless of the OS.
+I am currently working on a new version.
+		`,
+		category: ProjectCategory.Websites
+	},
+	{
 		imgSrc: triSelectIF,
 		projectLink: 'https://hexanome-thermopropulsif.gitlab.io/tri-selectif/',
 		label: "Tri Select'IF",
@@ -59,46 +79,34 @@ export const Projects: Project[] = [
 		projectLink: 'https://github.com/Billuc/Taipan-DI',
 		label: 'Taipan-DI',
 		description: `
-			A dependency injection library for Python that I wrote. I created this library to have a simple
-			yet powerful way to implement inversion of control in other Python projects. I took inspiration
-			from other Python DI libraries and .Net's DI tool and tested it extensively.
+			A dependency injection library for Python. I created this library to have a simple
+			yet powerful way to implement inversion of control in other Python projects.
 		`,
 		category: ProjectCategory.Libraries
 	},
-	{
-		imgSrc:
-			'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-		projectLink: 'https://github.com/Billuc',
-		label: 'Music-related libraries',
-		description: `
-			As I was working on a music related project, I needed to execute some operations and decided to create
-			dedicated Python libraries to implement them. Those operations include fetching music metadata, fetching
-			music lyrics and embedding metadata in music files.
-		`,
-		category: ProjectCategory.Libraries
-	},
-	{
-		imgSrc: muninn,
-		projectLink: 'https://billuc.github.io/Muninn',
-		label: 'Muninn',
-		description: `
-			A selfmade productivity app to meet my needs. It has a journal, lists, events and notes.
-			It was built as a PWA, so that it can be installed on every device regardless of the OS.
-			Note: It is not stable yet, but I am not currently working on it...
-		`,
-		category: ProjectCategory.Websites
-	},
-	{
-		imgSrc: ballAndStars,
-		projectLink: 'https://github.com/Billuc/Ball-and-Stars',
-		label: 'Ball and Stars',
-		description: `
-	        A simple game where you control a bouncing ball and have to catch all the stars.
-	        I made it with Java during holidays. It was heavily inspired by a game we used
-	        to play with a friend.
-	    `,
-		category: ProjectCategory.Games
-	},
+	// {
+	// 	imgSrc:
+	// 		'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+	// 	projectLink: 'https://github.com/Billuc',
+	// 	label: 'Music-related libraries',
+	// 	description: `
+	// 		As I was working on a music related project, I needed to execute some operations and decided to create
+	// 		dedicated Python libraries to implement them. Those operations include fetching music metadata, fetching
+	// 		music lyrics and embedding metadata in music files.
+	// 	`,
+	// 	category: ProjectCategory.Libraries
+	// },
+	// {
+	// 	imgSrc: ballAndStars,
+	// 	projectLink: 'https://github.com/Billuc/Ball-and-Stars',
+	// 	label: 'Ball and Stars',
+	// 	description: `
+	//         A simple game where you control a bouncing ball and have to catch all the stars.
+	//         I made it with Java during holidays. It was heavily inspired by a game we used
+	//         to play with a friend.
+	//     `,
+	// 	category: ProjectCategory.Games
+	// },
 	{
 		imgSrc: engine3D,
 		projectLink: 'https://github.com/Billuc/3DEngine',
@@ -106,7 +114,7 @@ export const Projects: Project[] = [
 		description: `
 	        I was interested in the way computers could show 3D objects on a 2D screen.
 	        So I tried to develop a simple 3D engine that could display dots at certain
-	        coordinates. The camera can move so we can see the dots get closer or further.
+	        coordinates.
 	    `,
 		category: ProjectCategory.Others
 	},
@@ -115,9 +123,9 @@ export const Projects: Project[] = [
 		projectLink: 'https://github.com/Billuc/RayTracing2D',
 		label: 'RayTracing2D',
 		description: `
-	        First experiment with ray tracing : tracing rays until they collide with an object.
 	        It was a small experiment I did after learning the theory behind ray tracing and
-	        computer graphics.
+	        computer graphics. It traces rays from the mouse in all directions until they hit
+	        a shape.
 	    `,
 		category: ProjectCategory.Others
 	},
@@ -128,20 +136,20 @@ export const Projects: Project[] = [
 		description: `
             My very first personal project : my own version of the game 2048 with Python. It 
             may be buggy and not very nice looking, since I made it with very limited coding
-            experience.
+            experience, but I am still proud I made it !
         `,
 		category: ProjectCategory.Games
-	},
-	{
-		imgSrc: fractals,
-		projectLink: 'https://github.com/Billuc/Fractals',
-		label: 'Fractals',
-		description: `
-            This is a small project I did for fun. I like fractals (and other mathematical
-            objects) and so I decided to create a project where I gradually draw different fractals.
-        `,
-		category: ProjectCategory.Others
 	}
+	// {
+	// 	imgSrc: fractals,
+	// 	projectLink: 'https://github.com/Billuc/Fractals',
+	// 	label: 'Fractals',
+	// 	description: `
+	//            This is a small project I did for fun. I like fractals (and other mathematical
+	//            objects) and so I decided to create a project where I gradually draw different fractals.
+	//        `,
+	// 	category: ProjectCategory.Others
+	// }
 	// {
 	// 	imgSrc: balistics,
 	// 	projectLink: 'https://github.com/Billuc/Balistics',
