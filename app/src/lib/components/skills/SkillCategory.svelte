@@ -6,13 +6,16 @@
 	import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 	import { faStar } from '@fortawesome/free-regular-svg-icons';
 
-	export let category: SkillCategory;
+	interface Props {
+		category: SkillCategory;
+	}
 
-	$: skillsOrderedByProficiency = orderByProficiency(category.skills);
+	let { category }: Props = $props();
 
 	const orderByProficiency = (skills: Skill[]) => {
 		return skills.sort((skillA, skillB) => skillB.proficiency - skillA.proficiency);
 	};
+	let skillsOrderedByProficiency = $derived(orderByProficiency(category.skills));
 </script>
 
 <div class="text-2xl font-black my-4">{category.title}</div>

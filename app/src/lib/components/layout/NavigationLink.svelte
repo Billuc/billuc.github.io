@@ -2,8 +2,13 @@
 	import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 	import IconButton from '../general/IconButton.svelte';
 
-	export let link: string;
-	export let icon: IconDefinition;
+	interface Props {
+		link: string;
+		icon: IconDefinition;
+		children?: import('svelte').Snippet;
+	}
+
+	let { link, icon, children }: Props = $props();
 </script>
 
 <a
@@ -17,6 +22,6 @@
 >
 	<IconButton noBorder {icon} />
 	<div class="overflow-clip ml-2">
-		<slot />
+		{@render children?.()}
 	</div>
 </a>

@@ -4,7 +4,11 @@
 	import LinkButton from '../general/LinkButton.svelte';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-	export let project: Project;
+	interface Props {
+		project: Project;
+	}
+
+	let { project }: Props = $props();
 </script>
 
 <div class="bg-slate-800 text-slate-100 flex flex-col p-4 rounded-sm max-w-xl shadow-md">

@@ -1,9 +1,15 @@
 <script lang="ts">
-	export let selected: boolean | undefined;
+	interface Props {
+		selected: boolean | undefined;
+		children?: import('svelte').Snippet;
+		onclick: (event: MouseEvent) => void;
+	}
+
+	let { selected, children, onclick }: Props = $props();
 </script>
 
 <button
-	on:click
+	{onclick}
 	class="
 		rounded-full overflow-hidden
 		flex justify-center items-center
@@ -13,5 +19,5 @@
 	"
 	class:bg-slate-600={selected}
 >
-	<slot />
+	{@render children?.()}
 </button>

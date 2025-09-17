@@ -2,11 +2,14 @@
 	import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
 
-	let className: string = '';
-	export { className as class };
-	export let icon: IconDefinition | string | null = null;
-	export let iconColor: string | null = null;
-	export let size: 'sm' | 'md' | 'lg' = 'md';
+	interface Props {
+		class?: string;
+		icon?: IconDefinition | string | null;
+		iconColor?: string | null;
+		size?: 'sm' | 'md' | 'lg';
+	}
+
+	let { class: className = '', icon = null, iconColor = null, size = 'md' }: Props = $props();
 
 	const textSizeClasses = {
 		sm: 'text-sm',
@@ -19,8 +22,8 @@
 		lg: 'h-5'
 	};
 
-	$: textSizeClass = textSizeClasses[size];
-	$: imgSizeClass = imgSizeClasses[size];
+	let textSizeClass = $derived(textSizeClasses[size]);
+	let imgSizeClass = $derived(imgSizeClasses[size]);
 </script>
 
 {#if typeof icon === 'string' && icon.startsWith('http')}

@@ -1,5 +1,5 @@
 <script>
-	import { faCode, faFilePen, faFlask, faTimeline } from '@fortawesome/free-solid-svg-icons';
+	import { faFilePen, faFlask, faTimeline } from '@fortawesome/free-solid-svg-icons';
 	import LinkButton from '../general/LinkButton.svelte';
 	import Fa from 'svelte-fa';
 	import { ContactOptions } from '$lib/model/contact';
@@ -9,7 +9,7 @@
 <div class="text-center w-full py-16">
 	<div class="flex flex-col items-center">
 		<div class="text-4xl font-extrabold">Hi, I am Luc Billaud</div>
-		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40" />
+		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40"></div>
 
 		<div class="self-stretch w-full md:w-2/3 mx-auto px-4 md:px-20">
 			<p class="text-base md:text-lg font-semibold text-justify">

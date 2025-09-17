@@ -5,18 +5,24 @@
 	import ResumeSkills from './ResumeSkills.svelte';
 	import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-	export let experience: Experience;
+	interface Props {
+		experience: Experience;
+	}
 
-	let open = false;
+	let { experience }: Props = $props();
+
+	let open = $state(false);
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	class="
 		bg-slate-800 text-slate-100
 		rounded-sm overflow-clip
 	"
 >
+	<!-- svelte-ignore a11y_interactive_supports_focus -->
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		class="
 			flex justify-between items-center gap-4
@@ -24,7 +30,7 @@
 			border-y border-slate-100 border-opacity-30
 			cursor-pointer hover:bg-slate-700
 		"
-		on:click={() => {
+		onclick={() => {
 			open = !open;
 		}}
 	>

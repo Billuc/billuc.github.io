@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let details: string[];
+	interface Props {
+		details: string[];
+	}
+
+	let { details }: Props = $props();
 </script>
 
 <ul class="list-disc text-justify text-xs md:text-sm">

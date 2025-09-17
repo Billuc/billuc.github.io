@@ -3,8 +3,13 @@
 	import type { BlogPostMetadata } from '$lib/model/blogpost';
 
 	// Took inspiration from this post
-	// https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
-	export let data: BlogPostMetadata & { content: any };
+	
+	interface Props {
+		// https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
+		data: BlogPostMetadata & { content: any };
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <BlogPost {data} />

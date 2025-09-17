@@ -1,5 +1,14 @@
+<script lang="ts">
+	interface Props {
+		activator?: import('svelte').Snippet;
+		tooltip?: import('svelte').Snippet;
+	}
+
+	let { activator, tooltip }: Props = $props();
+</script>
+
 <div class="group relative">
-	<slot name="activator" />
+	{@render activator?.()}
 	<div
 		class="
 			scale-0 group-hover:scale-100 transition-transform duration-300
@@ -10,6 +19,6 @@
 			after:border-transparent after:border-t-amber-600
 		"
 	>
-		<slot name="tooltip" />
+		{@render tooltip?.()}
 	</div>
 </div>

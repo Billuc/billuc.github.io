@@ -2,8 +2,12 @@
 	import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
 
-	export let name: string;
-	export let icon: IconDefinition | null = null;
+	interface Props {
+		name: string;
+		icon?: IconDefinition | null;
+	}
+
+	let { name, icon = null }: Props = $props();
 </script>
 
 <div

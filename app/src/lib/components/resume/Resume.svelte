@@ -9,7 +9,7 @@
 <div class="py-16 text-center w-full">
 	<div class="flex flex-col items-center">
 		<span class="text-4xl font-black text-slate-900">My experience</span>
-		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40" />
+		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40"></div>
 
 		<LinkButton to={resume} download="CV_Luc_Billaud_2024.pdf" class="mb-4">
 			Download my resume

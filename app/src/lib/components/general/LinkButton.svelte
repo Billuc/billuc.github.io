@@ -2,13 +2,21 @@
 	import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
-	export let to: string;
-	export let download: string | undefined = undefined;
-	export let compact: boolean | undefined = undefined;
+	interface Props {
+		to: string;
+		download?: string | undefined;
+		compact?: boolean | undefined;
+		class?: string;
+		children?: import('svelte').Snippet;
+	}
 
-	let className: string = '';
-
-	export { className as class };
+	let {
+		to,
+		download = undefined,
+		compact = undefined,
+		class: className = '',
+		children
+	}: Props = $props();
 </script>
 
 <a
@@ -24,7 +32,7 @@
 	`}
 	{download}
 >
-	<slot />
+	{@render children?.()}
 	<div class={`${compact ? 'ml-2' : 'ml-4'} duration-150 rotate-90`}>
 		<Fa icon={faArrowUp} />
 	</div>

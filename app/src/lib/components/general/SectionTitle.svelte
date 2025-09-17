@@ -1,3 +1,11 @@
+<script lang="ts">
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
+</script>
+
 <div class="my-8 flex flex-row flex-nowrap justify-center">
 	<div
 		class="
@@ -6,6 +14,6 @@
 		font-black uppercase text-center text-4xl
 	"
 	>
-		<slot />
+		{@render children?.()}
 	</div>
 </div>

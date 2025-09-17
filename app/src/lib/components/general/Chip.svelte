@@ -2,10 +2,14 @@
 	import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 	import Icon from './Icon.svelte';
 
-	let className: string = '';
-	export { className as class };
-	export let icon: IconDefinition | string | null = null;
-	export let iconColor: string | null = null;
+	interface Props {
+		class?: string;
+		icon?: IconDefinition | string | null;
+		iconColor?: string | null;
+		children?: import('svelte').Snippet;
+	}
+
+	let { class: className = '', icon = null, iconColor = null, children }: Props = $props();
 </script>
 
 <div
@@ -15,5 +19,5 @@
 	{#if icon}
 		<Icon {icon} {iconColor} size="md" />
 	{/if}
-	<slot />
+	{@render children?.()}
 </div>

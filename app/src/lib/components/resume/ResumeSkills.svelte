@@ -2,7 +2,11 @@
 	import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 	import ResumeSkill from './ResumeSkill.svelte';
 
-	export let skills: { name: string; icon: IconDefinition | null }[];
+	interface Props {
+		skills: { name: string; icon: IconDefinition | null }[];
+	}
+
+	let { skills }: Props = $props();
 </script>
 
 <div class="flex flex-col justify-center gap-2">

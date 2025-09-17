@@ -1,11 +1,19 @@
 <script lang="ts">
-    let className: string = "";
-    export { className as class };
+	interface Props {
+		class?: string;
+		background?: string;
+		color?: string;
+		children?: import('svelte').Snippet;
+	}
 
-    export let background: string = "bg-yellow-500 dark:bg-yellow-500"
-    export let color: string = "text-zinc-800 dark:text-zinc-800"
+	let {
+		class: className = '',
+		background = 'bg-yellow-500 dark:bg-yellow-500',
+		color = 'text-zinc-800 dark:text-zinc-800',
+		children
+	}: Props = $props();
 </script>
 
 <div class={`rounded-md shadow-xl ${className} ${background} ${color}`}>
-	<slot />
+	{@render children?.()}
 </div>

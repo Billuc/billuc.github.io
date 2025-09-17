@@ -2,14 +2,18 @@
 	import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 	import Fa from 'svelte-fa';
 
-	let className: string = '';
-	export { className as class };
-	export let icon: IconDefinition;
-	export let noBorder: boolean = false;
+	interface Props {
+		class?: string;
+		icon: IconDefinition;
+		noBorder?: boolean;
+		onclick?: (event: MouseEvent) => void;
+	}
+
+	let { class: className = '', icon, noBorder = false, onclick }: Props = $props();
 </script>
 
 <button
-	on:click
+	{onclick}
 	class={`
 		${!noBorder ? 'border-2 border-current' : ''} rounded
 		w-8 h-8 flex justify-center items-center 
