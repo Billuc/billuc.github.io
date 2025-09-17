@@ -17,8 +17,8 @@ export async function load({ params }): Promise<BlogPostMetadata & { content: an
 			lastUpdatedAt
 		};
 	} catch {
-		throw error(404, {
-			message: 'Not found'
-		});
+		error(404, {
+        			message: 'Not found'
+        		});
 	}
 }
