@@ -9,25 +9,25 @@
 		
 		<link href="../_app/immutable/assets/index.ZJaHuitq.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/0.f8NMm-SO.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.D-Z_XK79.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DaPG41v5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DOjkhJMK.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BzqehAlX.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Cu1WW25Q.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.uPXOlNSH.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/bnytOFrt.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BNT2r3GQ.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DIc3h8md.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/B4U1C1vn.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/D0iwhpLH.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.C-jVF1z6.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.B8FlYWpk.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/D9Z9MdNV.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/DsnmJJEf.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/B9xvzWmP.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Cp698Nca.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.3rExT2BJ.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Cz4T9vBq.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CglE_25W.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DRoFOHEh.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DiTWgRFJ.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/B821ZvVs.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/D1YBNPzp.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.BRxFFDON.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CfYbmsAE.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CfohfhMS.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.BbmSS9Kh.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DYLSkF05.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BaWFwNX7.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CraCJsNR.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BwCe5NWr.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BURWb2Id.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DBFc1hoR.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/5.NKYRAjUe.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><!----><main><div><div class="text-slate-900 flex flex-row w-full relative"><div class="fixed top-4 left-4 block md:hidden w-8 h-8 shadow-md cursor-pointer" role="button" tabindex="0"><div id="profile" class="flex flex-col flex-nowrap justify-center items-center"><img alt="" src="/_app/immutable/assets/luc2.D84-XoRd.jpg" class="shadow-xl rounded-xl svelte-1mytxqo"/></div><!----></div> <div class="fixed md:relative top-0 left-0 bg-slate-900 text-slate-50 z-10 max-w-[80%] md:min-w-xs md:max-w-xs transition-transform duration-300 -translate-x-full md:translate-x-0"><div class="sticky top-0 left-0 p-8 h-screen overflow-auto"><div id="profile" class="flex flex-col flex-nowrap justify-center items-center"><img alt="" src="/_app/immutable/assets/luc2.D84-XoRd.jpg" class="shadow-xl rounded-xl svelte-1mytxqo"/></div><!----> <div class="text-center"><div class="text-xl font-black my-4">Luc Billaud</div> <div class="text-sm my-2">Curious developer, Gleam enthusiast, backend enjoyer and open-source lover.</div></div> <div class="my-8"><a href="/" class="flex flex-row items-center px-8 py-0.5 border-sky-200 border-t last:border-b border-opacity-30 hover:text-red-300"><button class="
@@ -74,20 +74,74 @@ I could have gone the simple and easy path of reusing existing code, as there ar
 both in Erlang (<a href="https://www.erlang.org/doc/apps/xmerl/xmerl_ug.html" rel="nofollow">xmerl</a>) and Javascript
 (<a href="https://developer.mozilla.org/en-US/docs/Web/XML/Guides/Parsing_and_serializing_XML" rel="nofollow">DOMParser</a>)
 to parse XML, but I wanted to do the parsing myself so I ended up writing my own XML parser
-using <a href="https://hexdocs.pm/nibble/index.html" rel="nofollow">nibble</a>.</p> <h2>The RSS library</h2> <h2>The website</h2><!----></div></article></div><!----><!----><!----></div> <div class="mx-auto mb-4 text-center w-11/12 opacity-60 text-sm">Website developped by Luc Billaud using Svelte, Vite, Tailwind, FontAwesome, Github &amp; Github
+using <a href="https://hexdocs.pm/nibble/index.html" rel="nofollow">nibble</a>.</p> <p>Nibble is a lexer and parser combinator library written entirely in pure Gleam. This is great
+because it means the parser I wrote with it can run anywhere Gleam can, whether it is an
+Erlang or Javascript server or the browser. It works in 2 steps: a lexing step and a parsing
+step, much like lex/flex + yacc/bison (even though there are fundamental differences, I know).</p> <p>Let’s start with the lexer. The goal of the lexer is to take a string and turn it into a chain
+of meaningful symbols called tokens. Here is my list of tokens for XML:</p> <pre class="language-gleam"><!----><code class="language-gleam">pub type XmlToken &#123;
+  TagOpen(name: String)             // &lt;name
+  TagClose                          // &gt;
+  TagSelfClose                      // /&gt;
+  TagEnd(name: String)              // &lt;/name
+  Text(String)                      // a chain of characters
+  Equals                            // =
+  CommentStart                      // &lt;!--
+  CommentEnd                        // --&gt;
+  Quote(quote: String)              // &quot; or &#39;
+  CDATAOpen                         // &lt;[CDATA[
+  CDATAClose                        // ]]&gt;
+  ReferenceStart                    // &amp;
+  ReferenceName(name: String)       // name
+  ReferenceCode(code: String)       // #code
+  ReferenceHexCode(code: String)    // #xcode
+  ReferenceEnd                      // ;
+  XmlDeclarationStart               // &lt;?xml
+  XmlDeclarationEnd                 // ?&gt;
+&#125;</code><!----></pre> <p>My XML lexer is a bit more complicated than just matching characters to tokens though.
+Let’s take this example:</p> <pre class="language-xml"><!----><code class="language-xml"><span class="token comment">&lt;!-- You can define a book's title like so &lt;title>My Book&lt;/title> --></span></code><!----></pre> <p>Here, for instance, <code>&lt;title</code> should not be matched to <code>TagOpen("title")</code>, but should be
+included in the comment’s content. Therefore, I have to know that I am in the context of a comment.
+To introduce this idea of <em>lexing context</em>, nibble has the ability to define
+advanced lexers that produce different tokens based on the <em>mode</em> we are in. If you want
+to know more about how I used these modes, you can look at the code <a href="https://github.com/Billuc/gleaxml/blob/master/src/gleaxml/lexer.gleam" rel="nofollow">here</a>.</p> <p>Then, there is the parsing step. The parser’s job is to take the chain of tokens returned by
+the lexer and turn it into objects that can be used for whatever you need. Here, we want to
+create objects such as a XmlDocument, XmlNodes, etc. The parser is basically a set of rules
+on how tokens should be arranged and how to turn these into Gleam objects. Here is a simple example:</p> <pre class="language-gleam"><!----><code class="language-gleam">fn comment() -&gt; nibble.Parser(XmlNode, lexer.XmlToken, k) &#123;
+  use _ &lt;- nibble.do(nibble.token(lexer.CommentStart))
+  use values &lt;- nibble.do(
+    nibble.take_map_while(fn(tok) &#123;
+      case tok &#123;
+        lexer.Text(v) -&gt; option.Some(v)
+        _ -&gt; option.None
+      &#125;
+    &#125;),
+  )
+  use _ &lt;- nibble.do(nibble.token(lexer.CommentEnd))
+
+  nibble.return(Comment(string.join(values, &quot;&quot;)))
+&#125;</code><!----></pre> <p>This basically says “If you have a sequence of a CommentStart, then 0 or many Texts and finally a CommentEnd,
+create a Comment by joining the values of the Texts”. Since the <a href="https://www.w3.org/TR/xml/" rel="nofollow">XML specification</a> is very well defined, it was easy to create such rules to assemble tokens and create XmlDocument and XmlNode objects.</p> <p>Finally, I created a ‘main’ module with helpful function to make my life easier when I want to manipulate said objects,
+since pattern matching all the time when you want to get the value of an attribute or the first child of a certain
+name is cumbersome. Functions such as <code>pub fn get_node(root: parser.XmlNode, path: List(String))</code> or <code>pub fn get_attribute(node: parser.XmlNode, name: String)</code> have much more meaning in this context and are very
+convenient for building our RSS library.</p> <h2>The RSS library</h2> <p>The RSS library is very simple since most of the work has been done in the XML library.
+What we have to do now is simply to retrieve data from specific places in the XML node tree returned by our XML
+parser. Then, we can build new objects relative to RSS feeds and voilà !</p> <p>Once again, the <a href="https://www.rssboard.org/rss-specification" rel="nofollow">specification</a> is very clear and detailed
+and the helper functions I mentioned at the end of the previous section helped tremendously with
+retrieving data from specific places. You can find this library <a href="https://github.com/Billuc/glisse/" rel="nofollow">here</a>.</p> <h2>The website</h2> <p>Now that I can, from a string of data, parse its XML content and build RSS-related objects, I want to display
+the data so that I can read the news’ titles. A website is the best way to do this and get access to the
+content from basically anywhere. Gleam can build website by using the Lustre library, perfect !</p><!----></div></article></div><!----><!----><!----></div> <div class="mx-auto mb-4 text-center w-11/12 opacity-60 text-sm">Website developped by Luc Billaud using Svelte, Vite, Tailwind, FontAwesome, Github &amp; Github
 				Actions</div></div></div></div><!----></main><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1auibh2 = {
+					__sveltekit_q8eeq8 = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.D-Z_XK79.js"),
-						import("../_app/immutable/entry/app.C-jVF1z6.js")
+						import("../_app/immutable/entry/start.uPXOlNSH.js"),
+						import("../_app/immutable/entry/app.B8FlYWpk.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
