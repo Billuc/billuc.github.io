@@ -8,6 +8,7 @@ import py2048 from '$lib/assets/images/py2048.png';
 import rayTracing from '$lib/assets/images/ray-tracing.png';
 import taipanDi from '$lib/assets/images/taipan-di.jpeg';
 import triSelectIF from '$lib/assets/images/TriSelectIF.jpg';
+import rssReader from '$lib/assets/images/rss-reader.jpg';
 
 export enum ProjectCategory {
 	Libraries = 'Libraries',
@@ -18,8 +19,8 @@ export enum ProjectCategory {
 
 export const ProjectCategories = [
 	ProjectCategory.Libraries,
-	ProjectCategory.Games,
 	ProjectCategory.Websites,
+	ProjectCategory.Games,
 	ProjectCategory.Others
 ];
 
@@ -32,6 +33,14 @@ export interface Project {
 }
 
 export const Projects: Project[] = [
+	{
+		imgSrc: rssReader,
+		projectLink: 'https://github.com/Billuc/rss-reader',
+		label: 'RSS Reader',
+		description:
+			'A simple RSS aggregator to read the news ! Built from scratch in Gleam and deployed to an AWS Lambda.',
+		category: ProjectCategory.Websites
+	},
 	{
 		imgSrc:
 			'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Cigogne_%28Oberbronn%29_%2836129332332%29.jpg/330px-Cigogne_%28Oberbronn%29_%2836129332332%29.jpg',
