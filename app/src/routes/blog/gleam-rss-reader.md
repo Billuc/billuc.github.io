@@ -127,10 +127,60 @@ parser. Then, we can build new objects relative to RSS feeds and voilà !
 
 Once again, the [specification](https://www.rssboard.org/rss-specification) is very clear and detailed
 and the helper functions I mentioned at the end of the previous section helped tremendously with
-retrieving data from specific places. You can find this library [here](https://github.com/Billuc/glisse/).
+retrieving data from specific places. There isn't much to say about the code, you can find it
+[here](https://github.com/Billuc/glisse/).
 
 ## The website
 
 Now that I can, from a string of data, parse its XML content and build RSS-related objects, I want to display
 the data so that I can read the news' titles. A website is the best way to do this and get access to the
 content from basically anywhere. Gleam can build website by using the Lustre library, perfect !
+
+My first idea was to create a purely static website that I could host on a Github Page and access easily.
+I spun up a Lustre project, added [rsvp](https://hexdocs.pm/rsvp/index.html) to fetch the RSS documents, and...
+it did not work ! Damn you CORS ! I guess this solution is out the window and I have to fetch them on the
+server instead.
+
+As I am currently learning how to use AWS, I thought this project would be perfect for testing AWS Lambdas.
+A Lambda is a simple function that receive an event as an input and returns data under a specific format as
+the output. It can be called with an HTTP request from an URL and return data to create HTTP responses.
+I did not need much computational power, since I would simply be serving an HTML page and fetching, parsing
+and formatting RSS data, so a Lambda is a good fit (and it has a free tier).
+
+First, I have to decode the incoming event ! Since I will only be calling the Lambda with HTTP requests, the
+event will always have the same format, so I could write a decoder in order to get a Gleam object out of it
+(even though I am not sure this was necessary). The code of our Lambda then starts like this:
+
+```gleam
+pub fn handler(event) {
+  node.console_log("Received event: " <> string.inspect(event))
+  let ev = aws.decode_event(event)
+  // ...
+}
+```
+
+Next, I discriminate on the HTTP path to choose what I should do:
+
+```gleam
+let res = case ev.request_context.http.path {
+  "/" -> todo as "return a HTML page"
+  "/items" -> todo as "return the RSS data formatted"
+}
+res
+```
+
+I generate the HTML using Lustre and the `element.to_document_string` function, which generate an HTML document
+from a Lustre element. The HTML in itself is quite simple, it is a list of divs (one for each RSS source) that
+make a request to `/items` when initialized.
+
+The items endpoint has a very straightforward job to do: fetch the url passed as parameter, parse it and return
+the data correctly formatted. Since I use HTMX, the items endpoint should also return HTML that will replace
+the calling div's content. Again, I use Lustre to build an element from the parsed data and convert it to
+and HTML string using `element.to_string`.
+
+And voilà, we have an HTML page that loads and displays the RSS items from the provided URLs ! I use it
+almost daily to get news and articles. If you want to see it for yourself, [here](https://sbocjayj46dktf3orwcsw27nxi0ymkxn.lambda-url.eu-north-1.on.aws/) is the link. If you want to
+look at the code (which shouldn't be too hard to understand, send me a message if you struggle), it is
+[here](https://github.com/Billuc/rss-reader).
+
+## Ending notes
