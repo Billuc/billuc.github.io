@@ -1,4 +1,4 @@
-import"./DsnmJJEf.js";import"./CraCJsNR.js";import{f as m,s as a,a as p,b as u,d as o,r as n,Z as g}from"./DIc3h8md.js";import{h as r}from"./BHGvuBUI.js";const f={title:"RSS Reader - How I built my own news aggregator in Gleam",createdAt:"17/09/2025"},{title:x,createdAt:S}=f;var w=m(`<p>Some time ago, I gave myself a new side quest. I wanted to know more about RSS feeds.
+import"./DsnmJJEf.js";import"./CraCJsNR.js";import{f,s as e,a as w,b,d as t,r as a,Z as y}from"./DIc3h8md.js";import{h as o}from"./BHGvuBUI.js";const v={title:"RSS Reader - How I built my own news aggregator in Gleam",createdAt:"17/09/2025"},{title:L,createdAt:_}=v;var S=f(`<p>Some time ago, I gave myself a new side quest. I wanted to know more about RSS feeds.
 The motivation behind it was that I was tired of “modern” news websites. I feel it is
 now harder to access meaninful content on those websites than it should be. Whether it
 is loading time, huge images, useless platitudes or the infamous cookie popups and paywalls, I get annoyed
@@ -41,9 +41,25 @@ convenient for building our RSS library.</p> <h2>The RSS library</h2> <p>The RSS
 What we have to do now is simply to retrieve data from specific places in the XML node tree returned by our XML
 parser. Then, we can build new objects relative to RSS feeds and voilà !</p> <p>Once again, the <a href="https://www.rssboard.org/rss-specification" rel="nofollow">specification</a> is very clear and detailed
 and the helper functions I mentioned at the end of the previous section helped tremendously with
-retrieving data from specific places. You can find this library <a href="https://github.com/Billuc/glisse/" rel="nofollow">here</a>.</p> <h2>The website</h2> <p>Now that I can, from a string of data, parse its XML content and build RSS-related objects, I want to display
+retrieving data from specific places. There isn’t much to say about the code, you can find it <a href="https://github.com/Billuc/glisse/" rel="nofollow">here</a>.</p> <h2>The website</h2> <p>Now that I can, from a string of data, parse its XML content and build RSS-related objects, I want to display
 the data so that I can read the news’ titles. A website is the best way to do this and get access to the
-content from basically anywhere. Gleam can build website by using the Lustre library, perfect !</p>`,1);function T(l){var s=w(),e=a(p(s),20),h=o(e);r(h,()=>`<code class="language-gleam">pub type XmlToken &#123;
+content from basically anywhere. Gleam can build website by using the Lustre library, perfect !</p> <p>My first idea was to create a purely static website that I could host on a Github Page and access easily.
+I spun up a Lustre project, added <a href="https://hexdocs.pm/rsvp/index.html" rel="nofollow">rsvp</a> to fetch the RSS documents, and…
+it did not work ! Damn you CORS ! I guess this solution is out the window and I have to fetch them on the
+server instead.</p> <p>As I am currently learning how to use AWS, I thought this project would be perfect for testing AWS Lambdas.
+A Lambda is a simple function that receive an event as an input and returns data under a specific format as
+the output. It can be called with an HTTP request from an URL and return data to create HTTP responses.
+I did not need much computational power, since I would simply be serving an HTML page and fetching, parsing
+and formatting RSS data, so a Lambda is a good fit (and it has a free tier).</p> <p>First, I have to decode the incoming event ! Since I will only be calling the Lambda with HTTP requests, the
+event will always have the same format, so I could write a decoder in order to get a Gleam object out of it
+(even though I am not sure this was necessary). The code of our Lambda then starts like this:</p> <pre class="language-gleam"><!></pre> <p>Next, I discriminate on the HTTP path to choose what I should do:</p> <pre class="language-gleam"><!></pre> <p>I generate the HTML using Lustre and the <code>element.to_document_string</code> function, which generate an HTML document
+from a Lustre element. The HTML in itself is quite simple, it is a list of divs (one for each RSS source) that
+make a request to <code>/items</code> when initialized.</p> <p>The items endpoint has a very straightforward job to do: fetch the url passed as parameter, parse it and return
+the data correctly formatted. Since I use HTMX, the items endpoint should also return HTML that will replace
+the calling div’s content. Again, I use Lustre to build an element from the parsed data and convert it to
+and HTML string using <code>element.to_string</code>.</p> <p>And voilà, we have an HTML page that loads and displays the RSS items from the provided URLs ! I use it
+almost daily to get news and articles. If you want to see it for yourself, <a href="https://sbocjayj46dktf3orwcsw27nxi0ymkxn.lambda-url.eu-north-1.on.aws/" rel="nofollow">here</a> is the link. If you want to
+look at the code (which shouldn’t be too hard to understand, send me a message if you struggle), it is <a href="https://github.com/Billuc/rss-reader" rel="nofollow">here</a>.</p> <h2>Ending notes</h2>`,1);function R(d){var l=S(),n=e(w(l),20),c=t(n);o(c,()=>`<code class="language-gleam">pub type XmlToken &#123;
   TagOpen(name: String)             // &lt;name
   TagClose                          // &gt;
   TagSelfClose                      // /&gt;
@@ -62,7 +78,7 @@ content from basically anywhere. Gleam can build website by using the Lustre lib
   ReferenceEnd                      // ;
   XmlDeclarationStart               // &lt;?xml
   XmlDeclarationEnd                 // ?&gt;
-&#125;</code>`),n(e);var t=a(e,4),d=o(t);r(d,()=>`<code class="language-xml"><span class="token comment">&lt;!-- You can define a book's title like so &lt;title>My Book&lt;/title> --></span></code>`),n(t);var i=a(t,6),c=o(i);r(c,()=>`<code class="language-gleam">fn comment() -&gt; nibble.Parser(XmlNode, lexer.XmlToken, k) &#123;
+&#125;</code>`),a(n);var s=e(n,4),m=t(s);o(m,()=>`<code class="language-xml"><span class="token comment">&lt;!-- You can define a book's title like so &lt;title>My Book&lt;/title> --></span></code>`),a(s);var r=e(s,6),u=t(r);o(u,()=>`<code class="language-gleam">fn comment() -&gt; nibble.Parser(XmlNode, lexer.XmlToken, k) &#123;
   use _ &lt;- nibble.do(nibble.token(lexer.CommentStart))
   use values &lt;- nibble.do(
     nibble.take_map_while(fn(tok) &#123;
@@ -75,4 +91,12 @@ content from basically anywhere. Gleam can build website by using the Lustre lib
   use _ &lt;- nibble.do(nibble.token(lexer.CommentEnd))
 
   nibble.return(Comment(string.join(values, &quot;&quot;)))
-&#125;</code>`),n(i),g(14),u(l,s)}export{T as default,f as metadata};
+&#125;</code>`),a(r);var i=e(r,22),p=t(i);o(p,()=>`<code class="language-gleam">pub fn handler(event) &#123;
+  node.console_log(&quot;Received event: &quot; &lt;&gt; string.inspect(event))
+  let ev = aws.decode_event(event)
+  // ...
+&#125;</code>`),a(i);var h=e(i,4),g=t(h);o(g,()=>`<code class="language-gleam">let res = case ev.request_context.http.path &#123;
+  &quot;/&quot; -&gt; todo as &quot;return a HTML page&quot;
+  &quot;/items&quot; -&gt; todo as &quot;return the RSS data formatted&quot;
+&#125;
+res</code>`),a(h),y(8),b(d,l)}export{R as default,v as metadata};
