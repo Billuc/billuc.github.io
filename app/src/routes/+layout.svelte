@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Layout from '$lib/components/layout/Layout.svelte';
-	import { fade } from 'svelte/transition';
+	import { blur } from 'svelte/transition';
 
 	interface Props {
 		data: { currentRoute: string };
@@ -12,7 +12,10 @@
 </script>
 
 {#key data.currentRoute}
-	<main in:fade|global={{ duration: 150, delay: 150 }} out:fade|global={{ duration: 150 }}>
+	<main
+		in:blur|global={{ duration: 300, delay: 250, opacity: 70 }}
+		out:blur|global={{ duration: 300, opacity: 70 }}
+	>
 		<Layout>
 			{@render children?.()}
 		</Layout>
