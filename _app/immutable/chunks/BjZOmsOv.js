@@ -64,7 +64,7 @@ almost daily to get news and articles ! It was super interesting learning about 
 parsers and I plan on using nibble for more projects (I have this idea of a toy programming
 language) ! As always with Gleam, it was super easy to get things done, the language doesn’t
 get in your way, it is a pleasure to use and there are many great packages :)</p> <p>P.S.: I got to read of <a href="https://feedmaker.fly.dev" rel="nofollow">this website</a> that allow you to generate
-RSS feeds from websites thanks to my RSS reader :D I can get news from even more sources !!!</p>`,1);function _(d){var l=S(),n=e(w(l),20),c=t(n);o(c,()=>`<code class="language-gleam">pub type XmlToken &#123;
+RSS feeds from websites thanks to my RSS reader :D I can get news from even more sources !!!</p> <h2>Links</h2> <ul><li><a href="https://github.com/Billuc/gleaxml" rel="nofollow">gleaxml (XML parsing library)</a></li> <li><a href="https://github.com/Billuc/glisse/" rel="nofollow">glisse (RSS parser)</a></li> <li><a href="https://github.com/Billuc/rss-reader" rel="nofollow">RSS Reader (code)</a></li> <li><a href="https://sbocjayj46dktf3orwcsw27nxi0ymkxn.lambda-url.eu-north-1.on.aws/" rel="nofollow">RSS Reader (page)</a></li></ul>`,1);function _(d){var l=S(),n=e(w(l),20),c=t(n);o(c,()=>`<code class="language-gleam">pub type XmlToken &#123;
   TagOpen(name: String)             // &lt;name
   TagClose                          // &gt;
   TagSelfClose                      // /&gt;
@@ -83,7 +83,7 @@ RSS feeds from websites thanks to my RSS reader :D I can get news from even more
   ReferenceEnd                      // ;
   XmlDeclarationStart               // &lt;?xml
   XmlDeclarationEnd                 // ?&gt;
-&#125;</code>`),a(n);var s=e(n,4),m=t(s);o(m,()=>`<code class="language-xml"><span class="token comment">&lt;!-- You can define a book's title like so &lt;title>My Book&lt;/title> --></span></code>`),a(s);var r=e(s,6),u=t(r);o(u,()=>`<code class="language-gleam">fn comment() -&gt; nibble.Parser(XmlNode, lexer.XmlToken, k) &#123;
+&#125;</code>`),a(n);var s=e(n,4),u=t(s);o(u,()=>`<code class="language-xml"><span class="token comment">&lt;!-- You can define a book's title like so &lt;title>My Book&lt;/title> --></span></code>`),a(s);var r=e(s,6),m=t(r);o(m,()=>`<code class="language-gleam">fn comment() -&gt; nibble.Parser(XmlNode, lexer.XmlToken, k) &#123;
   use _ &lt;- nibble.do(nibble.token(lexer.CommentStart))
   use values &lt;- nibble.do(
     nibble.take_map_while(fn(tok) &#123;
@@ -104,4 +104,4 @@ RSS feeds from websites thanks to my RSS reader :D I can get news from even more
   &quot;/&quot; -&gt; todo as &quot;return a HTML page&quot;
   &quot;/items&quot; -&gt; todo as &quot;return the RSS data formatted&quot;
 &#125;
-res</code>`),a(h),y(12),b(d,l)}export{_ as default,v as metadata};
+res</code>`),a(h),y(16),b(d,l)}export{_ as default,v as metadata};
