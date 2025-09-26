@@ -21,10 +21,10 @@
 		</div>
 
 		<div class="my-16 flex flex-col gap-2">
-			<LinkButton to="/resume">
-				<Fa icon={faTimeline} class="mr-2" />
-				Discover my resume
-			</LinkButton>
+			<!-- <LinkButton to="/resume"> -->
+			<!-- 	<Fa icon={faTimeline} class="mr-2" /> -->
+			<!-- 	Discover my resume -->
+			<!-- </LinkButton> -->
 			<!-- <LinkButton to="/skills"> -->
 			<!-- 	<Fa icon={faCode} class="mr-2" /> -->
 			<!-- 	More about my skills -->

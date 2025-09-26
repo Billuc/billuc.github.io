@@ -116,28 +116,28 @@ I am currently working on a new version.
 	//     `,
 	// 	category: ProjectCategory.Games
 	// },
-	{
-		imgSrc: engine3D,
-		projectLink: 'https://github.com/Billuc/3DEngine',
-		label: '3D engine',
-		description: `
-	        I was interested in the way computers could show 3D objects on a 2D screen.
-	        So I tried to develop a simple 3D engine that could display dots at certain
-	        coordinates.
-	    `,
-		category: ProjectCategory.Others
-	},
-	{
-		imgSrc: rayTracing,
-		projectLink: 'https://github.com/Billuc/RayTracing2D',
-		label: 'RayTracing2D',
-		description: `
-	        It was a small experiment I did after learning the theory behind ray tracing and
-	        computer graphics. It traces rays from the mouse in all directions until they hit
-	        a shape.
-	    `,
-		category: ProjectCategory.Others
-	},
+	// {
+	// 	imgSrc: engine3D,
+	// 	projectLink: 'https://github.com/Billuc/3DEngine',
+	// 	label: '3D engine',
+	// 	description: `
+	//         I was interested in the way computers could show 3D objects on a 2D screen.
+	//         So I tried to develop a simple 3D engine that could display dots at certain
+	//         coordinates.
+	//     `,
+	// 	category: ProjectCategory.Others
+	// },
+	// {
+	// 	imgSrc: rayTracing,
+	// 	projectLink: 'https://github.com/Billuc/RayTracing2D',
+	// 	label: 'RayTracing2D',
+	// 	description: `
+	//         It was a small experiment I did after learning the theory behind ray tracing and
+	//         computer graphics. It traces rays from the mouse in all directions until they hit
+	//         a shape.
+	//     `,
+	// 	category: ProjectCategory.Others
+	// },
 	{
 		imgSrc: py2048,
 		projectLink: 'https://github.com/Billuc/Py2048',

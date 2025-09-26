@@ -195,3 +195,10 @@ get in your way, it is a pleasure to use and there are many great packages :)
 P.S.: I got to read of [this website](https://feedmaker.fly.dev) that allow you to generate
 RSS feeds from websites thanks to my RSS reader :D I can get news from even more sources !!!
 
+## Links
+
+- [gleaxml (XML parsing library)](https://github.com/Billuc/gleaxml)
+- [glisse (RSS parser)](https://github.com/Billuc/glisse/)
+- [RSS Reader (code)](https://github.com/Billuc/rss-reader)
+- [RSS Reader (page)](https://sbocjayj46dktf3orwcsw27nxi0ymkxn.lambda-url.eu-north-1.on.aws/)
+
