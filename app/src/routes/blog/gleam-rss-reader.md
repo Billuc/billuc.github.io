@@ -5,18 +5,17 @@ createdAt: '17/09/2025'
 
 Some time ago, I gave myself a new side quest. I wanted to know more about RSS feeds.
 The motivation behind it was that I was tired of "modern" news websites. I feel it is
-now harder to access meaninful content on those websites than it should be. Whether it
+now harder to access meaningful content on those websites than it should be. Whether it
 is loading time, huge images, useless platitudes or the infamous cookie popups and paywalls, I get annoyed
 really, really fast. This shouldn't be the case ! After all, all you need to know what
 there is to know is usually simply a title and a short description.
 
-That is where RSS feeds come in ! I am old enough to know that RSS feeds were a thing
-in the 2000s and that they were often used to be notified of the latest news of a
-particular website. So here I am on my new side quest of trying to build a RSS reader/aggregator
-for myself ! The goal is to have a simple list of titles, with a description if I want to know more
-and a link to the article if I want to read the full article.
+I am old enough to know that RSS feeds were commonly used to be notified of the latest news of a
+particular website, and all of this without the fioritures. So here I am on my new side quest of 
+trying to build a RSS reader/aggregator for myself ! The goal is to have a simple list of titles, 
+with a description if I want to know more and a link if I want to read the full article.
 
-For this project, I am using my currently favorite language, which is Gleam ! I didn't choose Gleam
+For this project, I am using my currently favorite language, Gleam ! I didn't choose Gleam
 because it would make the project easier or faster to write, but simply because I knew I could
 do the whole project using it and that I would have a good time all along the way :)
 
@@ -28,15 +27,15 @@ on type safety. With its type system, its friendly syntax and community and the 
 favorite languages to code with !
 
 Under the hood, Gleam compiles to Erlang or to Javascript. The Erlang target allows
-to take advantage of the power of the BEAM and its immense scalability and thus
-build extremely concurrent applications. The Javascript target allows to create scripts
-for the browser (take a look at [Lustre](https://hexdocs.pm/lustre/index.html), a Gleam
-web framework) or the server (via Node, Deno and co.).
+to take advantage of the power of the BEAM to build extremely concurrent applications. 
+The Javascript target allows to create scripts for the browser (take a look at 
+[Lustre](https://hexdocs.pm/lustre/index.html), a Gleam web framework) or the server 
+(via Node, Deno and co.).
 
 ## The XML parser
 
 The first step on our RSS reader journey is to parse the XML documents RSS is built upon.
-I could have gone the simple and easy path of reusing existing code, as there are utilities
+I could have gone the simple and easy path of reusing existing code. There are utilities
 both in Erlang ([xmerl](https://www.erlang.org/doc/apps/xmerl/xmerl_ug.html)) and Javascript
 ([DOMParser](https://developer.mozilla.org/en-US/docs/Web/XML/Guides/Parsing_and_serializing_XML))
 to parse XML, but I wanted to do the parsing myself so I ended up writing my own XML parser
@@ -115,7 +114,7 @@ is very well defined, it was easy to create such rules to assemble tokens and cr
 
 Finally, I created a 'main' module with helpful function to make my life easier when I want to manipulate said objects,
 since pattern matching all the time when you want to get the value of an attribute or the first child of a certain
-name is cumbersome. Functions such as `pub fn get_node(root: parser.XmlNode, path: List(String))` or
+tagname is cumbersome. Functions such as `pub fn get_node(root: parser.XmlNode, path: List(String))` or
 `pub fn get_attribute(node: parser.XmlNode, name: String)` have much more meaning in this context and are very
 convenient for building our RSS library.
 
@@ -133,12 +132,14 @@ retrieving data from specific places. There isn't much to say about the code, yo
 ## The website
 
 Now that I can, from a string of data, parse its XML content and build RSS-related objects, I want to display
-the data so that I can read the news' titles. A website is the best way to do this and get access to the
-content from basically anywhere. Gleam can build website by using the Lustre library, perfect !
+the data so that I can read the news' titles. A website is the best way to do this, since I would get access to the
+content from basically anywhere. Let's start building a webpage using Lustre then !
 
 My first idea was to create a purely static website that I could host on a Github Page and access easily.
 I spun up a Lustre project, added [rsvp](https://hexdocs.pm/rsvp/index.html) to fetch the RSS documents, and...
-it did not work ! Damn you CORS ! I guess this solution is out the window and I have to fetch them on the
+it did not work ! Damn you CORS ! Basically, I can't access content from another website if they don't authorize
+me to access it. Some RSS feeds don't allow or deny access to their RSS feeds, but the browser's default behaviour is, for
+security reasons, to block unallowed content... I guess this solution is out the window and I have to fetch them on the
 server instead.
 
 As I am currently learning how to use AWS, I thought this project would be perfect for testing AWS Lambdas.
@@ -178,9 +179,19 @@ the data correctly formatted. Since I use HTMX, the items endpoint should also r
 the calling div's content. Again, I use Lustre to build an element from the parsed data and convert it to
 and HTML string using `element.to_string`.
 
-And voilà, we have an HTML page that loads and displays the RSS items from the provided URLs ! I use it
-almost daily to get news and articles. If you want to see it for yourself, [here](https://sbocjayj46dktf3orwcsw27nxi0ymkxn.lambda-url.eu-north-1.on.aws/) is the link. If you want to
+And voilà, we have an HTML page that loads and displays the RSS items from the provided URLs ! If you want to see 
+it for yourself, [here](https://sbocjayj46dktf3orwcsw27nxi0ymkxn.lambda-url.eu-north-1.on.aws/) is the link. If you want to
 look at the code (which shouldn't be too hard to understand, send me a message if you struggle), it is
 [here](https://github.com/Billuc/rss-reader).
 
 ## Ending notes
+
+I loved doing this simple project, which has now a big impact since I use it
+almost daily to get news and articles ! It was super interesting learning about lexers and
+parsers and I plan on using nibble for more projects (I have this idea of a toy programming
+language) ! As always with Gleam, it was super easy to get things done, the language doesn't 
+get in your way, it is a pleasure to use and there are many great packages :)
+
+P.S.: I got to read of [this website](https://feedmaker.fly.dev) that allow you to generate
+RSS feeds from websites thanks to my RSS reader :D I can get news from even more sources !!!
+
