@@ -22,7 +22,7 @@
 		</p>
 
 		<div
-			class="px-4 md:px-10 lg:px-20 mx-auto self-stretch text-justify prose md:prose-lg max-w-full"
+			class="px-4 md:px-10 lg:px-20 mx-auto self-stretch text-justify prose md:my-prose-lg max-w-full"
 		>
 			<data.content />
 		</div>

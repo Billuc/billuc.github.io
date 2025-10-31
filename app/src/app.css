@@ -4,3 +4,14 @@
 @utility max-w-screen--xs {
 	max-width: calc(100vw - var(--container-xs));
 }
+
+@utility my-prose-lg {
+	@apply prose-lg;
+	@apply max-w-4xl;
+	line-height: 1.7;
+
+	:where(li):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+		margin-top: 0.25em;
+		margin-bottom: 0.25em;
+	}
+}

@@ -1,7 +1,8 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { exec } from 'child_process';
-import { mdsvex } from 'mdsvex';
+import { mdsvex, escapeSvelte } from 'mdsvex';
+import { codeToHtml } from 'shiki';
 
 function getBranchName() {
 	return new Promise((res, rej) =>
@@ -25,7 +26,13 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		mdsvex({
-			extensions: ['.md']
+			extensions: ['.md'],
+			highlight: {
+				highlighter: async (code, lang) => {
+					const html = await codeToHtml(code, { lang, theme: 'nord' });
+					return `{@html \`${escapeSvelte(html)}\`}`;
+				}
+			}
 		})
 	],
 
