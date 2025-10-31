@@ -21,7 +21,7 @@
 			{#each postsByCreatedDate as post}
 				<a
 					href={post.path}
-					class="text-left bg-slate-200 px-4 py-2 rounded-sm cursor-pointer w-full md:w-2/3"
+					class="text-left bg-slate-200 px-4 py-2 rounded-sm cursor-pointer w-full md:w-2/3 min-w-2xs max-w-lg"
 				>
 					<span class="font-bold">{post.metadata.title}</span><br />
 					<span class="text-sm italic">
