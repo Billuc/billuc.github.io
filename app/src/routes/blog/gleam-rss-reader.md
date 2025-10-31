@@ -1,6 +1,7 @@
 ---
 title: RSS Reader - How I built my own news aggregator in Gleam
 createdAt: '17/09/2025'
+lastUpdatedAt: '31/10/2025'
 ---
 
 Some time ago, I gave myself a new side quest. I wanted to know more about RSS feeds.
@@ -11,8 +12,8 @@ really, really fast. This shouldn't be the case ! After all, all you need to kno
 there is to know is usually simply a title and a short description.
 
 I am old enough to know that RSS feeds were commonly used to be notified of the latest news of a
-particular website, and all of this without the fioritures. So here I am on my new side quest of 
-trying to build a RSS reader/aggregator for myself ! The goal is to have a simple list of titles, 
+particular website, and all of this without the fioritures. So here I am on my new side quest of
+trying to build a RSS reader/aggregator for myself ! The goal is to have a simple list of titles,
 with a description if I want to know more and a link if I want to read the full article.
 
 For this project, I am using my currently favorite language, Gleam ! I didn't choose Gleam
@@ -27,9 +28,9 @@ on type safety. With its type system, its friendly syntax and community and the 
 favorite languages to code with !
 
 Under the hood, Gleam compiles to Erlang or to Javascript. The Erlang target allows
-to take advantage of the power of the BEAM to build extremely concurrent applications. 
-The Javascript target allows to create scripts for the browser (take a look at 
-[Lustre](https://hexdocs.pm/lustre/index.html), a Gleam web framework) or the server 
+to take advantage of the power of the BEAM to build extremely concurrent applications.
+The Javascript target allows to create scripts for the browser (take a look at
+[Lustre](https://hexdocs.pm/lustre/index.html), a Gleam web framework) or the server
 (via Node, Deno and co.).
 
 ## The XML parser
@@ -179,7 +180,7 @@ the data correctly formatted. Since I use HTMX, the items endpoint should also r
 the calling div's content. Again, I use Lustre to build an element from the parsed data and convert it to
 and HTML string using `element.to_string`.
 
-And voilà, we have an HTML page that loads and displays the RSS items from the provided URLs ! If you want to see 
+And voilà, we have an HTML page that loads and displays the RSS items from the provided URLs ! If you want to see
 it for yourself, [here](https://sbocjayj46dktf3orwcsw27nxi0ymkxn.lambda-url.eu-north-1.on.aws/) is the link. If you want to
 look at the code (which shouldn't be too hard to understand, send me a message if you struggle), it is
 [here](https://github.com/Billuc/rss-reader).
@@ -189,11 +190,14 @@ look at the code (which shouldn't be too hard to understand, send me a message i
 I loved doing this simple project, which has now a big impact since I use it
 almost daily to get news and articles ! It was super interesting learning about lexers and
 parsers and I plan on using nibble for more projects (I have this idea of a toy programming
-language) ! As always with Gleam, it was super easy to get things done, the language doesn't 
+language) ! As always with Gleam, it was super easy to get things done, the language doesn't
 get in your way, it is a pleasure to use and there are many great packages :)
 
 P.S.: I got to read of [this website](https://feedmaker.fly.dev) that allow you to generate
 RSS feeds from websites thanks to my RSS reader :D I can get news from even more sources !!!
+
+P.P.S.: I should warn you if you want to use GleaXML, as its performance and memory usage are not great. I have to
+allocate 512MB of RAM to my Lambdas and they still take about 3 seconds to parse and render basic RSS data.
 
 ## Links
 
@@ -201,4 +205,3 @@ RSS feeds from websites thanks to my RSS reader :D I can get news from even more
 - [glisse (RSS parser)](https://github.com/Billuc/glisse/)
 - [RSS Reader (code)](https://github.com/Billuc/rss-reader)
 - [RSS Reader (page)](https://sbocjayj46dktf3orwcsw27nxi0ymkxn.lambda-url.eu-north-1.on.aws/)
-
