@@ -42,7 +42,7 @@
 
 		<div class="my-8">
 			<NavigationLink link="/" icon={faHome}>Home</NavigationLink>
-			<NavigationLink link="/resume" icon={faTimeline}>Resume</NavigationLink>
+			<!-- <NavigationLink link="/resume" icon={faTimeline}>Resume</NavigationLink> -->
 			<!-- <NavigationLink link="/skills" icon={faCode}>Skills</NavigationLink> -->
 			<NavigationLink link="/projects" icon={faFlask}>Projects</NavigationLink>
 			<NavigationLink link="/blog" icon={faFilePen}>Blog</NavigationLink>
