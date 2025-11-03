@@ -56,54 +56,59 @@ so we check on that and return an error if it is not. Note that we keep the rema
 This second split should be on a _self-close tag token_ and return an error again if it is not. Finally, we can return the tag name that we
 got during the second split.
 
+And that is (almost) all there is to parsing. Obviously, this example is very simple compared to parsing whole XML documents but the core principle
+is there ! I only added helper functions that introduce some overhead but made my life sooooo much easier when writing the logic of parsing XML.
+
+The main benefit from this approach is that we only got through the document once and we do it very efficiently since we basically jump to the
+pre-defined tokens. As such, I expected this parser to be much faster than the nibble one, at least 2 to 3 times faster.
+
+## The FFI parsers
+
+[Gleam](https://gleam.run/) is a really cool language that can compile to Erlang or Javascript and, to take advantage of the extensive ecosystem of both languages, Gleam
+has a very powerful [FFI (foreign function interface)](https://en.wikipedia.org/wiki/Foreign_function_interface) system. This allowed me to write reference
+parsers, which I can compare my parsers to to see how fast/slow they are !
+
+Erlang's OTP does include natively a full-spec compliant XML parser, [xmerl](https://www.erlang.org/doc/apps/xmerl/api-reference.html), so I can use just that without
+putting much work into it. The only thing I have to do is wrap calls to xmerl_scan into functions that take Gleam data as an input and outputs data that can be
+"understood" by Gleam. Here is a snapshot of the code :
+
+```erlang
+-module(gleaxml_ffi).
+-export([
+  parse/1
+]).
+-include_lib("xmerl/include/xmerl.hrl").
+
+parse(XmlString) when is_binary(XmlString) ->
+    parse(binary_to_list(XmlString));
+parse(XmlString) when is_list(XmlString) ->
+    case do_parse(XmlString) of
+        {error, Reason} ->
+            {error, Reason};
+        {Xml, _Rest} -> to_xml_document(Xml);
+        Other ->
+            {error, Other}
+    end.
+
+do_parse(XmlString) when is_list(XmlString) ->
+    try xmerl_scan:string(XmlString)
+    catch
+        _:Reason -> {error, Reason}
+    end.
+
+
+to_xml_document(Xml) ->
+    case is_node(Xml) of
+        false -> {error, list_to_binary("unsupported_node")};
+        true -> {ok, #{
+                  atom_to_binary(version) => list_to_binary("1.0"),
+                  atom_to_binary(encoding) => list_to_binary("utf8"),
+                  atom_to_binary(standalone) => true,
+                  list_to_binary("root_element") => to_node(Xml)
+            }}
+    end.
 ```
-fn root_splitter() {
-  splitter.new([xml_decl_start, "<", "\r", "\n", " "])
-}
 
-fn attr_value_splitter() {
-  splitter.new([
-    hex_char_reference,
-    dec_char_reference,
-    entity_reference,
-    "\"",
-    "'",
-  ])
-}
-
-fn start_tag_splitter() {
-  splitter.new(["/>", ">", "=", "\"", "'", "\r", "\n", " "])
-}
-
-fn end_tag_splitter() {
-  splitter.new([">", "\r", " ", "\n"])
-}
-
-fn content_splitter() {
-  splitter.new([
-    "</",
-    hex_char_reference,
-    dec_char_reference,
-    entity_reference,
-    comment_start,
-    cdata_start,
-    "<",
-  ])
-}
-
-fn comment_value_splitter() {
-  splitter.new([comment_end, "--"])
-}
-
-fn cdata_splitter() {
-  splitter.new([cdata_end])
-}
-
-fn xml_decl_splitter() {
-  splitter.new(["=", "\"", "'", xml_decl_end, "\r", "\n", " "])
-}
-
-fn reference_splitter() {
-  splitter.new([semi_colon])
-}
-```
+Since Gleam's strings are binary data under the hood, we have to convert them to character lists, which is the way Erlang represents strings.
+Then, we can call `xmerl_scan:string` to parse the XML document and call `to_xml_document` to shape the data the way we want so that it matches
+our Gleam data type. And that is all there is to our Erlang FFI parser !
