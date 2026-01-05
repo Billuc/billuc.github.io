@@ -1,7 +1,7 @@
 ---
 title: A custom dev server with file watching in Gleam using Deno
 createdAt: '02/01/2026'
-lastUpdatedAt: '02/01/2026'
+lastUpdatedAt: '05/01/2026'
 ---
 
 After the work on gleaxml in [the previous blog post](./gleam-xml-parser-benchmark), I wanted to update my RSS reader website to use
