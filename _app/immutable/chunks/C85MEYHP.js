@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Billaud Luc - Website</title>
-		<link rel="icon" href="../luc.webp" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Billuc's website, developped by Luc Billaud" />
-		
-		<link href="../_app/immutable/assets/0.DFUcR9qQ.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.Cb3kVulx.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DPirPa6-.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/lpN2Vxpk.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BUApaBEI.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/C-f9v-IK.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DGkhdNmg.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.CPd9pt0i.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/PPVm8Dsz.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CZY0x-c-.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/EuLTIg3q.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Dj1VToQJ.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Dag62dna.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.BP1e-fXn.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/h_Zy9I_E.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BtSsL5BM.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CkX8RDRJ.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/B8rpUfFa.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BakJcqRh.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DG9Fq4r9.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/5.B5xxhQqA.js">
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--[--><!--[--><!----><!----><main><div><div class="text-slate-900 bg-slate-100 w-full relative"><div class="min-h-screen max-w-11/12 md:max-w-xl lg:max-w-2xl mx-auto flex flex-col justify-between"><div class="sticky top-0 left-0 bg-slate-900 text-slate-50 z-10 w-full h-12 px-4 py-2 rounded-b-md flex flex-row justify-between"><div><a href="/" class="text-xl font-black">Luc Billaud</a></div> <div><a href="/" class="px-4 hover:text-red-300 inline align-middle underline"><!---->About<!----></a><!----> <a href="/projects" class="px-4 hover:text-red-300 inline align-middle underline"><!---->Projects<!----></a><!----> <a href="/blog" class="px-4 hover:text-red-300 inline align-middle underline"><!---->Blog<!----></a><!----></div></div><!----> <div class="w-full py-6 grow"><!----><article class="py-4 text-center w-full"><span class="text-4xl font-black text-slate-900">How slow is GleaXML ? :)</span> <div class="my-4 mx-auto border-b-2 border-red-600 border-opacity-30 w-40"></div> <p class="text-sm italic mb-8">Published: 31/10/2025, last updated: 31/10/2025</p> <div class="px-4 max-w-full text-justify prose md:prose-lg md:prose-li:my-1 prose-code:text-red-700 prose-code:font-normal prose-blockquote:font-normal prose-blockquote:bg-slate-200 prose-blockquote:pr-4 prose-blockquote:border-l-slate-500"><!----><p>In my <a href="./gleam-rss-reader">previous post</a>, I presented RSS Reader, the RSS agregator I wrote entirely using Gleam.
+import{f as c,a as i}from"./CZY0x-c-.js";import"./B8rpUfFa.js";import{s,f as E,a6 as y}from"./lpN2Vxpk.js";import{h as a}from"./BjUVM2FD.js";const F={title:"How slow is GleaXML ? :)",createdAt:"31/10/2025"},{title:u,createdAt:g}=F;var h=c(`<p>In my <a href="./gleam-rss-reader">previous post</a>, I presented RSS Reader, the RSS agregator I wrote entirely using Gleam.
 In order to parse the RSS feeds, I had to use an XML parser and decided to create my own from scratch.
 That’s how <a href="https://github.com/Billuc/gleaxml" rel="nofollow">GleaXML</a> was born !</p> <p>When I shared it with the Gleam community on <a href="https://discord.gg/Fm8Pwmy" rel="nofollow">Discord</a>, it sparked a discussion on how
 nibble, the parser combinator I used, was slow, had a high memory usage and maybe wasn’t the best tool to parse XML
@@ -39,9 +7,43 @@ very good at doing one thing: splitting text ! I should be able to write a perfo
 magnitude of the performance gain, I decided to do a benchmark to compare my nibble and splitter parsers with each other and
 with a reference parser like <a href="https://www.erlang.org/doc/apps/xmerl/xmerl_ug.html" rel="nofollow">xmerl</a>, the XML library provided with
 Erlang.</p> <h2>The splitter parser</h2> <p>splitter’s job is only to split an input string based on tokens defined in advance, but this is enough to parse about anything.</p> <p>Let’s take a simple example like parsing a simple self-closing tag with no argument.
-Our input looks like this: <code>&lt;my-tag/></code>. Basically the expected structure is this: <code>OPEN_TAG tag_name SELF_CLOSE_TAG</code> and the data we
+Our input looks like this: <code>&lt;my-tag/&gt;</code>. Basically the expected structure is this: <code>OPEN_TAG tag_name SELF_CLOSE_TAG</code> and the data we
 want to retrieve is the tag name. We can then create a Splitter, split on <code>OPEN_TAG</code> and <code>SELF_CLOSE_TAG</code> and all that is left should
-be the tag name. Here is what the code looks like:</p> <!----><pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span style="color:#81A1C1">fn</span><span style="color:#88C0D0"> parse_tag</span><span style="color:#D8DEE9FF">() </span><span style="color:#81A1C1">-></span><span style="color:#D8DEE9FF"> Result(String, String) &#123;</span></span>
+be the tag name. Here is what the code looks like:</p> <!> <p>As you can see the splitter has to be pre-defined to split only on certain tokens. Here, the only tokens that are of interest are
+the <em>open tag token</em> (<code>&lt;</code>) and <em>self close tag token</em> (<code>/&gt;</code>), so we will only split on those.</p> <p>The first split should be on a <em>open tag token</em>, so we check on that and return an error if it is not <code>(1)</code>.
+Note that we keep the remaining string and use it to perform the second split.
+This second split should be on a <em>self-close tag token</em> and return an error again if it is not <code>(2)</code>.
+Finally, we can return the tag name that we got during the second split <code>(3)</code>.</p> <p>And that is (almost) all there is to parsing. Obviously, this example is very simple compared to parsing whole XML documents but the core principle
+is there ! I only added helper functions that introduce some overhead but made my life sooooo much easier when writing the logic of parsing XML.</p> <p>The main benefit from this approach is that we only got through the document once and we do it very efficiently since we basically jump to the
+pre-defined tokens. As such, I expected this parser to be much faster than the nibble one, at least 2 to 3 times faster.</p> <h2>The FFI parsers</h2> <p><a href="https://gleam.run/" rel="nofollow">Gleam</a> is a really cool language that can compile to Erlang or Javascript and, to take advantage of the extensive ecosystem of both languages, Gleam
+has a very powerful <a href="https://en.wikipedia.org/wiki/Foreign_function_interface" rel="nofollow">FFI (foreign function interface)</a> system. This allowed me to write reference
+parsers, which I can compare my parsers to to see how fast/slow they are !</p> <p>Erlang’s OTP does include natively a full-spec compliant XML parser, <a href="https://www.erlang.org/doc/apps/xmerl/api-reference.html" rel="nofollow">xmerl</a>, so I can use just that without
+putting much work into it. The only thing I have to do is wrap calls to xmerl_scan into functions that take Gleam data as an input and outputs data that can be
+“understood” by Gleam. Here is a snapshot of the code :</p> <!> <p>Since Gleam’s strings are binary data under the hood, we have to convert them to character lists, which is the way Erlang represents strings.
+Then, we can call <code>xmerl_scan:string</code> to parse the XML document and call <code>to_xml_document</code> to shape the data the way we want so that it matches
+our Gleam data type. And that is all there is to our Erlang FFI parser !</p> <p>For the JavaScript FFI parser, I had a tiny bit more trouble. There is an XML parser available called <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMParser" rel="nofollow">DOMParser</a>.
+However, the problem is that it is a Web API and is not available on Node, where I want to run my benchmarks.
+Thus, I used <a href="https://www.npmjs.com/package/jsdom" rel="nofollow">jsdom</a> to get a similar API that I could work with.</p> <p>Again, all that was left was write the “glue” code which was very simple. Here is the gist of it :</p> <!> <p>Note that I am returning JavaScript objects and not Gleam objects. Since I am unsure how both interact and whether I can “simply” return data and have
+it “magically transformed” into Gleam object as with Erlang, I decided to return JS objects and decode them on the Gleam side, to make sure everything
+was as I wanted them to be.</p> <p>So, now that we have our parsers, let’s see how well they perform !</p> <h2>Benchmark Results</h2> <p>To compare the performance of all my parsers, I used a benchmarking library called <a href="https://github.com/schurhammer/gleamy_bench" rel="nofollow">gleamy_bench</a>. Since
+I am no benchmarking expert, I don’t know what it’s worth, but I looked at the code and it seemed to do things well. It uses JS’s <code>performance.now</code> and
+Erlang’s <code>os.pref_counter</code> to get high resolution timestamps and does some warmup cycles to increase result stability.</p> <p>Next, I want to compare the performance for different document sizes, especially given the memory concerns raised over nibble. I expect that parsers that
+have a larger memory usage such as my original parser perform okay for small XML documents but have their performance drop when the file size increase. I
+selected 3 documents, each with different sizes. The first is a very trivial XML string consisting of 2 elements and a comment. The second is more of interest
+for my use-case (RSS feeds, remember ?) since it is a RSS document I retrieved at <a href="https://phys.org/rss-feed/" rel="nofollow">https://phys.org/rss-feed/</a>. The third document
+is a 20MB XML containing astronomical data from NASA I got from the <a href="https://aiweb.cs.washington.edu/research/projects/xmltk/xmldata/" rel="nofollow">UW XML repository</a>. It
+has 476646 elements, a max depth of 8 and an average depth of 5.58, which seems to be a good test for our parsers. I tried using larger files, but quickly
+abandonned the idea, since parsing them was taking way too long.</p> <p>Finally, for those that may be interested, here is the configuration I benched my parsers on:</p> <ul><li>Windows 11 24H2 - WSL with Ubuntu 22.04.5</li> <li>12th gen Intel i7 core</li> <li>32GB RAM</li></ul> <p>Now that that is done let’s see the results !</p> <h3>Erlang</h3> <!> <h3>Javascript</h3> <!> <blockquote><p>Note: I had to run the benchmark with <code>NODE_OPTIONS="--max-old-space-size=8192"</code> to avoid out-of-memory errors on the 20MB XML input for the FFI parser.</p></blockquote> <h3>Analysis</h3> <p>The most obvious observation we can make is that the Nibble parser does not perform as well as the other two parsers, especially as the size of the input grows.
+I am surprised by the performance of the splitter parser, especially compared to the FFI parser. I expected the FFI parser to be very optimized and as such to outperform the splitter parser.
+However, the result shows that the splitter parser can be 2 to 4 times faster than the FFI parser and up to 146 times faster than the nibble parser.
+It can still be slower than the FFI parser for small XML on the Erlang target and the high standard deviation is something I should investigate.</p> <p>On the JavaScript target, the results are similar. I expected the FFI to perform worse than its Erlang counterpart because apparently jsdom isn’t optimized, but it was
+actually a bit faster for the RSS and 20MB documents. For the small document, the jsdom parser performs really badly, but I guess this can be due to overhead or some
+initialization operations. The high standard deviation should again be something I should investigate.</p> <h2>Conclusion</h2> <p>Overall, my splitter parser performed remarkably well and even outperformed the FFI references for larger documents ! On the other hand,
+the nibble parser performed poorly, which was expected. Then, I’ll use the splitter parser as the main parser for the gleaxml project from
+now on.</p> <p>Some improvments could be made though ! I should rethink how my helper function for splitter are done to optimize performance. I also
+could use the supposedly faster <a href="https://www.npmjs.com/package/htmlparser2" rel="nofollow">htmlparser2</a> library as a JS reference. I could use
+a <a href="https://en.wikipedia.org/wiki/Simple_API_for_XML" rel="nofollow">SAX</a> approach to parse large documents efficiently and compare that to <a href="https://www.erlang.org/doc/apps/xmerl/xmerl_sax_parser.html" rel="nofollow">xmerl_sax_parser</a> and htmlparser2. Finally, I should consider making this
+project’s parsers full-spec compliant ^^’</p> <p>If I ever do one of these things, I will probably write about it here ! Until then, have a nice day ! :)</p> <h2>Links</h2> <ul><li><a href="https://github.com/Billuc/gleaxml/tree/benchmark" rel="nofollow">gleaxml benchmark code</a></li></ul>`,1);function f(t){var n=h(),e=s(E(n),16);a(e,()=>`<pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span style="color:#81A1C1">fn</span><span style="color:#88C0D0"> parse_tag</span><span style="color:#D8DEE9FF">() </span><span style="color:#81A1C1">-></span><span style="color:#D8DEE9FF"> Result(String, String) &#123;</span></span>
 <span class="line"><span style="color:#81A1C1">  let</span><span style="color:#D8DEE9FF"> my_splitter </span><span style="color:#81A1C1">=</span><span style="color:#D8DEE9FF"> splitter.</span><span style="color:#88C0D0">new</span><span style="color:#D8DEE9FF">([</span><span style="color:#A3BE8C">"&#x3C;"</span><span style="color:#D8DEE9FF">, </span><span style="color:#A3BE8C">"/>"</span><span style="color:#D8DEE9FF">])</span></span>
 <span class="line"><span style="color:#81A1C1">  let</span><span style="color:#D8DEE9FF"> input </span><span style="color:#81A1C1">=</span><span style="color:#A3BE8C"> "&#x3C;my-tag/>"</span></span>
 <span class="line"></span>
@@ -52,17 +54,7 @@ be the tag name. Here is what the code looks like:</p> <!----><pre class="shiki 
 <span class="line"><span style="color:#81A1C1">  use</span><span style="color:#81A1C1"> &#x3C;-</span><span style="color:#D8DEE9FF"> bool.</span><span style="color:#88C0D0">guard</span><span style="color:#D8DEE9FF">(delimiter </span><span style="color:#81A1C1">!=</span><span style="color:#A3BE8C"> "/>"</span><span style="color:#D8DEE9FF">, Error(</span><span style="color:#A3BE8C">"Tags should end with '/>'"</span><span style="color:#D8DEE9FF">))</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D8DEE9FF">  Ok(tag_name) </span><span style="color:#616E88">// (3)</span></span>
-<span class="line"><span style="color:#D8DEE9FF">&#125;</span></span></code></pre><!----> <p>As you can see the splitter has to be pre-defined to split only on certain tokens. Here, the only tokens that are of interest are
-the <em>open tag token</em> (<code>&lt;</code>) and <em>self close tag token</em> (<code>/></code>), so we will only split on those.</p> <p>The first split should be on a <em>open tag token</em>, so we check on that and return an error if it is not <code>(1)</code>.
-Note that we keep the remaining string and use it to perform the second split.
-This second split should be on a <em>self-close tag token</em> and return an error again if it is not <code>(2)</code>.
-Finally, we can return the tag name that we got during the second split <code>(3)</code>.</p> <p>And that is (almost) all there is to parsing. Obviously, this example is very simple compared to parsing whole XML documents but the core principle
-is there ! I only added helper functions that introduce some overhead but made my life sooooo much easier when writing the logic of parsing XML.</p> <p>The main benefit from this approach is that we only got through the document once and we do it very efficiently since we basically jump to the
-pre-defined tokens. As such, I expected this parser to be much faster than the nibble one, at least 2 to 3 times faster.</p> <h2>The FFI parsers</h2> <p><a href="https://gleam.run/" rel="nofollow">Gleam</a> is a really cool language that can compile to Erlang or Javascript and, to take advantage of the extensive ecosystem of both languages, Gleam
-has a very powerful <a href="https://en.wikipedia.org/wiki/Foreign_function_interface" rel="nofollow">FFI (foreign function interface)</a> system. This allowed me to write reference
-parsers, which I can compare my parsers to to see how fast/slow they are !</p> <p>Erlang’s OTP does include natively a full-spec compliant XML parser, <a href="https://www.erlang.org/doc/apps/xmerl/api-reference.html" rel="nofollow">xmerl</a>, so I can use just that without
-putting much work into it. The only thing I have to do is wrap calls to xmerl_scan into functions that take Gleam data as an input and outputs data that can be
-“understood” by Gleam. Here is a snapshot of the code :</p> <!----><pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span style="color:#ECEFF4">-</span><span style="color:#81A1C1">module</span><span style="color:#ECEFF4">(</span><span style="color:#8FBCBB">gleaxml_ffi</span><span style="color:#ECEFF4">).</span></span>
+<span class="line"><span style="color:#D8DEE9FF">&#125;</span></span></code></pre>`);var l=s(e,16);a(l,()=>`<pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span style="color:#ECEFF4">-</span><span style="color:#81A1C1">module</span><span style="color:#ECEFF4">(</span><span style="color:#8FBCBB">gleaxml_ffi</span><span style="color:#ECEFF4">).</span></span>
 <span class="line"><span style="color:#ECEFF4">-</span><span style="color:#81A1C1">export</span><span style="color:#ECEFF4">([</span></span>
 <span class="line"><span style="color:#88C0D0">  parse</span><span style="color:#ECEFF4">/</span><span style="color:#B48EAD">1</span></span>
 <span class="line"><span style="color:#ECEFF4">]).</span></span>
@@ -95,11 +87,7 @@ putting much work into it. The only thing I have to do is wrap calls to xmerl_sc
 <span class="line"><span style="color:#88C0D0">                  atom_to_binary</span><span style="color:#ECEFF4">(</span><span style="color:#D8DEE9FF">standalone</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1"> =></span><span style="color:#81A1C1"> true</span><span style="color:#ECEFF4">,</span></span>
 <span class="line"><span style="color:#88C0D0">                  list_to_binary</span><span style="color:#ECEFF4">(</span><span style="color:#ECEFF4">"</span><span style="color:#A3BE8C">root_element</span><span style="color:#ECEFF4">"</span><span style="color:#ECEFF4">)</span><span style="color:#81A1C1"> =></span><span style="color:#88C0D0"> to_node</span><span style="color:#ECEFF4">(</span><span style="color:#D8DEE9">Xml</span><span style="color:#ECEFF4">)</span></span>
 <span class="line"><span style="color:#ECEFF4">            &#125;&#125;</span></span>
-<span class="line"><span style="color:#81A1C1">    end.</span></span></code></pre><!----> <p>Since Gleam’s strings are binary data under the hood, we have to convert them to character lists, which is the way Erlang represents strings.
-Then, we can call <code>xmerl_scan:string</code> to parse the XML document and call <code>to_xml_document</code> to shape the data the way we want so that it matches
-our Gleam data type. And that is all there is to our Erlang FFI parser !</p> <p>For the JavaScript FFI parser, I had a tiny bit more trouble. There is an XML parser available called <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMParser" rel="nofollow">DOMParser</a>.
-However, the problem is that it is a Web API and is not available on Node, where I want to run my benchmarks.
-Thus, I used <a href="https://www.npmjs.com/package/jsdom" rel="nofollow">jsdom</a> to get a similar API that I could work with.</p> <p>Again, all that was left was write the “glue” code which was very simple. Here is the gist of it :</p> <!----><pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span style="color:#81A1C1">import</span><span style="color:#ECEFF4"> &#123;</span><span style="color:#8FBCBB"> Ok</span><span style="color:#ECEFF4">,</span><span style="color:#8FBCBB"> Error</span><span style="color:#ECEFF4">,</span><span style="color:#8FBCBB"> List</span><span style="color:#ECEFF4"> &#125;</span><span style="color:#81A1C1"> from</span><span style="color:#ECEFF4"> '</span><span style="color:#A3BE8C">../../gleam.mjs</span><span style="color:#ECEFF4">'</span><span style="color:#81A1C1">;</span></span>
+<span class="line"><span style="color:#81A1C1">    end.</span></span></code></pre>`);var o=s(l,8);a(o,()=>`<pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span style="color:#81A1C1">import</span><span style="color:#ECEFF4"> &#123;</span><span style="color:#8FBCBB"> Ok</span><span style="color:#ECEFF4">,</span><span style="color:#8FBCBB"> Error</span><span style="color:#ECEFF4">,</span><span style="color:#8FBCBB"> List</span><span style="color:#ECEFF4"> &#125;</span><span style="color:#81A1C1"> from</span><span style="color:#ECEFF4"> '</span><span style="color:#A3BE8C">../../gleam.mjs</span><span style="color:#ECEFF4">'</span><span style="color:#81A1C1">;</span></span>
 <span class="line"><span style="color:#81A1C1">import</span><span style="color:#ECEFF4"> &#123;</span><span style="color:#8FBCBB"> JSDOM</span><span style="color:#ECEFF4"> &#125;</span><span style="color:#81A1C1"> from</span><span style="color:#ECEFF4"> '</span><span style="color:#A3BE8C">jsdom</span><span style="color:#ECEFF4">'</span><span style="color:#81A1C1">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#81A1C1">function</span><span style="color:#88C0D0"> newDomParser</span><span style="color:#ECEFF4">()</span><span style="color:#ECEFF4"> &#123;</span></span>
@@ -128,17 +116,7 @@ Thus, I used <a href="https://www.npmjs.com/package/jsdom" rel="nofollow">jsdom<
 <span class="line"><span style="color:#88C0D0">		encoding</span><span style="color:#ECEFF4">:</span><span style="color:#ECEFF4"> '</span><span style="color:#A3BE8C">UTF-8</span><span style="color:#ECEFF4">'</span><span style="color:#ECEFF4">,</span></span>
 <span class="line"><span style="color:#88C0D0">		root_element</span><span style="color:#ECEFF4">:</span><span style="color:#88C0D0"> toElement</span><span style="color:#D8DEE9FF">(</span><span style="color:#88C0D0">getRootElement</span><span style="color:#D8DEE9FF">(</span><span style="color:#D8DEE9">xml</span><span style="color:#D8DEE9FF">))</span></span>
 <span class="line"><span style="color:#ECEFF4">	&#125;</span><span style="color:#81A1C1">;</span></span>
-<span class="line"><span style="color:#ECEFF4">&#125;</span></span></code></pre><!----> <p>Note that I am returning JavaScript objects and not Gleam objects. Since I am unsure how both interact and whether I can “simply” return data and have
-it “magically transformed” into Gleam object as with Erlang, I decided to return JS objects and decode them on the Gleam side, to make sure everything
-was as I wanted them to be.</p> <p>So, now that we have our parsers, let’s see how well they perform !</p> <h2>Benchmark Results</h2> <p>To compare the performance of all my parsers, I used a benchmarking library called <a href="https://github.com/schurhammer/gleamy_bench" rel="nofollow">gleamy_bench</a>. Since
-I am no benchmarking expert, I don’t know what it’s worth, but I looked at the code and it seemed to do things well. It uses JS’s <code>performance.now</code> and
-Erlang’s <code>os.pref_counter</code> to get high resolution timestamps and does some warmup cycles to increase result stability.</p> <p>Next, I want to compare the performance for different document sizes, especially given the memory concerns raised over nibble. I expect that parsers that
-have a larger memory usage such as my original parser perform okay for small XML documents but have their performance drop when the file size increase. I
-selected 3 documents, each with different sizes. The first is a very trivial XML string consisting of 2 elements and a comment. The second is more of interest
-for my use-case (RSS feeds, remember ?) since it is a RSS document I retrieved at <a href="https://phys.org/rss-feed/" rel="nofollow">https://phys.org/rss-feed/</a>. The third document
-is a 20MB XML containing astronomical data from NASA I got from the <a href="https://aiweb.cs.washington.edu/research/projects/xmltk/xmldata/" rel="nofollow">UW XML repository</a>. It
-has 476646 elements, a max depth of 8 and an average depth of 5.58, which seems to be a good test for our parsers. I tried using larger files, but quickly
-abandonned the idea, since parsing them was taking way too long.</p> <p>Finally, for those that may be interested, here is the configuration I benched my parsers on:</p> <ul><li>Windows 11 24H2 - WSL with Ubuntu 22.04.5</li> <li>12th gen Intel i7 core</li> <li>32GB RAM</li></ul> <p>Now that that is done let’s see the results !</p> <h3>Erlang</h3> <!----><pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span>benching set Small XML Nibble Xml Parser</span></span>
+<span class="line"><span style="color:#ECEFF4">&#125;</span></span></code></pre>`);var p=s(o,20);a(p,()=>`<pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span>benching set Small XML Nibble Xml Parser</span></span>
 <span class="line"><span>benching set Small XML Splitter Xml Parser</span></span>
 <span class="line"><span>benching set Small XML FFI Xml Parser</span></span>
 <span class="line"><span>benching set RSS XML Nibble Xml Parser</span></span>
@@ -159,7 +137,7 @@ abandonned the idea, since parsing them was taking way too long.</p> <p>Finally,
 <span class="line"><span></span></span>
 <span class="line"><span>Input               Function                       IPS           Min           Max          Mean           P99</span></span>
 <span class="line"><span>20MB XML            Splitter Xml Parser         0.1296     7535.8357     7831.2075     7715.1691     7831.2075</span></span>
-<span class="line"><span>20MB XML            FFI Xml Parser              0.0528    18911.3905    18911.3905    18911.3905    18911.3905</span></span></code></pre><!----> <h3>Javascript</h3> <!----><pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span>benching set Small XML Nibble Xml Parser</span></span>
+<span class="line"><span>20MB XML            FFI Xml Parser              0.0528    18911.3905    18911.3905    18911.3905    18911.3905</span></span></code></pre>`);var r=s(p,4);a(r,()=>`<pre class="shiki nord" style="background-color:#2e3440ff;color:#d8dee9ff" tabindex="0"><code><span class="line"><span>benching set Small XML Nibble Xml Parser</span></span>
 <span class="line"><span>benching set Small XML Splitter Xml Parser</span></span>
 <span class="line"><span>benching set Small XML FFI Xml Parser</span></span>
 <span class="line"><span>benching set RSS XML Nibble Xml Parser</span></span>
@@ -180,40 +158,4 @@ abandonned the idea, since parsing them was taking way too long.</p> <p>Finally,
 <span class="line"><span></span></span>
 <span class="line"><span>Input               Function                       IPS           Min           Max          Mean           P99</span></span>
 <span class="line"><span>20MB XML            Splitter Xml Parser         0.1380     7024.2156     7462.3651     7243.2438     7462.3651</span></span>
-<span class="line"><span>20MB XML            FFI Xml Parser              0.0656    15236.0095    15236.0095    15236.0095    15236.0095</span></span></code></pre><!----> <blockquote><p>Note: I had to run the benchmark with <code>NODE_OPTIONS="--max-old-space-size=8192"</code> to avoid out-of-memory errors on the 20MB XML input for the FFI parser.</p></blockquote> <h3>Analysis</h3> <p>The most obvious observation we can make is that the Nibble parser does not perform as well as the other two parsers, especially as the size of the input grows.
-I am surprised by the performance of the splitter parser, especially compared to the FFI parser. I expected the FFI parser to be very optimized and as such to outperform the splitter parser.
-However, the result shows that the splitter parser can be 2 to 4 times faster than the FFI parser and up to 146 times faster than the nibble parser.
-It can still be slower than the FFI parser for small XML on the Erlang target and the high standard deviation is something I should investigate.</p> <p>On the JavaScript target, the results are similar. I expected the FFI to perform worse than its Erlang counterpart because apparently jsdom isn’t optimized, but it was
-actually a bit faster for the RSS and 20MB documents. For the small document, the jsdom parser performs really badly, but I guess this can be due to overhead or some
-initialization operations. The high standard deviation should again be something I should investigate.</p> <h2>Conclusion</h2> <p>Overall, my splitter parser performed remarkably well and even outperformed the FFI references for larger documents ! On the other hand,
-the nibble parser performed poorly, which was expected. Then, I’ll use the splitter parser as the main parser for the gleaxml project from
-now on.</p> <p>Some improvments could be made though ! I should rethink how my helper function for splitter are done to optimize performance. I also
-could use the supposedly faster <a href="https://www.npmjs.com/package/htmlparser2" rel="nofollow">htmlparser2</a> library as a JS reference. I could use
-a <a href="https://en.wikipedia.org/wiki/Simple_API_for_XML" rel="nofollow">SAX</a> approach to parse large documents efficiently and compare that to <a href="https://www.erlang.org/doc/apps/xmerl/xmerl_sax_parser.html" rel="nofollow">xmerl_sax_parser</a> and htmlparser2. Finally, I should consider making this
-project’s parsers full-spec compliant ^^’</p> <p>If I ever do one of these things, I will probably write about it here ! Until then, have a nice day ! :)</p> <h2>Links</h2> <ul><li><a href="https://github.com/Billuc/gleaxml/tree/benchmark" rel="nofollow">gleaxml benchmark code</a></li></ul><!----></div></article><!----><!----><!----></div> <div class="mx-auto mb-4 text-center opacity-60 text-sm">Website developped by Luc Billaud using Svelte, Vite, Tailwind, FontAwesome, Github &amp; Github
-				Actions</div></div></div></div><!----></main><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
-			
-			<script>
-				{
-					__sveltekit_1v8rcz6 = {
-						base: new URL("..", location).pathname.slice(0, -1)
-					};
-
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("../_app/immutable/entry/start.Cb3kVulx.js"),
-						import("../_app/immutable/entry/app.CPd9pt0i.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 5],
-							data: [null,null],
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-	</body>
-</html>
+<span class="line"><span>20MB XML            FFI Xml Parser              0.0656    15236.0095    15236.0095    15236.0095    15236.0095</span></span></code></pre>`),y(20),i(t,n)}export{f as default,F as metadata};
