@@ -15,7 +15,7 @@ const rssReader = asset('/images/rss-reader.jpg');
 export enum ProjectCategory {
 	Libraries = 'Libraries',
 	Games = 'Games',
-	Websites = 'Websites',
+	Websites = 'Webapps',
 	Others = 'Others'
 }
 

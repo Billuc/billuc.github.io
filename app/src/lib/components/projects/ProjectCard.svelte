@@ -13,27 +13,28 @@
 
 <div
 	class={[
-		'bg-slate-800 text-slate-100',
+		'bg-slate-200',
 		'flex flex-row items-center gap-2',
-		'px-4 py-2 rounded-sm max-w-xl shadow-md'
+		'rounded-sm max-w-lg',
+		'px-4 py-2 mb-4 mx-auto'
 	]}
 >
 	<img
 		src={project.imgSrc}
 		alt={`Image for project ${project.label}`}
-		class="rounded-sm h-20 w-20 object-cover shrink-0 mx-auto"
+		class="rounded-sm h-20 w-20 object-cover shrink-0"
 	/>
 
-	<div class="flex flex-col gap-2">
-		<span class="text-xl font-black">{project.label}</span>
+	<div class="px-2">
+		<span class="text-xl font-black mb-2">{project.label}</span>
 
-		<div class="justify-around text-sm text-justify px-2">
+		<div class="text-sm text-justify">
 			{project.description}
 		</div>
 
 		{#if project.projectLink}
-			<LinkButton to={project.projectLink} class="mx-4">
-				<Fa icon={faGithub} class="mr-2" />
+			<LinkButton to={project.projectLink} class="mx-4 mt-2">
+				<Fa icon={faGithub} class="mr-2" title={project.label + ' on Github'} />
 				See code
 			</LinkButton>
 		{/if}
