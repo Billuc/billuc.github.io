@@ -2,38 +2,38 @@
     <channel>
         <title><![CDATA[Luc Billaud - Blog]]></title>
         <description><![CDATA[Luc Billaud - Blog]]></description>
-        <link>../blog</link>
+        <link>https://billuc.github.io/blog</link>
         <image>
-            <url>../luc.webp</url>
+            <url>https://billuc.github.io/luc.webp</url>
             <title>Luc Billaud - Blog</title>
-            <link>../blog</link>
+            <link>https://billuc.github.io/blog</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 05 Jan 2026 12:59:51 GMT</lastBuildDate>
-        <atom:link href="../blog/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Mon, 05 Jan 2026 13:57:21 GMT</lastBuildDate>
+        <atom:link href="https://billuc.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[A custom dev server with file watching in Gleam using Deno]]></title>
-            <link>../blog/gleam-deno-dev-server</link>
-            <guid isPermaLink="true">../blog/gleam-deno-dev-server</guid>
-            <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>
+            <link>https://billuc.github.io/blog/gleam-deno-dev-server</link>
+            <guid isPermaLink="true">https://billuc.github.io/blog/gleam-deno-dev-server</guid>
+            <pubDate>Fri, 02 Jan 2026 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How slow is GleaXML ? :)]]></title>
-            <link>../blog/gleam-xml-parser-benchmark</link>
-            <guid isPermaLink="true">../blog/gleam-xml-parser-benchmark</guid>
-            <pubDate>Invalid Date</pubDate>
+            <link>https://billuc.github.io/blog/gleam-xml-parser-benchmark</link>
+            <guid isPermaLink="true">https://billuc.github.io/blog/gleam-xml-parser-benchmark</guid>
+            <pubDate>Fri, 31 Oct 2025 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[RSS Reader - How I built my own news aggregator in Gleam]]></title>
-            <link>../blog/gleam-rss-reader</link>
-            <guid isPermaLink="true">../blog/gleam-rss-reader</guid>
-            <pubDate>Invalid Date</pubDate>
+            <link>https://billuc.github.io/blog/gleam-rss-reader</link>
+            <guid isPermaLink="true">https://billuc.github.io/blog/gleam-rss-reader</guid>
+            <pubDate>Wed, 17 Sep 2025 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Using Dependency Injection in Vue3 + Vite with Tsyringe]]></title>
-            <link>../blog/vue-tsyringe</link>
-            <guid isPermaLink="true">../blog/vue-tsyringe</guid>
-            <pubDate>Invalid Date</pubDate>
+            <link>https://billuc.github.io/blog/vue-tsyringe</link>
+            <guid isPermaLink="true">https://billuc.github.io/blog/vue-tsyringe</guid>
+            <pubDate>Sat, 17 Aug 2024 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
