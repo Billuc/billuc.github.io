@@ -35,9 +35,7 @@
 
 		<div class="text-center">
 			<div class="text-xl font-black my-4">Luc Billaud</div>
-			<div class="text-sm my-2">
-				Curious developer, Gleam enthusiast, backend enjoyer and open-source lover.
-			</div>
+			<div class="text-sm my-2">Curious developer and open-source lover.</div>
 		</div>
 
 		<div class="my-8">
