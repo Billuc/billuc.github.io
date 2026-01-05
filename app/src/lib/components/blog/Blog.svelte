@@ -14,7 +14,23 @@
 
 <div class="py-16 text-center w-full">
 	<div class="flex flex-col items-center">
-		<span class="text-4xl font-black text-slate-900">Blog</span>
+		<div class="text-4xl font-black text-slate-900">
+			Blog
+			<a
+				href="./blog/rss.xml"
+				class="inline-block ml-1"
+				data-sveltekit-preload-data="false"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img
+					src="https://www.rssboard.org/images/rss-feed-icon-96-by-96.png"
+					alt="Link to RSS feed"
+					width="24"
+					height="24"
+				/>
+			</a>
+		</div>
 		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40"></div>
 
 		<div class="flex flex-col gap-4 px-5 self-stretch items-center">
