@@ -9,7 +9,7 @@ import {
 	faUnity,
 	faVuejs
 } from '@fortawesome/free-brands-svg-icons';
-import { faC, faVrCardboard } from '@fortawesome/free-solid-svg-icons';
+import { faVrCardboard } from '@fortawesome/free-solid-svg-icons';
 
 import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 

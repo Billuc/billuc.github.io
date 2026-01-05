@@ -1,14 +1,16 @@
-import engine3D from '$lib/assets/images/3d.png';
-import balistics from '$lib/assets/images/balistics.png';
-import ballAndStars from '$lib/assets/images/ball-and-stars.png';
-import fractals from '$lib/assets/images/fractals.png';
-import git from '$lib/assets/images/GIT.png';
-import muninn from '$lib/assets/images/Muninn.png';
-import py2048 from '$lib/assets/images/py2048.png';
-import rayTracing from '$lib/assets/images/ray-tracing.png';
-import taipanDi from '$lib/assets/images/taipan-di.jpeg';
-import triSelectIF from '$lib/assets/images/TriSelectIF.jpg';
-import rssReader from '$lib/assets/images/rss-reader.jpg';
+// import engine3D from '$lib/assets/images/3d.png';
+// import balistics from '$lib/assets/images/balistics.png';
+// import ballAndStars from '$lib/assets/images/ball-and-stars.png';
+// import fractals from '$lib/assets/images/fractals.png';
+// import rayTracing from '$lib/assets/images/ray-tracing.png';
+import { asset } from '$app/paths';
+
+const git = asset('/images/GIT.png');
+const muninn = asset('/images/Muninn.png');
+const py2048 = asset('/images/py2048.png');
+const taipanDi = asset('/images/taipan-di.jpeg');
+const triSelectIF = asset('/images/TriSelectIF.jpg');
+const rssReader = asset('/images/rss-reader.jpg');
 
 export enum ProjectCategory {
 	Libraries = 'Libraries',

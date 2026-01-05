@@ -1,7 +1,9 @@
 <script>
 	import { ContactOptions } from '$lib/model/contact';
 	import ContactLink from '../layout/ContactLink.svelte';
-	import image from '$lib/assets/luc2.jpg';
+	import { asset } from '$app/paths';
+
+	const image = asset('/luc2.jpg');
 </script>
 
 <div class="text-center w-full py-12">

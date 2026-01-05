@@ -6,10 +6,6 @@
 	}
 
 	let { posts }: Props = $props();
-
-	let postsByCreatedDate = $derived(
-		posts.sort((a, b) => Date.parse(a.metadata.createdAt) - Date.parse(b.metadata.createdAt))
-	);
 </script>
 
 <div class="py-16 text-center w-full">
@@ -34,7 +30,7 @@
 		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40"></div>
 
 		<div class="flex flex-col gap-4 px-5 self-stretch items-center">
-			{#each postsByCreatedDate as post}
+			{#each posts as post}
 				<a
 					href={post.path}
 					class="text-left bg-slate-200 px-4 py-2 rounded-sm cursor-pointer w-full md:w-2/3 min-w-2xs max-w-lg"
