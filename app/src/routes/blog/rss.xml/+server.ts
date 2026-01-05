@@ -1,11 +1,12 @@
 import type { BlogPost } from '$lib/model/blogpost';
 import type { RequestHandler } from '@sveltejs/kit';
 import { asset, resolve } from '$app/paths';
+import { PUBLIC_HOST } from '$env/static/public';
 import RSS from 'rss';
 
 export const prerender = true;
 
-export const GET: RequestHandler = async ({ }) => {
+export const GET: RequestHandler = async ({ url }) => {
   const allPostFiles = import.meta.glob<boolean, string, BlogPost>('/src/routes/blog/*.md');
   const iterablePostFiles = Object.entries(allPostFiles);
 
@@ -28,19 +29,21 @@ export const GET: RequestHandler = async ({ }) => {
     return Date.parse(dateB) - Date.parse(dateA);
   });
 
+  const currentUrl = new URL(url.pathname, PUBLIC_HOST);
+
   const feed = new RSS({
     title: 'Luc Billaud - Blog',
-    feed_url: resolve('/blog/rss.xml'),
-    site_url: resolve('/blog'),
-    image_url: asset('/luc.webp')
+    feed_url: new URL(resolve('/blog/rss.xml'), currentUrl).toString(),
+    site_url: new URL(resolve('/blog'), currentUrl).toString(),
+    image_url: new URL(asset('/luc.webp'), currentUrl).toString()
   });
 
   for (const post of sortedPosts) {
     feed.item({
       title: post.metadata.title,
       description: '',
-      url: post.path,
-      date: post.metadata.createdAt
+      url: new URL(post.path, currentUrl).toString(),
+      date: standardizeDate(post.metadata.createdAt)
     });
   }
 
