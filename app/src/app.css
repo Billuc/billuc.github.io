@@ -1,25 +1,2 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
-
-@utility max-w-screen--xs {
-	max-width: calc(100vw - var(--container-xs));
-}
-
-@utility my-prose-lg {
-	@apply prose-lg;
-	@apply lg:max-w-4xl;
-	line-height: 1.7;
-
-	:where(li):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-		margin-top: 0.25em;
-		margin-bottom: 0.25em;
-	}
-}
-
-.prose blockquote {
-	@apply font-normal bg-slate-200 pr-4 border-l-slate-500;
-}
-
-.prose p code {
-	@apply font-normal bg-slate-200 px-1 rounded;
-}

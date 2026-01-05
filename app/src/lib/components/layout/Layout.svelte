@@ -10,21 +10,21 @@
 </script>
 
 <div class:dark={isDark}>
-	<div class={['text-slate-900', 'flex flex-row w-full', 'relative']}>
-		<NavBar />
-
+	<div class={['text-slate-900', 'bg-slate-100', 'w-full', 'relative']}>
 		<div
 			class={[
-				'min-h-screen grow max-w-full md:max-w-screen--xs',
-				'bg-slate-100',
+				'min-h-screen max-w-11/12 md:max-w-xl lg:max-w-2xl',
+				'mx-auto',
 				'flex flex-col justify-between'
 			]}
 		>
-			<div class="w-11/12 mx-auto py-6 grow flex">
+			<NavBar />
+
+			<div class="w-full py-6 grow">
 				{@render children?.()}
 			</div>
 
-			<div class="mx-auto mb-4 text-center w-11/12 opacity-60 text-sm">
+			<div class="mx-auto mb-4 text-center opacity-60 text-sm">
 				Website developped by Luc Billaud using Svelte, Vite, Tailwind, FontAwesome, Github & Github
 				Actions
 			</div>

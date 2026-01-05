@@ -11,20 +11,24 @@
 	let { data }: Props = $props();
 </script>
 
-<div class="py-16 text-center w-full">
-	<article class="flex flex-col items-center">
-		<span class="text-4xl font-black text-slate-900">{data.metadata.title}</span>
-		<div class="my-4 border-b-2 border-red-600 border-opacity-30 w-40"></div>
+<article class="py-4 text-center w-full">
+	<span class="text-4xl font-black text-slate-900">{data.metadata.title}</span>
+	<div class="my-4 mx-auto border-b-2 border-red-600 border-opacity-30 w-40"></div>
 
-		<p class="text-sm italic mb-8">
-			Published: {data.metadata.createdAt}, last updated: {data.metadata.lastUpdatedAt ??
-				data.metadata.createdAt}
-		</p>
+	<p class="text-sm italic mb-8">
+		Published: {data.metadata.createdAt}, last updated: {data.metadata.lastUpdatedAt ??
+			data.metadata.createdAt}
+	</p>
 
-		<div
-			class="px-4 md:px-10 lg:px-20 mx-auto self-stretch text-justify prose md:my-prose-lg max-w-full"
-		>
-			<data.content />
-		</div>
-	</article>
-</div>
+	<div
+		class={[
+			'px-4 max-w-full',
+			'text-justify',
+			'prose md:prose-lg md:prose-li:my-1',
+			'prose-code:text-red-700 prose-code:font-normal',
+			'prose-blockquote:font-normal prose-blockquote:bg-slate-200 prose-blockquote:pr-4 prose-blockquote:border-l-slate-500'
+		]}
+	>
+		<data.content />
+	</div>
+</article>
