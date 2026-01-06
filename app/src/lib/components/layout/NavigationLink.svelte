@@ -10,6 +10,6 @@
 	let { link, children }: Props = $props();
 </script>
 
-<a href={link} class={['px-4', 'hover:text-red-300', 'inline', 'align-middle underline']}>
+<a href={link} class={['px-2 md:px-4', 'hover:text-red-300', 'inline', 'align-middle underline']}>
 	{@render children?.()}
 </a>
